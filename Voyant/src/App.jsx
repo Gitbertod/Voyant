@@ -1,6 +1,7 @@
 
 
 import './App.css'
+import Main from './components/Main';
 import NavbarVoyant from "./components/NavbarVoyant";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
      
      <NavbarVoyant></NavbarVoyant>
+     <Main></Main>
     </>
   )
 }
