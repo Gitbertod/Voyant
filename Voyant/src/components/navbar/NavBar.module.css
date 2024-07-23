@@ -1,0 +1,83 @@
+.navbar {
+    display: flex;
+    overflow: hidden;
+    background-color: #333;
+    transition: 300ms;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 300ms;
+  }
+  
+  .subnav {
+    float: left;
+    overflow: hidden;
+    transition: 300ms;
+  }
+  
+  .subnav .subnavbtn {
+    display: flex;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover,
+  .subnav:hover .subnavbtn {
+    background-color: white;
+    color: black;
+    transition: 300ms;
+  }
+  
+  .subnavContent {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    height: 50vh;
+    color: black;
+    transition: 300ms;
+  }
+  
+  .subnavContent a {
+    float: left;
+    color: black;
+    text-decoration: none;
+    transition: 400ms;
+  }
+  
+  .subnavContent a:hover {
+    background-color: #eee;
+    color: black;
+    transition: 400ms;
+  }
+  
+  .subnav:hover .subnavContent {
+    display: block;
+  }
+
+  .divStyle {
+    padding: 0 16px;
+  }
+
+  .icon{
+    margin: 0px auto;
+    margin-bottom: 10px;
+    height: 70px;
+    width: 70px;
+  }
