@@ -1,18 +1,26 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Main from "./components/main/Main";
-import NavBar from "./components/navbar/NavBar";
-
-// import NavbarVoyant from "./components/navbar/NavbarVoyant";
-
-
+import Landing from "./views/Landing";
+import Nosotros from "./views/Nosotros";
+import Soluciones from "./components/navbar/soluciones/Soluciones";
+import Climatizacion from "./views/Climatizacion"
+import Seguridad from "./views/Seguridad"
+import IndustriaFourDotZero from "./views/IndustriaFourDotZero";
+import Contacto from "./views/Contacto";
 
 function App() {
   return (
     <>
-      {/* <NavbarVoyant></NavbarVoyant> */}
-      <NavBar></NavBar>
-      <Main></Main>
-      
+      <Routes>
+        <Route path="/" element={<Landing />}></Route>
+        <Route path="/nosotros" element={<Nosotros/>}></Route>
+        <Route path="/soluciones" element={<Soluciones/>}></Route>
+        <Route path="/soluciones/distribucion-respaldo-de-energia" element={<Soluciones/>}></Route>
+        <Route path="/soluciones/climatizacion" element={<Climatizacion/>}></Route>
+        <Route path="/soluciones/seguridad" element={<Seguridad/>}></Route>
+        <Route path="/contacto" element={<Contacto/>}></Route>
+        <Route path="/soluciones/industria4.0" element={<IndustriaFourDotZero/>}></Route>  
+      </Routes>
     </>
   );
 }

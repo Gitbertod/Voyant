@@ -5,6 +5,7 @@
     transition: 300ms;
     justify-content: center;
     align-items: center;
+    z-index: 20;
   }
   
   .navbar a {
@@ -32,7 +33,7 @@
   .subnav:hover .subnavbtn  {
     background-color: white;
     color: black;
-    transition: 300ms;
+    transition: 700ms;
   }
   
   .subnavContent {
@@ -46,7 +47,7 @@
     height: 50vh;
     color: black;
     transform: translateY(-120%);
-   
+    transition: opacity 300ms, transform 300ms;
   }
   
   .subnavContent a {
@@ -64,7 +65,7 @@
     color: black;
   }
   
-  .subnav:hover > .subnavContent {
+  /* .subnav:hover > .subnavContent {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +73,7 @@
     transition: 700ms;
     opacity: 1;
     transform: translateY(0%);
-  }
+  } */
   .subnavContent:hover{
     position: absolute;
     opacity: 1;
@@ -92,4 +93,14 @@
     margin-bottom: 10px;
     width: 140px;
     height: 140px;
+  }
+
+  .showMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: 700ms;
+    opacity: 1;
+    transform: translateY(0%);
   }
