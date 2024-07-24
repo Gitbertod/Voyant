@@ -16,13 +16,6 @@
     text-decoration: none;
     transition: 300ms;
   }
-  
-  .subnav {
-    float: left;
-    overflow: hidden;
-    transition: 300ms;
-  }
-  
   .subnav .subnavbtn {
     display: flex;
     font-size: 16px;
@@ -36,48 +29,67 @@
   }
   
   .navbar a:hover,
-  .subnav:hover .subnavbtn {
+  .subnav:hover .subnavbtn  {
     background-color: white;
     color: black;
     transition: 300ms;
   }
   
   .subnavContent {
-    display: none;
+    display: flex;
     position: absolute;
     left: 0;
     background-color: white;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
+    opacity: 0; 
     height: 50vh;
     color: black;
-    transition: 300ms;
+    transform: translateY(-120%);
+   
   }
   
   .subnavContent a {
-    float: left;
+    display: flex;
+    flex-direction: column;
     color: black;
     text-decoration: none;
-    transition: 400ms;
+    transition: 900ms;
+    align-items: center;
+    justify-content: center;
   }
   
-  .subnavContent a:hover {
+   a:hover .subnavContent{
     background-color: #eee;
     color: black;
-    transition: 400ms;
   }
   
-  .subnav:hover .subnavContent {
-    display: block;
+  .subnav:hover > .subnavContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: 700ms;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  .subnavContent:hover{
+    position: absolute;
+    opacity: 1;
+    transform: translateY(0%);
   }
 
   .divStyle {
     padding: 0 16px;
   }
 
+  .subnavContent .category{
+    width: 250px;
+    height: 250px;
+  }
   .icon{
     margin: 0px auto;
     margin-bottom: 10px;
-    height: 70px;
-    width: 70px;
+    width: 140px;
+    height: 140px;
   }
