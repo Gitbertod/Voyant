@@ -22,7 +22,7 @@ const NavBar = () => {
     setState({ isOpen: true }); // Muestra el menú
   };
   const handleMouseLeave = () => {
-    setState({ isOpen: false });// Oculta el menú cuando el
+    setState({ isOpen: false }); // Oculta el menú cuando el
   };
 
   return (
@@ -33,12 +33,15 @@ const NavBar = () => {
         </div>
         <Link to="/nosotros">Nosotros</Link>
         <div className={styles.subnav}>
-          <button
-            className={styles.subnavbtn}
-            onMouseEnter={handleSolucionesHover}
-          >
-           <Link to="/soluciones">Soluciones </Link> 
-          </button>
+            
+            <button
+              className={styles.subnavbtn}
+              onMouseEnter={handleSolucionesHover}
+            >
+             <Link to="/soluciones"> Soluciones</Link>
+            </button>
+        
+
           <div
             onMouseLeave={handleMouseLeave}
             className={`${styles.subnavContent} ${
@@ -77,9 +80,13 @@ const NavBar = () => {
             className={styles.subnavbtn}
             onMouseEnter={handleSectoresHover}
           >
-            Sectores <i className="fa fa-caret-down"></i>
+            <Link to="/sectores">Sectores</Link>
           </button>
-          <div onMouseEnter={handleSectoresHover} onMouseOut={handleMouseLeave} className={styles.subnavContent}>
+          <div
+            onMouseEnter={handleSectoresHover}
+            onMouseOut={handleMouseLeave}
+            className={styles.subnavContent}
+          >
             <div className={styles.category}>
               <a href="#bring">
                 <HiCpuChip className={styles.icon} />
@@ -114,7 +121,7 @@ const NavBar = () => {
         </div>
         <div className={styles.subnav}>
           <button className={styles.subnavbtn}>
-            VOYANT 365 <i className="fa fa-caret-down"></i>
+            <Link to="/voyant365">VOYANT 365</Link> 
           </button>
           <div className={styles.subnavContent}>
             <a href="#link1">Link 1</a>
