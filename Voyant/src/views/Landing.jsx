@@ -6,8 +6,8 @@ const Landing = () => {
   return (
     <>
       
-        <NavBar></NavBar>
         <Main></Main>
+        <NavBar></NavBar>
       
     </>
   );

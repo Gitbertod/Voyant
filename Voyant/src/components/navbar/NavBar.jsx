@@ -33,15 +33,12 @@ const NavBar = () => {
         </div>
         <Link to="/nosotros">Nosotros</Link>
         <div className={styles.subnav}>
-            
             <button
               className={styles.subnavbtn}
               onMouseEnter={handleSolucionesHover}
             >
              <Link to="/soluciones"> Soluciones</Link>
             </button>
-        
-
           <div
             onMouseLeave={handleMouseLeave}
             className={`${styles.subnavContent} ${
