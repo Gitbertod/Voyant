@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Landing from "./views/Landing";
-import Nosotros from "./views/Nosotros";
-import Soluciones from "./views/Soluciones";
-import Climatizacion from "./views/Climatizacion"
-import Seguridad from "./views/Seguridad"
-import IndustriaFourDotZero from "./views/IndustriaFourDotZero";
-import Contacto from "./views/Contacto";
-import Sectores from "./views/Sectores";
-import Voyant365 from "./views/Voyant365";
+import Landing from "./views/landing/Landing";
+import Nosotros from "./views/nosotros/Nosotros";
+import Soluciones from "./views/soluciones/Soluciones";
+import Climatizacion from "./views/climatizacion/Climatizacion"
+import Seguridad from "./views/seguridad/Seguridad"
+import IndustriaFourDotZero from "./views/industria4.0/IndustriaFourDotZero";
+import Contacto from "./views/contacto/Contacto";
+import Sectores from "./views/sectores/Sectores";
+import Voyant365 from "./views/voyant365/Voyant365";
 
 function App() {
   return (

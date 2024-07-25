@@ -1,0 +1,16 @@
+.logo{
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 0;
+    position:absolute;
+}
+.container{
+    display: flex;
+}
+.icon{
+    width: 100px;
+    height: 100px;
+    margin-right:20px ;
+    color: white
+}
