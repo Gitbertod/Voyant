@@ -3,7 +3,7 @@
     overflow: hidden;
     background-color:transparent;
     transition: 300ms;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 50px;
     z-index: 20;
@@ -119,3 +119,9 @@
     opacity: 1;
     transform: translateY(0%);
   }
+.optionsNav{
+  display: flex;
+}
+.logo{
+
+}

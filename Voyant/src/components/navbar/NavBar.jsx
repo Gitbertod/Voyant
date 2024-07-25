@@ -31,101 +31,103 @@ const NavBar = () => {
         <div className={styles.subnav}>
           <img src="logoVoyantColor.svg" className="sm:h-9" alt="Voyant Logo" />
         </div>
-        <Link to="/nosotros">Nosotros</Link>
-        <div className={styles.subnav}>
+        <div className={styles.optionsNav}>
+          <Link to="/nosotros">Nosotros</Link>
+          <div className={styles.subnav}>
             <button
               className={styles.subnavbtn}
               onMouseEnter={handleSolucionesHover}
             >
-             <Link to="/soluciones"> Soluciones</Link>
+              <Link to="/soluciones"> Soluciones</Link>
             </button>
-          <div
-            onMouseLeave={handleMouseLeave}
-            className={`${styles.subnavContent} ${
-              state.isOpen ? styles.showMenu : ""
-            }`}
-          >
-            <div className={styles.category}>
-              <a href="#company">
-                <TbBatteryCharging2 className={styles.icon} />
-                Distribución y<br></br>
-                respaldo de energía
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#team">
-                <BsFan className={styles.icon} />
-                Climatizacion
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#careers">
-                <GrShieldSecurity className={styles.icon} />
-                Seguridad
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#careers">
-                <GiArtificialIntelligence className={styles.icon} />
-                Industria 4.0
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className={styles.subnav}>
-          <button
-            className={styles.subnavbtn}
-            onMouseEnter={handleSectoresHover}
-          >
-            <Link to="/sectores">Sectores</Link>
-          </button>
-          <div
-            onMouseEnter={handleSectoresHover}
-            onMouseOut={handleMouseLeave}
-            className={styles.subnavContent}
-          >
-            <div className={styles.category}>
-              <a href="#bring">
-                <HiCpuChip className={styles.icon} />
-                Datacenters
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#deliver">
-                <GiMining className={styles.icon} />
-                Minería
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#package">
-                <SlEnergy className={styles.icon} />
-                Industria Eléctrica
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#package">
-                <FaIndustry className={styles.icon} />
-                Industria
-              </a>
-            </div>
-            <div className={styles.category}>
-              <a href="#express">
-                <FaTowerCell className={styles.icon} />
-                Telecomunicaciones
-              </a>
+            <div
+              onMouseLeave={handleMouseLeave}
+              className={`${styles.subnavContent} ${
+                state.isOpen ? styles.showMenu : ""
+              }`}
+            >
+              <div className={styles.category}>
+                <a href="#company">
+                  <TbBatteryCharging2 className={styles.icon} />
+                  Distribución y<br></br>
+                  respaldo de energía
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#team">
+                  <BsFan className={styles.icon} />
+                  Climatizacion
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#careers">
+                  <GrShieldSecurity className={styles.icon} />
+                  Seguridad
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#careers">
+                  <GiArtificialIntelligence className={styles.icon} />
+                  Industria 4.0
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.subnav}>
-          <button className={styles.subnavbtn}>
-            <Link to="/voyant365">VOYANT 365</Link> 
-          </button>
-          <div className={styles.subnavContent}>
-            <a href="#link1">Link 1</a>
-            <a href="#link2">Link 2</a>
+          <div className={styles.subnav}>
+            <button
+              className={styles.subnavbtn}
+              onMouseEnter={handleSectoresHover}
+            >
+              <Link to="/sectores">Sectores</Link>
+            </button>
+            <div
+              onMouseEnter={handleSectoresHover}
+              onMouseOut={handleMouseLeave}
+              className={styles.subnavContent}
+            >
+              <div className={styles.category}>
+                <a href="#bring">
+                  <HiCpuChip className={styles.icon} />
+                  Datacenters
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#deliver">
+                  <GiMining className={styles.icon} />
+                  Minería
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#package">
+                  <SlEnergy className={styles.icon} />
+                  Industria Eléctrica
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#package">
+                  <FaIndustry className={styles.icon} />
+                  Industria
+                </a>
+              </div>
+              <div className={styles.category}>
+                <a href="#express">
+                  <FaTowerCell className={styles.icon} />
+                  Telecomunicaciones
+                </a>
+              </div>
+            </div>
           </div>
+          <div className={styles.subnav}>
+            <button className={styles.subnavbtn}>
+              <Link to="/voyant365">VOYANT 365</Link>
+            </button>
+            <div className={styles.subnavContent}>
+              <a href="#link1">Link 1</a>
+              <a href="#link2">Link 2</a>
+            </div>
+          </div>
+          <Link to="contacto">Contacto</Link>
         </div>
-        <Link to="contacto">Contacto</Link>
       </div>
     </>
   );

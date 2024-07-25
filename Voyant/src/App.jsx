@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Landing from "./views/Landing";
 import Nosotros from "./views/Nosotros";
-import Soluciones from "./components/navbar/soluciones/Soluciones";
+import Soluciones from "./views/Soluciones";
 import Climatizacion from "./views/Climatizacion"
 import Seguridad from "./views/Seguridad"
 import IndustriaFourDotZero from "./views/IndustriaFourDotZero";
