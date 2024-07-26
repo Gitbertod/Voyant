@@ -16,23 +16,27 @@ const Sectores = () => {
         <img src="logoVoyantColor.svg" className={styles.logo} />
       </Link>
       <div className={styles.container}>
-        <div>
-          <HiCpuChip className={styles.icon} />
-          <h2>DATA CENTERS</h2>
-        </div>
-        <div>
+        <Link to="#">
+          <div className={styles.boxCategory}>
+            <HiCpuChip className={styles.icon} />
+            <h2>DATA CENTERS</h2>
+          </div>
+        </Link>
+        <div className={styles.boxCategory}>
           <GiMining className={styles.icon} />
           <h2>MINERIA</h2>
         </div>
-        <div>
+        <div className={styles.boxCategory}>
           <SlEnergy className={styles.icon} />
-          <h2>INDUSTRIA ELECTRICA</h2>
+          <h2>
+            INDUSTRIA<br></br> ELECTRICA
+          </h2>
         </div>
-        <div>
+        <div className={styles.boxCategory}>
           <FaIndustry className={styles.icon} />
           <h2>INDUSTRIA</h2>
         </div>
-        <div>
+        <div className={styles.boxCategory}>
           <FaTowerCell className={styles.icon} />
           <h2>TELECOMUNICACIONES</h2>
         </div>

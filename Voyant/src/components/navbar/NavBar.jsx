@@ -12,17 +12,18 @@ import { GiArtificialIntelligence } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [state, setState] = useState({
-    isOpen: false,
-  });
+  const [isOpenSoluciones, setIsOpenSoluciones] = useState(false);
+  const [isOpenSectores, setIsOpenSectores] = useState(false);
+
   const handleSolucionesHover = () => {
-    setState({ isOpen: true });
+    setIsOpenSoluciones(true);
   };
   const handleSectoresHover = () => {
-    setState({ isOpen: true }); // Muestra el menú
+    setIsOpenSectores(true);
   };
   const handleMouseLeave = () => {
-    setState({ isOpen: false }); // Oculta el menú cuando el
+    setIsOpenSoluciones(false);
+    setIsOpenSectores(false);
   };
 
   return (
@@ -37,13 +38,15 @@ const NavBar = () => {
             <button
               className={styles.subnavbtn}
               onMouseEnter={handleSolucionesHover}
+              onMouseLeave={handleMouseLeave}
             >
               <Link to="/soluciones"> Soluciones</Link>
             </button>
             <div
+              onMouseEnter={handleSolucionesHover}
               onMouseLeave={handleMouseLeave}
               className={`${styles.subnavContent} ${
-                state.isOpen ? styles.showMenu : ""
+                isOpenSoluciones ? styles.showMenu : ""
               }`}
             >
               <div className={styles.category}>
@@ -77,13 +80,16 @@ const NavBar = () => {
             <button
               className={styles.subnavbtn}
               onMouseEnter={handleSectoresHover}
+              onMouseLeave={handleMouseLeave}
             >
               <Link to="/sectores">Sectores</Link>
             </button>
             <div
               onMouseEnter={handleSectoresHover}
-              onMouseOut={handleMouseLeave}
-              className={styles.subnavContent}
+              onMouseLeave={handleMouseLeave}
+              className={`${styles.subnavContent} ${
+                isOpenSectores ? styles.showMenu : ""
+              }`}
             >
               <div className={styles.category}>
                 <a href="#bring">
@@ -132,4 +138,5 @@ const NavBar = () => {
     </>
   );
 };
+
 export default NavBar;

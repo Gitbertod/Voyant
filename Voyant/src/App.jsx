@@ -9,6 +9,7 @@ import IndustriaFourDotZero from "./views/industria4.0/IndustriaFourDotZero";
 import Contacto from "./views/contacto/Contacto";
 import Sectores from "./views/sectores/Sectores";
 import Voyant365 from "./views/voyant365/Voyant365";
+import { FooterVoyant } from "./components/footer/FooterVoyant";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/voyant365" element={<Voyant365/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
       </Routes>
+      <FooterVoyant/>
     </>
   );
 }

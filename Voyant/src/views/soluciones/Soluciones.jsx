@@ -1,10 +1,10 @@
+'use client';
+
 
 const Soluciones = () => {
   return (
     <>
-      
-      
-      <div>Soluciones!!</div>
+
     </>
   );
 };
