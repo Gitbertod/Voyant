@@ -5,10 +5,6 @@ const Main = () => {
     <div className="main">
       <div className="overlay"></div>
       <video src={bgvideo2} autoPlay loop muted></video>
-      <div className="content">
-        <img src="logoVoyantWhite.svg" className="sm:h-9" alt="Voyant Logo" />
-        <h1>LAS MEJORES SOLUCIONES PARA TUS REQUERIMIENTOS</h1>
-      </div>
     </div>
   );
 };

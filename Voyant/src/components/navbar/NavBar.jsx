@@ -12,17 +12,18 @@ import { GiArtificialIntelligence } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [state, setState] = useState({
-    isOpen: false,
-  });
+  const [isOpenSoluciones, setIsOpenSoluciones] = useState(false);
+  const [isOpenSectores, setIsOpenSectores] = useState(false);
+
   const handleSolucionesHover = () => {
-    setState({ isOpen: true });
+    setIsOpenSoluciones(true);
   };
   const handleSectoresHover = () => {
-    setState({ isOpen: true }); // Muestra el menú
+    setIsOpenSectores(true);
   };
   const handleMouseLeave = () => {
-    setState({ isOpen: false }); // Oculta el menú cuando el
+    setIsOpenSoluciones(false);
+    setIsOpenSectores(false);
   };
 
   return (
@@ -37,39 +38,35 @@ const NavBar = () => {
             <button
               className={styles.subnavbtn}
               onMouseEnter={handleSolucionesHover}
+              onMouseLeave={handleMouseLeave}
             >
               <Link to="/soluciones"> Soluciones</Link>
             </button>
             <div
+              onMouseEnter={handleSolucionesHover}
               onMouseLeave={handleMouseLeave}
               className={`${styles.subnavContent} ${
-                state.isOpen ? styles.showMenu : ""
+                isOpenSoluciones ? styles.showMenu : ""
               }`}
             >
               <div className={styles.category}>
-                <a href="#company">
-                  <TbBatteryCharging2 className={styles.icon} />
+                <TbBatteryCharging2 className={styles.icon} />
+                <Link to="#company">
                   Distribución y<br></br>
                   respaldo de energía
-                </a>
+                </Link>
               </div>
               <div className={styles.category}>
-                <a href="#team">
-                  <BsFan className={styles.icon} />
-                  Climatizacion
-                </a>
+                <BsFan className={styles.icon} />
+                <a href="#team">Climatizacion</a>
               </div>
               <div className={styles.category}>
-                <a href="#careers">
-                  <GrShieldSecurity className={styles.icon} />
-                  Seguridad
-                </a>
+                <GrShieldSecurity className={styles.icon} />
+                <a href="#careers">Seguridad</a>
               </div>
               <div className={styles.category}>
-                <a href="#careers">
-                  <GiArtificialIntelligence className={styles.icon} />
-                  Industria 4.0
-                </a>
+                <GiArtificialIntelligence className={styles.icon} />
+                <a href="#careers">Industria 4.0</a>
               </div>
             </div>
           </div>
@@ -77,41 +74,44 @@ const NavBar = () => {
             <button
               className={styles.subnavbtn}
               onMouseEnter={handleSectoresHover}
+              onMouseLeave={handleMouseLeave}
             >
               <Link to="/sectores">Sectores</Link>
             </button>
             <div
               onMouseEnter={handleSectoresHover}
-              onMouseOut={handleMouseLeave}
-              className={styles.subnavContent}
+              onMouseLeave={handleMouseLeave}
+              className={`${styles.subnavContent} ${
+                isOpenSectores ? styles.showMenu : ""
+              }`}
             >
               <div className={styles.category}>
-                <a href="#bring">
                   <HiCpuChip className={styles.icon} />
+                <a href="#bring">
                   Datacenters
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#deliver">
                   <GiMining className={styles.icon} />
+                <a href="#deliver">
                   Minería
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#package">
                   <SlEnergy className={styles.icon} />
+                <a href="#package">
                   Industria Eléctrica
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#package">
                   <FaIndustry className={styles.icon} />
+                <a href="#package">
                   Industria
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#express">
                   <FaTowerCell className={styles.icon} />
+                <a href="#express">
                   Telecomunicaciones
                 </a>
               </div>
@@ -132,4 +132,5 @@ const NavBar = () => {
     </>
   );
 };
+
 export default NavBar;

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Qualy_Bold";
+    src: url("/fonts/Qualy_Bold.ttf");
+    font-weight: bold;
+}
+
+.container {
+    font-family: "Qualy";
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 50vh;
+  }
+.centerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+    
+}
+.h1{
+    font-family: "Qualy_Bold";
+    display: flex;
+    flex-direction: column;
+    color:white;
+    font-size: 40px;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.subtitle{
+    color: white;
+    font-size: 30px;
+}
