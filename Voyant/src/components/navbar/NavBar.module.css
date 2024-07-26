@@ -87,6 +87,8 @@ a:hover .subnavContent {
   margin-bottom: 10px;
   width: 140px;
   height: 140px;
+  color:black;
+  z-index: 100;
 }
 .navbar:hover {
   background-color: white;
@@ -106,4 +108,8 @@ a:hover .subnavContent {
 }
 .optionsNav {
   display: flex;
+}
+.category{
+  height: 250px;
+  width: 250px;
 }

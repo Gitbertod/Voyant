@@ -50,29 +50,23 @@ const NavBar = () => {
               }`}
             >
               <div className={styles.category}>
-                <a href="#company">
-                  <TbBatteryCharging2 className={styles.icon} />
+                <TbBatteryCharging2 className={styles.icon} />
+                <Link to="#company">
                   Distribución y<br></br>
                   respaldo de energía
-                </a>
+                </Link>
               </div>
               <div className={styles.category}>
-                <a href="#team">
-                  <BsFan className={styles.icon} />
-                  Climatizacion
-                </a>
+                <BsFan className={styles.icon} />
+                <a href="#team">Climatizacion</a>
               </div>
               <div className={styles.category}>
-                <a href="#careers">
-                  <GrShieldSecurity className={styles.icon} />
-                  Seguridad
-                </a>
+                <GrShieldSecurity className={styles.icon} />
+                <a href="#careers">Seguridad</a>
               </div>
               <div className={styles.category}>
-                <a href="#careers">
-                  <GiArtificialIntelligence className={styles.icon} />
-                  Industria 4.0
-                </a>
+                <GiArtificialIntelligence className={styles.icon} />
+                <a href="#careers">Industria 4.0</a>
               </div>
             </div>
           </div>
@@ -92,32 +86,32 @@ const NavBar = () => {
               }`}
             >
               <div className={styles.category}>
-                <a href="#bring">
                   <HiCpuChip className={styles.icon} />
+                <a href="#bring">
                   Datacenters
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#deliver">
                   <GiMining className={styles.icon} />
+                <a href="#deliver">
                   Minería
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#package">
                   <SlEnergy className={styles.icon} />
+                <a href="#package">
                   Industria Eléctrica
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#package">
                   <FaIndustry className={styles.icon} />
+                <a href="#package">
                   Industria
                 </a>
               </div>
               <div className={styles.category}>
-                <a href="#express">
                   <FaTowerCell className={styles.icon} />
+                <a href="#express">
                   Telecomunicaciones
                 </a>
               </div>
