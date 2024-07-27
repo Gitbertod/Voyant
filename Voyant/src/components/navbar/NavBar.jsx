@@ -46,28 +46,36 @@ const NavBar = () => {
               onMouseEnter={handleSolucionesHover}
               onMouseLeave={handleMouseLeave}
               className={`${styles.subnavContent} ${
-                isOpenSoluciones ? styles.showMenu : ""
+                isOpenSoluciones ? styles.slidebottom : ""
               }`}
             >
-              <div className={styles.category}>
-                <TbBatteryCharging2 className={styles.icon} />
-                <Link to="#company">
+              <Link to="/soluciones/distribucion-respaldo-de-energia">
+                <div className={styles.category}>
+                  <TbBatteryCharging2 className={styles.icon} />
                   Distribución y<br></br>
                   respaldo de energía
-                </Link>
-              </div>
-              <div className={styles.category}>
-                <BsFan className={styles.icon} />
-                <a href="#team">Climatizacion</a>
-              </div>
-              <div className={styles.category}>
-                <GrShieldSecurity className={styles.icon} />
-                <a href="#careers">Seguridad</a>
-              </div>
-              <div className={styles.category}>
-                <GiArtificialIntelligence className={styles.icon} />
-                <a href="#careers">Industria 4.0</a>
-              </div>
+                </div>
+              </Link>
+
+              <Link to="/soluciones/climatizacion">
+                <div className={styles.category}>
+                  <BsFan className={styles.icon} />
+                  Climatizacion
+                </div>
+              </Link>
+              <Link to="/soluciones/seguridad">
+                <div className={styles.category}>
+                  <GrShieldSecurity className={styles.icon} />
+                  Seguridad
+                </div>
+              </Link>
+
+              <Link to="/soluciones/industria4.0">
+                <div className={styles.category}>
+                  <GiArtificialIntelligence className={styles.icon} />
+                  Industria 4.0
+                </div>
+              </Link>
             </div>
           </div>
           <div className={styles.subnav}>
@@ -82,39 +90,49 @@ const NavBar = () => {
               onMouseEnter={handleSectoresHover}
               onMouseLeave={handleMouseLeave}
               className={`${styles.subnavContent} ${
-                isOpenSectores ? styles.showMenu : ""
+                isOpenSectores ? styles.slidebottom : ""
               }`}
             >
-              <div className={styles.category}>
-                  <HiCpuChip className={styles.icon} />
-                <a href="#bring">
-                  Datacenters
-                </a>
-              </div>
-              <div className={styles.category}>
-                  <GiMining className={styles.icon} />
-                <a href="#deliver">
-                  Minería
-                </a>
-              </div>
-              <div className={styles.category}>
-                  <SlEnergy className={styles.icon} />
-                <a href="#package">
-                  Industria Eléctrica
-                </a>
-              </div>
-              <div className={styles.category}>
-                  <FaIndustry className={styles.icon} />
-                <a href="#package">
-                  Industria
-                </a>
-              </div>
-              <div className={styles.category}>
-                  <FaTowerCell className={styles.icon} />
-                <a href="#express">
-                  Telecomunicaciones
-                </a>
-              </div>
+              <Link to="">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <HiCpuChip className={styles.icon} />
+                    Datacenters
+                  </div>
+                </div>
+              </Link>
+              <Link to="#deliver">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <GiMining className={styles.icon} />
+                    Minería
+                  </div>
+                </div>
+              </Link>
+              <Link to="#package">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <SlEnergy className={styles.icon} />
+                    Industria Eléctrica
+                  </div>
+                </div>
+              </Link>
+              <Link to="#package">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <FaIndustry className={styles.icon} />
+                    Industria
+                  </div>
+                </div>
+              </Link>
+              <Link to="#express">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <FaTowerCell className={styles.icon} />
+                    Telecomunicaciones
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
           <div className={styles.subnav}>
