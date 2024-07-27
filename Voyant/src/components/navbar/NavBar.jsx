@@ -50,30 +50,38 @@ const NavBar = () => {
               }`}
             >
               <Link to="/soluciones/distribucion-respaldo-de-energia">
-                <div className={styles.category}>
-                  <TbBatteryCharging2 className={styles.icon} />
-                  Distribución y<br></br>
-                  respaldo de energía
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <TbBatteryCharging2 className={styles.icon} />
+                    Distribución y<br></br>
+                    respaldo de energía
+                  </div>
                 </div>
               </Link>
 
               <Link to="/soluciones/climatizacion">
-                <div className={styles.category}>
-                  <BsFan className={styles.icon} />
-                  Climatizacion
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <BsFan className={styles.icon} />
+                    Climatizacion
+                  </div>
                 </div>
               </Link>
               <Link to="/soluciones/seguridad">
-                <div className={styles.category}>
-                  <GrShieldSecurity className={styles.icon} />
-                  Seguridad
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <GrShieldSecurity className={styles.icon} />
+                    Seguridad
+                  </div>
                 </div>
               </Link>
 
               <Link to="/soluciones/industria4.0">
-                <div className={styles.category}>
-                  <GiArtificialIntelligence className={styles.icon} />
-                  Industria 4.0
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <GiArtificialIntelligence className={styles.icon} />
+                    Industria 4.0
+                  </div>
                 </div>
               </Link>
             </div>
