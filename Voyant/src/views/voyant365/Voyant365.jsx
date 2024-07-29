@@ -1,5 +1,6 @@
+import BoxDataPercentage from "../../components/iconsdata/BoxDataPercentage";
 import styles from "./Voyant365.module.css";
-import { GrShieldSecurity } from "react-icons/gr";
+
 import { Link } from "react-router-dom";
 
 const Voyant365 = () => {
@@ -22,39 +23,7 @@ const Voyant365 = () => {
           reprehenderit recusandae quidem inventore neque dicta dignissimos?
           Incidunt, eum? Deserunt, consequuntur animi?
         </p>
-        <div className={styles.slidebottom}>
-          <div className={styles.dataInfo}>
-            <div className={styles.dataInfo}>
-              <GrShieldSecurity className={styles.icon} />
-              <div className={styles.containerData}>
-                <p className={styles.porcentaje}>89%</p>
-                <p className={styles.miniInfo}>
-                  Optimizacion<br></br> de recursos
-                </p>
-              </div>
-              <div className={styles.whiteLine}></div>
-            </div>
-            <div className={styles.dataInfo}>
-              <GrShieldSecurity className={styles.icon} />
-              <div className={styles.containerData}>
-                <p className={styles.porcentaje}>89%</p>
-                <p className={styles.miniInfo}>
-                  Optimizacion<br></br> de recursos
-                </p>
-              </div>
-              <div className={styles.whiteLine}></div>
-            </div>
-            <div className={styles.dataInfo}>
-              <GrShieldSecurity className={styles.icon} />
-              <div className={styles.containerData}>
-                <p className={styles.porcentaje}>89%</p>
-                <p className={styles.miniInfo}>
-                  Optimizacion<br></br> de recursos
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <BoxDataPercentage></BoxDataPercentage>   
       </div>
     </>
   );
