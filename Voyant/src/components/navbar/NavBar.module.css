@@ -36,8 +36,7 @@
 }
 .navbar a:hover,
 .subnav:hover .subnavbtn {
-  background-color: #e9e9e9;
-  color: white;
+  background-color: #eee;
   transition: background-color 600ms;
 }
 .subnavContent {
@@ -48,7 +47,7 @@
   width: 100%;
   opacity: 0;
   height: 35vh;
-  color: black;
+  color: #f9b03a;
   transform: translateY(-50%);
   transition: opacity 600ms, transform 600ms;
 }
@@ -60,10 +59,11 @@
   transition: background-color 600ms;
   align-items: center;
   justify-content: center;
+  height: fit-content;
 }
 a:hover .subnavContent {
   background-color: #eee;
-  color: black;
+ color: #f9b03a;
 }
 .subnav:hover > .subnavContent,
 .subnavContent:hover {
@@ -73,21 +73,23 @@ a:hover .subnavContent {
   align-content: center;
   transition: opacity 600ms, transform 600ms;
   opacity: 1;
+  color: #f9b03a;
   transform: translateY(0%);
 }
 .divStyle {
   padding: 0 16px;
 }
 .subnavContent .category {
-  width: 250px;
-  height: 250px;
+  
+  height: fit-content;
+  justify-content: space-evenly;
 }
 .icon {
   margin: 0px auto;
   margin-bottom: 10px;
-  width: 140px;
-  height: 140px;
-  color: black;
+  width: 100px;
+  height: 100px;
+  color: #032d42;
   z-index: 10;
 }
 .navbar:hover {
@@ -109,8 +111,8 @@ a:hover .subnavContent {
   display: flex;
 }
 .category {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 .slidebottom {
 	-webkit-animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

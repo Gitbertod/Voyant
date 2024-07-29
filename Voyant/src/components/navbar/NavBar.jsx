@@ -33,7 +33,7 @@ const NavBar = () => {
           <img src="logoVoyantColor.svg" className="sm:h-9" alt="Voyant Logo" />
         </div>
         <div className={styles.optionsNav}>
-          <Link to="/nosotros">Nosotros</Link>
+          <Link to="/nosotros" className={styles.link}>Nosotros</Link>
           <div className={styles.subnav}>
             <button
               className={styles.subnavbtn}
@@ -101,7 +101,7 @@ const NavBar = () => {
                 isOpenSectores ? styles.slidebottom : ""
               }`}
             >
-              <Link to="">
+              <Link to="/data-centers">
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
                     <HiCpuChip className={styles.icon} />
@@ -109,7 +109,7 @@ const NavBar = () => {
                   </div>
                 </div>
               </Link>
-              <Link to="#deliver">
+              <Link to="/mineria">
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
                     <GiMining className={styles.icon} />
@@ -117,7 +117,7 @@ const NavBar = () => {
                   </div>
                 </div>
               </Link>
-              <Link to="#package">
+              <Link to="/industria-electrica">
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
                     <SlEnergy className={styles.icon} />
@@ -125,7 +125,7 @@ const NavBar = () => {
                   </div>
                 </div>
               </Link>
-              <Link to="#package">
+              <Link to="/industria">
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
                     <FaIndustry className={styles.icon} />
@@ -133,7 +133,7 @@ const NavBar = () => {
                   </div>
                 </div>
               </Link>
-              <Link to="#express">
+              <Link to="/telecomunicaciones">
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
                     <FaTowerCell className={styles.icon} />
@@ -147,10 +147,6 @@ const NavBar = () => {
             <button className={styles.subnavbtn}>
               <Link to="/voyant365">VOYANT 365</Link>
             </button>
-            <div className={styles.subnavContent}>
-              <a href="#link1">Link 1</a>
-              <a href="#link2">Link 2</a>
-            </div>
           </div>
           <Link to="contacto">Contacto</Link>
         </div>

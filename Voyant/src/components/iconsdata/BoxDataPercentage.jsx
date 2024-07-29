@@ -1,6 +1,6 @@
-import React from 'react'
 import { GrShieldSecurity } from "react-icons/gr";
 import styles from "./BoxDataPercentage.module.css"
+
 const BoxDataPercentage = () => {
   return (
     <div className={styles.slidebottom}>
