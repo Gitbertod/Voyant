@@ -15,6 +15,7 @@ import Mineria from "./views/sectores/mineria/Mineria";
 import IndustriaElectrica from "./views/sectores/industria-electrica/IndustriaElectrica";
 import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
+import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
 function App() {
   return (
     <>
@@ -22,7 +23,7 @@ function App() {
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/soluciones" element={<Soluciones/>}></Route>
-        <Route path="/soluciones/distribucion-respaldo-de-energia" element={<Soluciones/>}></Route>
+        <Route path="/soluciones/distribucion-respaldo-de-energia" element={<DistribucionRespaldoEnergia></DistribucionRespaldoEnergia>}></Route>
         <Route path="/soluciones/climatizacion" element={<Climatizacion/>}></Route>
         <Route path="/soluciones/seguridad" element={<Seguridad/>}></Route>
         <Route path="/soluciones/industria4.0" element={<IndustriaFourDotZero/>}></Route>  

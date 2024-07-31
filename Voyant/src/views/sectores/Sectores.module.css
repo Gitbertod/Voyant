@@ -10,12 +10,11 @@
     width: 100%;
     object-fit: cover;
 }
-.container{
+.containerSectores{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    height: 100vh;
     flex-wrap: wrap;
 }
 
@@ -23,12 +22,47 @@
     color: white;
     font-size: 25px;
 }
+.container p{
+    margin-bottom: 40px;
+}
 .icon{
     width: 80px;
     height: 80px;
     color: white
 }
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .boxCategory{
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 25px;
+}
+
+.container{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    height: 100vh;
+    width: 80%;
+}
+.container h1{
+    font-size: 70px;
+    font-weight: 500;
+    text-align: left;
+}
+.yellowLine{
+    width: 70%;
+    height: 10px;
+    background-color: #f9b03a ;
+    
+}
+.textInfo{
+    font-size: 25px;
+    text-align: left;
 }
