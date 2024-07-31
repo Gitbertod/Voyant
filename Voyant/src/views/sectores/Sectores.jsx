@@ -12,33 +12,48 @@ const Sectores = () => {
         <div className="overlay"></div>
         <img src="sectores_bg.jpeg" className={styles.bgimage}></img>
       </div>
-      <Link to="/">
+      {/* <Link to="/">
         <img src="logoVoyantColor.svg" className={styles.logo} />
-      </Link>
-      <div className={styles.container}>
-        <Link to="#">
-          <div className={styles.boxCategory}>
-            <HiCpuChip className={styles.icon} />
-            <h2>DATA CENTERS</h2>
+      </Link> */}
+      <div className={styles.mainContainer}>
+        <div className={styles.container}>
+          <h1>Sectores</h1>
+          <div className={styles.yellowLine}></div>
+          <p className={styles.textInfo}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum? Deserunt, consequuntur animi?
+            illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum? Deserunt, consequuntur animi?
+          </p>
+          <div className={styles.containerSectores}>
+            <Link to="#">
+              <div className={styles.boxCategory}>
+                <HiCpuChip className={styles.icon} />
+                <h2>DATA CENTERS</h2>
+              </div>
+            </Link>
+            <div className={styles.boxCategory}>
+              <GiMining className={styles.icon} />
+              <h2>MINERIA</h2>
+            </div>
+            <div className={styles.boxCategory}>
+              <SlEnergy className={styles.icon} />
+              <h2>
+                INDUSTRIA<br></br> ELECTRICA
+              </h2>
+            </div>
+            <div className={styles.boxCategory}>
+              <FaIndustry className={styles.icon} />
+              <h2>INDUSTRIA</h2>
+            </div>
+            <div className={styles.boxCategory}>
+              <FaTowerCell className={styles.icon} />
+              <h2>TELECOMUNICACIONES</h2>
+            </div>
           </div>
-        </Link>
-        <div className={styles.boxCategory}>
-          <GiMining className={styles.icon} />
-          <h2>MINERIA</h2>
-        </div>
-        <div className={styles.boxCategory}>
-          <SlEnergy className={styles.icon} />
-          <h2>
-            INDUSTRIA<br></br> ELECTRICA
-          </h2>
-        </div>
-        <div className={styles.boxCategory}>
-          <FaIndustry className={styles.icon} />
-          <h2>INDUSTRIA</h2>
-        </div>
-        <div className={styles.boxCategory}>
-          <FaTowerCell className={styles.icon} />
-          <h2>TELECOMUNICACIONES</h2>
         </div>
       </div>
     </>
