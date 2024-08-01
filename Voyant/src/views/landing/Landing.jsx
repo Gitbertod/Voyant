@@ -1,6 +1,7 @@
 import Main from "../../components/main/Main";
 import NavBar from "../../components/navbar/NavBar";
 import Sectores from "../sectores/Sectores";
+import Soluciones from "../soluciones/Soluciones";
 import styles from "./Landing.module.css";
 import { Footer } from "flowbite-react";
 
@@ -29,7 +30,9 @@ const Landing = () => {
         <p className={styles.subtitle}>
           Las mejores soluciones para tus requerimientos
         </p>
+        
       <Sectores></Sectores>
+      
       </main>
       <footer>
         <Footer />

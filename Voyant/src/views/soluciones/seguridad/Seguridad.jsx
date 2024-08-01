@@ -1,11 +1,10 @@
-
 import { Link } from "react-router-dom";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import seguridad_bg from "../../../assets/seguridad_bg.mov";
-import styles from "./Seguridad.module.css"
+import styles from "./Seguridad.module.css";
 const Seguridad = () => {
   const tituloH1 = "Seguridad";
-    return (
+  return (
     <>
       <div className="main">
         <div className="overlay"></div>
@@ -33,7 +32,7 @@ const Seguridad = () => {
         <BoxDataPercentage></BoxDataPercentage>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Seguridad
+export default Seguridad;

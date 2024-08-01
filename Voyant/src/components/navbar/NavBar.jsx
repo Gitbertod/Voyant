@@ -30,6 +30,7 @@ const NavBar = () => {
     <>
       <div className={styles.navbar}>
         <div className={styles.subnav}>
+        
           <img src="logoVoyantColor.svg" className="sm:h-9" alt="Voyant Logo" />
         </div>
         <div className={styles.optionsNav}>
