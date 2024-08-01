@@ -16,9 +16,11 @@ import IndustriaElectrica from "./views/sectores/industria-electrica/IndustriaEl
 import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
+
 function App() {
   return (
     <>
+    
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
