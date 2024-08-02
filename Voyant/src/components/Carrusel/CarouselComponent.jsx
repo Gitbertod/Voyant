@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,11 +7,11 @@ export function CarouselComponent() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     cssEase: "linear"
   };
 

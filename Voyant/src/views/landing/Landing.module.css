@@ -62,3 +62,10 @@
     position: relative;
     z-index: 1; /* Asegura que el contenido esté por encima del fondo */
   }
+
+
+  /*******************************/
+  .ingeniero{
+    mask-image: linear-gradient(white 80%, transparent);
+   
+  }

@@ -1,0 +1,23 @@
+.newsContainer {
+    position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
+    height: 100vh;
+    overflow: hidden; /* Para asegurar que el contenido no desborde el contenedor */
+  }
+  .newsContainer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("/bg_white1.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: blur(3px);
+      z-index: 0; /* Asegura que esté detrás del contenido */
+    }
+    
+    .newsContainer > * {
+      position: relative;
+      z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+    }
