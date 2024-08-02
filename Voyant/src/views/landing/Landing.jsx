@@ -33,11 +33,13 @@ const Landing = () => {
           Las mejores soluciones para tus requerimientos
         </p>
         <Sectores></Sectores>
-       <div className="py-6 bg-white">
-        <h2 className="py-6 text-5xl">Últimas noticias de Voyant</h2>
-        <CarouselComponent></CarouselComponent>
-       </div>
-        
+        <div className={styles.newsContainer}>
+          <div className="flex justify-center flex-col items-center py-11">
+            <img src="./logoVoyantColor.svg" className="max-w-64 " />
+            <h2 className="py-6 text-5xl">Últimas noticias de Voyant</h2>
+          </div>
+          <CarouselComponent></CarouselComponent>
+        </div>
       </main>
       <footer>
         <Footer />
