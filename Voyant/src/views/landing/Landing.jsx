@@ -1,7 +1,7 @@
 import Main from "../../components/main/Main";
 import NavBar from "../../components/navbar/NavBar";
 import News from "../../components/news/News";
-
+import SectionComponent from "../../components/section-component/SectionComponent";
 import Sectores from "../sectores/Sectores";
 import Soluciones from "../soluciones/Soluciones";
 import styles from "./Landing.module.css";
@@ -33,7 +33,6 @@ const Landing = () => {
           Las mejores soluciones para tus requerimientos
         </p>
         <Sectores></Sectores>
-        {/* <SectionComponent></SectionComponent> */}
         <Soluciones></Soluciones>
         <News></News>
       </main>
