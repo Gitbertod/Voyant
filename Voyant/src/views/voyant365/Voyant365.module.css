@@ -3,6 +3,7 @@
     width: 100vw;
     z-index: -3;
     object-fit: cover;
+    height: 100dvh;
 }
 .logo{
     height: 40px;

@@ -1,7 +1,7 @@
-import { CardComponent } from "../../components/Card/CardComponent";
-import { CarouselComponent } from "../../components/Carrusel/CarouselComponent";
 import Main from "../../components/main/Main";
 import NavBar from "../../components/navbar/NavBar";
+import News from "../../components/news/News";
+import SectionComponent from "../../components/section-component/SectionComponent";
 import Sectores from "../sectores/Sectores";
 import Soluciones from "../soluciones/Soluciones";
 import styles from "./Landing.module.css";
@@ -33,11 +33,8 @@ const Landing = () => {
           Las mejores soluciones para tus requerimientos
         </p>
         <Sectores></Sectores>
-       <div className="py-6 bg-white">
-        <h2 className="py-6 text-5xl">Últimas noticias de Voyant</h2>
-        <CarouselComponent></CarouselComponent>
-       </div>
-        
+        <Soluciones></Soluciones>
+        <News></News>
       </main>
       <footer>
         <Footer />
