@@ -143,5 +143,16 @@ a:hover .subnavContent {
             opacity: 1;
   }
 }
+.logoVoyant{
+  height: 40px;
+}
+/*RESPONSIVE*/
+@media (max-width:768px){
 
-
+  .subnav {
+    display: none;
+  }
+  .optionsNav{
+    display: none;
+  }
+}

@@ -10,6 +10,7 @@ import { FaTowerCell } from "react-icons/fa6";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { DrawerComponent } from "../drawer/DrawerComponent";
 
 const NavBar = () => {
   const [isOpenSoluciones, setIsOpenSoluciones] = useState(false);
@@ -29,9 +30,8 @@ const NavBar = () => {
   return (
     <>
       <div className={styles.navbar}>
+          <img src="logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />
         <div className={styles.subnav}>
-        
-          <img src="logoVoyantColor.svg" className="sm:h-9" alt="Voyant Logo" />
         </div>
         <div className={styles.optionsNav}>
           <Link to="/nosotros" className={styles.link}>Nosotros</Link>
@@ -151,6 +151,7 @@ const NavBar = () => {
           </div>
           <Link to="contacto">Contacto</Link>
         </div>
+        <DrawerComponent></DrawerComponent>
       </div>
     </>
   );
