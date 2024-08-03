@@ -61,9 +61,36 @@
     width: 70%;
     height: 10px;
     background-color: #f9b03a ;
-    
+
 }
 .textInfo{
     font-size: 25px;
     text-align: left;
+}
+
+/*RESPONSIVE*/
+
+@media(max-width:1280px ) {
+    .yellowLine{
+        height: 10px;
+        width: 70%;
+        background-color: #f9b03a ;
+        
+    }
+    .mainContainer{
+        height: 100%;
+    }
+}
+
+@media(max-width:1024px ) {
+    .yellowLine{
+        height: 10px;
+        width: 70%;
+        background-color: #f9b03a ;
+        z-index: 100;
+        
+    }
+    .mainContainer{
+        height: 100%;
+    }
 }
