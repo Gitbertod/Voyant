@@ -1,5 +1,5 @@
 import styles from "./News.module.css";
-import { CarouselComponent } from "../carrusel/CarouselComponent";
+import { CarouselComponent } from "../Carrusel/CarouselComponent";
 
 const News = () => {
   return (
