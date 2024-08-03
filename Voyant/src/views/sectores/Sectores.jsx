@@ -42,13 +42,13 @@ const Sectores = () => {
                   <h2>DATA CENTERS</h2>
                 </div>
               </Link>
-              <Link to="/industria-electrica">
+              <Link to="/mineria">
                 <div className={styles.boxCategory}>
                   <GiMining className={styles.icon} />
                   <h2>MINERIA</h2>
                 </div>
               </Link>
-              <Link to="">
+              <Link to="/industria-electrica">
                 <div className={styles.boxCategory}>
                   <SlEnergy className={styles.icon} />
                   <h2>
