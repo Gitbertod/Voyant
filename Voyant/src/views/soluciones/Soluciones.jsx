@@ -8,7 +8,6 @@ import styles from "./Soluciones.module.css";
 import { GrShieldSecurity } from "react-icons/gr";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";
-import NavBar from "../../components/navbar/NavBar";
 
 const Soluciones = () => {
   useEffect(() => {
@@ -22,9 +21,6 @@ const Soluciones = () => {
           <div className="overlay"></div>
           <img src="soluciones_bg.jpeg" className={styles.bgimage}></img>
         </div>
-        {/* <Link to="/">
-        <img src="logoVoyantColor.svg" className={styles.logo} />
-      </Link> */}
         <div className={styles.mainContainer} data-aos="fade-right">
           <div className={styles.container}>
             <h1>Soluciones</h1>

@@ -2,9 +2,10 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Button, Drawer, Sidebar } from "flowbite-react";
 import { useState } from "react";
+import styles from "./DrawerComponent.module.css";
 import { Link } from "react-router-dom";
 import {
-  HiChartPie,
+ 
   HiCollection,
   HiInformationCircle,
   HiShoppingBag,
@@ -19,12 +20,12 @@ export function DrawerComponent() {
   return (
     <>
       <div className="flex min-h-[50vh] items-center justify-center">
-        <Button onClick={() => setIsOpen(true)} className="bg-amber-400">
-          <RxHamburgerMenu />
+        <Button onClick={() => setIsOpen(true)} className="bg-amber-400 p-0">
+          <RxHamburgerMenu className={styles.icon} />
         </Button>
       </div>
       <Drawer open={isOpen} onClose={handleClose} position="right">
-        <Drawer.Header title="Drawer" />
+      <Drawer.Header title="" titleIcon={() => <img src="logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />} />
         <Drawer.Items>
           <Sidebar
             aria-label="Sidebar with multi-level dropdown example"
@@ -34,20 +35,20 @@ export function DrawerComponent() {
               <div>
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
-                    <Sidebar.Item href="/nosotros" icon={HiChartPie}>
+                    <Sidebar.Item  icon={HiUsers}>
                       <Link to="/nosotros">Nosotros</Link>
                     </Sidebar.Item>
-                    <Sidebar.Item href="/soluciones" icon={HiShoppingBag}>
-                      Soluciones
+                    <Sidebar.Item  icon={HiShoppingBag}>
+                      <Link to="/soluciones">Soluciones</Link>
                     </Sidebar.Item>
-                    <Sidebar.Item href="/sectores" icon={HiUsers}>
-                      Sectores
+                    <Sidebar.Item  icon={HiCollection}>
+                      <Link to="/sectores">Sectores</Link>
                     </Sidebar.Item>
-                    <Sidebar.Item href="/voyant365" icon={HiCollection}>
-                      Voyant 365
+                    <Sidebar.Item  icon={HiCollection}>
+                      <Link to="/voyant365">Voyant 365</Link>      
                     </Sidebar.Item>
-                    <Sidebar.Item href="contacto" icon={HiInformationCircle}>
-                      Contacto
+                    <Sidebar.Item  icon={HiInformationCircle}>
+                      <Link to="/contacto">Contacto</Link>
                     </Sidebar.Item>
                   </Sidebar.ItemGroup>
                 </Sidebar.Items>

@@ -149,6 +149,9 @@ a:hover .subnavContent {
 /*RESPONSIVE*/
 @media (max-width:768px){
 
+  .navbar{
+    height: 80px ;
+  }
   .subnav {
     display: none;
   }
