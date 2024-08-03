@@ -2,6 +2,7 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Button, Drawer, Sidebar } from "flowbite-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   HiChartPie,
   HiCollection,
@@ -9,7 +10,6 @@ import {
   HiShoppingBag,
   HiUsers,
 } from "react-icons/hi";
-
 
 export function DrawerComponent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,9 @@ export function DrawerComponent() {
   return (
     <>
       <div className="flex min-h-[50vh] items-center justify-center">
-        <Button onClick={() => setIsOpen(true)} className="bg-amber-400"><RxHamburgerMenu /></Button>
+        <Button onClick={() => setIsOpen(true)} className="bg-amber-400">
+          <RxHamburgerMenu />
+        </Button>
       </div>
       <Drawer open={isOpen} onClose={handleClose} position="right">
         <Drawer.Header title="Drawer" />
@@ -33,14 +35,14 @@ export function DrawerComponent() {
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
                     <Sidebar.Item href="/nosotros" icon={HiChartPie}>
-                      Nosotros
+                      <Link to="/nosotros">Nosotros</Link>
                     </Sidebar.Item>
                     <Sidebar.Item href="/soluciones" icon={HiShoppingBag}>
                       Soluciones
                     </Sidebar.Item>
                     <Sidebar.Item href="/sectores" icon={HiUsers}>
                       Sectores
-                    </Sidebar.Item>   
+                    </Sidebar.Item>
                     <Sidebar.Item href="/voyant365" icon={HiCollection}>
                       Voyant 365
                     </Sidebar.Item>
