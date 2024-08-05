@@ -34,3 +34,31 @@
     font-size: xx-large;
     text-align: left;
 }
+
+/*RESPONSIVE*/
+
+@media (max-width:1536px){
+    .container h5{
+        font-size: 50px;
+    }
+    .parrafo{
+        font-size: x-large;
+    }
+}
+@media (max-width:1280px){
+    .container h5{
+        font-size: 40px;
+    }
+    .parrafo{
+        font-size:large;
+    }
+    .container img{
+        mask-image: linear-gradient(white 50%,transparent);
+        width: 90%;  
+    }
+    .containerInfo{
+        display: flex;
+        align-items: center;
+        width: 90%;
+    }
+}

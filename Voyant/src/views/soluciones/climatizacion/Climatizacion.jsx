@@ -5,7 +5,7 @@ import climatizacion_bg from "../../../assets/climatizacion_bg.mov";
 import BoxDataPercentage from '../../../components/iconsdata/BoxDataPercentage';
 
 const Climatizacion = () => {
-  const tituloH1 = "Mineria";
+  const tituloH1 = "Climatización";
   const videoBg = climatizacion_bg;
   
   return (
