@@ -18,17 +18,19 @@ const Industria = () => {
       <Link to="/">
         <img src="logoVoyantColor.svg" className={styles.logo} />
       </Link>
-      <img src="logosVoyant_bg.svg" className={styles.logosVoyant} />
-      <div className={styles.container}>
-        <h1>Industria</h1>
-        <div className={styles.yellowLine}></div>
-        <p className={styles.textInfo}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-          sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-          reprehenderit recusandae quidem inventore neque dicta dignissimos?
-          Incidunt, eum? Deserunt, consequuntur animi?
-        </p>
-        <BoxDataPercentage></BoxDataPercentage>
+      <div className={styles.mainContainer}>
+        <div className={styles.container}>
+          <h1>Industria</h1>
+          <div className={styles.yellowLine}></div>
+          <p className={styles.textInfo}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum? Deserunt, consequuntur animi?
+          </p>
+          <BoxDataPercentage></BoxDataPercentage>
+          <img src="logosVoyant_bg.svg" className={styles.logosVoyant} />
+        </div>
       </div>
     </>
   );
