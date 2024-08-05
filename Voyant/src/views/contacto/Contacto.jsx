@@ -1,14 +1,13 @@
 import ContactoForm from "../../components/form-contacto/ContactoForm";
-
-import { Carousel } from "flowbite-react";
 import NavBar from "../../components/navbar/NavBar";
+import styles from "./Contacto.module.css"
 
 const Contacto = () => {
   return (
     <>
       <NavBar></NavBar>
 
-      <div>
+      <div className={styles.contactoContainer}>
         <div className="flex">
           <div>
             
@@ -19,7 +18,7 @@ const Contacto = () => {
           </div>
         <ContactoForm></ContactoForm>
         </div>
-        <ContactoForm></ContactoForm>
+        
       </div>
     </>
   );

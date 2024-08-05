@@ -16,7 +16,7 @@ const SectionComponent = () => {
           </div>
         </div>
 
-        <div className="" data-aos="fade-up" data-aos-duration="2000">
+        <div className={styles.imgContainer} data-aos="fade-up" data-aos-duration="2000">
           <img src="./ingenieroWhite.png" />
         </div>
       </div>

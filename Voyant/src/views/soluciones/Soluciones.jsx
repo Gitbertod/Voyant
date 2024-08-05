@@ -38,7 +38,9 @@ const Soluciones = () => {
               <div className={styles.containerSectores}>
                 <Link to="/soluciones/distribucion-respaldo-de-energia">
                   <div className={styles.boxCategory}>
-                    <TbBatteryCharging2 className={styles.icon} />
+                    <div className="mx-2">
+                      <TbBatteryCharging2 className={styles.icon} />
+                    </div>
                     <h2>
                       Distribucion y <br></br> respaldo de energía
                     </h2>
@@ -46,19 +48,25 @@ const Soluciones = () => {
                 </Link>
                 <Link to="/soluciones/climatizacion">
                   <div className={styles.boxCategory}>
-                    <BsFan className={styles.icon} />
+                    <div className="mx-2">
+                      <BsFan className={styles.icon} />
+                    </div>
                     <h2>Climatizacion</h2>
                   </div>
                 </Link>
                 <Link to="/soluciones/seguridad">
                   <div className={styles.boxCategory}>
-                    <GrShieldSecurity className={styles.icon} />
+                    <div className="mx-2">
+                      <GrShieldSecurity className={styles.icon} />
+                    </div>
                     <h2>Seguridad</h2>
                   </div>
                 </Link>
                 <Link to="/soluciones/industria4.0">
                   <div className={styles.boxCategory}>
-                    <GiArtificialIntelligence className={styles.icon} />
+                    <div className="mx-2">
+                      <GiArtificialIntelligence className={styles.icon} />
+                    </div>
                     <h2>Industria 4.0</h2>
                   </div>
                 </Link>
