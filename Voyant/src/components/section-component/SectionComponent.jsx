@@ -9,8 +9,7 @@ const SectionComponent = () => {
           <p className={styles.parrafo}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
             sit enim officia harum asperiores, error, reiciendis exercitationem
-            esse possimus quidem ipsum tempore excepturi nam unde doloribus fuga
-            sunt cupiditate accusamus?
+            
           </p>
           <div className="flex justify-start my-11">
             <Button color="warning">Saber más</Button>
