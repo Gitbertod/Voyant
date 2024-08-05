@@ -38,19 +38,25 @@ const Sectores = () => {
             <div className={styles.containerSectores}>
               <Link to="/data-centers">
                 <div className={styles.boxCategory}>
-                  <HiCpuChip className={styles.icon} />
+                  <div className="mx-2">
+                    <HiCpuChip className={styles.icon} />
+                  </div>
                   <h2>DATA CENTERS</h2>
                 </div>
               </Link>
               <Link to="/mineria">
                 <div className={styles.boxCategory}>
-                  <GiMining className={styles.icon} />
+                  <div className="mx-2">
+                    <GiMining className={styles.icon} />
+                  </div>
                   <h2>MINERIA</h2>
                 </div>
               </Link>
               <Link to="/industria-electrica">
                 <div className={styles.boxCategory}>
-                  <SlEnergy className={styles.icon} />
+                  <div className="mx-2">
+                    <SlEnergy className={styles.icon} />
+                  </div>
                   <h2>
                     INDUSTRIA<br></br> ELECTRICA
                   </h2>
@@ -58,13 +64,17 @@ const Sectores = () => {
               </Link>
               <Link to="/industria">
                 <div className={styles.boxCategory}>
-                  <FaIndustry className={styles.icon} />
+                  <div className="mx-2">
+                    <FaIndustry className={styles.icon} />
+                  </div>
                   <h2>INDUSTRIA</h2>
                 </div>
               </Link>
               <Link to="/telecomunicaciones">
                 <div className={styles.boxCategory}>
-                  <FaTowerCell className={styles.icon} />
+                  <div className="mx-2">
+                    <FaTowerCell className={styles.icon} />
+                  </div>
                   <h2>TELECOMUNICACIONES</h2>
                 </div>
               </Link>
