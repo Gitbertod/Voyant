@@ -1,11 +1,13 @@
 .container{
     display: flex;
-    background-image: url("./voyant_bg3.jpeg");
-    height: 100vh;
+    /* background-image: url("./voyant_bg3.jpeg"); */
+    background-color: white;
+    height: 100dvh;
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
-    height: 100vh;
     overflow: hidden;
     background-size: cover;
+    justify-content: center;
+    height: 100dvh;
     
 }
 
@@ -18,13 +20,17 @@
 .containerInfo{
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: 80%;
 }
 
 .container img{
-    mask-image: linear-gradient(white 20%,transparent);
+    mask-image: linear-gradient(white 50%,transparent);
     width: 100%;  
+}
+.containerText{
+    width: 50%;
 }
 .parrafo{
     font-size: xx-large;
+    text-align: left;
 }
