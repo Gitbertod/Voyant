@@ -39,15 +39,22 @@
 
 @media (max-width:1783px){
     .container h5{
-        font-size: 50px;
+        font-size: 60px;
     }
     .parrafo{
         font-size: x-large;
     }
+    .container img{
+        mask-image: linear-gradient(white 50%,transparent);
+        width: 100%;  
+    }
+    .imgContainer{
+        width: 60%;
+    }
 }
 @media (max-width:1460px){
     .container h5{
-        font-size: 40px;
+        font-size: 50px;
     }
     .parrafo{
         font-size:large;
@@ -64,4 +71,17 @@
         align-items: center;
         width: 90%;
     }
+}
+@media (max-width:768px){
+    .containerInfo{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        width: 90%;
+        height: 100dvh;
+    }
+    .imgContainer{
+        width: 100%;
+    }
+
 }

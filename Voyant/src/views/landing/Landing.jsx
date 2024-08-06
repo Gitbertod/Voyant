@@ -1,4 +1,4 @@
-import Main from "../../components/main/Main";
+import Main from "../../components/videolanding/VideoLanding";
 import NavBar from "../../components/navbar/NavBar";
 import News from "../../components/news/News";
 import SectionComponent from "../../components/section-component/SectionComponent";
@@ -6,14 +6,15 @@ import Sectores from "../sectores/Sectores";
 import Soluciones from "../soluciones/Soluciones";
 import styles from "./Landing.module.css";
 import { Footer } from "flowbite-react";
+import VideoLanding from "../../components/videolanding/VideoLanding";
 
 const Landing = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Main />
       <header>
         <NavBar />
       </header>
+      <VideoLanding />
       <main className="flex-grow justify-center items-center">
         <div className={styles.centerContainer}>
           <div className={styles.container}></div>

@@ -15,73 +15,70 @@ const Sectores = () => {
   }, []);
   return (
     <>
-      <div className="main">
-        <div className="overlay"></div>
-        <img src="sectores_bg.jpeg" className={styles.bgimage}></img>
-      </div>
-      {/* <Link to="/">
-        <img src="logoVoyantColor.svg" className={styles.logo} />
-      </Link> */}
-      <div className={styles.mainContainer} data-aos="fade-right">
-        <div className={styles.container}>
-          <h1>Sectores</h1>
-          <div className={styles.yellowLine}></div>
-          <p className={styles.textInfo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum? Deserunt, consequuntur animi? illum vero voluptatibus
-            ipsa, natus quaerat reprehenderit recusandae quidem inventore neque
-            dicta dignissimos? Incidunt, eum? Deserunt, consequuntur animi?
-          </p>
-          <div data-aos="fade-up" data-aos-duration="2000">
-            <div className={styles.containerSectores}>
-              <Link to="/data-centers">
-                <div className={styles.boxCategory}>
-                  <div className="mx-2">
-                    <HiCpuChip className={styles.icon} />
+      <div className={styles.sectoresContainer}>
+        <div className="flex justify-center flex-col items-center py-11">
+          <div className={styles.container}>
+            <div data-aos="fade-right">
+              <h2>Sectores</h2>
+              <div className={styles.yellowLine}></div>
+              <p className={styles.textInfo}>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Quisquam, sequi sunt assumenda, illum vero voluptatibus ipsa,
+                natus quaerat reprehenderit sequi sunt assumenda, illum vero voluptatibus ipsa
+              </p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="2000">
+              <div className={styles.containerSectores}>
+                <Link to="/data-centers">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                      <HiCpuChip className={styles.icon} />
+                    </div>
+                    <h3>DATA CENTERS</h3>
                   </div>
-                  <h2>DATA CENTERS</h2>
-                </div>
-              </Link>
-              <Link to="/mineria">
-                <div className={styles.boxCategory}>
-                  <div className="mx-2">
-                    <GiMining className={styles.icon} />
+                </Link>
+                <Link to="/mineria">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                      <GiMining className={styles.icon} />
+                    </div>
+                    <h3>MINERIA</h3>
                   </div>
-                  <h2>MINERIA</h2>
-                </div>
-              </Link>
-              <Link to="/industria-electrica">
-                <div className={styles.boxCategory}>
-                  <div className="mx-2">
-                    <SlEnergy className={styles.icon} />
+                </Link>
+                <Link to="/industria-electrica">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                      <SlEnergy className={styles.icon} />
+                    </div>
+                    <h3>
+                      INDUSTRIA<br></br> ELECTRICA
+                    </h3>
                   </div>
-                  <h2>
-                    INDUSTRIA<br></br> ELECTRICA
-                  </h2>
-                </div>
-              </Link>
-              <Link to="/industria">
-                <div className={styles.boxCategory}>
-                  <div className="mx-2">
-                    <FaIndustry className={styles.icon} />
+                </Link>
+                <Link to="/industria">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                      <FaIndustry className={styles.icon} />
+                    </div>
+                    <h3>INDUSTRIA</h3>
                   </div>
-                  <h2>INDUSTRIA</h2>
-                </div>
-              </Link>
-              <Link to="/telecomunicaciones">
-                <div className={styles.boxCategory}>
-                  <div className="mx-2">
-                    <FaTowerCell className={styles.icon} />
+                </Link>
+                <Link to="/telecomunicaciones">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                      <FaTowerCell className={styles.icon} />
+                    </div>
+                    <h3>TELECOMUNICACIONES</h3>
                   </div>
-                  <h2>TELECOMUNICACIONES</h2>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      {/* <Link to="/">
+        <img src="logoVoyantColor.svg" className={styles.logo} />
+      </Link> */}
     </>
   );
 };
