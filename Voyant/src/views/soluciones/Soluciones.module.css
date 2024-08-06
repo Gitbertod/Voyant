@@ -1,3 +1,12 @@
+.sectoresContainer{
+    display: flex;
+    position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
+   /* Para asegurar que el contenido no desborde el contenedor */
+    background-image: url("/soluciones_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .logo{
     height: 40px;
     margin-top: 20px;
@@ -5,11 +14,7 @@
     z-index: 0;
     position:absolute;
 }
-.bgimage{
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
-}
+
 .containerSectores{
     display: flex;
     justify-content: space-evenly;
@@ -18,7 +23,7 @@
     flex-wrap: wrap;
 }
 
- .boxCategory h2{
+.boxCategory h2{
     color: white;
     font-size: 25px;
 }
@@ -35,6 +40,15 @@
     justify-content: center;
     align-items: center;
 }
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    height: 100dvh;
+    width: 80%;
+}
 .boxCategory{
     display: flex;
     align-items: center;
@@ -42,16 +56,7 @@
     margin: 25px;
 }
 
-.container{
-    display: flex;
-    margin-left: 20px;
-    flex-direction: column;
-    color: white;
-    justify-content: center;
-    height: 100vh;
-    width: 80%;
-}
-.container h1{
+.container h2{
     font-size: 70px;
     font-weight: 500;
     text-align: left;
@@ -60,9 +65,59 @@
     width: 70%;
     height: 10px;
     background-color: #f9b03a ;
-    
+
 }
 .textInfo{
     font-size: 25px;
     text-align: left;
 }
+
+/*RESPONSIVE*/
+
+@media(max-width:640px){
+    .container p{
+        margin-bottom: 0px;
+    }
+    .icon{
+        width: 70px;
+        height: 70px;
+        color: white
+    }
+}
+
+@media(max-width:480px){
+.sectoresContainer{
+    background-position: center;
+    background-size: cover;
+}
+
+.container h2{
+    font-size: 35px;
+    font-weight: 500;
+    text-align: left;
+}
+.textInfo{
+    font-size: 16px;
+    text-align: left;
+}
+.boxCategory{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 20px;
+}
+.containerSectores{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    
+    
+}
+}
+    
+@media(max-width:360px){
+
+}
+

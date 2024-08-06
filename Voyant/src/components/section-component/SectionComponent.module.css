@@ -7,8 +7,7 @@
     overflow: hidden;
     background-size: cover;
     justify-content: center;
-    height: 100dvh;
-    
+    height: 100dvh;  
 }
 
 .container h5{
@@ -54,7 +53,7 @@
 }
 @media (max-width:1460px){
     .container h5{
-        font-size: 50px;
+        font-size: 60px;
     }
     .parrafo{
         font-size:large;
@@ -72,6 +71,13 @@
         width: 90%;
     }
 }
+@media (max-width:1024px){
+    
+    .containerText h5{
+        font-size: 55px;
+    }
+    
+}
 @media (max-width:768px){
     .containerInfo{
         flex-direction: column;
@@ -80,8 +86,26 @@
         width: 90%;
         height: 100dvh;
     }
+    .containerText{
+        width: 90%;
+    }
+    .imgContainer{
+        width: 90%;
+    }
+    .container h5{
+        font-size: 60px;
+    }
+
+}
+@media (max-width:375px){
+    .containerText{
+        width: 90%;
+    }
     .imgContainer{
         width: 100%;
+    }
+    .container h5{
+        font-size: 40px;
     }
 
 }

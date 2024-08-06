@@ -16,58 +16,56 @@ const Soluciones = () => {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen">
-        <div className="main">
-          <div className="overlay"></div>
-          <img src="soluciones_bg.jpeg" className={styles.bgimage}></img>
-        </div>
-        <div className={styles.mainContainer} data-aos="fade-right">
+      <div className={styles.sectoresContainer}>
+        <div className="flex justify-center flex-col items-center py-11">
           <div className={styles.container}>
-            <h1>Soluciones</h1>
-            <div className={styles.yellowLine}></div>
-            <p className={styles.textInfo}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quisquam, sequi sunt assumenda, illum vero voluptatibus ipsa,
-              natus quaerat reprehenderit recusandae quidem inventore neque
-              dicta dignissimos? Incidunt, eum? Deserunt, consequuntur animi?
-              illum vero voluptatibus ipsa, natus quaerat reprehenderit
-              recusandae quidem inventore neque dicta dignissimos? Incidunt,
-              eum? Deserunt, consequuntur animi?
-            </p>
+            <div data-aos="fade-right">
+              <h2>Soluciones</h2>
+              <div className={styles.yellowLine}></div>
+              <p className={styles.textInfo}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati odit illo sunt impedit odio, veritatis sit suscipit,
+                libero neque officiis laudantium voluptatem iusto beatae!
+                Placeat velit autem dolor optio. Corrupti.
+              </p>
+            </div>
             <div data-aos="fade-up" data-aos-duration="2000">
               <div className={styles.containerSectores}>
-                <Link to="/soluciones/distribucion-respaldo-de-energia">
+                <Link to="/data-centers">
                   <div className={styles.boxCategory}>
                     <div className="mx-2">
                       <TbBatteryCharging2 className={styles.icon} />
                     </div>
-                    <h2>
-                      Distribucion y <br></br> respaldo de energía
-                    </h2>
+                    <h3>
+                      Distribucion y respaldo<br></br>
+                      de energia
+                    </h3>
                   </div>
                 </Link>
-                <Link to="/soluciones/climatizacion">
+                <Link to="/mineria">
                   <div className={styles.boxCategory}>
                     <div className="mx-2">
                       <BsFan className={styles.icon} />
                     </div>
-                    <h2>Climatizacion</h2>
+                    <h3>Climatizacion</h3>
                   </div>
                 </Link>
-                <Link to="/soluciones/seguridad">
+                <Link to="/industria-electrica">
                   <div className={styles.boxCategory}>
                     <div className="mx-2">
                       <GrShieldSecurity className={styles.icon} />
                     </div>
-                    <h2>Seguridad</h2>
+                    <h3>
+                      Seguridad
+                    </h3>
                   </div>
                 </Link>
-                <Link to="/soluciones/industria4.0">
+                <Link to="/industria">
                   <div className={styles.boxCategory}>
                     <div className="mx-2">
                       <GiArtificialIntelligence className={styles.icon} />
                     </div>
-                    <h2>Industria 4.0</h2>
+                    <h3>Industria 4.0</h3>
                   </div>
                 </Link>
               </div>
