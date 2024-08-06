@@ -12,33 +12,42 @@ export function CarouselComponent() {
     autoplay: true,
     speed: 3000,
     autoplaySpeed: 1000,
-    cssEase: "linear"
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024, // Resoluciones menores a 1024px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600, // Resoluciones menores a 600px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <>
-      <div className="slider-container">
-        <Slider {...settings}>
-          <div className="m-10">
-            <CardComponent></CardComponent>
-          </div>
-          <div className="m-10">
-            <CardComponent></CardComponent>
-          </div>
-          <div className="m-10">
-            <CardComponent></CardComponent>
-          </div>
-          <div className="m-10">
-            <CardComponent></CardComponent>
-          </div>
-          <div className="m-10">
-            <CardComponent></CardComponent>
-          </div>
-          <div className="m-10">
-            <CardComponent></CardComponent>
-          </div>
-        </Slider>
-      </div>
-    </>
+    <div className="slider-container">
+      <Slider {...settings}>
+        <div className="m-11">
+          <CardComponent />
+        </div>
+        <div className="m-11">
+          <CardComponent />
+        </div>
+        <div className="m-11">
+          <CardComponent />
+        </div>
+        <div className="m-11">
+          <CardComponent />
+        </div>
+        
+      </Slider>
+    </div>
   );
 }
