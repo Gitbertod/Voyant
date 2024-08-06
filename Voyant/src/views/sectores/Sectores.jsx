@@ -10,6 +10,10 @@ import { FaIndustry } from "react-icons/fa6";
 import { FaTowerCell } from "react-icons/fa6";
 
 const Sectores = () => {
+  const tituloH2 = "Sectores";
+  const parrafo =
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit ";
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -19,12 +23,10 @@ const Sectores = () => {
         <div className="flex justify-center flex-col items-center py-11">
           <div className={styles.container}>
             <div data-aos="fade-right">
-              <h2>Sectores</h2>
+              <h2>{tituloH2}</h2>
               <div className={styles.yellowLine}></div>
               <p className={styles.textInfo}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Quisquam, sequi sunt assumenda, illum vero voluptatibus ipsa,
-                natus quaerat reprehenderit sequi sunt assumenda, illum vero voluptatibus ipsa
+                {parrafo}
               </p>
             </div>
             <div data-aos="fade-up" data-aos-duration="2000">

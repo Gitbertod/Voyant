@@ -1,4 +1,3 @@
-import Main from "../../components/videolanding/VideoLanding";
 import NavBar from "../../components/navbar/NavBar";
 import News from "../../components/news/News";
 import SectionComponent from "../../components/section-component/SectionComponent";
@@ -7,6 +6,7 @@ import Soluciones from "../soluciones/Soluciones";
 import styles from "./Landing.module.css";
 import { Footer } from "flowbite-react";
 import VideoLanding from "../../components/videolanding/VideoLanding";
+
 
 const Landing = () => {
   return (
