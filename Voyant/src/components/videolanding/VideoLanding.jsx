@@ -1,12 +1,12 @@
 import bgvideo2 from "../../assets/videobg.mov";
-import styles from "./Main.module.css";
-const Main = () => {
+import styles from "./VideoLanding.module.css";
+const VideoLanding = () => {
   return (
     <div className={styles.main}>
-        <div className="overlay"></div>
+        <div className={styles.overlay}></div>
         <video src={bgvideo2} autoPlay loop muted className={styles.video}></video>
     </div>
   );
 };
 
-export default Main;
+export default VideoLanding;
