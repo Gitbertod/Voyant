@@ -4,7 +4,7 @@ import styles from "./BoxDataPercentage.module.css"
 const BoxDataPercentage = () => {
   return (
     <div className={styles.slidebottom}>
-          <div className={styles.dataInfo}>
+          <div className={styles.dataInfoContainer}>
             <div className={styles.dataInfo}>
               <GrShieldSecurity className={styles.icon} />
               <div className={styles.containerData}>

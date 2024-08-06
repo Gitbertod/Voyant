@@ -10,13 +10,13 @@ const Mineria = () => {
   return (
     <>
       <div className="main">
-        <div className="overlay"></div>
+        <div className={styles.overlay}></div>
         <video
           src={videoBg}
           autoPlay
           loop
           muted
-          className={styles.bgimage}
+          className={styles.videoBg}
         ></video>
       </div>
       <Link to="/">
