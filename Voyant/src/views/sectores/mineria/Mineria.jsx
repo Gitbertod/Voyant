@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/mineria_bg.mov";
 import styles from "./Mineria.module.css";
 
-const Mineria = () => {
-  const tituloH1 = "Mineria";
-  const videoBg = mineria_bg;
-  
+const Mineria = ({tituloh1 = "Mineria"}) => {
+ 
   return (
     <>
       <div className="main">
         <div className={styles.overlay}></div>
+        <div className={styles.imageBg}></div>
         <video
-          src={videoBg}
+          src={mineria_bg}
           autoPlay
           loop
           muted
@@ -25,7 +25,7 @@ const Mineria = () => {
       <div className={styles.mainContainer}>
         <img src="logosVoyant_bg.svg" className={styles.logosVoyant} />
         <div className={styles.container}>
-          <h1>{tituloH1}</h1>
+          <h1>{tituloh1}</h1>
           <div className={styles.yellowLine}></div>
           <p className={styles.textInfo}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -38,6 +38,10 @@ const Mineria = () => {
       </div>
     </>
   );
+};
+
+Mineria.propTypes =  {
+  tituloh1: PropTypes.string
 };
 
 export default Mineria;
