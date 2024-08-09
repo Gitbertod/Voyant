@@ -1,23 +1,43 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/mineria_bg.mov";
 import styles from "./Mineria.module.css";
 
-const Mineria = ({tituloh1 = "Mineria"}) => {
- 
+const Mineria = ({ tituloh1 = "Mineria" }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div className="main">
         <div className={styles.overlay}></div>
         <div className={styles.imageBg}></div>
-        <video
-          src={mineria_bg}
-          autoPlay
-          loop
-          muted
-          className={styles.videoBg}
-        ></video>
+        {!isMobile && (
+          <video
+            src={mineria_bg}
+            autoPlay
+            loop
+            muted
+            className={styles.videoBg}
+          ></video>
+        )}
       </div>
       <Link to="/">
         <img src="logoVoyantColor.svg" className={styles.logo} />
@@ -33,15 +53,15 @@ const Mineria = ({tituloh1 = "Mineria"}) => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?
           </p>
-          <BoxDataPercentage></BoxDataPercentage>
+          <BoxDataPercentage />
         </div>
       </div>
     </>
   );
 };
 
-Mineria.propTypes =  {
-  tituloh1: PropTypes.string
+Mineria.propTypes = {
+  tituloh1: PropTypes.string,
 };
 
 export default Mineria;
