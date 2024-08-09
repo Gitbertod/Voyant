@@ -135,7 +135,7 @@
       display: none;
     }
     .mainContainer {
-      background-image: url("./MinaBg.jpg");
+      background-image: url("../../../../public/MinaBg.jpg");
       background-repeat: no-repeat;
       background-size: cover;
     }
