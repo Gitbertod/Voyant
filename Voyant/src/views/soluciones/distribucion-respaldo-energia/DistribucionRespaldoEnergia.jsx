@@ -43,7 +43,7 @@ const DistribucionRespaldoEnergia = ({ tituloh1 = "Distribución y respaldo de e
         <img src="/logoVoyantColor.svg" className={styles.logo} />
       </Link>
       <div className={styles.mainContainer}>
-        <img src="logosVoyant_bg.svg" className={styles.logosVoyant} />
+        <img src="/logosVoyant_bg.svg" className={styles.logosVoyant} />
         <div className={styles.container}>
           <h1>{tituloh1}</h1>
           <div className={styles.yellowLine}></div>

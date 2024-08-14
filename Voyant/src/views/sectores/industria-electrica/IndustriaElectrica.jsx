@@ -5,7 +5,7 @@ import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/industriaElectrica_bg.mov";
 import styles from "./IndustriaElectrica.module.css";
 
-const IndustriaElectrica = ({ tituloh1 = "Industria Electrica" }) => {
+const IndustriaElectrica = ({ tituloh1 = "Industria Eléctrica" }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

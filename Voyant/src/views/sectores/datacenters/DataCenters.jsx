@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
-import mineria_bg from "../../../assets/datacenter_bg.mov";
+import video_bg from "../../../assets/datacenter_bg.mov";
 import styles from "./DataCenters.module.css";
 
 const DataCenters = ({ tituloh1 = "Datacenters" }) => {
@@ -31,7 +31,7 @@ const DataCenters = ({ tituloh1 = "Datacenters" }) => {
         <div className={styles.imageBg}></div>
         {!isMobile && (
           <video
-            src={mineria_bg}
+            src={video_bg}
             autoPlay
             loop
             muted
