@@ -135,7 +135,7 @@
       display: none;
     }
     .mainContainer {
-      background-image: url("../../../../public/DataCenters_bg.jpeg");
+      background-image: url("../../../../public/dataCenters_bg.jpeg");
       background-repeat: no-repeat;
       background-size: cover;
     }
