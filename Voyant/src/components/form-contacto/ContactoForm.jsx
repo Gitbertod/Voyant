@@ -83,7 +83,11 @@ const ContactoForm = () => {
 
   return (
     <>
+    
       <form ref={form} onSubmit={handleForm} className={styles.form}>
+      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex">
+        Formulario de contacto
+      </h5>
         <div className={styles.field}>
           <label>Nombre</label>
           <input
@@ -129,7 +133,7 @@ const ContactoForm = () => {
           )}
         </div>
         <div className={styles.field}>
-          <input type="submit" value="Enviar" />
+          <input type="submit" value="Enviar" className={styles.button} />
         </div>
       </form>
     </>
