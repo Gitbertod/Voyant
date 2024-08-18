@@ -20,7 +20,8 @@ import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respald
 function App() {
   return (
     <>
-    
+    <div className="flex flex-col min-h-screen">
+    <div className="flex-grow">
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
@@ -39,6 +40,10 @@ function App() {
         <Route path="/telecomunicaciones" element={<Telecomunicaciones/>}></Route>
       </Routes>
       <FooterVoyant/>
+
+    </div>
+
+    </div>
     </>
   );
 }

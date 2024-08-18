@@ -10,8 +10,10 @@
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .main {
   width: 100%;
@@ -24,6 +26,12 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.container{
+  display: flex;
+}
+footer{
+  margin-top: auto;
 }
 
 /* .content {
