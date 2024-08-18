@@ -135,7 +135,7 @@
       display: none;
     }
     .mainContainer {
-      background-image: url("../../../../public/voyant365_bg2.jpeg");
+      background-image: url("../../../public/voyant365_bg2.jpeg");
       background-repeat: no-repeat;
       background-size: cover;
     }

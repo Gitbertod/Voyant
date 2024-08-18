@@ -20,17 +20,17 @@ export function FooterVoyant() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
+              <a href="/soluciones" className="hover:underline me-4 md:me-6">
                 Soluciones
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
+              <a href="/sectores" className="hover:underline me-4 md:me-6">
                 Sectores
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/contacto" className="hover:underline">
                 Contacto
               </a>
             </li>

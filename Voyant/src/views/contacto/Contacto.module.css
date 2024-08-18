@@ -1,25 +1,52 @@
+body{
+  background-color:#111827;
+}
 .contactoContainer{
  
   height: 100dvh;
   
+}
+.contactoTitulo{
+  color:#f9b03a ;
+  font-size: 50px;
+  margin: 20px;
 }
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.cards{
+  display: flex;
+  justify-content: center;
+}
 
 form {
   max-width: 300px;
-  margin: 30px auto;
+  height: 100%;
   padding: 10px 20px;
-  background: #f4f7f8;
+  background: #e0e0e0;
   border-radius: 8px;
+  margin-left: 40px;
+}
+.formularioContainer{
+  min-width: 400px;
+  max-width: 650px;
 }
 
 h1 {
-  margin: 0 0 30px 0;
+  
   text-align: center;
+}
+.contactoSubtitulo{
+  display: flex;
+  justify-content: center;
+  color:#f9b03a;
+  font-size: large;
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 input[type="text"],
@@ -30,7 +57,6 @@ select {
   border: none;
   font-size: 16px;
   height: auto;
-  margin: 0;
   outline: 0;
   padding: 15px;
   width: 100%;
@@ -87,7 +113,25 @@ label.light {
 @media screen and (min-width: 480px) {
 
   form {
-    max-width: 480px;
+    max-width: 580px;
   }
 
+}
+
+@media (max-width: 900px){
+
+  .cards{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  form{
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .formularioContainer form{
+    max-width: 100%;
+    margin-top: 20px;
+  }
 }
