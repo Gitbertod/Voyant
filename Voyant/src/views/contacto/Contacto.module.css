@@ -1,13 +1,13 @@
 body{
   background-color:#111827;
 }
-.contactoContainer{
- 
-  height: 100dvh;
-  
+.container{ 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
+
 .contactoTitulo{
-  color:#f9b03a ;
+  color:white ;
   font-size: 50px;
   margin: 20px;
 }
@@ -19,29 +19,26 @@ body{
 .cards{
   display: flex;
   justify-content: center;
+  margin-bottom: 25px;
+  
 }
 
 form {
-  max-width: 300px;
+  min-width: 375px;
   height: 100%;
   padding: 10px 20px;
   background: #e0e0e0;
   border-radius: 8px;
   margin-left: 40px;
 }
-.formularioContainer{
-  min-width: 400px;
-  max-width: 650px;
-}
 
 h1 {
-  
   text-align: center;
 }
 .contactoSubtitulo{
   display: flex;
   justify-content: center;
-  color:#f9b03a;
+  color:white;
   font-size: large;
   margin-bottom: 20px;
   text-align: center;
@@ -76,8 +73,6 @@ select {
   height: 32px;
   border-radius: 2px;
 }
-
-
 
 fieldset {
   margin-bottom: 30px;
