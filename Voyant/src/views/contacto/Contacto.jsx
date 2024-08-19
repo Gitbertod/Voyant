@@ -1,13 +1,12 @@
 import { CardContact } from "../../components/CardContact/CardContact";
 import ContactoForm from "../../components/form-contacto/ContactoForm";
-import NavBar from "../../components/navbar/NavBar";
 import styles from "./Contacto.module.css";
 
 const Contacto = () => {
   return (
     <>
       <div className={styles.container}>
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
         <div className={styles.contactoContainer}>
           <h2 className={styles.contactoTitulo}>CONTACTO</h2>
           <p className={styles.contactoSubtitulo}>

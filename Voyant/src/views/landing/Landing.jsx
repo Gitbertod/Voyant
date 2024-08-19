@@ -6,6 +6,7 @@ import Soluciones from "../soluciones/Soluciones";
 import styles from "./Landing.module.css";
 import { Footer } from "flowbite-react";
 import VideoLanding from "../../components/videolanding/VideoLanding";
+import Contacto from "../contacto/Contacto";
 
 
 const Landing = () => {
@@ -37,6 +38,7 @@ const Landing = () => {
         <SectionComponent></SectionComponent>
         <Soluciones></Soluciones>
         <News></News>
+        <Contacto></Contacto>
       </main>
       <footer>
         <Footer />
