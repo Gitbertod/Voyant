@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/mineria_bg.mov";
 import styles from "./Mineria.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const Mineria = ({ tituloh1 = "Mineria" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +57,11 @@ const Mineria = ({ tituloh1 = "Mineria" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Nuestras soluciones"
+        text="Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades en el campo de la minería"
+        imgSrc="mineria.png"
+      />
     </>
   );
 };

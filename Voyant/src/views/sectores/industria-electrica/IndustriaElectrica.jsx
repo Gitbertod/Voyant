@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/industriaElectrica_bg.mov";
 import styles from "./IndustriaElectrica.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const IndustriaElectrica = ({ tituloh1 = "Industria Eléctrica" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +57,14 @@ const IndustriaElectrica = ({ tituloh1 = "Industria Eléctrica" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Industria eléctrica"
+        text="Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades tecnológicas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum?"
+        imgSrc="./industriaElectrica.png"
+      />
     </>
   );
 };

@@ -4,8 +4,11 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/distribucion_bg.mov";
 import styles from "./DistribucionRespaldoEnergia.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
-const DistribucionRespaldoEnergia = ({ tituloh1 = "Distribución y respaldo de energía" }) => {
+const DistribucionRespaldoEnergia = ({
+  tituloh1 = "Distribución y respaldo de energía",
+}) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -56,6 +59,14 @@ const DistribucionRespaldoEnergia = ({ tituloh1 = "Distribución y respaldo de e
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Distribución y respaldo de energía"
+        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum? Deserunt, consequuntur animi?"
+            imgSrc="/distribucion.jpg"
+      />
     </>
   );
 };

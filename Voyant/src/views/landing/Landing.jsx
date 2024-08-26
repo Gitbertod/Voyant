@@ -8,7 +8,6 @@ import { Footer } from "flowbite-react";
 import VideoLanding from "../../components/videolanding/VideoLanding";
 import Contacto from "../contacto/Contacto";
 
-
 const Landing = () => {
   return (
     <div className="flex flex-col min-h-screen">
@@ -35,7 +34,12 @@ const Landing = () => {
           Las mejores soluciones para tus requerimientos
         </p>
         <Sectores></Sectores>
-        <SectionComponent></SectionComponent>
+        <SectionComponent
+          title="Quienes somos"
+          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
+          buttonText="Saber más"
+          imgSrc="./ingenieroWhite.png"
+        />
         <Soluciones></Soluciones>
         <News></News>
         <Contacto></Contacto>

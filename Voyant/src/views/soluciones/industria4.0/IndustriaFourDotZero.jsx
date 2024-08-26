@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/industria4.0_bg.mov";
 import styles from "./IndustriaFourDotZero.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +57,14 @@ const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Industria 4.0"
+        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum? Deserunt, consequuntur animi?"
+            imgSrc="/iot.png"
+      />
     </>
   );
 };

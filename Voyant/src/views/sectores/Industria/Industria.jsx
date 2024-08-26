@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/industria_bg.mov";
 import styles from "./Industria.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const Industria = ({ tituloh1 = "Industria" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +57,13 @@ const Industria = ({ tituloh1 = "Industria" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Industria"
+        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?"
+        imgSrc="industria.png"    
+      />
     </>
   );
 };

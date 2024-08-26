@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/telecomunicaciones_bg.mov";
 import styles from "./Telecomunicaciones.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const Telecomunicaciones = ({ tituloh1 = "Telecomunicaciones" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +57,13 @@ const Telecomunicaciones = ({ tituloh1 = "Telecomunicaciones" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Telecomunicaciones"
+        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?"
+        imgSrc="telecomunicaciones.png"
+      />
     </>
   );
 };
@@ -65,4 +73,3 @@ Telecomunicaciones.propTypes = {
 };
 
 export default Telecomunicaciones;
-

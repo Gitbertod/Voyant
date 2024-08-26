@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import video_bg from "../../../assets/datacenter_bg.mov";
 import styles from "./DataCenters.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const DataCenters = ({ tituloh1 = "Datacenters" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +57,11 @@ const DataCenters = ({ tituloh1 = "Datacenters" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Nuestros Datacenters"
+        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
+        imgSrc="server.jpeg"
+      />
     </>
   );
 };
@@ -65,4 +71,3 @@ DataCenters.propTypes = {
 };
 
 export default DataCenters;
-
