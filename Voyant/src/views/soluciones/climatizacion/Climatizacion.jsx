@@ -1,10 +1,10 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import mineria_bg from "../../../assets/climatizacion_bg.mov";
 import styles from "./Climatizacion.module.css";
+import SectionComponent from "../../../components/section-component/SectionComponent";
 
 const Climatizacion = ({ tituloh1 = "Climatización" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -57,6 +57,14 @@ const Climatizacion = ({ tituloh1 = "Climatización" }) => {
           <BoxDataPercentage />
         </div>
       </div>
+      <SectionComponent
+        title="Climatización"
+        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
+            reprehenderit recusandae quidem inventore neque dicta dignissimos?
+            Incidunt, eum? Deserunt, consequuntur animi?"
+            imgSrc="/climatizacion.png"
+      />
     </>
   );
 };
