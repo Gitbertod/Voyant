@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
-import mineria_bg from "../../../assets/industria4.0_bg.mov";
-import styles from "./IndustriaFourDotZero.module.css";
+import video_bg from "../../../assets/industria4.0_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
+import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 
 const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,43 +25,21 @@ const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
 
   return (
     <>
-      <div className="main">
-        <div className={styles.overlay}></div>
-        <div className={styles.imageBg}></div>
-        {!isMobile && (
-          <video
-            src={mineria_bg}
-            autoPlay
-            loop
-            muted
-            className={styles.videoBg}
-          ></video>
-        )}
-      </div>
-      <Link to="/">
-        <img src="/logoVoyantColor.svg" className={styles.logo} />
-      </Link>
-      <div className={styles.mainContainer}>
-        <img src="/logosVoyant_bg.svg" className={styles.logosVoyant} />
-        <div className={styles.container}>
-          <h1>{tituloh1}</h1>
-          <div className={styles.yellowLine}></div>
-          <p className={styles.textInfo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum? Deserunt, consequuntur animi?
-          </p>
-          <BoxDataPercentage />
-        </div>
-      </div>
+      <CategoryWithBackgroundVideo
+        title="Industria 4.0"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        videoSrc={video_bg}
+        logoSrc="/logoVoyantColor.svg"
+        logosBgSrc="/logosVoyant_bg.svg"
+      />
       <SectionComponent
         title="Industria 4.0"
+        buttonText="Contáctanos"
         text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
             sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
-            imgSrc="/iot.png"
+        imgSrc="/iot.png"
       />
     </>
   );

@@ -59,6 +59,7 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
       </div>
       <SectionComponent
         title="Seguridad"
+        buttonText="Contáctanos"
         text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
             sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
