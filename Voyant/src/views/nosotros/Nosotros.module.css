@@ -5,12 +5,11 @@ body{
     display: flex;
     /* background-image: url("./voyant_bg3.jpeg"); */
     background-color: white;
-    height: 100dvh;
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
     overflow: hidden;
     background-size: cover;
     justify-content: center;
-    height: 100dvh;  
+    height: 100%;  
 }
 
 .container h5{
@@ -88,7 +87,7 @@ body{
         display: flex;
         align-items: center;
         width: 90%;
-        height: 100dvh;
+        
     }
     .containerText{
         width: 90%;
