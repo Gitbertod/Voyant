@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import video_bg from "../../../assets/mineria_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
-
-const Mineria = ({ tituloh1 = "Mineria" }) => {
+import CallToAction from "../../../components/call-to-action/CallToAction";
+const Mineria = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -39,7 +37,7 @@ const Mineria = ({ tituloh1 = "Mineria" }) => {
         buttonText="Contáctanos"
         text="Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades en el campo de la minería"
         imgSrc="mineria.png"
-        linkTo="/contacto"
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
       />
     </>
   );

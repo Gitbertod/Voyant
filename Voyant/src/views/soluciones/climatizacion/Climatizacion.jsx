@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import video_bg from "../../../assets/climatizacion_bg.mov";
-
+import CallToAction from "../../../components/call-to-action/CallToAction";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 
-const Climatizacion = ({ tituloh1 = "Climatización" }) => {
+const Climatizacion = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const Climatizacion = ({ tituloh1 = "Climatización" }) => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/climatizacion.png"
-        linkTo="/contacto"
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
       />
     </>
   );

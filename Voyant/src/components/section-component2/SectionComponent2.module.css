@@ -1,12 +1,13 @@
 .container{
-    
+    display: flex;
     /* background-image: url("./voyant_bg3.jpeg"); */
     background-color: white;
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
     overflow: hidden;
     background-size: cover;
     justify-content: center;
-    height: 100%;  
+    height: 100vh;  
+    
 }
 
 .container h5{
@@ -19,6 +20,8 @@
     display: flex;
     align-items: center;
     width: 80%;
+    flex-direction: row-reverse;
+    
 }
 
 .container img{
@@ -29,9 +32,8 @@
     width: 50%;
 }
 .parrafo{
-    font-size: x-large;
+    font-size: xx-large;
     text-align: left;
-    padding-right: 50px;
 }
 
 /*RESPONSIVE*/
@@ -52,14 +54,12 @@
     }
 }
 @media (max-width:1460px){
-    .container h5{
-        font-size: 60px;
-    }
+    
     .parrafo{
         font-size:large;
     }
     .container img{
-        
+       
         width: 100%;  
     }
     .imgContainer{
@@ -79,18 +79,22 @@
     
 }
 @media (max-width:768px){
+    .containerText h5{
+        font-size: 45px;
+    }
     .containerInfo{
         flex-direction: column;
         display: flex;
         align-items: center;
         width: 90%;
-        
+        height: 100%;
     }
     .containerText{
         width: 90%;
     }
     .imgContainer{
         width: 90%;
+        margin-bottom: 40px;
     }
     .container h5{
         font-size: 60px;
@@ -98,6 +102,7 @@
 
 }
 @media (max-width:375px){
+    
     .containerText{
         width: 90%;
     }

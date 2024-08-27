@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import video_bg from "../../../assets/datacenter_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
+import CallToAction from "../../../components/call-to-action/CallToAction";
 
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -37,7 +38,7 @@ const DataCenters = () => {
         buttonText="Contáctanos"
         text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
         imgSrc="server.jpeg"
-        linkTo="/contacto"
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
       />
     </>
   );

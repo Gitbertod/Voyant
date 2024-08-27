@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import video_bg from "../../../assets/industria4.0_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
-
-const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
+import CallToAction from "../../../components/call-to-action/CallToAction";
+const IndustriaFourDotZero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/iot.png"
-        linkTo="/contacto"
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
       />
     </>
   );
