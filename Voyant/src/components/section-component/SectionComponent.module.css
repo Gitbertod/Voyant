@@ -7,6 +7,7 @@
     background-size: cover;
     justify-content: center;
     min-height: 700px;  
+    height: 100vh;
 }
 
 .container h5{
@@ -19,6 +20,7 @@
     display: flex;
     align-items: center;
     width: 80%;
+    
 }
 
 .container img{
@@ -51,14 +53,12 @@
     }
 }
 @media (max-width:1460px){
-    .container h5{
-        font-size: 60px;
-    }
+    
     .parrafo{
         font-size:large;
     }
     .container img{
-        mask-image: linear-gradient(white 50%,transparent);
+       
         width: 100%;  
     }
     .imgContainer{
@@ -78,6 +78,9 @@
     
 }
 @media (max-width:768px){
+    .containerText h5{
+        font-size: 45px;
+    }
     .containerInfo{
         flex-direction: column;
         display: flex;
@@ -98,6 +101,7 @@
 
 }
 @media (max-width:375px){
+    
     .containerText{
         width: 90%;
     }

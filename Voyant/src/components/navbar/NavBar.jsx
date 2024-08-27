@@ -30,7 +30,9 @@ const NavBar = () => {
   return (
     <>
       <div className={styles.navbar}>
+        <Link to="/">
           <img src="logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />
+        </Link>
         <div className={styles.subnav}>
         </div>
         <div className={styles.optionsNav}>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import video_bg from "../../../assets/distribucion_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
-
+import CallToAction from "../../../components/call-to-action/CallToAction";
 const DistribucionRespaldoEnergia = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -40,7 +40,7 @@ const DistribucionRespaldoEnergia = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/distribucion.jpg"
-        linkTo="/contacto"
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
       />
     </>
   );

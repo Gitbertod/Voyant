@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import styles from "./SectionComponent.module.css";
+import styles from "./SectionComponent2.module.css";
 import PropTypes from "prop-types";
 
-const SectionComponent = ({
+const SectionComponent2 = ({
   title,
   text,
   imgSrc,
@@ -44,7 +44,7 @@ const SectionComponent = ({
   );
 };
 
-SectionComponent.propTypes = {
+SectionComponent2.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
@@ -55,4 +55,4 @@ SectionComponent.propTypes = {
   imgContainerClass: PropTypes.string,
 };
 
-export default SectionComponent;
+export default SectionComponent2;

@@ -7,6 +7,7 @@ import styles from "./Landing.module.css";
 import { Footer } from "flowbite-react";
 import VideoLanding from "../../components/videolanding/VideoLanding";
 import Contacto from "../contacto/Contacto";
+import CallToAction from "../../components/call-to-action/CallToAction";
 
 const Landing = () => {
   return (
@@ -40,6 +41,7 @@ const Landing = () => {
           buttonText="Saber más"
           imgSrc="./ingenieroWhite.png"
           linkTo="/nosotros"
+          childComponent={<CallToAction linkTo={"/nosotros"} buttonText="Saber mas"></CallToAction>}
         />
         <Soluciones />
         <News></News>

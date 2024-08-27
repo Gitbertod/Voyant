@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import video_bg from "../../../assets/industriaElectrica_bg.mov";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import SectionComponent from "../../../components/section-component/SectionComponent";
+import CallToAction from "../../../components/call-to-action/CallToAction";
 
 const IndustriaElectrica = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -43,7 +44,7 @@ const IndustriaElectrica = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum?"
         imgSrc="./industriaElectrica.png"
-        linkTo="/contacto"
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
       />
     </>
   );

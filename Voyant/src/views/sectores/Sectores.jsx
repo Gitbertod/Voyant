@@ -21,7 +21,7 @@ const Sectores = ({childComponent}) => {
     <>
       <div className={styles.sectoresContainer}>
         {childComponent}
-        <div className="flex justify-center flex-col items-center py-11">
+        <div className="flex justify-center flex-col items-center">
           <div className={styles.container}>
             <div data-aos="fade-right">
               <h2>{tituloH2}</h2>
