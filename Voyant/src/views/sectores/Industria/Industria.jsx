@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 import video_bg from "../../../assets/industria_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
@@ -28,7 +26,7 @@ const Industria = ({ tituloh1 = "Industria" }) => {
   return (
     <>
       <CategoryWithBackgroundVideo
-        title="Industria eléctrica"
+        title="Industria"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
