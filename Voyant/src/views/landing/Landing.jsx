@@ -39,8 +39,9 @@ const Landing = () => {
           text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
           buttonText="Saber más"
           imgSrc="./ingenieroWhite.png"
+          linkTo="/nosotros"
         />
-        <Soluciones></Soluciones>
+        <Soluciones />
         <News></News>
         <Contacto></Contacto>
       </main>

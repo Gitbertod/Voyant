@@ -1,8 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
 import Shape from "../../components/shape/Shape";
 import styles from "./Nosotros.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Nosotros = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <>
       <div className={styles.container}>

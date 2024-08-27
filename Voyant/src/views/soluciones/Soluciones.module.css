@@ -1,18 +1,10 @@
 .sectoresContainer{
-    display: flex;
+    min-height: 700px;
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
    /* Para asegurar que el contenido no desborde el contenedor */
     background-image: url("/soluciones_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.logo{
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 20px;
-    z-index: 0;
-    position:absolute;
 }
 
 .containerSectores{
@@ -75,6 +67,7 @@
 /*RESPONSIVE*/
 
 @media(max-width:640px){
+    
     .container p{
         margin-bottom: 0px;
     }

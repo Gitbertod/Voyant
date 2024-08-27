@@ -1,0 +1,20 @@
+.logo{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position:absolute;
+}
+.link{
+    height: 100%;
+    width: 100%;
+}  
+
+@media(max-width:640px){
+    .logo{
+        margin: 0px;
+        position: relative;
+        padding: 20px;
+        height: 90px;
+    }
+    
+}

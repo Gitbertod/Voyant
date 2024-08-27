@@ -39,6 +39,7 @@ const Industria = ({ tituloh1 = "Industria" }) => {
             sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
             reprehenderit recusandae quidem inventore neque dicta dignissimos?"
         imgSrc="industria.png"
+        linkTo="/contacto"
       />
     </>
   );

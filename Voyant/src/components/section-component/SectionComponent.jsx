@@ -1,6 +1,10 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styles from "./SectionComponent.module.css";
 import PropTypes from "prop-types";
 import { Button } from "flowbite-react";
+import { Link } from "react-router-dom";
 const SectionComponent = ({
   title,
   text,
@@ -10,7 +14,12 @@ const SectionComponent = ({
   containerInfoClass,
   containerTextClass,
   imgContainerClass,
+  linkTo
 }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className={`${styles.container} ${containerClass}`}>
       <div className={`${styles.containerInfo} ${containerInfoClass}`}>
@@ -21,7 +30,9 @@ const SectionComponent = ({
           <h5>{title}</h5>
           <p className={styles.parrafo}>{text}</p>
           <div className="flex justify-start my-11">
-            <Button color="warning">{buttonText}</Button>
+            <Link to={linkTo}>
+              <Button color="warning">{buttonText}</Button>
+            </Link>
           </div>
         </div>
 
@@ -46,13 +57,6 @@ SectionComponent.propTypes = {
   containerInfoClass: PropTypes.string,
   containerTextClass: PropTypes.string,
   imgContainerClass: PropTypes.string,
-};
-
-SectionComponent.defaultProps = {
-  containerClass: "",
-  containerInfoClass: "",
-  containerTextClass: "",
-  imgContainerClass: "",
 };
 
 export default SectionComponent;

@@ -40,6 +40,7 @@ const IndustriaFourDotZero = ({ tituloh1 = "Industria 4.0" }) => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/iot.png"
+        linkTo="/contacto"
       />
     </>
   );

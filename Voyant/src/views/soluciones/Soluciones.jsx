@@ -9,7 +9,7 @@ import { GrShieldSecurity } from "react-icons/gr";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";
 
-const Soluciones = () => {
+const Soluciones = ({childComponent}) => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -17,7 +17,8 @@ const Soluciones = () => {
   return (
     <>
       <div className={styles.sectoresContainer}>
-        <div className="flex justify-center flex-col items-center py-11">
+        {childComponent}
+        <div className="flex justify-center flex-col items-center ">
           <div className={styles.container}>
             <div data-aos="fade-right">
               <h2>Soluciones</h2>

@@ -9,7 +9,7 @@ import { SlEnergy } from "react-icons/sl";
 import { FaIndustry } from "react-icons/fa6";
 import { FaTowerCell } from "react-icons/fa6";
 
-const Sectores = () => {
+const Sectores = ({childComponent}) => {
   const tituloH2 = "Sectores";
   const parrafo =
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit ";
@@ -20,6 +20,7 @@ const Sectores = () => {
   return (
     <>
       <div className={styles.sectoresContainer}>
+        {childComponent}
         <div className="flex justify-center flex-col items-center py-11">
           <div className={styles.container}>
             <div data-aos="fade-right">

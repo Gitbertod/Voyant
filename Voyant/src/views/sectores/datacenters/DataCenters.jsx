@@ -37,6 +37,7 @@ const DataCenters = () => {
         buttonText="Contáctanos"
         text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
         imgSrc="server.jpeg"
+        linkTo="/contacto"
       />
     </>
   );

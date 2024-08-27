@@ -16,6 +16,8 @@ import IndustriaElectrica from "./views/sectores/industria-electrica/IndustriaEl
 import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
+import LogoBackButton from "./components/logo-back-button/LogoBackButton";
+
 
 function App() {
   return (
@@ -25,12 +27,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
-        <Route path="/soluciones" element={<Soluciones/>}></Route>
+        <Route path="/soluciones" element={<Soluciones childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/soluciones/distribucion-respaldo-de-energia" element={<DistribucionRespaldoEnergia></DistribucionRespaldoEnergia>}></Route>
         <Route path="/soluciones/climatizacion" element={<Climatizacion/>}></Route>
         <Route path="/soluciones/seguridad" element={<Seguridad/>}></Route>
         <Route path="/soluciones/industria4.0" element={<IndustriaFourDotZero/>}></Route>  
-        <Route path="/sectores" element={<Sectores/>}></Route>
+        <Route path="/sectores" element={<Sectores childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/data-centers" element={<DataCenters/>}></Route>
         <Route path="/mineria" element={<Mineria/>}></Route>
         <Route path="/industria-electrica" element={<IndustriaElectrica/>}></Route>

@@ -39,7 +39,8 @@ const DistribucionRespaldoEnergia = () => {
             sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
-            imgSrc="/distribucion.jpg"
+        imgSrc="/distribucion.jpg"
+        linkTo="/contacto"
       />
     </>
   );
