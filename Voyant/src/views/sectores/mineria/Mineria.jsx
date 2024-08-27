@@ -39,6 +39,7 @@ const Mineria = ({ tituloh1 = "Mineria" }) => {
         buttonText="Contáctanos"
         text="Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades en el campo de la minería"
         imgSrc="mineria.png"
+        linkTo="/contacto"
       />
     </>
   );

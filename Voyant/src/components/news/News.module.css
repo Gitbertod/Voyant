@@ -1,6 +1,6 @@
 .newsContainer {
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
-    height: 100vh;
+    min-height: 700px;
     overflow: hidden; /* Para asegurar que el contenido no desborde el contenedor */
   }
   .newsContainer::before {

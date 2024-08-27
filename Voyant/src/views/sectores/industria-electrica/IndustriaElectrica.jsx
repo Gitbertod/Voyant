@@ -43,6 +43,7 @@ const IndustriaElectrica = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum?"
         imgSrc="./industriaElectrica.png"
+        linkTo="/contacto"
       />
     </>
   );

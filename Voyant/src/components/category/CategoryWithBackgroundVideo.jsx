@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BoxDataPercentage from "../iconsdata/BoxDataPercentage";
 import styles from "./CategoryWithBackgroundVideo.module.css"
+import LogoBackButton from "../logo-back-button/LogoBackButton";
 
 const CategoryWithBackgroundVideo = ({ 
     title, 
@@ -49,9 +50,7 @@ const CategoryWithBackgroundVideo = ({
           ></video>
         )}
       </div>
-      <Link to="/">
-        <img src={logoSrc} className={styles.logo} alt="Logo" />
-      </Link>
+      <LogoBackButton />
       <div className={styles.mainContainer}>
         <img src={logosBgSrc} className={styles.logosVoyant} alt="Logos Background" />
         <div className={styles.container}>
