@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
+import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import video_bg from "../../../assets/datacenter_bg.mov";
-import styles from "./DataCenters.module.css";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 
-const DataCenters = ({ tituloh1 = "Datacenters" }) => {
+const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -27,38 +25,16 @@ const DataCenters = ({ tituloh1 = "Datacenters" }) => {
 
   return (
     <>
-      <div className="main">
-        <div className={styles.overlay}></div>
-        <div className={styles.imageBg}></div>
-        {!isMobile && (
-          <video
-            src={video_bg}
-            autoPlay
-            loop
-            muted
-            className={styles.videoBg}
-          ></video>
-        )}
-      </div>
-      <Link to="/">
-        <img src="logoVoyantColor.svg" className={styles.logo} />
-      </Link>
-      <div className={styles.mainContainer}>
-        <img src="logosVoyant_bg.svg" className={styles.logosVoyant} />
-        <div className={styles.container}>
-          <h1>{tituloh1}</h1>
-          <div className={styles.yellowLine}></div>
-          <p className={styles.textInfo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum? Deserunt, consequuntur animi?
-          </p>
-          <BoxDataPercentage />
-        </div>
-      </div>
+      <CategoryWithBackgroundVideo
+        title="Datacenters"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        videoSrc={video_bg}
+        logoSrc="logoVoyantColor.svg"
+        logosBgSrc="logosVoyant_bg.svg"
+      />
       <SectionComponent
         title="Nuestros Datacenters"
+        buttonText="Contáctanos"
         text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
         imgSrc="server.jpeg"
       />

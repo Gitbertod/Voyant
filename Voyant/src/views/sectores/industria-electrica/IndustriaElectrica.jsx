@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
-import mineria_bg from "../../../assets/industriaElectrica_bg.mov";
-import styles from "./IndustriaElectrica.module.css";
+import video_bg from "../../../assets/industriaElectrica_bg.mov";
+import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 
-const IndustriaElectrica = ({ tituloh1 = "Industria Eléctrica" }) => {
+const IndustriaElectrica = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+
+    // Mueve la vista al tope de la página cuando el componente se monta
+    window.scrollTo(0, 0);
 
     // Set initial value
     handleResize();
@@ -27,38 +28,16 @@ const IndustriaElectrica = ({ tituloh1 = "Industria Eléctrica" }) => {
 
   return (
     <>
-      <div className="main">
-        <div className={styles.overlay}></div>
-        <div className={styles.imageBg}></div>
-        {!isMobile && (
-          <video
-            src={mineria_bg}
-            autoPlay
-            loop
-            muted
-            className={styles.videoBg}
-          ></video>
-        )}
-      </div>
-      <Link to="/">
-        <img src="logoVoyantColor.svg" className={styles.logo} />
-      </Link>
-      <div className={styles.mainContainer}>
-        <img src="logosVoyant_bg.svg" className={styles.logosVoyant} />
-        <div className={styles.container}>
-          <h1>{tituloh1}</h1>
-          <div className={styles.yellowLine}></div>
-          <p className={styles.textInfo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum? Deserunt, consequuntur animi?
-          </p>
-          <BoxDataPercentage />
-        </div>
-      </div>
+      <CategoryWithBackgroundVideo
+        title="Industria eléctrica"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        videoSrc={video_bg}
+        logoSrc="logoVoyantColor.svg"
+        logosBgSrc="logosVoyant_bg.svg"
+      />
       <SectionComponent
         title="Industria eléctrica"
+        buttonText="Contáctanos"
         text="Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades tecnológicas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
             sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
