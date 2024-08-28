@@ -17,6 +17,7 @@ import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
 import LogoBackButton from "./components/logo-back-button/LogoBackButton";
+import BlogPost from "./views/blog-post/BlogPost";
 
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
         <Route path="/voyant365" element={<Voyant365/>}></Route>
         <Route path="/contacto" element={<Contacto childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/telecomunicaciones" element={<Telecomunicaciones/>}></Route>
+        <Route path="/blog" element={<BlogPost/>}></Route>
+        
+
       </Routes>
       <FooterVoyant/>
 

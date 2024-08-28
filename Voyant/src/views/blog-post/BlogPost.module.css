@@ -1,0 +1,42 @@
+body{
+    
+}
+.imageHeroContainer{
+    width: 100%;
+    max-height: 400px;
+    
+
+}
+.img{
+    width: 100%;
+}
+.title{
+    font-size: xx-large;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.subtitle{
+    font-size: x-large;
+    font-weight: 600;
+}
+.postContent{
+    margin: 0px auto;
+    color: aliceblue;
+    max-width: 1000px;
+
+}
+.parrafoContainer{
+    font-size: larger;
+    text-align: left;
+}
+@media (max-width:1000px){
+.parrafoContainer{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.title{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+}
