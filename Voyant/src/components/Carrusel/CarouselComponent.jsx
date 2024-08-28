@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CardComponent } from "../Card/CardComponent";
+import { Link } from "react-router-dom";
 
 export function CarouselComponent() {
   const settings = {
@@ -35,18 +36,25 @@ export function CarouselComponent() {
     <div className="slider-container">
       <Slider {...settings}>
         <div className="m-11">
-          <CardComponent />
+          <Link to="/blog">
+            <CardComponent />
+          </Link>
         </div>
         <div className="m-11">
-          <CardComponent />
+          <Link to="/blog">
+            <CardComponent />
+          </Link>
         </div>
         <div className="m-11">
-          <CardComponent />
+          <Link to="/blog">
+            <CardComponent />
+          </Link>
         </div>
         <div className="m-11">
-          <CardComponent />
+          <Link to="/blog">
+            <CardComponent />
+          </Link>
         </div>
-        
       </Slider>
     </div>
   );

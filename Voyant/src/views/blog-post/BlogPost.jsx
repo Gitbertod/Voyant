@@ -2,13 +2,22 @@ import styles from "./BlogPost.module.css";
 import NavBar from "../../components/navbar/NavBar";
 import { AvatarComponent } from "../../components/avatar/AvatarComponent";
 import { CardComponent } from "../../components/Card/CardComponent";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const BlogPost = () => {
-  return (
+  
+  useEffect(()=>{
+    AOS.init();
+    window.scrollTo(0, 0);
+  })
+    return (
     <>
       <NavBar></NavBar>
       <img className={styles.img} src="/blog-post.jpeg"></img>
 
-      <div className={styles.postContent}>
+      <div data-aos="fade-up"
+          data-aos-duration="1000" className={styles.postContent}>
         <h1 className={styles.title}>
           Voyant y Mitsubishi Electrics una alianza para el progreso tecnológico
           del Perú
