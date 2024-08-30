@@ -12,6 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
+    "firebase": "^10.13.1",
     "flowbite": "^2.4.1",
     "flowbite-react": "^0.10.1",
     "prop-types": "^15.8.1",

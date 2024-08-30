@@ -18,6 +18,9 @@ import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunica
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
 import LogoBackButton from "./components/logo-back-button/LogoBackButton";
 import BlogPost from "./views/blog-post/BlogPost";
+import BlogPostForm from "./components/blog-post-form/BlogPostForm";
+import Login from "./views/login/Login";
+import Register from "./views/register/Register";
 
 
 function App() {
@@ -42,7 +45,9 @@ function App() {
         <Route path="/contacto" element={<Contacto childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/telecomunicaciones" element={<Telecomunicaciones/>}></Route>
         <Route path="/blog" element={<BlogPost/>}></Route>
-        
+        <Route path="/blog/create" element={<BlogPostForm/>}></Route>
+        <Route path ="/login" element={<Login></Login>}></Route>
+        <Route path ="/register" element={<Register></Register>}></Route>
 
       </Routes>
       <FooterVoyant/>
