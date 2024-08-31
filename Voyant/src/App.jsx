@@ -21,6 +21,7 @@ import BlogPost from "./views/blog-post/BlogPost";
 import BlogPostForm from "./components/blog-post-form/BlogPostForm";
 import Login from "./views/login/Login";
 import Register from "./views/register/Register";
+import { AuthProvider } from "./context/AuthProvider";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
     <>
     <div className="flex flex-col min-h-screen">
     <div className="flex-grow">
+      <AuthProvider>
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
@@ -48,9 +50,10 @@ function App() {
         <Route path="/blog/create" element={<BlogPostForm/>}></Route>
         <Route path ="/login" element={<Login></Login>}></Route>
         <Route path ="/register" element={<Register></Register>}></Route>
-
       </Routes>
       <FooterVoyant/>
+
+      </AuthProvider>
 
     </div>
 
