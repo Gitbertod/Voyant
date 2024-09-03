@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { useAuth } from "../../context/AuthProvider";
+import {useNavigate} from "react-router-dom"
 
 const BlogPostForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
+  const {user,logout, loading} = useAuth()
+
+  const navigate = useNavigate("/register");
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -10,6 +16,11 @@ const BlogPostForm = () => {
 
   const handleContentChange = (e) => {
     setContent(e.target.value);
+  };
+
+  const handleLogout = async () => {
+    await logout()
+    navigate("/login")
   };
 
   const handleSubmit = async (e) => {
@@ -44,9 +55,15 @@ const BlogPostForm = () => {
     }
   };
 
+  if(loading) return <h1>Loading</h1>
+  console.log(user)
   return (
     <div className="max-w-md mx-auto p-4">
-      <h2 className="text-xl font-semibold mb-4">Crear un nuevo post</h2>
+      <button className="bg-yellow-400 w-20" onClick={handleLogout}>
+        Logout
+      </button>
+      <h2 className="text-xl font-semibold mb-4">Bienvenido {  user.displayName || user.email}</h2>
+      <img src={user.photoURL}></img>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="title" className="block text-gray-700">

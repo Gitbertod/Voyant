@@ -6,7 +6,7 @@
     overflow: hidden;
     background-size: cover;
     justify-content: center;
-    height: 100vh;  
+    height: 100%;  
     
 }
 
@@ -32,7 +32,7 @@
     width: 50%;
 }
 .parrafo{
-    font-size: xx-large;
+    font-size: x-large;
     text-align: left;
 }
 

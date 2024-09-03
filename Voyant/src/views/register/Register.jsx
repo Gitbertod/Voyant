@@ -9,7 +9,7 @@ const Register = () => {
   });
 
   const { signup } = useAuth();
-  const navigate = useNavigate();
+  const navigate = useNavigate("/login");
   const [error, setError] = useState();
 
   const handleChange = ({ target: { name, value } }) => {
@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await signup(user.email, user.password);
-      //navigate('/')
+      navigate('/login')
     } catch (error) {
       if (error.code === "auth/weak-password") console.log("password debil");
 
