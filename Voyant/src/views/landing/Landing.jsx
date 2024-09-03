@@ -32,7 +32,7 @@ const Landing = () => {
           <h1 className={styles.h1}>VOYANT</h1>
         </div>
         <p className={styles.subtitle}>
-          Las mejores soluciones para tus requerimientos
+          Infraestructura confiable para que siempre avances
         </p>
         <Sectores></Sectores>
         <SectionComponent
@@ -41,7 +41,12 @@ const Landing = () => {
           buttonText="Saber más"
           imgSrc="./ingenieroWhite.png"
           linkTo="/nosotros"
-          childComponent={<CallToAction linkTo={"/nosotros"} buttonText="Saber mas"></CallToAction>}
+          childComponent={
+            <CallToAction
+              linkTo={"/nosotros"}
+              buttonText="Saber mas"
+            ></CallToAction>
+          }
         />
         <Soluciones />
         <News></News>

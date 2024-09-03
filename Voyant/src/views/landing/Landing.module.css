@@ -24,18 +24,18 @@
     display: flex;
     flex-direction: column;
     color:white;
-    font-size: 40px;
+    font-size: 80px;
 }
 .img{
     display: flex;
     justify-content: center;
-    height: 70px;
+    height: 120px;
     margin-left: 20px;
     margin-right: 20px;
 }
 .subtitle{
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 350px;
 }
 

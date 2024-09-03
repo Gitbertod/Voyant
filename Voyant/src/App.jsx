@@ -22,6 +22,7 @@ import BlogPostForm from "./components/blog-post-form/BlogPostForm";
 import Login from "./views/login/Login";
 import Register from "./views/register/Register";
 import { AuthProvider } from "./context/AuthProvider";
+import ProtectedRoute from "./components/portected-route/ProtectedRoute";
 
 
 function App() {
@@ -47,8 +48,15 @@ function App() {
         <Route path="/contacto" element={<Contacto childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/telecomunicaciones" element={<Telecomunicaciones/>}></Route>
         <Route path="/blog" element={<BlogPost/>}></Route>
-        <Route path="/blog/create" element={<BlogPostForm/>}></Route>
         <Route path ="/login" element={<Login></Login>}></Route>
+        
+          <Route path="/blog/create" element={
+            <ProtectedRoute>
+              <BlogPostForm/>
+            </ProtectedRoute>
+            }></Route>
+       
+        
         <Route path ="/register" element={<Register></Register>}></Route>
       </Routes>
       <FooterVoyant/>
