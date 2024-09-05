@@ -13,7 +13,7 @@ const SectionComponent2 = ({
   containerTextClass,
   imgContainerClass,
   childComponent,
-  childComponent2 
+  childComponent2,
 }) => {
   useEffect(() => {
     AOS.init();
@@ -35,7 +35,7 @@ const SectionComponent2 = ({
           className={`${styles.imgContainer} ${imgContainerClass}`}
           data-aos="fade-up"
           data-aos-duration="2000"
-          >
+        >
           {childComponent2}
           <img src={imgSrc} />
         </div>

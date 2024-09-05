@@ -24,16 +24,18 @@
     
 }
 
-.container img{
+.imgContainer {
     
-    width: 100%;  
+    
 }
 .containerText{
     width: 50%;
+    margin: 3rem;
 }
 .parrafo{
     font-size: x-large;
     text-align: left;
+    
 }
 
 /*RESPONSIVE*/
