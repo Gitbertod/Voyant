@@ -13,7 +13,7 @@ export function FooterVoyant() {
               className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
             >
               <img
-                src="logoVoyantColor.svg"
+                src="/logoVoyantColor.svg"
                 className="h-8"
                 alt="Voyant Logo"
               />

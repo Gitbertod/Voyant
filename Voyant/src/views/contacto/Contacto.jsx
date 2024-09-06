@@ -3,7 +3,10 @@ import ContactoForm from "../../components/form-contacto/ContactoForm";
 import LogoBackButton from "../../components/logo-back-button/LogoBackButton";
 import styles from "./Contacto.module.css";
 
+
 const Contacto = ({childComponent}) => {
+  
+  
   return (
     <>
       <div className={styles.container}>

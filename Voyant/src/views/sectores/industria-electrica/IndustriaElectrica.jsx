@@ -4,6 +4,7 @@ import video_bg from "../../../assets/industriaElectrica_bg.mov";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
+import NavBar from "../../../components/navbar/NavBar";
 
 const IndustriaElectrica = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,6 +36,7 @@ const IndustriaElectrica = () => {
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
+        childComponent={<NavBar></NavBar>}
       />
       <SectionComponent
         title="Industria eléctrica"

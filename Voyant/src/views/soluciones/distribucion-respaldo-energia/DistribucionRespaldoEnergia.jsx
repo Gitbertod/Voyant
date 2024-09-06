@@ -4,6 +4,8 @@ import video_bg from "../../../assets/distribucion_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
+import NavBar from "../../../components/navbar/NavBar";
+
 const DistribucionRespaldoEnergia = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,6 +33,7 @@ const DistribucionRespaldoEnergia = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
+        childComponent={<NavBar></NavBar>}
       />
       <SectionComponent
         title="Distribución y respaldo de energía"

@@ -6,7 +6,7 @@ import mineria_bg from "../../../assets/seguridad_bg.mov";
 import styles from "./Seguridad.module.css";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-
+import NavBar from "../../../components/navbar/NavBar";
 const Seguridad = ({ tituloh1 = "Seguridad" }) => {
   const [isMobile, setIsMobile] = useState(false);
 

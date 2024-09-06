@@ -5,10 +5,9 @@
   transition: background-color 300ms;
   justify-content: space-evenly;
   align-items: center;
-  height: 50px;
+  height: 65px;
   z-index: 100;
   line-height: 50px;
- 
 }
 .navbar a {
   float: left;
@@ -120,6 +119,10 @@ a:hover .subnavContent {
 	        animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.logoVoyant{
+  height: 45px;
+}
+
 /**/
 
  @-webkit-keyframes slide-bottom {
@@ -144,9 +147,7 @@ a:hover .subnavContent {
             opacity: 1;
   }
 }
-.logoVoyant{
-  height: 40px;
-}
+
 /*RESPONSIVE*/
 @media (max-width:768px){
 
