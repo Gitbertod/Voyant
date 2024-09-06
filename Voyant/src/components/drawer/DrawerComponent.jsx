@@ -19,13 +19,13 @@ export function DrawerComponent() {
 
   return (
     <>
-      <div className="flex min-h-[50vh] items-center justify-center">
+      <div className="flex  items-center justify-center">
         <Button onClick={() => setIsOpen(true)} className="bg-amber-400 p-0">
           <RxHamburgerMenu className={styles.icon} />
         </Button>
       </div>
       <Drawer open={isOpen} onClose={handleClose} position="right">
-      <Drawer.Header title="" titleIcon={() => <img src="logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />} />
+      <Drawer.Header title="" titleIcon={() => <img src="/logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />} />
         <Drawer.Items>
           <Sidebar
             aria-label="Sidebar with multi-level dropdown example"

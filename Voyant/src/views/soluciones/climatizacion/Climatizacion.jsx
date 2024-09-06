@@ -5,7 +5,7 @@ import video_bg from "../../../assets/climatizacion_bg.mov";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
-
+import NavBar from "../../../components/navbar/NavBar";
 const Climatizacion = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -33,6 +33,7 @@ const Climatizacion = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
+        childComponent={<NavBar></NavBar>}
       />
       <SectionComponent
         title="Climatización"

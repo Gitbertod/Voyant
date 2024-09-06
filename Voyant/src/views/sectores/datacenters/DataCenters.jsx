@@ -4,7 +4,7 @@ import CategoryWithBackgroundVideo from "../../../components/category/CategoryWi
 import video_bg from "../../../assets/datacenter_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-
+import NavBar from "../../../components/navbar/NavBar";
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,6 +32,7 @@ const DataCenters = () => {
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
+        childComponent={<NavBar></NavBar>}
       />
       <SectionComponent
         title="Nuestros Datacenters"

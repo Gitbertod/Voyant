@@ -8,8 +8,16 @@ import { Footer } from "flowbite-react";
 import VideoLanding from "../../components/videolanding/VideoLanding";
 import Contacto from "../contacto/Contacto";
 import CallToAction from "../../components/call-to-action/CallToAction";
+import { useEffect } from "react";
+import AOS from "aos";
 
 const Landing = () => {
+  
+  useEffect(() => {
+    AOS.init();
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <header>

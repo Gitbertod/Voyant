@@ -23,6 +23,7 @@ import Login from "./views/login/Login";
 import Register from "./views/register/Register";
 import { AuthProvider } from "./context/AuthProvider";
 import ProtectedRoute from "./components/portected-route/ProtectedRoute";
+import GestionDeLaEnergia from "./views/soluciones/gestion-de-la-energia/GestionDeLaEnergia";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/soluciones/climatizacion" element={<Climatizacion/>}></Route>
         <Route path="/soluciones/seguridad" element={<Seguridad/>}></Route>
         <Route path="/soluciones/industria4.0" element={<IndustriaFourDotZero/>}></Route>  
+        <Route path="/soluciones/gestion-de-la-energia" element={<GestionDeLaEnergia/>}></Route>  
         <Route path="/sectores" element={<Sectores childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/data-centers" element={<DataCenters/>}></Route>
         <Route path="/mineria" element={<Mineria/>}></Route>

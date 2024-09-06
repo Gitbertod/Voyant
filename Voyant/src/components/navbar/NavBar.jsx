@@ -9,6 +9,7 @@ import { FaIndustry } from "react-icons/fa6";
 import { FaTowerCell } from "react-icons/fa6";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";
+import { BiSolidCarBattery } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { DrawerComponent } from "../drawer/DrawerComponent";
 
@@ -31,7 +32,7 @@ const NavBar = () => {
     <>
       <div className={styles.navbar}>
         <Link to="/">
-          <img src="logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />
+          <img src="/logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />
         </Link>
         <div className={styles.subnav}>
         </div>
@@ -84,6 +85,14 @@ const NavBar = () => {
                   <div className={styles.category}>
                     <GiArtificialIntelligence className={styles.icon} />
                     Industria 4.0
+                  </div>
+                </div>
+              </Link>
+              <Link to="/soluciones/gestion-de-la-energia">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <BiSolidCarBattery className={styles.icon} />
+                    Gestión de la energía
                   </div>
                 </div>
               </Link>
@@ -151,7 +160,7 @@ const NavBar = () => {
               <Link to="/voyant365">VOYANT 365</Link>
             </button>
           </div>
-          <Link to="contacto">Contacto</Link>
+          <Link to="/contacto">Contacto</Link>
         </div>
         <DrawerComponent></DrawerComponent>
       </div>
