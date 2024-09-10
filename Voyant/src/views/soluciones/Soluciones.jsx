@@ -8,6 +8,7 @@ import styles from "./Soluciones.module.css";
 import { GrShieldSecurity } from "react-icons/gr";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";
+import { AiOutlineAreaChart } from "react-icons/ai";
 
 const Soluciones = ({childComponent}) => {
   useEffect(() => {
@@ -67,6 +68,15 @@ const Soluciones = ({childComponent}) => {
                       <GiArtificialIntelligence className={styles.icon} />
                     </div>
                     <h3>Industria 4.0</h3>
+                  </div>
+                </Link>
+                <Link to="/soluciones/gestion-de-la-energia">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                    <AiOutlineAreaChart className={styles.icon} />
+                      
+                    </div>
+                    <h3>Gestión de la energía</h3>
                   </div>
                 </Link>
               </div>
