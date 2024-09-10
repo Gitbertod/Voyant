@@ -24,6 +24,7 @@ import Register from "./views/register/Register";
 import { AuthProvider } from "./context/AuthProvider";
 import ProtectedRoute from "./components/portected-route/ProtectedRoute";
 import GestionDeLaEnergia from "./views/soluciones/gestion-de-la-energia/GestionDeLaEnergia";
+import OtrosSectores from "./views/sectores/otros-sectores/OtrosSectores";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route path="/voyant365" element={<Voyant365/>}></Route>
         <Route path="/contacto" element={<Contacto childComponent={<LogoBackButton/>}/>}></Route>
         <Route path="/telecomunicaciones" element={<Telecomunicaciones/>}></Route>
+        <Route path="/otros-sectores" element={<OtrosSectores/>}></Route>
         <Route path="/blog" element={<BlogPost/>}></Route>
         <Route path ="/login" element={<Login></Login>}></Route>
         

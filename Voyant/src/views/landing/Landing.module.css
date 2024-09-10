@@ -69,3 +69,21 @@
     mask-image: linear-gradient(white 80%, transparent);
    
   }
+
+  /*RESPONSIVE*/
+  @media(max-width:540px){
+    .img{
+      height: 60px;
+    }
+
+    .h1{
+      color:white;
+      font-size: 40px;
+    }
+
+    .subtitle{
+      color: white;
+      font-size: 25px;
+      margin-bottom: 350px;
+  }
+  }

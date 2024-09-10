@@ -10,6 +10,8 @@ import { FaTowerCell } from "react-icons/fa6";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { BiSolidCarBattery } from "react-icons/bi";
+import { AiOutlineAreaChart } from "react-icons/ai";
+import { LiaIndustrySolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { DrawerComponent } from "../drawer/DrawerComponent";
 
@@ -32,12 +34,17 @@ const NavBar = () => {
     <>
       <div className={styles.navbar}>
         <Link to="/">
-          <img src="/logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />
+          <img
+            src="/logoVoyantColor.svg"
+            className={styles.logoVoyant}
+            alt="Voyant Logo"
+          />
         </Link>
-        <div className={styles.subnav}>
-        </div>
+        <div className={styles.subnav}></div>
         <div className={styles.optionsNav}>
-          <Link to="/nosotros" className={styles.link}>Nosotros</Link>
+          <Link to="/nosotros" className={styles.link}>
+            Nosotros
+          </Link>
           <div className={styles.subnav}>
             <button
               className={styles.subnavbtn}
@@ -91,7 +98,7 @@ const NavBar = () => {
               <Link to="/soluciones/gestion-de-la-energia">
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
-                    <BiSolidCarBattery className={styles.icon} />
+                    <AiOutlineAreaChart className={styles.icon} />
                     Gestión de la energía
                   </div>
                 </div>
@@ -150,6 +157,14 @@ const NavBar = () => {
                   <div className={styles.category}>
                     <FaTowerCell className={styles.icon} />
                     Telecomunicaciones
+                  </div>
+                </div>
+              </Link>
+              <Link to="/otros-sectores">
+                <div className={styles.slidebottom}>
+                  <div className={styles.category}>
+                    <LiaIndustrySolid className={styles.icon} />
+                    Otros sectores
                   </div>
                 </div>
               </Link>

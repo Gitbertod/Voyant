@@ -8,6 +8,7 @@ import { GiMining } from "react-icons/gi";
 import { SlEnergy } from "react-icons/sl";
 import { FaIndustry } from "react-icons/fa6";
 import { FaTowerCell } from "react-icons/fa6";
+import { LiaIndustrySolid } from "react-icons/lia";
 
 const Sectores = ({childComponent}) => {
   const tituloH2 = "Sectores";
@@ -74,6 +75,16 @@ const Sectores = ({childComponent}) => {
                     <h3>TELECOMUNICACIONES</h3>
                   </div>
                 </Link>
+                <Link to="/otros-sectores">
+                  <div className={styles.boxCategory}>
+                    <div className="mx-2">
+                    <LiaIndustrySolid className={styles.icon} /> 
+                    </div>
+                    <h3>OTROS SECTORES</h3>
+                  </div>
+                </Link>
+
+
               </div>
             </div>
           </div>

@@ -5,6 +5,8 @@ import SectionComponent from "../../../components/section-component/SectionCompo
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import NavBar from "../../../components/navbar/NavBar";
+import { Link } from "react-router-dom";
+import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
 
 const DistribucionRespaldoEnergia = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,13 +29,20 @@ const DistribucionRespaldoEnergia = () => {
 
   return (
     <>
+       <div className="flex h-16 justify-evenly items-center   ">
+        <Link to="/">
+          <img src="/logoVoyantColor.svg" className="h-11 align-middle " alt="Voyant Logo" />
+        </Link>
+        <div className="w-56"></div>
+        <DrawerComponent></DrawerComponent>
+      </div>
       <CategoryWithBackgroundVideo
         title="Distribución y respaldo de energía"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        
       />
       <SectionComponent
         title="Distribución y respaldo de energía"
