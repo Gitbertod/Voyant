@@ -31,7 +31,7 @@ const Mineria = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        
       />
       <SectionComponent
         title="Nuestras soluciones"

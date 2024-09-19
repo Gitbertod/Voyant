@@ -9,10 +9,11 @@ import { SlEnergy } from "react-icons/sl";
 import { FaIndustry } from "react-icons/fa6";
 import { FaTowerCell } from "react-icons/fa6";
 import { LiaIndustrySolid } from "react-icons/lia";
+import CategoryBox from "../../components/category-box/CategoryBox";
 
-const Sectores = ({childComponent}) => {
+const Sectores = ({ childComponent, parrafo }) => {
   const tituloH2 = "Sectores";
-  
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -20,78 +21,53 @@ const Sectores = ({childComponent}) => {
     <>
       <div className={styles.sectoresContainer}>
         {childComponent}
-        <div className="flex justify-center flex-col items-center">
+        <div className="flex justify-center flex-col items-center h-full">
           <div className={styles.container}>
             <div data-aos="fade-right">
               <h2>{tituloH2}</h2>
               <div className={styles.yellowLine}></div>
-              <p className={styles.textInfo}>
-              En VOYANT, nos dedicamos a proporcionar soluciones de infraestructura crítica adaptadas a las necesidades únicas de diversos sectores. No importa en qué industria te desarrolles, nuestro equipo está preparado para entender tus desafíos específicos y equiparte con la tecnología más avanzada en energía, climatización y seguridad. Nuestras soluciones están diseñadas no solo para maximizar la eficiencia y la confiabilidad, sino también para impulsar la innovación en tu campo. Descubre cómo estamos contribuyendo en la transformación de tu sector y cómo podemos ayudar a preparar tu empresa para un futuro sin límites.
-
-              </p>
+              <p
+                className={styles.textInfo}
+                dangerouslySetInnerHTML={{ __html: parrafo }}
+              ></p>
             </div>
             <div data-aos="fade-up" data-aos-duration="2000">
               <div className={styles.containerSectores}>
-                <Link to="/data-centers">
-                  <div className={styles.boxCategory}>
-                    <div className="mx-2">
-                      <HiCpuChip className={styles.icon} />
-                    </div>
-                    <h3>DATA CENTERS</h3>
-                  </div>
-                </Link>
-                <Link to="/mineria">
-                  <div className={styles.boxCategory}>
-                    <div className="mx-2">
-                      <GiMining className={styles.icon} />
-                    </div>
-                    <h3>MINERIA</h3>
-                  </div>
-                </Link>
-                <Link to="/industria-electrica">
-                  <div className={styles.boxCategory}>
-                    <div className="mx-2">
-                      <SlEnergy className={styles.icon} />
-                    </div>
-                    <h3>
-                      INDUSTRIA<br></br> ELECTRICA
-                    </h3>
-                  </div>
-                </Link>
-                <Link to="/industria">
-                  <div className={styles.boxCategory}>
-                    <div className="mx-2">
-                      <FaIndustry className={styles.icon} />
-                    </div>
-                    <h3>INDUSTRIA</h3>
-                  </div>
-                </Link>
-                <Link to="/telecomunicaciones">
-                  <div className={styles.boxCategory}>
-                    <div className="mx-2">
-                      <FaTowerCell className={styles.icon} />
-                    </div>
-                    <h3>TELECOMUNICACIONES</h3>
-                  </div>
-                </Link>
-                <Link to="/otros-sectores">
-                  <div className={styles.boxCategory}>
-                    <div className="mx-2">
-                    <LiaIndustrySolid className={styles.icon} /> 
-                    </div>
-                    <h3>OTROS SECTORES</h3>
-                  </div>
-                </Link>
-
-
+                <CategoryBox
+                  title="DATACENTERS"
+                  icon={<HiCpuChip className={styles.icon} />}
+                  link="/data-centers"
+                />
+                <CategoryBox
+                  title="MINERIA"
+                  icon={<GiMining className={styles.icon} />}
+                  link="/mineria"
+                />
+                <CategoryBox
+                  title={<span>INDUSTRIA<br/>ELECTRICA</span>}
+                  icon={<SlEnergy className={styles.icon} />}
+                  link="/industria-electrica"
+                />
+                <CategoryBox
+                  title="INDUSTRIA"
+                  icon={<FaIndustry className={styles.icon} />}
+                  link="/industria"
+                />
+                <CategoryBox
+                  title="TELECOMUNICACIONES"
+                  icon={<FaTowerCell className={styles.icon} />}
+                  link="/telecomunicaciones"
+                />
+                <CategoryBox
+                  title="OTROS SECTORES"
+                  icon={<LiaIndustrySolid className={styles.icon} />}
+                  link="/otros-sectores"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <Link to="/">
-        <img src="logoVoyantColor.svg" className={styles.logo} />
-      </Link> */}
     </>
   );
 };

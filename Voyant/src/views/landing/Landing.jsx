@@ -17,6 +17,13 @@ const Landing = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const text = `
+  <br>  
+  En VOYANT, nos dedicamos a proporcionar soluciones de infraestructura crítica adaptadas a las necesidades únicas de diversos sectores.<br>
+    No importa en qué industria te desarrolles, nuestro equipo está preparado para entender tus desafíos específicos y equiparte con la tecnología más avanzada en energía, climatización y seguridad.<br>
+    Nuestras soluciones están diseñadas no solo para maximizar la eficiencia y la confiabilidad, sino también para impulsar la innovación en tu campo.<br><br>
+    Descubre cómo estamos contribuyendo en la transformación de tu sector y cómo podemos ayudar a preparar tu empresa para un futuro sin límites.
+  `;
   return (
     <div className="flex flex-col min-h-screen">
       <header>
@@ -41,7 +48,7 @@ const Landing = () => {
         <p className={styles.subtitle}>
           Infraestructura confiable para que siempre avances
         </p>
-        <Sectores></Sectores>
+        <Sectores parrafo={text} />
         <SectionComponent
           title="Quienes somos"
           text="En VOYANT, transformamos la tecnología en soluciones que ponemos al servicio de las personas. Nos dedicamos a diseñar, implementar y mantener infraestructuras críticas en energía, climatización y seguridad, asegurando operaciones continuas y fiables para nuestros clientes. Nuestro equipo, apasionado y comprometido, impulsa la innovación, siempre fomentando prácticas sostenibles para juntos construir infraestructura confiable para que siempre avances…
