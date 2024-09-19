@@ -44,6 +44,7 @@ const CategoryWithBackgroundVideo = ({
         {!isMobile && (
           <video
             src={videoSrc}
+            preload="auto"
             autoPlay
             loop
             muted

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import video_bg from "../../../assets/climatizacion_bg.mov";
+import video_bg from "../../../assets/climatizacion_bg.mp4";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
