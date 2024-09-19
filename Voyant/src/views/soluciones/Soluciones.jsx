@@ -25,10 +25,11 @@ const Soluciones = ({childComponent}) => {
               <h2>Soluciones</h2>
               <div className={styles.yellowLine}></div>
               <p className={styles.textInfo}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Obcaecati odit illo sunt impedit odio, veritatis sit suscipit,
-                libero neque officiis laudantium voluptatem iusto beatae!
-                Placeat velit autem dolor optio. Corrupti.
+              En VOYANT, transformamos desafíos en oportunidades. Nuestras soluciones de infraestructura crítica en energía, climatización y seguridad, están diseñadas para operar en las condiciones más exigentes. 
+              Con un enfoque centrado en la innovación y la sostenibilidad, así como el respaldo de fabricantes líderes, ofrecemos sistemas que no solo cumplen con los estándares más altos de eficiencia y confiabilidad, sino que también se adaptan de manera inteligente a las necesidades específicas de cada cliente. 
+              <br></br>
+              <br></br>Explora cómo nuestras soluciones pueden ayudarte a optimizar operaciones, contribuyendo a un crecimiento sostenible y continuo para tu negocio.
+
               </p>
             </div>
             <div data-aos="fade-up" data-aos-duration="2000">

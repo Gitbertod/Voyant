@@ -12,9 +12,7 @@ import { LiaIndustrySolid } from "react-icons/lia";
 
 const Sectores = ({childComponent}) => {
   const tituloH2 = "Sectores";
-  const parrafo =
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit ";
-
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -28,7 +26,8 @@ const Sectores = ({childComponent}) => {
               <h2>{tituloH2}</h2>
               <div className={styles.yellowLine}></div>
               <p className={styles.textInfo}>
-                {parrafo}
+              En VOYANT, nos dedicamos a proporcionar soluciones de infraestructura crítica adaptadas a las necesidades únicas de diversos sectores. No importa en qué industria te desarrolles, nuestro equipo está preparado para entender tus desafíos específicos y equiparte con la tecnología más avanzada en energía, climatización y seguridad. Nuestras soluciones están diseñadas no solo para maximizar la eficiencia y la confiabilidad, sino también para impulsar la innovación en tu campo. Descubre cómo estamos contribuyendo en la transformación de tu sector y cómo podemos ayudar a preparar tu empresa para un futuro sin límites.
+
               </p>
             </div>
             <div data-aos="fade-up" data-aos-duration="2000">

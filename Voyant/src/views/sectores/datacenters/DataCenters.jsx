@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
-import video_bg from "../../../assets/datacenter_bg.mov";
+import video_bg from "../../../assets/datacenters720.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import NavBar from "../../../components/navbar/NavBar";

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
-import mineria_bg from "../../../assets/seguridad_bg.mov";
+import mineria_bg from "../../../assets/seguridad_bg.mp4";
 import styles from "./Seguridad.module.css";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";

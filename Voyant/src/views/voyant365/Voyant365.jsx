@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import video_bg from "../../assets/voyant365_bg.mov";
+import video_bg from "../../assets/AdobeStock_325568184.mp4";
 import CategoryWithBackgroundVideo from "../../components/category/CategoryWithBackgroundVideo";
 import NavBar from "../../components/navbar/NavBar";
 
-const Voyant365 = ({ tituloh1 = "Voyant 365" }) => {
+const Voyant365 = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

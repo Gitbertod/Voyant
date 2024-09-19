@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 
 const Landing = () => {
-  
   useEffect(() => {
     AOS.init();
     window.scrollTo(0, 0);
@@ -45,7 +44,8 @@ const Landing = () => {
         <Sectores></Sectores>
         <SectionComponent
           title="Quienes somos"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
+          text="En VOYANT, transformamos la tecnología en soluciones que ponemos al servicio de las personas. Nos dedicamos a diseñar, implementar y mantener infraestructuras críticas en energía, climatización y seguridad, asegurando operaciones continuas y fiables para nuestros clientes. Nuestro equipo, apasionado y comprometido, impulsa la innovación, siempre fomentando prácticas sostenibles para juntos construir infraestructura confiable para que siempre avances…
+"
           buttonText="Saber más"
           imgSrc="./ingenieroWhite.png"
           linkTo="/nosotros"
