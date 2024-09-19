@@ -2,9 +2,11 @@
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
    /* Para asegurar que el contenido no desborde el contenedor */
     background-image: url("/sectores_bg.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
-    min-height: 700px;
+    height: auto;
+    
+    
 }
 
 .logo{
@@ -23,7 +25,7 @@
     flex-wrap: wrap;
 }
 
-.boxCategory h2{
+h2{
     color: white;
     font-size: 25px;
 }
@@ -31,8 +33,8 @@
     margin-bottom: 40px;
 }
 .icon{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     color: white
 }
 .mainContainer{
@@ -49,13 +51,6 @@
     height: 100vh;
     width: 80%;
 }
-.boxCategory{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 25px;
-}
-
 .container h2{
     font-size: 70px;
     font-weight: 500;
@@ -68,20 +63,29 @@
 
 }
 .textInfo{
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
 }
 
 /*RESPONSIVE*/
-
+@media (max-width:1100px){
+    .sectoresContainer{
+        height: 1100px ;
+    }
+    
+}
 @media(max-width:640px){
     .container p{
         margin-bottom: 0px;
     }
     .icon{
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         color: white
+    }
+    .textInfo{
+        font-size: 16px;
+        text-align: left;
     }
 }
 
@@ -96,24 +100,12 @@
     font-weight: 500;
     text-align: left;
 }
-.textInfo{
-    font-size: 16px;
-    text-align: left;
-}
-.boxCategory{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin: 20px;
-}
+
 .containerSectores{
-    display: flex;
-    justify-content: start;
+    display: flex; 
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    
-    
 }
 }
     
