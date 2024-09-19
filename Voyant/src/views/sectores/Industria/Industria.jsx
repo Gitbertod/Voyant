@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import video_bg from "../../../assets/industria_bg.mov";
+import video_bg from "../../../assets/industria.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import NavBar from "../../../components/navbar/NavBar";
+import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 const Industria = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,7 +32,7 @@ const Industria = () => {
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        childComponent={<BurguerMenu />}
       />
       <SectionComponent
         title="Industria"

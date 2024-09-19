@@ -6,6 +6,7 @@ import CallToAction from "../../../components/call-to-action/CallToAction";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import NavBar from "../../../components/navbar/NavBar";
+import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
 const Climatizacion = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -27,13 +28,20 @@ const Climatizacion = () => {
 
   return (
     <>
+      
       <CategoryWithBackgroundVideo
         title="Climatización"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec."
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        childComponent={<div className="flex h-16 justify-evenly items-center   ">
+          <Link to="/">
+            <img src="/logoVoyantColor.svg" className="h-11 align-middle " alt="Voyant Logo" />
+          </Link>
+          <div className="w-56"></div>
+          <DrawerComponent></DrawerComponent>
+        </div>}
       />
       <SectionComponent
         title="Climatización"

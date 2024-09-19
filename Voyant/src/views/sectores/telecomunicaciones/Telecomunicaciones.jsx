@@ -4,7 +4,8 @@ import video_bg from "../../../assets/telecomunicaciones.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import NavBar from "../../../components/navbar/NavBar";
+import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
+
 const Telecomunicaciones = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,7 +33,7 @@ const Telecomunicaciones = () => {
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        childComponent={<BurguerMenu></BurguerMenu>}
       />
       <SectionComponent
         title="Telecomunicaciones"

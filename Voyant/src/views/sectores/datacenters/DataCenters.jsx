@@ -5,6 +5,9 @@ import video_bg from "../../../assets/datacenters.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import NavBar from "../../../components/navbar/NavBar";
+import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
+import { Link } from "react-router-dom";
+import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,7 +35,7 @@ const DataCenters = () => {
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        childComponent={<BurguerMenu />}
       />
       <SectionComponent
         title="Nuestros Datacenters"

@@ -5,6 +5,7 @@
     background-image: url("/soluciones_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    height: auto;
 }
 
 .containerSectores{
@@ -14,17 +15,12 @@
     align-content: center;
     flex-wrap: wrap;
 }
-
-.boxCategory h2{
-    color: white;
-    font-size: 25px;
-}
 .container p{
     margin-bottom: 40px;
 }
 .icon{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     color: white
 }
 .mainContainer{
@@ -66,15 +62,25 @@
 
 /*RESPONSIVE*/
 
-@media(max-width:640px){
+@media (max-width:1100px){
+    .sectoresContainer{
+        height: 1100px ;
+    }
     
+}
+
+@media(max-width:640px){
     .container p{
         margin-bottom: 0px;
     }
     .icon{
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         color: white
+    }
+    .textInfo{
+        font-size: 16px;
+        text-align: left;
     }
 }
 
@@ -89,24 +95,12 @@
     font-weight: 500;
     text-align: left;
 }
-.textInfo{
-    font-size: 16px;
-    text-align: left;
-}
-.boxCategory{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin: 20px;
-}
+
 .containerSectores{
-    display: flex;
-    justify-content: start;
+    display: flex; 
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    
-    
 }
 }
     
