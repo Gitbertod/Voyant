@@ -4,8 +4,7 @@ import video_bg from "../../../assets/industria4.0_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import NavBar from "../../../components/navbar/NavBar";
-
+import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 const IndustriaFourDotZero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -33,7 +32,7 @@ const IndustriaFourDotZero = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
-        childComponent={<NavBar></NavBar>}
+        childComponent={<BurguerMenu />}
       />
       <SectionComponent
         title="Industria 4.0"

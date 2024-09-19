@@ -6,7 +6,10 @@ import mineria_bg from "../../../assets/seguridad_bg.mp4";
 import styles from "./Seguridad.module.css";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import NavBar from "../../../components/navbar/NavBar";
+import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
+import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
+
+
 const Seguridad = ({ tituloh1 = "Seguridad" }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -41,9 +44,7 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
           ></video>
         )}
       </div>
-      <Link to="/">
-        <img src="/logoVoyantColor.svg" className={styles.logo} />
-      </Link>
+      <BurguerMenu />
       <div className={styles.mainContainer}>
         <img src="/logosVoyant_bg.svg" className={styles.logosVoyant} />
         <div className={styles.container}>

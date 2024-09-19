@@ -4,6 +4,7 @@ import video_bg from "../../../assets/mineria_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
+import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 const Mineria = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,7 +32,7 @@ const Mineria = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-        
+        childComponent={<BurguerMenu />}
       />
       <SectionComponent
         title="Nuestras soluciones"

@@ -2,11 +2,9 @@
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
    /* Para asegurar que el contenido no desborde el contenedor */
     background-image: url("/sectores_bg.jpg");
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     height: auto;
-    
-    
 }
 
 .logo{
