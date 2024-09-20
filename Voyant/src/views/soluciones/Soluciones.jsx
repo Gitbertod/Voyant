@@ -25,7 +25,8 @@ const Soluciones = ({ childComponent }) => {
             <div data-aos="fade-right">
               <h2>Soluciones</h2>
               <div className={styles.yellowLine}></div>
-              <p className={styles.textInfo}><br></br>
+              <p className={styles.textInfo}>
+                <br></br>
                 En VOYANT, transformamos desafíos en oportunidades. Nuestras
                 soluciones de infraestructura crítica en energía, climatización
                 y seguridad, están diseñadas para operar en las condiciones más
@@ -43,31 +44,48 @@ const Soluciones = ({ childComponent }) => {
             </div>
             <div data-aos="fade-up" data-aos-duration="2000">
               <div className={styles.containerSectores}>
-                <CategoryBox
-                  title={<span>DISTRIBUCÍON<br />Y RESPALDO DE ENERGÍA</span>}
-                  icon={<TbBatteryCharging2 className={styles.icon} />}
-                  link="/soluciones/distribucion-respaldo-de-energia"
-                />
-                <CategoryBox
-                  title="CLIMATIZACIÓN"
-                  icon={<BsFan className={styles.icon} />}
-                  link="/soluciones/climatizacion"
-                />
-                <CategoryBox
-                  title="SEGURIDAD"
-                  icon={<GrShieldSecurity className={styles.icon} />}
-                  link="/soluciones/seguridad"
-                />
-                <CategoryBox
-                  title="INDUSTRIA 4.0"
-                  icon={<GiArtificialIntelligence className={styles.icon} />}
-                  link="/soluciones/industria4.0"
-                />
-                <CategoryBox
+                <div className="p-4 transition-transform transform hover:scale-105">
+                  <CategoryBox
+                    title={
+                      <span>
+                        DISTRIBUCÍON
+                        <br />Y RESPALDO DE ENERGÍA
+                      </span>
+                    }
+                    icon={<TbBatteryCharging2 className={styles.icon} />}
+                    link="/soluciones/distribucion-respaldo-de-energia"
+                    className="p-4 transition-transform transform hover:scale-105"
+                  />
+                </div>
+                <div className="p-4 transition-transform transform hover:scale-105">
+                  <CategoryBox
+                    title="CLIMATIZACIÓN"
+                    icon={<BsFan className={styles.icon} />}
+                    link="/soluciones/climatizacion"
+                  />
+                </div>
+                <div className="p-4 transition-transform transform hover:scale-105">
+                  <CategoryBox
+                    title="SEGURIDAD"
+                    icon={<GrShieldSecurity className={styles.icon} />}
+                    link="/soluciones/seguridad"
+                  />
+                </div>
+                <div className="p-4 transition-transform transform hover:scale-105">
+                  <CategoryBox
+                    title="INDUSTRIA 4.0"
+                    icon={<GiArtificialIntelligence className={styles.icon} />}
+                    link="/soluciones/industria4.0"
+                  />
+                </div>
+                <div className="p-4 transition-transform transform hover:scale-105">
+                  <CategoryBox
                   title="GESTÍON DE LA ENERGÍA"
                   icon={<AiOutlineAreaChart className={styles.icon} />}
                   link="/soluciones/gestion-de-la-energia"
                 />
+                </div>
+                
               </div>
             </div>
           </div>

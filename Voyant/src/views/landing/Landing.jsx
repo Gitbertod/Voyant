@@ -11,6 +11,7 @@ import CallToAction from "../../components/call-to-action/CallToAction";
 import { useEffect } from "react";
 import AOS from "aos";
 
+
 const Landing = () => {
   useEffect(() => {
     AOS.init();
@@ -64,6 +65,7 @@ const Landing = () => {
           }
         />
         <Soluciones />
+        
         <News></News>
         <Contacto></Contacto>
       </main>
