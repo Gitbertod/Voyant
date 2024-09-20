@@ -1,0 +1,85 @@
+body{
+    background-image: url("/valores.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+}
+.fondo{
+    /* background: radial-gradient(circle, #19395f 10%, transparent 11%);
+        background-size: 3em 3em;
+        background-color: #001d54;
+        opacity: 1;
+        height:max-content; */
+        background-image: url("/valores.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    /* background-image: url("./voyant_bg3.jpeg"); */
+    position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
+    overflow: hidden;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;  
+    height: 100%;
+}
+
+.container h3{
+    font-size: 70px;
+    font-weight: 500;
+    text-align: left;
+    color: #f9b03a;
+}
+.parrafo{
+    margin-top: 20px;
+    color:white;
+    font-size: 16px;
+    text-align: left;
+}
+
+.parrafo h4{
+    color:#f9b03a;
+    font-weight: 900;
+    font-size: 20px;
+}
+.containerInfo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    width: 250px;
+    backdrop-filter: blur(8px);
+    border-radius: 10px; /* Ajusta el valor según tu preferencia */
+    margin: 20px;
+    padding: 20px;
+    /* border: 1px solid white; */
+    min-height: 360px;
+}
+.textAboveCards{
+    margin: 20px;
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    width: 90%;
+}

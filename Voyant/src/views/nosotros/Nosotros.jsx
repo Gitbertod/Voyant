@@ -6,6 +6,9 @@ import SectionComponent from "../../components/section-component/SectionComponen
 import SectionComponent2 from "../../components/section-component2/SectionComponent2";
 import Shape from "../../components/shape/Shape";
 import styles from "./Nosotros.module.css";
+import Valores from "../../components/valores/Valores";
+
+
 
 const Nosotros = () => {
   useEffect(() => {
@@ -41,33 +44,54 @@ const Nosotros = () => {
             <br></br>
             <br></br>
             <ul className="list-disc">
-              <strong><li>Aumentar la confiabilidad</li></strong>
-              <strong><li>Reducir costos de operación y mantenimiento</li></strong>
+              <strong>
+                <li>Aumentar la confiabilidad</li>
+              </strong>
+              <strong>
+                <li>Reducir costos de operación y mantenimiento</li>
+              </strong>
             </ul>
             <br></br>
             Nos enfocamos en asegurar la operación continua y eficiente de tu
             infraestructura crítica, mejorando su estabilidad, rendimiento y
             sostenibilidad.
             <br></br>
-            <br></br> 
-            Implementamos soluciones usando la mejor tecnología
-            disponible, que permita reducir los gastos operativos, aumente la
-            eficiencia y optimice el uso de los recursos, con un firme
-            compromiso hacia la reducción del impacto ambiental. 
+            <br></br>
+            Implementamos soluciones usando la mejor tecnología disponible, que
+            permita reducir los gastos operativos, aumente la eficiencia y
+            optimice el uso de los recursos, con un firme compromiso hacia la
+            reducción del impacto ambiental.
             <br></br>
             <br></br>
-            En VOYANT, vislumbramos un futuro en el que la tecnología avanzada, la
-            infraestructura resiliente y la sostenibilidad convergen para
+            En VOYANT, vislumbramos un futuro en el que la tecnología avanzada,
+            la infraestructura resiliente y la sostenibilidad convergen para
             sostener entornos operativos seguros y rentables. Nos esforzamos por
             liderar el camino hacia un desarrollo industrial que no solo permita
             a las empresas mantenerse y destacarse en sus industrias, sino que
             también promueva un equilibrio responsable con nuestro planeta.
-            <br></br><br></br>
+            <br></br>
+            <br></br>
             Nuestro objetivo es hacer de este futuro una realidad tangible para
             cada uno de nuestros clientes.
           </>
         }
         childComponent2={<Shape />}
+      />
+      <div></div>
+
+      <Valores></Valores>
+      <SectionComponent
+        title="Valores"
+        text={
+          <>
+            <strong>Nuestros Valores</strong><br/> 
+            En VOYANT, nuestros valores son la guía para cada
+            decisión y acción que tomamos. Estos valores reflejan nuestro
+            compromiso no solo con nuestros clientes y socios, sino también con
+            nuestro equipo y la comunidad en general.
+          </>
+        }
+        
       />
     </>
   );
