@@ -29,6 +29,14 @@ import BurguerMenu from "./components/burguer-menu/BurguerMenu";
 
 
 function App() {
+  const text = `
+  <br>  
+  En VOYANT, nos dedicamos a proporcionar soluciones de infraestructura crítica adaptadas a las necesidades únicas de diversos sectores.<br>
+    No importa en qué industria te desarrolles, nuestro equipo está preparado para entender tus desafíos específicos y equiparte con la tecnología más avanzada en energía, climatización y seguridad.<br>
+    Nuestras soluciones están diseñadas no solo para maximizar la eficiencia y la confiabilidad, sino también para impulsar la innovación en tu campo.<br><br>
+    Descubre cómo estamos contribuyendo en la transformación de tu sector y cómo podemos ayudar a preparar tu empresa para un futuro sin límites.
+  `;
+
   return (
     <>
     <div className="flex flex-col min-h-screen">
@@ -37,13 +45,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
-        <Route path="/soluciones" element={<Soluciones childComponent={<LogoBackButton/>}/>}></Route>
+        <Route path="/soluciones" element={<Soluciones childComponent={<BurguerMenu/>}/>}></Route>
         <Route path="/soluciones/distribucion-respaldo-de-energia" element={<DistribucionRespaldoEnergia></DistribucionRespaldoEnergia>}></Route>
         <Route path="/soluciones/climatizacion" element={<Climatizacion/>}></Route>
         <Route path="/soluciones/seguridad" element={<Seguridad/>}></Route>
         <Route path="/soluciones/industria4.0" element={<IndustriaFourDotZero/>}></Route>  
         <Route path="/soluciones/gestion-de-la-energia" element={<GestionDeLaEnergia/>}></Route>  
-        <Route path="/sectores" element={<Sectores childComponent={<BurguerMenu />}/>}></Route>
+        <Route path="/sectores" element={<Sectores childComponent={<BurguerMenu />} parrafo={text}/>}></Route>
         <Route path="/data-centers" element={<DataCenters/>}></Route>
         <Route path="/mineria" element={<Mineria/>}></Route>
         <Route path="/industria-electrica" element={<IndustriaElectrica/>}></Route>
