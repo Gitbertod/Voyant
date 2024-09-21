@@ -11,14 +11,13 @@ import CallToAction from "../../components/call-to-action/CallToAction";
 import { useEffect } from "react";
 import AOS from "aos";
 
-
 const Landing = () => {
   useEffect(() => {
     AOS.init();
     window.scrollTo(0, 0);
   }, []);
 
-  const text = `
+  const textSectores = `
   <br>  
   En VOYANT, nos dedicamos a proporcionar soluciones de infraestructura crítica adaptadas a las necesidades únicas de diversos sectores.<br>
     No importa en qué industria te desarrolles, nuestro equipo está preparado para entender tus desafíos específicos y equiparte con la tecnología más avanzada en energía, climatización y seguridad.<br>
@@ -49,7 +48,7 @@ const Landing = () => {
         <p className={styles.subtitle}>
           Infraestructura confiable para que siempre avances
         </p>
-        <Sectores parrafo={text} />
+        <Sectores parrafo={textSectores} />
         <SectionComponent
           title="Quienes somos"
           text="En VOYANT, transformamos la tecnología en soluciones que ponemos al servicio de las personas. Nos dedicamos a diseñar, implementar y mantener infraestructuras críticas en energía, climatización y seguridad, asegurando operaciones continuas y fiables para nuestros clientes. Nuestro equipo, apasionado y comprometido, impulsa la innovación, siempre fomentando prácticas sostenibles para juntos construir infraestructura confiable para que siempre avances…
@@ -66,6 +65,7 @@ const Landing = () => {
         />
         <Soluciones />
         
+
         <News></News>
         <Contacto></Contacto>
       </main>

@@ -7,6 +7,7 @@ import SectionComponent2 from "../../components/section-component2/SectionCompon
 import Shape from "../../components/shape/Shape";
 import styles from "./Nosotros.module.css";
 import Valores from "../../components/valores/Valores";
+import NuestraGente from "../../components/nuestra-gente/NuestraGente";
 
 
 
@@ -79,20 +80,8 @@ const Nosotros = () => {
       />
       <div></div>
 
-      <Valores></Valores>
-      <SectionComponent
-        title="Valores"
-        text={
-          <>
-            <strong>Nuestros Valores</strong><br/> 
-            En VOYANT, nuestros valores son la guía para cada
-            decisión y acción que tomamos. Estos valores reflejan nuestro
-            compromiso no solo con nuestros clientes y socios, sino también con
-            nuestro equipo y la comunidad en general.
-          </>
-        }
-        
-      />
+      <Valores />
+      <NuestraGente />
     </>
   );
 };
