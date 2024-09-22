@@ -54,3 +54,23 @@ p span{
     color:#f9b03a;
     font-weight: 500;
 }
+
+/*RESPONSIVE*/
+@media(max-width:600px){
+    .container h3{
+        font-size:xx-large;
+        font-weight: 500;
+        text-align: left;
+        color: #f9b03a;
+    }
+
+    .textAboveCards{
+        margin-left: 55px;
+        margin-right: 55px;
+        margin-bottom: 0px;
+        color:white;
+        font-size: larger;
+        text-align: start;
+        width: 90%;
+    }
+}

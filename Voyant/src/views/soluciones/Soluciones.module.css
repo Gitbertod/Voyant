@@ -1,7 +1,7 @@
 .sectoresContainer{
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
    /* Para asegurar que el contenido no desborde el contenedor */
-    background-image: url("/sectores_bg.jpg");
+    background-image: url("/soluciones_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -68,7 +68,7 @@ h2{
 /*RESPONSIVE*/
 @media (max-width:1100px){
     .sectoresContainer{
-        height: 1100px ;
+        height: 1250px ;
     }
     
 }
