@@ -1,4 +1,4 @@
-import bgvideo2 from "../../assets/videobg.mov";
+import bgvideo2 from "../../assets/landing.mp4";
 import styles from "./VideoLanding.module.css";
 const VideoLanding = () => {
   return (

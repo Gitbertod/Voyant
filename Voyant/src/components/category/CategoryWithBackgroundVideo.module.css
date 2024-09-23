@@ -1,3 +1,7 @@
+:root {
+  
+}
+
 .imageBg{
     display: block;
     background-image: url("./MinaBg.jpg");
@@ -136,7 +140,7 @@
       display: none;
     }
     .mainContainer {
-      background-image: url("/industria-electrica_bg.jpg");
+      background-image: var(--imagen-fondo);
       background-repeat: no-repeat;
       background-size: cover;
     }
