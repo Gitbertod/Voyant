@@ -8,6 +8,7 @@ import Shape from "../../components/shape/Shape";
 import styles from "./Nosotros.module.css";
 import Valores from "../../components/valores/Valores";
 import NuestraGente from "../../components/nuestra-gente/NuestraGente";
+import BurguerMenu from "../../components/burguer-menu/BurguerMenu";
 
 
 
@@ -19,7 +20,7 @@ const Nosotros = () => {
 
   return (
     <>
-      <NavBar />
+      <BurguerMenu  />
       <SectionComponent
         title="Nosotros"
         text={

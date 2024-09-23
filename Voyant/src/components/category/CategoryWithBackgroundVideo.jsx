@@ -13,7 +13,8 @@ const CategoryWithBackgroundVideo = ({
   videoSrc,
   logoSrc,
   logosBgSrc,
-  childComponent
+  childComponent,
+  backgroundMobile // Cambiamos el nombre de la prop para mayor claridad
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -22,13 +23,8 @@ const CategoryWithBackgroundVideo = ({
       setIsMobile(window.innerWidth <= 768);
     };
 
-    // Mueve la vista al tope de la página cuando el componente se monta
     window.scrollTo(0, 0);
-
-    // Set initial value
     handleResize();
-
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -40,7 +36,13 @@ const CategoryWithBackgroundVideo = ({
     <>
       <div className="main">
         <div className={styles.overlay}></div>
-        <div className={styles.imageBg}></div>
+        {/* Aplicamos la imagen de fondo móvil directamente al estilo en línea */}
+        <div
+          className={styles.imageBg}
+          style={{
+            backgroundImage: isMobile ? `url(${backgroundMobile})` : "",
+          }}
+        ></div>
         {!isMobile && (
           <video
             src={videoSrc}
@@ -69,16 +71,19 @@ const CategoryWithBackgroundVideo = ({
     </>
   );
 };
+
 CategoryWithBackgroundVideo.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string.isRequired,
-  videoSrc: PropTypes.string.isRequired,
-  logoSrc: PropTypes.string.isRequired,
-  logosBgSrc: PropTypes.string.isRequired,
-  sectionTitle: PropTypes.string.isRequired,
-  sectionText: PropTypes.string.isRequired,
-  sectionButtonText: PropTypes.string.isRequired,
-  sectionImgSrc: PropTypes.string.isRequired,
-  childComponent:PropTypes.node
+title: PropTypes.string,
+text: PropTypes.string.isRequired,
+videoSrc: PropTypes.string.isRequired,
+logoSrc: PropTypes.string.isRequired,
+logosBgSrc: PropTypes.string.isRequired,
+sectionTitle: PropTypes.string.isRequired,
+sectionText: PropTypes.string.isRequired,
+sectionButtonText: PropTypes.string.isRequired,
+sectionImgSrc: PropTypes.string.isRequired,
+childComponent:PropTypes.node,
+backgroundMobile: PropTypes.string, 
 };
+
 export default CategoryWithBackgroundVideo;

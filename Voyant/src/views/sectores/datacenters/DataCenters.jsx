@@ -8,6 +8,7 @@ import NavBar from "../../../components/navbar/NavBar";
 import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
 import { Link } from "react-router-dom";
 import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
+import dataCenterBg from "../../../../public/dataCenters_bg.jpeg"
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -36,6 +37,7 @@ const DataCenters = () => {
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
         childComponent={<BurguerMenu />}
+        backgroundMobile={'/dataCenters_bg.jpeg'}
       />
       <SectionComponent
         title="Nuestros Datacenters"
