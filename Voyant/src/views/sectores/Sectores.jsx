@@ -10,6 +10,7 @@ import { FaIndustry } from "react-icons/fa6";
 import { FaTowerCell } from "react-icons/fa6";
 import { LiaIndustrySolid } from "react-icons/lia";
 import CategoryBox from "../../components/category-box/CategoryBox";
+import NavBar from "../../components/navbar/NavBar";
 
 const Sectores = ({ childComponent, parrafo }) => {
   const tituloH2 = "Sectores";
@@ -19,6 +20,7 @@ const Sectores = ({ childComponent, parrafo }) => {
   }, []);
   return (
     <>
+   
       <div className={styles.sectoresContainer}>
         {childComponent}
         <div className="flex justify-center flex-col items-center h-full">
