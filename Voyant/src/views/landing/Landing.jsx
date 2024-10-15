@@ -2,7 +2,7 @@ import NavBar from "../../components/navbar/NavBar";
 import News from "../../components/news/News";
 import SectionComponent from "../../components/section-component/SectionComponent";
 import Sectores from "../sectores/Sectores";
-import Soluciones from "../soluciones/Soluciones";
+import Soluciones from "../soluciones/SolucionesView";
 import styles from "./Landing.module.css";
 import { Footer } from "flowbite-react";
 import VideoLanding from "../../components/videolanding/VideoLanding";
@@ -10,7 +10,9 @@ import Contacto from "../contacto/Contacto";
 import CallToAction from "../../components/call-to-action/CallToAction";
 import { useEffect } from "react";
 import AOS from "aos";
-
+import CategoryBox from "../../components/category-box/CategoryBox";
+import { TbBatteryCharging2 } from "react-icons/tb";
+import SolucionesView from "../soluciones/SolucionesView";
 const Landing = () => {
   useEffect(() => {
     AOS.init();
@@ -27,7 +29,7 @@ const Landing = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <header>
-        <NavBar />
+        
       </header>
       <VideoLanding />
       <main className="flex-grow justify-center items-center">
@@ -63,8 +65,7 @@ const Landing = () => {
             ></CallToAction>
           }
         />
-        <Soluciones />
-        
+        <SolucionesView />
 
         <News></News>
         <Contacto></Contacto>

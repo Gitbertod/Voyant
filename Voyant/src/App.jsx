@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Landing from "./views/landing/Landing";
 import Nosotros from "./views/nosotros/Nosotros";
-import Soluciones from "./views/soluciones/Soluciones";
+import SolucionesView from "./views/soluciones/SolucionesView";
 import Climatizacion from "./views/soluciones/climatizacion/Climatizacion"
 import Seguridad from "./views/soluciones/seguridad/Seguridad"
 import IndustriaFourDotZero from "./views/soluciones/industria4.0/IndustriaFourDotZero";
@@ -26,6 +26,7 @@ import ProtectedRoute from "./components/portected-route/ProtectedRoute";
 import GestionDeLaEnergia from "./views/soluciones/gestion-de-la-energia/GestionDeLaEnergia";
 import OtrosSectores from "./views/sectores/otros-sectores/OtrosSectores";
 import BurguerMenu from "./components/burguer-menu/BurguerMenu";
+import NavBar from "./components/navbar/NavBar";
 
 
 function App() {
@@ -42,10 +43,11 @@ function App() {
     <div className="flex flex-col min-h-screen">
     <div className="flex-grow">
       <AuthProvider>
+        <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
-        <Route path="/soluciones" element={<Soluciones childComponent={<BurguerMenu/>}/>}></Route>
+        <Route path="/soluciones" element={<SolucionesView childComponent={<BurguerMenu/>}/>}></Route>
         <Route path="/soluciones/distribucion-respaldo-de-energia" element={<DistribucionRespaldoEnergia></DistribucionRespaldoEnergia>}></Route>
         <Route path="/soluciones/climatizacion" element={<Climatizacion/>}></Route>
         <Route path="/soluciones/seguridad" element={<Seguridad/>}></Route>
