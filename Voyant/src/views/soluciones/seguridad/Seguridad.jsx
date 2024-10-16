@@ -44,7 +44,6 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
           ></video>
         )}
       </div>
-      <BurguerMenu />
       <div className={styles.mainContainer}>
         <img src="/logosVoyant_bg.svg" className={styles.logosVoyant} />
         <div className={styles.container}>

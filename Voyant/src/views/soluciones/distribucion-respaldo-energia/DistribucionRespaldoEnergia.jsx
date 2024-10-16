@@ -37,7 +37,6 @@ const DistribucionRespaldoEnergia = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
-        childComponent={<BurguerMenu />}
       />
       <SectionComponent
         title="Distribución y respaldo de energía"
