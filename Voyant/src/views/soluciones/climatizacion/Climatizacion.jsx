@@ -35,13 +35,6 @@ const Climatizacion = () => {
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
-        childComponent={<div className="flex h-16 justify-evenly items-center   ">
-          <Link to="/">
-            <img src="/logoVoyantColor.svg" className="h-11 align-middle " alt="Voyant Logo" />
-          </Link>
-          <div className="w-56"></div>
-          <DrawerComponent></DrawerComponent>
-        </div>}
       />
       <SectionComponent
         title="Climatización"

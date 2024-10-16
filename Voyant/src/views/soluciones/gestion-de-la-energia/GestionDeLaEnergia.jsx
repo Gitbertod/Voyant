@@ -18,7 +18,7 @@ const GestionDeLaEnergia = () => {
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
         videoSrc={video_bg}
-        childComponent={<BurguerMenu />}
+        
       />
     </>
   );
