@@ -1,12 +1,13 @@
 .container{
     
     /* background-image: url("./voyant_bg3.jpeg"); */
-    background-color: white;
+    background-color:transparent;
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
     overflow: hidden;
     background-size: cover;
     justify-content: center;
-    height: 100%;  
+    height: 100%;
+    z-index: -1;  
 }
 
 .container h5{

@@ -20,7 +20,7 @@ const Nosotros = () => {
 
   return (
     <>
-      <BurguerMenu  />
+  
       <SectionComponent
         title="Nosotros"
         text={
