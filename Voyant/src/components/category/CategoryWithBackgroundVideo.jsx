@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BoxDataPercentage from "../iconsdata/BoxDataPercentage";
 import styles from "./CategoryWithBackgroundVideo.module.css";
-import LogoBackButton from "../logo-back-button/LogoBackButton";
-import { DrawerComponent } from "../drawer/DrawerComponent";
-import NavBar from "../navbar/NavBar";
 
 const CategoryWithBackgroundVideo = ({
   title,

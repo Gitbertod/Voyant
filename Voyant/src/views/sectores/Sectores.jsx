@@ -22,7 +22,6 @@ const Sectores = ({ childComponent, parrafo }) => {
     <>
    
       <div className={styles.sectoresContainer}>
-        {childComponent}
         <div className="flex justify-center flex-col items-center h-full">
           <div className={styles.container}>
             <div data-aos="fade-right">
