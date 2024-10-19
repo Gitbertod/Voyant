@@ -8,7 +8,7 @@ import NavBar from "../../../components/navbar/NavBar";
 import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
 import { Link } from "react-router-dom";
 import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
-import dataCenterBg from "../../../../public/dataCenters_bg.jpeg"
+import dataCenterBg from "../../../../public/dataCenters_bg.jpeg";
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,11 +32,39 @@ const DataCenters = () => {
     <>
       <CategoryWithBackgroundVideo
         title="Datacenters"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        text={
+          <>
+            <strong>
+              En VOYANT, sabemos que la continuidad operativa y la eficiencia
+              son esenciales para un datacenter.
+            </strong>{" "}
+            Nos especializamos en soluciones de infraestructura crítica que
+            garantizan un funcionamiento seguro e ininterrumpido para los
+            centros de datos, desde la distribución y el respaldo de energía
+            hasta la climatización y los sistemas de seguridad de última
+            generación.
+            <br></br>
+            <br></br>
+            Nuestras soluciones están diseñadas para maximizar la eficiencia
+            energética, optimizar la refrigeración y proteger todas las áreas
+            del datacenter, mientras reducimos costos operativos y mejoramos la
+            confiabilidad. Con tecnología inteligente, adaptable y resiliente,
+            aseguramos que los datacenters mantengan un rendimiento óptimo,
+            protegiendo sus activos más valiosos y asegurando la continuidad del
+            negocio.
+            <br></br>
+            <br></br>
+            En VOYANT, somos el socio estratégico ideal para implementar y
+            mantener la infraestructura crítica de tu datacenter, apoyando cada
+            paso de tu crecimiento. Desde pequeños datacenters de borde hasta
+            grandes infraestructuras de hiperescala, estamos listos para
+            acompañarte hacia un futuro sin límites.
+          </>
+        }
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-        backgroundMobile={'/dataCenters_bg.jpeg'}
+        backgroundMobile={"/dataCenters_bg.jpeg"}
       />
       <SectionComponent
         title="Nuestros Datacenters"
