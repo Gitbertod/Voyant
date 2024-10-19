@@ -1,0 +1,31 @@
+.dataInfoContainer{
+    display: flex;
+    margin-top: 80px;
+}
+.dataInfo{
+    display: flex;
+}
+.icon{
+    width: 100px;
+    height: 100px;
+    margin-right:20px ;
+}
+.containerData{
+    text-align: left;
+}
+.porcentaje{
+    font-size: 30px;
+}
+.miniInfo{
+    font-size: 30px;
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+.whiteLine{
+    width: 10px;
+    height: 100%;
+    background-color: white ;
+    margin-right:40px ;
+    margin-left: 40px;
+}
