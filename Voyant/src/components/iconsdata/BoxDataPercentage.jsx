@@ -1,11 +1,12 @@
-import { GrShieldSecurity } from "react-icons/gr";
+import { FaCheckCircle } from "react-icons/fa";
 import styles from "./BoxDataPercentage.module.css";
 import MiniDataInfo from "../mini-datainfo/MiniDataInfo";
 const BoxDataPercentage = () => {
   return (
     <div className={styles.slidebottom}>
       <div className={styles.dataInfoContainer}>
-        <MiniDataInfo
+      
+      <MiniDataInfo
           title={"EFICIENCIA"}
           text={
             <>
@@ -14,8 +15,10 @@ const BoxDataPercentage = () => {
             </>
           }
           whiteLine={<div className={styles.whiteLine}></div>}
+          icon={<FaCheckCircle className={styles.icon} />}
         />
         <MiniDataInfo
+          icon={<FaCheckCircle className={styles.icon} />}
           title={"ALTA DISPONIBILIDAD"}
           text={
             <>
@@ -26,6 +29,7 @@ const BoxDataPercentage = () => {
           whiteLine={<div className={styles.whiteLine}></div>}
         />
         <MiniDataInfo
+          icon={<FaCheckCircle className={styles.icon} />}
           title={"SERVICIO"}
           text={
             <>

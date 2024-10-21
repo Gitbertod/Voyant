@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: auto;
     background-repeat: none;
     background-size: cover;
 }
@@ -27,11 +27,12 @@
     flex-direction: column;
     color: white;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 80%;
 }
 .overlay{
-    position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
