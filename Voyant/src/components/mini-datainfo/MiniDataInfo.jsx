@@ -1,10 +1,10 @@
 import { GrShieldSecurity } from "react-icons/gr";
 import styles from "./MiniDataInfo.module.css"
-function MiniDataInfo({title,text,whiteLine}) {
+function MiniDataInfo({title,text,whiteLine,icon}) {
   return (
     <>
       <div className={styles.dataInfo}>
-        <GrShieldSecurity className={styles.icon} />
+        {icon}
         <div className={styles.containerData}>
           <p className={styles.porcentaje}>{title}</p>
           <p className={styles.miniInfo}>
