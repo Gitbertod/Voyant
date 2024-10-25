@@ -62,9 +62,38 @@ const DataCenters = () => {
         backgroundMobile={"/dataCenters_bg.jpeg"}
       />
       <SectionComponent
-        title="Nuestros Datacenters"
+        title="Nuestras soluciones para Datacenter"
         buttonText="Contáctanos"
-        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sit enim officia harum asperiores, error, reiciendis exercitationem."
+        text={
+          <>
+            Te acompañamos desde el diseño conceptual hasta la implementación y
+            el mantenimiento de la infraestructura de tu datacenter. Nuestro
+            equipo, respaldado por fabricantes de primer nivel, diseña e
+            implementa soluciones que garantizan la operación confiable y
+            eficiente de tu infraestructura en cada una de las áreas clave en
+            las que intervenimos.<br></br>
+            <br></br>
+            <strong>Sistemas de respaldo de energía:</strong> Diseñamos
+            soluciones en AC y DC para asegurar la continuidad de la energía en
+            las aplicaciones críticas de tu datacenter, optimizando tanto la
+            eficiencia como el uso del espacio. Con configuraciones redundantes,
+            garantizamos alta disponibilidad y una operación continua. Nuestras
+            soluciones se integran a la plataforma de monitoreo del cliente y
+            están respaldadas por nuestro servicio con personal certificado
+            disponible 24/7. Nuestras soluciones cumplen con los más altos
+            estándares internacionales, como IEEE y TIA-942, asegurando la
+            fiabilidad y certificación para datacenters Tier III o IV.<br></br>
+            <br></br>
+            <strong>Distribución de energía:</strong> Desde la celda de media tensión y el
+            switchgear hasta el último punto eléctrico del datacenter, diseñamos
+            e implementamos tableros con tecnología de vanguardia. Más allá de
+            distribuir energía, nuestras soluciones permiten monitorear el
+            consumo y el estado de las protecciones en todas las áreas del
+            datacenter, integrándose de manera flexible con cualquier BMS o DCIM
+            que utilices. Esto te brinda una visibilidad completa sobre el
+            estado de tu red eléctrica.
+          </>
+        }
         imgSrc="server.jpeg"
         childComponent={
           <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
