@@ -1,16 +1,11 @@
 import { CardContact } from "../../components/CardContact/CardContact";
 import ContactoForm from "../../components/form-contacto/ContactoForm";
-import LogoBackButton from "../../components/logo-back-button/LogoBackButton";
 import styles from "./Contacto.module.css";
 
-
-const Contacto = ({childComponent}) => {
-  
-  
+const Contacto = ({ childComponent }) => {
   return (
     <>
       <div className={styles.container}>
-        {/* <NavBar></NavBar> */}
         {childComponent}
         <div className={styles.contactoContainer}>
           <h2 className={styles.contactoTitulo}>CONTACTO</h2>
