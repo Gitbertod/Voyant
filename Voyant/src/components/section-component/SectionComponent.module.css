@@ -7,7 +7,7 @@
     background-size: cover;
     justify-content: center;
     min-height: 700px;  
-    height: 100vh;
+    height: auto;
     z-index: -1;
 }
 
@@ -35,6 +35,9 @@
     font-size:large;
     text-align: left;
 }
+.imgContainer{
+    width: 70%;
+}
 
 /*RESPONSIVE*/
 
@@ -47,10 +50,10 @@
     }
     .container img{
         mask-image: linear-gradient(white 50%,transparent);
-        width: 100%;  
+        width: 50%;  
     }
     .imgContainer{
-        width: 60%;
+        width: 40%;
     }
 }
 @media (max-width:1460px){

@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import video_bg from "../../../assets/datacenters.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
+import SectionComponent2 from "../../../components/section-component2/SectionComponent2";
 import CallToAction from "../../../components/call-to-action/CallToAction";
+
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -63,7 +65,6 @@ const DataCenters = () => {
       />
       <SectionComponent
         title="Nuestras soluciones para Datacenter"
-        buttonText="Contáctanos"
         text={
           <>
             Te acompañamos desde el diseño conceptual hasta la implementación y
@@ -84,20 +85,58 @@ const DataCenters = () => {
             estándares internacionales, como IEEE y TIA-942, asegurando la
             fiabilidad y certificación para datacenters Tier III o IV.<br></br>
             <br></br>
-            <strong>Distribución de energía:</strong> Desde la celda de media tensión y el
-            switchgear hasta el último punto eléctrico del datacenter, diseñamos
-            e implementamos tableros con tecnología de vanguardia. Más allá de
-            distribuir energía, nuestras soluciones permiten monitorear el
-            consumo y el estado de las protecciones en todas las áreas del
-            datacenter, integrándose de manera flexible con cualquier BMS o DCIM
-            que utilices. Esto te brinda una visibilidad completa sobre el
-            estado de tu red eléctrica.
+            <strong>Distribución de energía:</strong> Desde la celda de media
+            tensión y el switchgear hasta el último punto eléctrico del
+            datacenter, diseñamos e implementamos tableros con tecnología de
+            vanguardia. Más allá de distribuir energía, nuestras soluciones
+            permiten monitorear el consumo y el estado de las protecciones en
+            todas las áreas del datacenter, integrándose de manera flexible con
+            cualquier BMS o DCIM que utilices. Esto te brinda una visibilidad
+            completa sobre el estado de tu red eléctrica. <br></br>
+            <br></br>
           </>
         }
-        imgSrc="server.jpeg"
-        childComponent={
-          <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+        imgSrc="DataCenter.jpg"
+      />
+      <SectionComponent2
+        text={
+          <>
+            <strong>Sistemas de climatización:</strong> Nuestras soluciones de
+            climatización están diseñadas para maximizar la eficiencia
+            energética de tu datacenter, empleando tecnologías avanzadas como
+            enfriadoras de velocidad variable y sistemas de free cooling,
+            integrados con control inteligente para optimizar el flujo de aire.
+            Nos adaptamos a entornos con confinamiento de pasillos calientes y
+            fríos, y garantizamos alta disponibilidad con configuraciones
+            redundantes.<br></br> Entendemos que el enfriamiento es un reto
+            clave en la evolución de los datacenters de hiperescala, por eso
+            trabajamos de la mano con fabricantes líderes para mantenernos a la
+            vanguardia tecnológica. Contamos con soporte técnico 24/7 y
+            ofrecemos mantenimiento predictivo para asegurar un funcionamiento
+            sin interrupciones. Nuestras soluciones cumplen con los estándares
+            internacionales más exigentes, como ASHRAE y TIA-942, garantizando
+            la confiabilidad y certificación para datacenters Tier III y IV.
+            <br></br>
+            <br></br>
+            <strong>Seguridad y control de acceso:</strong> Diseñamos soluciones
+            para garantizar un entorno seguro en tu datacenter, utilizando
+            tecnologías avanzadas como cámaras de alta resolución,
+            reconocimiento facial y sistemas biométricos de acceso, además de
+            cerraduras de alta seguridad mecánicas y electromecánicas. Nuestros
+            sistemas, integrados con control inteligente, permiten monitorear y
+            gestionar el acceso a todas las áreas críticas de forma
+            centralizada, adaptándose a las necesidades específicas de cada
+            instalación. Ofrecemos configuraciones de autenticación multifactor
+            y respaldo en caso de fallas, asegurando la continuidad operativa.
+            Con soporte técnico 24/7 y mantenimiento predictivo, garantizamos
+            que los sistemas de seguridad funcionen sin interrupciones. Nuestras
+            soluciones cumplen con los más altos estándares internacionales de
+            seguridad, como ISO 27001 y TIA-942, asegurando la protección y el
+            cumplimiento para datacenters Tier III y IV.
+          </>
         }
+        imgSrc="server2.jpeg"
+        childComponent={<CallToAction linkTo={""} buttonText={"Contáctanos"}/>}
       />
     </>
   );
