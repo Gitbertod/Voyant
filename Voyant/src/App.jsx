@@ -16,7 +16,6 @@ import IndustriaElectrica from "./views/sectores/industria-electrica/IndustriaEl
 import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
-import LogoBackButton from "./components/logo-back-button/LogoBackButton";
 import BlogPost from "./views/blog-post/BlogPost";
 import BlogPostForm from "./components/blog-post-form/BlogPostForm";
 import Login from "./views/login/Login";
