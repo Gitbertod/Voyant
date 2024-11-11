@@ -136,7 +136,7 @@ const DataCenters = () => {
           </>
         }
         imgSrc="server2.jpeg"
-        childComponent={<CallToAction linkTo={""} buttonText={"Contáctanos"}/>}
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText={"Contáctanos"}/>}
       />
     </>
   );

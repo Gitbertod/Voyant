@@ -16,7 +16,6 @@ import IndustriaElectrica from "./views/sectores/industria-electrica/IndustriaEl
 import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
-import LogoBackButton from "./components/logo-back-button/LogoBackButton";
 import BlogPost from "./views/blog-post/BlogPost";
 import BlogPostForm from "./components/blog-post-form/BlogPostForm";
 import Login from "./views/login/Login";
@@ -59,7 +58,7 @@ function App() {
         <Route path="/industria-electrica" element={<IndustriaElectrica/>}></Route>
         <Route path="/industria" element={<Industria/>}></Route>
         <Route path="/voyant365" element={<Voyant365/>}></Route>
-        <Route path="/contacto" element={<Contacto childComponent={<LogoBackButton/>}/>}></Route>
+        <Route path="/contacto" element={<Contacto />}></Route>
         <Route path="/telecomunicaciones" element={<Telecomunicaciones/>}></Route>
         <Route path="/otros-sectores" element={<OtrosSectores/>}></Route>
         <Route path="/blog" element={<BlogPost/>}></Route>
