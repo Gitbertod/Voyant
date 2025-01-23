@@ -32,7 +32,16 @@ const IndustriaElectrica = () => {
     <>
       <CategoryWithBackgroundVideo
         title="Industria eléctrica"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        text={<>
+          <strong>En VOYANT, comprendemos los desafíos únicos de la industria eléctrica en todas sus fases: generación, transmisión y distribución. </strong>
+
+          Sabemos que la estabilidad de la red y la continuidad del servicio son pilares indispensables para el éxito del negocio.
+          Por ello, diseñamos soluciones que operan con el más alto nivel de confiabilidad, incluso en los entornos más demandantes,
+          asegurando que cada componente crítico funcione de manera óptima en todo momento.,<br /><br />
+          <p>Entendemos que, en la industria eléctrica, la continuidad operativa y la seguridad de los activos son esenciales para una red eficiente, fiable y controlable. Nuestras soluciones están respaldadas por tecnología avanzada y resiliente en sistemas de distribución y respaldo de energía, climatización y seguridad. Esto garantiza que tus procesos críticos sigan operando sin interrupciones, maximizando la confiabilidad de la infraestructura y protegiendo tus activos en cada punto de la operación.
+          </p>
+        </>}
+
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
@@ -45,7 +54,7 @@ const IndustriaElectrica = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum?"
         imgSrc="./industriaElectrica.png"
-        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
+        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />}
       />
     </>
   );
