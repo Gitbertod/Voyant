@@ -5,15 +5,9 @@ const BoxDataPercentage = () => {
   return (
     <div className={styles.slidebottom}>
       <div className={styles.dataInfoContainer}>
-      
-      <MiniDataInfo
-          title={"EFICIENCIA"}
-          text={
-            <>
-              Soluciones que optimizan<br></br>
-              el uso de energia
-            </>
-          }
+        <MiniDataInfo
+          title={""}
+          text={<></>}
           whiteLine={<div className={styles.whiteLine}></div>}
           icon={<FaCheckCircle className={styles.icon} />}
         />

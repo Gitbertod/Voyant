@@ -1,0 +1,11 @@
+.fondo {
+  background: radial-gradient(circle, #19395f 10%, transparent 11%);
+  background-size: 3em 3em;
+  background-color: #001d54;
+  opacity: 1;
+  height: max-content;
+  /* background-image: url("/valores.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto; */
+}

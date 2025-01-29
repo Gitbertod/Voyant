@@ -11,7 +11,8 @@ const CategoryWithBackgroundVideo = ({
   logoSrc,
   logosBgSrc,
   childComponent,
-  backgroundMobile // Cambiamos el nombre de la prop para mayor claridad
+  backgroundMobile,
+  children
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -62,7 +63,7 @@ const CategoryWithBackgroundVideo = ({
           <h1>{title}</h1>
           <div className={styles.yellowLine}></div>
           <p className={styles.textInfo}>{text}</p>
-          <BoxDataPercentage></BoxDataPercentage>
+          {children}
         </div>
       </div>
     </>
