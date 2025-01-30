@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("/soluciones_bg.jpg");
+    /* background-image: url("/soluciones_bg.jpg");  esta era la falla del background*/ 
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;

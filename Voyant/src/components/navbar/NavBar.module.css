@@ -86,7 +86,7 @@ a:hover .subnavContent {
 }
 .icon {
   margin: 0px auto;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 100px;
   height: 100px;
   color: #032d42;
@@ -113,6 +113,7 @@ a:hover .subnavContent {
 .category {
   height: 200px;
   width: 200px;
+  line-height: 25px;
 }
 .slidebottom {
 	-webkit-animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

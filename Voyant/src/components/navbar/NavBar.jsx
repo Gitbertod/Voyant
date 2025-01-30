@@ -64,7 +64,7 @@ const NavBar = () => {
                 <div className={styles.slidebottom}>
                   <div className={styles.category}>
                     <TbBatteryCharging2 className={styles.icon} />
-                    Distribución y<br></br>
+                    Distribución y
                     respaldo de energía
                   </div>
                 </div>

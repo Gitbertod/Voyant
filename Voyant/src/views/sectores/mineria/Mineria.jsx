@@ -6,7 +6,7 @@ import CategoryWithBackgroundVideo from "../../../components/category/CategoryWi
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
 import { FaCheckCircle } from "react-icons/fa";
-import styles from "./Mineria.module.css";
+import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
 import CardBlur from "../../../components/card-blur/CardBlur";
 import { TbBatteryCharging2 } from "react-icons/tb";
 import Section3 from "../../../components/section3/Section3";

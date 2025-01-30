@@ -61,8 +61,17 @@
     font-style: normal;
 }
 
-@media (max-width:960px){
-.porcentaje{
+@media (max-width:1080px){
+    .dataInfoContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        margin-top: 30px;
+    }
+
+
+    .porcentaje{
     font-size: 40px;
 }
 .icon{
@@ -114,8 +123,14 @@
 }
 
 @media (max-width:712px){
+    .dataInfoContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 30px;
+    }
   
-  .porcentaje{
+    .porcentaje{
       font-size: 30px;
   }
   .icon{

@@ -7,7 +7,7 @@ import { TbBatteryCharging2 } from "react-icons/tb";
 
 const SectoresSoluciones = ({ title, text, child1}) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <div className={styles.content} data-aos="fade-right">
         <h2>{title}</h2>
         <div className={styles.yellowLine}></div>
