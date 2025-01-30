@@ -5,6 +5,9 @@ import CategoryWithBackgroundVideo from "../../../components/category/CategoryWi
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
+import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
+import styles from "./IndustriaElectrica.module.css";
+import { FaCheckCircle } from "react-icons/fa";
 
 const IndustriaElectrica = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,20 +35,76 @@ const IndustriaElectrica = () => {
     <>
       <CategoryWithBackgroundVideo
         title="Industria eléctrica"
-        text={<>
-          <strong>En VOYANT, comprendemos los desafíos únicos de la industria eléctrica en todas sus fases: generación, transmisión y distribución. </strong>
-
-          Sabemos que la estabilidad de la red y la continuidad del servicio son pilares indispensables para el éxito del negocio.
-          Por ello, diseñamos soluciones que operan con el más alto nivel de confiabilidad, incluso en los entornos más demandantes,
-          asegurando que cada componente crítico funcione de manera óptima en todo momento.,<br /><br />
-          <p>Entendemos que, en la industria eléctrica, la continuidad operativa y la seguridad de los activos son esenciales para una red eficiente, fiable y controlable. Nuestras soluciones están respaldadas por tecnología avanzada y resiliente en sistemas de distribución y respaldo de energía, climatización y seguridad. Esto garantiza que tus procesos críticos sigan operando sin interrupciones, maximizando la confiabilidad de la infraestructura y protegiendo tus activos en cada punto de la operación.
-          </p>
-        </>}
-
+        text={
+          <>
+            <strong>
+              En VOYANT, comprendemos los desafíos únicos de la industria
+              eléctrica en todas sus fases: generación, transmisión y
+              distribución.{" "}
+            </strong>
+            Sabemos que la estabilidad de la red y la continuidad del servicio
+            son pilares indispensables para el éxito del negocio. Por ello,
+            diseñamos soluciones que operan con el más alto nivel de
+            confiabilidad, incluso en los entornos más demandantes, asegurando
+            que cada componente crítico funcione de manera óptima en todo
+            momento.,
+            <br />
+            <br />
+            <p>
+              Entendemos que, en la industria eléctrica, la continuidad
+              operativa y la seguridad de los activos son esenciales para una
+              red eficiente, fiable y controlable. Nuestras soluciones están
+              respaldadas por tecnología avanzada y resiliente en sistemas de
+              distribución y respaldo de energía, climatización y seguridad.
+              Esto garantiza que tus procesos críticos sigan operando sin
+              interrupciones, maximizando la confiabilidad de la infraestructura
+              y protegiendo tus activos en cada punto de la operación.
+            </p>
+          </>
+        }
         videoSrc={video_bg}
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
-      />
+      >
+        {
+          <div className={styles.slidebottom}>
+            <div className={styles.dataInfoContainer}>
+              <MiniDataInfo
+                title={"CONFIABILIDAD"}
+                text={
+                  <>
+                    <p>Soluciones diseñadas para</p>
+                    <p>garantizar la continuidad operativa.</p>
+                  </>
+                }
+                whiteLine={<div className={styles.whiteLine}></div>}
+                icon={<FaCheckCircle className={styles.icon} />}
+              />
+              <MiniDataInfo
+                icon={<FaCheckCircle className={styles.icon} />}
+                title={"SEGURIDAD"}
+                text={
+                  <>
+                    <p>Soluciones diseñadas para garantizar</p>
+                    <p>la seguridad del personal<p>y los activos.</p> </p>
+                  </>
+                }
+                whiteLine={<div className={styles.whiteLine}></div>}
+              />
+              <MiniDataInfo
+                icon={<FaCheckCircle className={styles.icon} />}
+                title={"ADAPTABILIDAD"}
+                text={
+                  <>
+                    <p>Soluciones diseñadas específicamente</p>
+                    <p>para cada fase de la industria eléctrica </p>
+                  </>
+                }
+              />
+            </div>
+          </div>
+        }
+      </CategoryWithBackgroundVideo>
       <SectionComponent
         title="Industria eléctrica"
         buttonText="Contáctanos"
@@ -54,7 +113,9 @@ const IndustriaElectrica = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum?"
         imgSrc="./industriaElectrica.png"
-        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />}
+        childComponent={
+          <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+        }
       />
     </>
   );

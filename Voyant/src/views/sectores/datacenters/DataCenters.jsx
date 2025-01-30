@@ -5,6 +5,9 @@ import video_bg from "../../../assets/datacenters.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import SectionComponent2 from "../../../components/section-component2/SectionComponent2";
 import CallToAction from "../../../components/call-to-action/CallToAction";
+import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
+import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
+import { FaCheckCircle } from "react-icons/fa";
 
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -62,7 +65,48 @@ const DataCenters = () => {
         logoSrc="logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
         backgroundMobile={"/dataCenters_bg.jpeg"}
-      />
+      >
+        {" "}
+        {
+          <div className={styles.slidebottom}>
+            <div className={styles.dataInfoContainer}>
+              <MiniDataInfo
+                title={"EFICIENCIA"}
+                text={
+                  <>
+                    <p>Soluciones que optimizan</p>
+                    <p>el uso de energía.</p>
+                  </>
+                }
+                whiteLine={<div className={styles.whiteLine}></div>}
+                icon={<FaCheckCircle className={styles.icon} />}
+              />
+              <MiniDataInfo
+                icon={<FaCheckCircle className={styles.icon} />}
+                title={"ALTA DISPONIBILIDAD"}
+                text={
+                  <>
+                    <p>Soluciones diseñadas para</p>
+                    <p>asegurar la continuidad operativa.</p>
+                  </>
+                }
+                whiteLine={<div className={styles.whiteLine}></div>}
+              />
+              <MiniDataInfo
+                icon={<FaCheckCircle className={styles.icon} />}
+                title={"SERVICIO"}
+                text={
+                  <>
+                    <p>Personal experto disponible 7x24</p>
+                    <p>para mantener funcionando </p>
+                    <p>lo que no se puede detener</p>
+                  </>
+                }
+              />
+            </div>
+          </div>
+        }
+      </CategoryWithBackgroundVideo>
       <SectionComponent
         title="Nuestras soluciones para Datacenter"
         text={
@@ -136,7 +180,9 @@ const DataCenters = () => {
           </>
         }
         imgSrc="server2.jpeg"
-        childComponent={<CallToAction linkTo={"/contacto"} buttonText={"Contáctanos"}/>}
+        childComponent={
+          <CallToAction linkTo={"/contacto"} buttonText={"Contáctanos"} />
+        }
       />
     </>
   );

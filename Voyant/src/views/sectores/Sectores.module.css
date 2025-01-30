@@ -1,7 +1,7 @@
 .sectoresContainer{
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
    /* Para asegurar que el contenido no desborde el contenedor */
-    background-image: url("/sectores_bg.jpg");
+    background-image: url("./sectores_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -21,6 +21,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
+    z-index: 2;
 }
 
 h2{
