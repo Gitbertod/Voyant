@@ -25,7 +25,7 @@
 }
 
 .container img{
-    mask-image: linear-gradient(white 50%,transparent);
+    /* mask-image: linear-gradient(white 50%,transparent); */
     width: 100%;  
 }
 .containerText{

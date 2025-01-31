@@ -6,7 +6,7 @@ import SectionComponent from "../../../components/section-component/SectionCompo
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
-import styles from "./IndustriaElectrica.module.css";
+import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
 import { FaCheckCircle } from "react-icons/fa";
 
 const IndustriaElectrica = () => {
@@ -86,7 +86,9 @@ const IndustriaElectrica = () => {
                 text={
                   <>
                     <p>Soluciones diseñadas para garantizar</p>
-                    <p>la seguridad del personal<p>y los activos.</p> </p>
+                    <p>
+                      la seguridad del personal<p>y los activos.</p>{" "}
+                    </p>
                   </>
                 }
                 whiteLine={<div className={styles.whiteLine}></div>}
@@ -108,10 +110,16 @@ const IndustriaElectrica = () => {
       <SectionComponent
         title="Industria eléctrica"
         buttonText="Contáctanos"
-        text="Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades tecnológicas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum?"
+        text={
+          <>
+            Te acompañamos en todo el proceso, desde el diseño conceptual hasta
+            la implementación y el mantenimiento de tus sistemas. Nuestro
+            equipo, respaldado por fabricantes de primer nivel, diseña,
+            implementa y mantiene soluciones que garantizan la operación
+            confiable y eficiente de la infraestructura en todas las fases:
+            generación, transmisión y distribución de energía eléctrica.
+          </>
+        }
         imgSrc="./industriaElectrica.png"
         childComponent={
           <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />

@@ -1,4 +1,3 @@
-import { GrShieldSecurity } from "react-icons/gr";
 import styles from "./MiniDataInfo.module.css"
 function MiniDataInfo({title,text,whiteLine,icon}) {
   return (
