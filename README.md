@@ -1,4 +1,4 @@
-# Web oficial de Sigmasafi
+# Web oficial de Voyant
 
 ### Características
 - Desarrollado con React y Vite.
