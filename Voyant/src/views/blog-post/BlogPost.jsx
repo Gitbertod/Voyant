@@ -54,7 +54,7 @@ const BlogPost = () => {
             presión, incluso cuando las condiciones cambian, incluso cuando
             nadie los ve.
           </p>
-          
+
           {/* <h2 className={styles.subtitle}>Subtítulo de ejemplo</h2> */}
           <p className="mt-5 mb-5 leading-loose">
             Nuestra misión es clara: contribuir al desarrollo del país con
@@ -65,7 +65,22 @@ const BlogPost = () => {
             Gracias a todo el equipo por demostrar una vez más que en VOYANT, no
             solo construimos soluciones… construimos confianza.
           </p>
-          
+          <div className="flex flex-wrap gap-2 mt-8 px-4">
+            {[
+              "#VOYANT",
+              "#InfraestructuraCrítica",
+              "#DataCenters",
+              "#AltaDisponibilidad",
+              "#TransformaciónDigital",
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="bg-yellow-300 text-gray-900 text-sm font-semibold px-3 py-1 rounded-full shadow-sm hover:bg-yellow-400 transition"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex justify-center space-x-2 mt-20 mb-4 text-yellow-300 font-bold">
