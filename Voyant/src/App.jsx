@@ -26,6 +26,7 @@ import GestionDeLaEnergia from "./views/soluciones/gestion-de-la-energia/Gestion
 import OtrosSectores from "./views/sectores/otros-sectores/OtrosSectores";
 import BurguerMenu from "./components/burguer-menu/BurguerMenu";
 import NavBar from "./components/navbar/NavBar";
+import Dashboard from "./views/admin/Dashboard";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Landing />}></Route>
+        <Route path="/admin/dashboard" element={<Dashboard/>}  ></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/soluciones" element={<SolucionesView childComponent={<BurguerMenu/>}/>}></Route>
         <Route path="/soluciones/distribucion-respaldo-de-energia" element={<DistribucionRespaldoEnergia></DistribucionRespaldoEnergia>}></Route>
