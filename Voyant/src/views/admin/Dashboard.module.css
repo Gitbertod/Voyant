@@ -1,0 +1,11 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: rgb(242, 242, 242);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+}
