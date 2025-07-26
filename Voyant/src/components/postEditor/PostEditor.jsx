@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api";
+import styles from "./PostEditor.module.css";
+import Swal from "sweetalert2";
 
 const PostEditor = () => {
   const [userId, setUserId] = useState("");
@@ -21,6 +23,13 @@ const PostEditor = () => {
       setUserId("");
       setTitle("");
       setBody("");
+      
+      Swal.fire({
+        title: "Post publicado!",
+        text: "You clicked the button!",
+        icon: "success",
+      });
+
     } catch (error) {
       console.error("Error al crear post:", error.message);
     }
@@ -53,7 +62,9 @@ const PostEditor = () => {
         onChange={(e) => setBody(e.target.value)}
       ></textarea>
 
-      <button onClick={handleSubmit}>Publicar</button>
+      <button onClick={handleSubmit} className={styles.button}>
+        Publicar
+      </button>
     </div>
   );
 };
