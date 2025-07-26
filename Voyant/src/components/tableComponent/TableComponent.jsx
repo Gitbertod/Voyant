@@ -9,7 +9,7 @@ export function TableComponent() {
     const fetchPost = async () => {
       try {
         const response = await api.get("/posts");
-        setPosts(response.data.data); 
+        setPosts(response.data.data);
         console.log(response.data.data);
       } catch (error) {
         console.error("Error fetching post:", error.message);
@@ -17,6 +17,15 @@ export function TableComponent() {
     };
     fetchPost();
   }, []);
+
+  const handleDeletePost = async (postId) => {
+    try {
+      await api.delete(`/posts/${postId}`);
+      setPosts((prevPosts) => prevPosts.filter((post) => post._id !== postId));
+    } catch (error) {
+      console.error("Error al eliminar el post", error.message);
+    }
+  };
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -44,6 +53,8 @@ export function TableComponent() {
             </th>
             <th scope="col" className="px-6 py-3">
               Body
+            </th><th scope="col" className="px-6 py-3">
+              Acciones
             </th>
           </tr>
         </thead>
@@ -70,6 +81,14 @@ export function TableComponent() {
               </td>
               <td className="px-6 py-4">{post.title}</td>
               <td className="px-6 py-4">{post.body}</td>
+              <td className="px-6 py-4">
+                <button
+                  onClick={() => handleDeletePost(post._id)}
+                  className="text-red-600 hover:underline"
+                >
+                  Eliminar
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
