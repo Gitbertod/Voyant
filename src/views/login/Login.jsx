@@ -28,50 +28,53 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    await loginWithGoogle();
-    navigate("/blog/create");
+  // const handleGoogleSignIn = async () => {
+  //   await loginWithGoogle();
+  //   navigate("/blog/create");
 
-  };
+  // };
 
-  
   return (
-    <div className="flex flex-col items-center justify-center ">
-      <form onSubmit={handleSubmit} className="w-64">
-        <label htmlFor="email">Email</label>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <form
+        onSubmit={handleSubmit}
+        className="w-80 bg-white shadow-lg rounded-lg p-6 flex flex-col"
+      >
+        <h2 className="text-2xl font-bold text-center mb-4 text-gray-700">Login</h2>
+
+        <label htmlFor="email" className="mb-1">
+          Email
+        </label>
         <input
           type="email"
           name="email"
           autoComplete="email"
           placeholder="tucorreo@correo.com"
           onChange={handleChange}
-          className="border p-2 mb-2 w-full"
+          className="border p-2 mb-3 w-full rounded"
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" className="mb-1">
+          Password
+        </label>
         <input
           type="password"
           name="password"
           placeholder="******"
           id="password"
           onChange={handleChange}
-          className="border p-2 mb-2 w-full"
+          className="border p-2 mb-4 w-full rounded"
         />
+
+        {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
 
         <button
           type="submit"
-          className="bg-yellow-400 w-full text-white py-2 rounded"
+          className="bg-yellow-400 hover:bg-yellow-500 transition-colors w-full text-white py-2 rounded"
         >
           Login
         </button>
       </form>
-
-      <button
-        className="bg-yellow-400 p-3 text-white py-2 rounded"
-        onClick={handleGoogleSignIn}
-      >
-        Login with Google
-      </button>
     </div>
   );
 };
