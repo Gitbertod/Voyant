@@ -9,7 +9,7 @@ export function TableComponent() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await api.get("/posts");
+        const response = await api.get("api/v1/posts");
         setPosts(response.data.data);
         console.log(response.data.data);
       } catch (error) {
@@ -21,7 +21,7 @@ export function TableComponent() {
 
   const handleDeletePost = async (postId) => {
     try {
-      await api.delete(`/posts/${postId}`);
+      await api.delete(`api/v1/posts/${postId}`);
       setPosts((prevPosts) => prevPosts.filter((post) => post._id !== postId));
     } catch (error) {
       console.error("Error al eliminar el post", error.message);

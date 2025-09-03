@@ -41,6 +41,7 @@ export function AuthProvider({ children }) {
     setUser(null);
     localStorage.removeItem("token");
     delete api.defaults.headers.common["Authorization"];
+   
   };
 
   // ✅ Revisar si ya había un token guardado al iniciar app

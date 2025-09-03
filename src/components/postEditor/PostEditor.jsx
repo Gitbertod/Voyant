@@ -11,16 +11,14 @@ const PostEditor = () => {
   const handleSubmit = async () => {
     try {
       const newPost = {
-        userId,
         title,
         body,
       };
 
-      const response = await api.post("/posts", newPost);
+      const response = await api.post("api/v1/posts", newPost);
       console.log("Post creado:", response.data.data);
 
       //Limpiar formulario
-      setUserId("");
       setTitle("");
       setBody("");
       
@@ -37,16 +35,6 @@ const PostEditor = () => {
 
   return (
     <div>
-      <div className="flex">
-        <label className="font-medium">User ID</label>
-        <input
-          type="text"
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
-          className="mt-1 border px-2 py-1 rounded max-w-sm"
-        ></input>
-      </div>
-
       <div className="flex">
         <label>Title</label>
         <input
