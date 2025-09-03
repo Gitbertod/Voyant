@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
 import PostEditor from "../postEditor/PostEditor";
+import { Avatar } from "flowbite-react";
 
 export function TableComponent() {
   const [posts, setPosts] = useState([]);
@@ -33,27 +34,16 @@ export function TableComponent() {
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th scope="col" className="p-4">
-              <div className="flex items-center">
-                <input
-                  id="checkbox-all-search"
-                  type="checkbox"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label htmlFor="checkbox-all-search" className="sr-only">
-                  checkbox
-                </label>
-              </div>
+            <th scope="col" className="px-6 py-3">
+              email
             </th>
             <th scope="col" className="px-6 py-3">
-              User
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Title
+              Titulo
             </th>
             <th scope="col" className="px-6 py-3">
               Body
-            </th><th scope="col" className="px-6 py-3">
+            </th>
+            <th scope="col" className="px-6 py-3">
               Acciones
             </th>
           </tr>
@@ -64,20 +54,15 @@ export function TableComponent() {
               key={post._id}
               className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
-              <td className="w-4 p-4">
-                <div className="flex items-center">
-                  <input
-                    id={`checkbox-${post._id}`}
-                    type="checkbox"
-                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                  />
-                  <label htmlFor={`checkbox-${post._id}`} className="sr-only">
-                    checkbox
-                  </label>
-                </div>
-              </td>
               <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                {post.userId}
+                <Avatar img="/images/people/profile-picture-5.jpg" rounded>
+                  <div className="space-y-1 font-medium dark:text-white">
+                    <div>{post.user.name.first}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      {post.user.email}
+                    </div>
+                  </div>
+                </Avatar>
               </td>
               <td className="px-6 py-4">{post.title}</td>
               <td className="px-6 py-4">{post.body}</td>
