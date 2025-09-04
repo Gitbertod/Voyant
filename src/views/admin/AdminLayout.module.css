@@ -1,0 +1,11 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: rgb(242, 242, 242);
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+}

@@ -1,6 +1,6 @@
 // context/AuthProvider.jsx
 import { useContext, createContext, useEffect, useState } from "react";
-import api from "../api"; // tu axios con baseURL
+import api from "../api";
 
 const AuthContext = createContext();
 
@@ -15,7 +15,6 @@ export function AuthProvider({ children }) {
     const res = await api.post("/api/v1/users/login", { email, password });
     const { token, data } = res.data;
 
-    // guardamos usuario y token
     setUser(data.user);
     localStorage.setItem("token", token);
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -41,23 +40,32 @@ export function AuthProvider({ children }) {
     setUser(null);
     localStorage.removeItem("token");
     delete api.defaults.headers.common["Authorization"];
-   
   };
 
-  // ✅ Revisar si ya había un token guardado al iniciar app
+  // ✅ Mantener login si hay token
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      // ⚠️ Opcional: podrías pegarle a un endpoint tipo `/me`
-      // para traer de nuevo el usuario
+
+      api
+        .get("/api/v1/users/me")
+        .then((res) => {
+          setUser(res.data.data);
+        })
+        .catch(() => {
+          logout(); // Si el token no es válido
+        });
     }
     setLoading(false);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signup, login, user, logout, loading }}>
+    <AuthContext.Provider
+      value={{ signup, login, user, setUser, logout, loading }} // 👈 ahora expone setUser
+    >
       {children}
     </AuthContext.Provider>
   );
 }
+

@@ -1,36 +1,26 @@
-import React, { useState } from "react";
 import { useAuth } from "../../context/AuthProvider";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const BlogPostForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const {user,logout, loading} = useAuth()
-
-  const navigate = useNavigate("/register");
-
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleContentChange = (e) => {
-    setContent(e.target.value);
-  };
+  const { user, logout, loading } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await logout()
-    navigate("/login")
+    await logout();
+    navigate("/login");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes enviar los datos del post al servidor o realizar otras acciones
 
     const post = {
       title,
       body: content,
-      userId: "79c1b7e3-46e4-4dc7-b3cb-77a34e18e854",
+      userId: user?.uid || "79c1b7e3-46e4-4dc7-b3cb-77a34e18e854",
     };
 
     try {
@@ -44,7 +34,6 @@ const BlogPostForm = () => {
 
       if (response.ok) {
         console.log("Post creado exitosamente");
-        //Limpio el formulario
         setTitle("");
         setContent("");
       } else {
@@ -55,15 +44,16 @@ const BlogPostForm = () => {
     }
   };
 
-  if(loading) return <h1>Loading</h1>
-  console.log(user)
+  if (loading) return <h1>Loading...</h1>;
+  if (!user) return <h1>No hay usuario logueado</h1>;
+
   return (
     <div className="max-w-md mx-auto p-4">
-      <button className="bg-yellow-400 w-20" onClick={handleLogout}>
-        Logout
-      </button>
-      <h2 className="text-xl font-semibold mb-4">Bienvenido {  user.displayName || user.email}</h2>
-      <img src={user.photoURL}></img>
+      
+      <h2 className="text-xl font-semibold mb-4">
+        Bienvenido {user.displayName || user.email}
+      </h2>
+      {user.photoURL && <img src={user.photoURL} alt="User avatar" />}
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="title" className="block text-gray-700">
@@ -74,7 +64,7 @@ const BlogPostForm = () => {
             id="title"
             className="w-full border rounded p-2"
             value={title}
-            onChange={handleTitleChange}
+            onChange={(e) => setTitle(e.target.value)}
             required
           />
         </div>
@@ -87,7 +77,7 @@ const BlogPostForm = () => {
             className="w-full border rounded p-2"
             rows="6"
             value={content}
-            onChange={handleContentChange}
+            onChange={(e) => setContent(e.target.value)}
             required
           ></textarea>
         </div>
