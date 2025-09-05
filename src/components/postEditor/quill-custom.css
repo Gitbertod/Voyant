@@ -1,0 +1,8 @@
+/* Aumentamos la altura mínima del editor */
+.editor-container .ql-editor {
+  min-height: 300px; /* más alto que antes */
+  max-height: 600px; /* no crece infinito */
+  overflow-y: auto;  /* agrega scroll si pasa el límite */
+  font-size: 1rem;   /* tamaño de texto más cómodo */
+  line-height: 1.6;  /* mejor legibilidad */
+}

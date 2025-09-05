@@ -17,11 +17,9 @@ import Industria from "./views/sectores/Industria/Industria";
 import Telecomunicaciones from "./views/sectores/telecomunicaciones/Telecomunicaciones";
 import DistribucionRespaldoEnergia from "./views/soluciones/distribucion-respaldo-energia/DistribucionRespaldoEnergia";
 import BlogPost from "./views/blog-post/BlogPost";
-import BlogPostForm from "./components/blog-post-form/BlogPostForm";
 import Login from "./views/login/Login";
 import Register from "./views/register/Register";
 import { AuthProvider } from "./context/AuthProvider";
-import ProtectedRoute from "./components/portected-route/ProtectedRoute";
 import GestionDeLaEnergia from "./views/soluciones/gestion-de-la-energia/GestionDeLaEnergia";
 import OtrosSectores from "./views/sectores/otros-sectores/OtrosSectores";
 import BurguerMenu from "./components/burguer-menu/BurguerMenu";
@@ -29,6 +27,7 @@ import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./views/admin/Dashboard";
 import Profile from "./components/profile/Profile";
 import AdminLayout from "./views/admin/AdminLayout";
+import PostEditor from "./components/postEditor/PostEditor";
 
 function App() {
   const text = `
@@ -103,7 +102,7 @@ function App() {
               <Route path="/admin" element={<AdminLayout />}>
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="profile" element={<Profile />} />
-                <Route path="blog/create" element={<BlogPostForm />} />
+                <Route path="blog/create" element={<PostEditor />} />
                 
               </Route>
 
