@@ -1,10 +1,52 @@
-.button{
-    background-color: #111827;
-    color: white;
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.button:hover{
-    background-color: #2e416a;
+
+.inputGroup {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+.editor {
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  background: white;
+}
+
+.button {
+  background-color: #111827;
+  color: white;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1f2937;
 }

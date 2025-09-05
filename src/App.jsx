@@ -29,6 +29,7 @@ import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./views/admin/Dashboard";
 import Profile from "./components/profile/Profile";
 import AdminLayout from "./views/admin/AdminLayout";
+import PostEditor from "./components/postEditor/PostEditor";
 
 function App() {
   const text = `
@@ -103,7 +104,7 @@ function App() {
               <Route path="/admin" element={<AdminLayout />}>
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="profile" element={<Profile />} />
-                <Route path="blog/create" element={<BlogPostForm />} />
+                <Route path="blog/create" element={<PostEditor />} />
                 
               </Route>
 
