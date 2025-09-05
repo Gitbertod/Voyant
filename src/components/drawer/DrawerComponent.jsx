@@ -5,7 +5,6 @@ import { useState } from "react";
 import styles from "./DrawerComponent.module.css";
 import { Link } from "react-router-dom";
 import {
- 
   HiCollection,
   HiInformationCircle,
   HiShoppingBag,
@@ -25,7 +24,16 @@ export function DrawerComponent() {
         </Button>
       </div>
       <Drawer open={isOpen} onClose={handleClose} position="right">
-      <Drawer.Header title="" titleIcon={() => <img src="/logoVoyantColor.svg" className={styles.logoVoyant} alt="Voyant Logo" />} />
+        <Drawer.Header
+          title=""
+          titleIcon={() => (
+            <img
+              src="/logoVoyantColor.svg"
+              className={styles.logoVoyant}
+              alt="Voyant Logo"
+            />
+          )}
+        />
         <Drawer.Items>
           <Sidebar
             aria-label="Sidebar with multi-level dropdown example"
@@ -35,20 +43,32 @@ export function DrawerComponent() {
               <div>
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
-                    <Sidebar.Item  icon={HiUsers}>
-                      <Link to="/nosotros">Nosotros</Link>
+                    <Sidebar.Item as={Link} to="/nosotros" icon={HiUsers}>
+                      Nosotros
                     </Sidebar.Item>
-                    <Sidebar.Item  icon={HiShoppingBag}>
-                      <Link to="/soluciones">Soluciones</Link>
+
+                    <Sidebar.Item
+                      as={Link}
+                      to="/soluciones"
+                      icon={HiShoppingBag}
+                    >
+                      Soluciones
                     </Sidebar.Item>
-                    <Sidebar.Item  icon={HiCollection}>
-                      <Link to="/sectores">Sectores</Link>
+
+                    <Sidebar.Item as={Link} to="/sectores" icon={HiCollection}>
+                      Sectores
                     </Sidebar.Item>
-                    <Sidebar.Item  icon={HiCollection}>
-                      <Link to="/voyant365">Voyant 365</Link>      
+
+                    <Sidebar.Item as={Link} to="/voyant365" icon={HiCollection}>
+                      Voyant 365
                     </Sidebar.Item>
-                    <Sidebar.Item  icon={HiInformationCircle}>
-                      <Link to="/contacto">Contacto</Link>
+
+                    <Sidebar.Item
+                      as={Link}
+                      to="/contacto"
+                      icon={HiInformationCircle}
+                    >
+                      Contacto
                     </Sidebar.Item>
                   </Sidebar.ItemGroup>
                 </Sidebar.Items>

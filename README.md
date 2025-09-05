@@ -1,4 +1,4 @@
-# Web oficial de Sigmasafi
+# Web oficial de Voyant
 
 ### Características
 - Desarrollado con React y Vite.
@@ -6,14 +6,14 @@
 - Optimizado para rendimiento.
 
 ### Captura de pantalla 
-![Captura de pantalla](./Voyant/public/captura1.jpeg)
+![Captura de pantalla](./public/captura1.jpeg)
 
 
 ### 🌎 Demo en Vivo
 
 Puedes ver la aplicación desplegada en: [Voyant en Vercel](https://voyant-chi.vercel.app/)
 
- 
+
 
 # Para empezar
 

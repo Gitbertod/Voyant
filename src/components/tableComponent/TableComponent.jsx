@@ -44,7 +44,6 @@ export function TableComponent() {
             <th scope="col" className="px-6 py-3">
               Acciones
             </th>
-            
           </tr>
         </thead>
         <tbody>
@@ -71,7 +70,7 @@ export function TableComponent() {
 
               {/* Usuario */}
               <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                <Avatar img="/images/people/profile-picture-5.jpg" rounded>
+                <Avatar img="/vicAvatar.jpg" rounded>
                   <div className="space-y-1 font-medium dark:text-white">
                     <div>{post.user?.name?.first}</div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">

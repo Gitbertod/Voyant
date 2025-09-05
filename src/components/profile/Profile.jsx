@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthProvider";
 import api from "../../api";
+import { Avatar } from "flowbite-react";
 
 const Profile = () => {
   const { user, loading, setUser } = useAuth();
@@ -50,6 +51,7 @@ const Profile = () => {
       <h2 className="text-2xl font-bold mb-4 text-gray-700 text-center">
         Mi Perfil
       </h2>
+      <Avatar img="/vicAvatar.jpg" rounded bordered color="light" size="xl" />
 
       <div className="space-y-4">
         {isEditing ? (
@@ -102,8 +104,8 @@ const Profile = () => {
           </>
         ) : (
           <>
-            <p>
-              <span className="font-semibold">Nombre:</span> {user.name.first}{" "}
+            <p className="m-4">
+              <span className="font-semibold m-1">Nombre:</span> {user.name.first}{" "}
               {user.name.last}
             </p>
             <p>
