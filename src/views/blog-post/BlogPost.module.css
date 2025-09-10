@@ -9,7 +9,6 @@ body{
   width: 100%;
   height: 400px; /* ajusta según tu diseño */
   object-fit: cover; /* recorta manteniendo proporción */
-  border-bottom: 4px solid #facc15; /* opcional: línea amarilla estética */
 }
 
 .title{

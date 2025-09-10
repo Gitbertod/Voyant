@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import api from "../../api";
 import UploadImage from "../uploadImage/UploadImage";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import styles from "./PostEditor.module.css";
 
 export default function PostEditor({ mode = "create", post = null, onSuccess }) {
   const { id } = useParams();
   const [title, setTitle] = useState(post ? post.title : "");
   const [body, setBody] = useState(post ? post.body : "");
-  const [image, setImage] = useState(post ? post.image : ""); // 👈 nuevo estado
+  const [image, setImage] = useState(post ? post.image : "");
 
   useEffect(() => {
     if (mode === "edit" && id && !post) {
@@ -31,31 +34,21 @@ export default function PostEditor({ mode = "create", post = null, onSuccess }) 
   const handleSubmit = async () => {
     try {
       let response;
-
       if (mode === "create") {
-        response = await api.post("api/v1/posts", { 
-          title, 
-          body,
-          image // 👈 ahora mandamos la URL a MongoDB
-        });
+        response = await api.post("api/v1/posts", { title, body, image });
         Swal.fire("Post publicado!", "Tu publicación se guardó con éxito.", "success");
       } else if (mode === "edit" && post) {
-        response = await api.patch(`api/v1/posts/${post._id}`, { 
-          title, 
-          body,
-          image 
-        });
+        response = await api.patch(`api/v1/posts/${post._id}`, { title, body, image });
         Swal.fire("Post actualizado!", "Los cambios se guardaron con éxito.", "success");
       }
 
       if (mode === "create") {
         setTitle("");
         setBody("");
-        setImage(""); // reset imagen
+        setImage("");
       }
 
       if (onSuccess) onSuccess(response.data.data);
-
     } catch (error) {
       console.error("Error al guardar post:", error.message);
       Swal.fire("Error", "Hubo un problema al guardar el post.", "error");
@@ -63,40 +56,44 @@ export default function PostEditor({ mode = "create", post = null, onSuccess }) 
   };
 
   return (
-    <div className="p-4 bg-white rounded shadow-md">
-      <h2 className="text-xl font-bold mb-4">
+    <div className={styles.container}>
+      <h2 className={styles.heading}>
         {mode === "create" ? "Crear Nuevo Post" : "Editar Post"}
       </h2>
 
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Título del post"
-        className="w-full p-2 border rounded mb-3"
-      />
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Título</label>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Título del post"
+          className={styles.input}
+        />
+      </div>
 
-      <textarea
-        value={body}
-        onChange={(e) => setBody(e.target.value)}
-        placeholder="Contenido del post"
-        className="w-full p-2 border rounded mb-3"
-      />
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Contenido</label>
+        <ReactQuill
+          theme="snow"
+          value={body}
+          onChange={setBody}
+          className={styles.editor}
+        />
+      </div>
 
-      {/* Subida de imagen */}
-      <UploadImage onUpload={setImage} />
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Imagen destacada</label>
+        <UploadImage onUpload={setImage} />
+        {image && (
+          <div className={styles.previewWrapper}>
+            <p className={styles.previewLabel}>Vista previa:</p>
+            <img src={image} alt="preview" className={styles.previewImage} />
+          </div>
+        )}
+      </div>
 
-      {image && (
-        <div className="mt-4">
-          <p className="text-sm text-gray-600">Imagen seleccionada:</p>
-          <img src={image} alt="preview" className="mt-2 max-w-xs rounded" />
-        </div>
-      )}
-
-      <button
-        onClick={handleSubmit}
-        className="px-4 py-2 mt-4 bg-green-500 text-white rounded hover:bg-green-600"
-      >
+      <button onClick={handleSubmit} className={styles.button}>
         {mode === "create" ? "Publicar" : "Actualizar"}
       </button>
     </div>

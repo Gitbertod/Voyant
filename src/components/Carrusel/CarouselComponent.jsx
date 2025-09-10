@@ -36,22 +36,22 @@ export function CarouselComponent() {
     <div className="slider-container">
       <Slider {...settings}>
         <div className="m-11">
-          <Link to="/blog">
+          <Link to="/blog/68ba45cdd5df60c376d2f93a">
             <CardComponent />
           </Link>
         </div>
         <div className="m-11">
-          <Link to="/blog">
+          <Link to="/blog/68ba45cdd5df60c376d2f93a">
             <CardComponent />
           </Link>
         </div>
         <div className="m-11">
-          <Link to="/blog">
+          <Link to="/blog/68ba45cdd5df60c376d2f93a">
             <CardComponent />
           </Link>
         </div>
         <div className="m-11">
-          <Link to="/blog">
+          <Link to="/blog/68ba45cdd5df60c376d2f93a">
             <CardComponent />
           </Link>
         </div>
