@@ -95,7 +95,7 @@ function App() {
               <Route path="/otros-sectores" element={<OtrosSectores />}></Route>
               
               {/* Blog público */}
-              <Route path="/blog" element={<BlogPost />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/login" element={<Login></Login>}></Route>
               
               {/* Rutas privadas admin */}
