@@ -134,12 +134,12 @@ export function TableComponent() {
         <Modal.Body>
           {editingPost && (
             <PostEditor
-              mode="edit"
-              post={editingPost}
-              onSuccess={() => {
-                fetchPosts();
-                handleCloseModal();
-              }}
+            mode="edit"
+            post={editingPost}
+            onSuccess={() => {
+              fetchPosts();
+              handleCloseModal();
+            }}
             />
           )}
         </Modal.Body>
