@@ -1,52 +1,80 @@
 .container {
-  max-width: 700px;
+  max-width: 750px;
   margin: 2rem auto;
-  padding: 1.5rem;
-  background: #f9fafb;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
 }
 
 .inputGroup {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
 }
 
 .input {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.75rem;
   border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border-radius: 8px;
   outline: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 .input:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .editor {
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  background: white;
+  min-height: 200px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.previewWrapper {
+  margin-top: 1rem;
+}
+
+.previewLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.previewImage {
+  margin-top: 0.5rem;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button {
-  background-color: #111827;
+  background-color: #142e65;
   color: white;
-  width: 150px;
-  height: 40px;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
 }
 
 .button:hover {
-  background-color: #1f2937;
+  background-color: #1e40af;
+  transform: translateY(-1px);
 }

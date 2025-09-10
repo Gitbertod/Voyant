@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../api";
 import { Avatar, Modal } from "flowbite-react";
 import PostEditor from "../postEditor/PostEditor";
+import { Link } from "react-router-dom";
 
 export function TableComponent() {
   const [posts, setPosts] = useState([]);
@@ -32,7 +33,9 @@ export function TableComponent() {
     if (!postToDelete) return;
     try {
       await api.delete(`api/v1/posts/${postToDelete._id}`);
-      setPosts((prevPosts) => prevPosts.filter((post) => post._id !== postToDelete._id));
+      setPosts((prevPosts) =>
+        prevPosts.filter((post) => post._id !== postToDelete._id)
+      );
       setIsDeleteModalOpen(false);
       setPostToDelete(null);
     } catch (error) {
@@ -106,7 +109,16 @@ export function TableComponent() {
               </td>
 
               {/* Título */}
-              <td className="px-6 py-4">{post.title}</td>
+
+              <td className="px-6 py-4">
+                <Link
+                  to={`/blog/${post?._id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {post.title}
+                </Link>
+              </td>
 
               {/* Acciones */}
               <td className="px-6 py-4 flex gap-2">
@@ -146,7 +158,10 @@ export function TableComponent() {
       </Modal>
 
       {/* Modal de confirmación de eliminación */}
-      <Modal show={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)}>
+      <Modal
+        show={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+      >
         <Modal.Header>Confirmar eliminación</Modal.Header>
         <Modal.Body>
           <p className="text-gray-600 dark:text-gray-300">
