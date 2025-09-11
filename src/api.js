@@ -1,7 +1,7 @@
 import axios from 'axios';
-const api = axios.create({baseURL: 'https://voyant-backend.onrender.com/api/v1/',})
+const api = axios.create({baseURL: 'https://voyant-backend.onrender.com',})
 
-const local = 'http://127.0.0.1:3001';
+//const local = 'http://127.0.0.1:3001';
 
 // Interceptor para añadir el token automáticamente
 api.interceptors.request.use((config) => {
