@@ -17,7 +17,7 @@ const BlogPost = () => {
 
     const fetchPost = async () => {
       try {
-        const res = await api.get(`/api/v1/posts/${id}`);
+        const res = await api.get(`/posts/${id}`);
         setPost(res.data.data); // 👈 depende cómo devuelves la data en tu backend
       } catch (error) {
         console.error("Error al cargar el post:", error.message);

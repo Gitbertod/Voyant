@@ -2,10 +2,11 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: import.meta.env.PROD
-    ? "https://voyant-backend.onrender.com/api/v1" // 👉 backend en Render
-    : "http://localhost:3001/api/v1",              // 👉 backend local
+  ? "https://voyant-backend.onrender.com/api/v1" // 👉 backend en Render
+  : "http://localhost:3001/api/v1",              // 👉 backend local
   withCredentials: true, // si manejas cookies/sesión
 });
+console.log(api)
 
 //const local = 'http://127.0.0.1:3001';
 
