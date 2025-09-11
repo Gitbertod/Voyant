@@ -30,7 +30,7 @@ export function SidebarComponent() {
   useEffect(() => {
     const fetchDataUser = async () => {
       try {
-        const response = await api.get("/api/v1/users/me"); // 👈 endpoint para obtener el user logueado
+        const response = await api.get("/users/me"); // 👈 endpoint para obtener el user logueado
         setUserData(response.data.data); // asumiendo { data: { name, email, role, picture } }
       } catch (error) {
         console.error("Error fetching user data:", error.message);

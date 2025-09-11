@@ -35,10 +35,10 @@ export default function PostEditor({ mode = "create", post = null, onSuccess }) 
     try {
       let response;
       if (mode === "create") {
-        response = await api.post("api/v1/posts", { title, body, image });
+        response = await api.post("/posts", { title, body, image });
         Swal.fire("Post publicado!", "Tu publicación se guardó con éxito.", "success");
       } else if (mode === "edit" && post) {
-        response = await api.patch(`api/v1/posts/${post._id}`, { title, body, image });
+        response = await api.patch(`/posts/${post._id}`, { title, body, image });
         Swal.fire("Post actualizado!", "Los cambios se guardaron con éxito.", "success");
       }
 

@@ -10,7 +10,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await api.get("/api/v1/stats");
+        const res = await api.get("/stats");
         setStats(res.data.data); // { users: 12, posts: 48, comments: 230 }
       } catch (error) {
         console.error("Error al cargar estadísticas:", error);
@@ -22,7 +22,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await api.get("/api/v1/users/me");
+        const res = await api.get("/users/me");
         setUser(res.data.data);
       } catch (error) {
         console.error("Error al cargar datos de usuario:", error);

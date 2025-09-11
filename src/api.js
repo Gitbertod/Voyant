@@ -6,7 +6,7 @@ const api = axios.create({
   : "http://localhost:3001/api/v1",              // 👉 backend local
   withCredentials: true, // si manejas cookies/sesión
 });
-console.log(api)
+
 
 //const local = 'http://127.0.0.1:3001';
 

@@ -13,7 +13,7 @@ export function TableComponent() {
 
   const fetchPosts = async () => {
     try {
-      const response = await api.get("api/v1/posts");
+      const response = await api.get("/posts");
       setPosts(response.data.data);
     } catch (error) {
       console.error("Error fetching post:", error.message);

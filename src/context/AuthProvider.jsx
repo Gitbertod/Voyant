@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
 
   // ✅ Login con backend
   const login = async (email, password) => {
-    const res = await api.post("/api/v1/users/login", { email, password });
+    const res = await api.post("/users/login", { email, password });
     const { token, data } = res.data;
 
     setUser(data.user);
@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
 
   // ✅ Signup con backend
   const signup = async (name, email, password, passwordConfirm) => {
-    const res = await api.post("/api/v1/signup", {
+    const res = await api.post("/signup", {
       name,
       email,
       password,
@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       api
-        .get("/api/v1/users/me")
+        .get("/users/me")
         .then((res) => {
           setUser(res.data.data);
         })

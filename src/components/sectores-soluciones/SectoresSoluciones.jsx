@@ -11,7 +11,7 @@ const SectoresSoluciones = ({ title, text, child1}) => {
       <div className={styles.content} data-aos="fade-right">
         <h2>{title}</h2>
         <div className={styles.yellowLine}></div>
-        <p className={styles.textInfo}>{text}</p>
+        <div className={styles.textInfo}>{text}</div>
         <div className={styles.categoryContainer}>
           {child1}
         </div>
