@@ -32,7 +32,7 @@ export function TableComponent() {
   const handleDeletePost = async () => {
     if (!postToDelete) return;
     try {
-      await api.delete(`api/v1/posts/${postToDelete._id}`);
+      await api.delete(`/posts/${postToDelete._id}`);
       setPosts((prevPosts) =>
         prevPosts.filter((post) => post._id !== postToDelete._id)
       );
