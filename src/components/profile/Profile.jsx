@@ -10,13 +10,13 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [preview, setPreview] = useState(null); // preview de la foto
   const [form, setForm] = useState({
-    first: "",
-    last: "",
-    email: "",
-    country: null,
-    city: "",
-    phone: "",
-    photo: "", // url final de Cloudinary
+    first: user?.name.first || "",
+    last: user?.name.last || "",
+    email: user?.email || "",
+    country: user?.country || "",
+    city: user?.city || "",
+    phone: user?.phone || "",
+    photo: user?.photo || "", // url final de Cloudinary
   });
 
   // Lista de países
@@ -115,7 +115,13 @@ const Profile = () => {
       </h2>
 
       <div className="flex justify-center mb-4">
-        <Avatar img={preview || "/vicAvatar.jpg"} rounded bordered color="light" size="xl" />
+        <Avatar
+          img={preview || "/vicAvatar.jpg"}
+          rounded
+          bordered
+          color="light"
+          size="xl"
+        />
       </div>
 
       <div className="space-y-4">
