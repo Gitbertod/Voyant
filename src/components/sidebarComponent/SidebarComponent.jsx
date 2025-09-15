@@ -46,16 +46,19 @@ export function SidebarComponent() {
 
   return (
     <Sidebar aria-label="Sidebar with logo branding example">
-      <SidebarLogo href="#" img="/logoVoyantColor.svg" imgAlt="Voyant logo" />
+      {/* <SidebarLogo href="#" img="/logoVoyantColor.svg" imgAlt="Voyant logo" /> */}
 
       {/* Bloque usuario */}
       <div className="flex flex-col items-center mb-6">
         <Avatar
-          img={userData?.picture || "/vicAvatar.jpg"}
+          img={userData?.picture || "/default-avatar-icon.jpg"}
           rounded
           bordered
           color="light"
           size="xl"
+          imgProps={{
+            className: "object-cover w-full h-full",
+          }}
         />
         {userData ? (
           <div className="mt-2 text-center">
