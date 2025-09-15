@@ -16,7 +16,7 @@ const Profile = () => {
     country: user?.country || "",
     city: user?.city || "",
     phone: user?.phone || "",
-    photo: user?.photo || "", // url final de Cloudinary
+    picture: user?.picture || "", // url final de Cloudinary
   });
 
   // Lista de países
@@ -33,9 +33,9 @@ const Profile = () => {
           : null,
         city: user?.city || "",
         phone: user?.phone || "",
-        photo: user?.photo || "",
+        picture: user?.picture || "",
       });
-      setPreview(user?.photo || null);
+      setPreview(user?.picture || null);
     }
   }, [user, options]);
 
@@ -85,11 +85,11 @@ const Profile = () => {
   // ✅ Guardar cambios
   const handleSave = async () => {
     try {
-      let photoUrl = form.photo;
+      let photoUrl = form.picture;
 
       // si la foto es un archivo, la subimos
-      if (form.photo instanceof File) {
-        photoUrl = await uploadToCloudinary(form.photo);
+      if (form.picture instanceof File) {
+        photoUrl = await uploadToCloudinary(form.picture);
       }
 
       const res = await api.patch("/users/updateMe", {
@@ -98,7 +98,7 @@ const Profile = () => {
         country: form.country ? form.country.value : null,
         city: form.city,
         phone: form.phone,
-        photo: photoUrl,
+        picture: photoUrl,
       });
 
       setUser(res.data.data.user);
@@ -110,21 +110,23 @@ const Profile = () => {
 
   return (
     <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-lg">
-      <h2 className="text-2xl font-bold mb-4 text-gray-700 text-center">
-        Mi Perfil
-      </h2>
-
       <div className="flex justify-center mb-4">
         <Avatar
-          img={preview || "/vicAvatar.jpg"}
+          img={preview || "/default-avatar-icon.jpg"}
           rounded
           bordered
           color="light"
           size="xl"
         />
+        <div>
+          <h2 className="text-2xl font-bold mb-4 text-gray-700 text-start">
+            {form.first} {form.last}
+          </h2>
+          <h3>{form.email}</h3>
+        </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 text-start">
         {isEditing ? (
           <>
             {/* Nombre */}
@@ -241,6 +243,18 @@ const Profile = () => {
             </p>
             <p>
               <span className="font-semibold">Teléfono:</span>{" "}
+              {user?.phone || "No especificado"}
+            </p>
+            <p>
+              <span className="font-semibold">Fecha de nacimiento:</span>{" "}
+              {user?.phone || "No especificado"}
+            </p>
+            <p>
+              <span className="font-semibold">DNI:</span>{" "}
+              {user?.phone || "No especificado"}
+            </p>
+            <p>
+              <span className="font-semibold">Cargo:</span>{" "}
               {user?.phone || "No especificado"}
             </p>
             <p>
