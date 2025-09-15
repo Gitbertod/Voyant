@@ -1,20 +1,21 @@
 "use client";
 
+import { MdConnectWithoutContact } from "react-icons/md";
+import { GrTechnology } from "react-icons/gr";
+
 import {
   Avatar,
   Sidebar,
   SidebarItem,
   SidebarItemGroup,
   SidebarItems,
-  SidebarLogo,
 } from "flowbite-react";
 import {
   HiArrowSmRight,
   HiChartPie,
   HiInbox,
-  HiShoppingBag,
   HiUser,
-  HiViewBoards,
+  HiUsers ,
 } from "react-icons/hi";
 import { useAuth } from "../../context/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
@@ -83,18 +84,21 @@ export function SidebarComponent() {
           </SidebarItem>
 
           <SidebarItem as={Link} to="/admin/dashboard" icon={HiChartPie}>
-            Dashboard
+            Dashboard Blog
+          </SidebarItem>
+          <SidebarItem as={Link} to="/admin/manage-users" icon={HiUsers }>
+            Gestionar usuarios
           </SidebarItem>
 
           <SidebarItem as={Link} to="/admin/blog/create" icon={HiInbox}>
             Crear Post
           </SidebarItem>
 
-          <SidebarItem href="#" icon={HiShoppingBag}>
+          <SidebarItem href="#" icon={GrTechnology}>
             Voyant 365
           </SidebarItem>
 
-          <SidebarItem href="#" icon={HiViewBoards}>
+          <SidebarItem href="#" icon={MdConnectWithoutContact}>
             Voyant Conecta
           </SidebarItem>
 

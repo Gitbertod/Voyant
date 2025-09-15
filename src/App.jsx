@@ -28,6 +28,7 @@ import Dashboard from "./views/admin/Dashboard";
 import Profile from "./components/profile/Profile";
 import AdminLayout from "./views/admin/AdminLayout";
 import PostEditor from "./components/postEditor/PostEditor";
+import { UsersTableComponent } from "./components/usersTableComponent/UsersTableComponent";
 
 function App() {
   const text = `
@@ -93,20 +94,18 @@ function App() {
                 element={<Telecomunicaciones />}
               ></Route>
               <Route path="/otros-sectores" element={<OtrosSectores />}></Route>
-              
+
               {/* Blog público */}
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/login" element={<Login></Login>}></Route>
-              
+
               {/* Rutas privadas admin */}
               <Route path="/admin" element={<AdminLayout />}>
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="profile" element={<Profile />} />
                 <Route path="blog/create" element={<PostEditor />} />
-                
+                <Route path="manage-users" element={<UsersTableComponent />} />
               </Route>
-
-              
 
               <Route path="/register" element={<Register></Register>}></Route>
             </Routes>
