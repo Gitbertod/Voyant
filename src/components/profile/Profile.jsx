@@ -57,9 +57,9 @@ const Profile = () => {
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setForm((prev) => ({ ...prev, photo: file })); // guardamos el archivo
+      setForm((prev) => ({ ...prev, picture: file })); // <--- usa picture
       const reader = new FileReader();
-      reader.onloadend = () => setPreview(reader.result); // mostramos preview
+      reader.onloadend = () => setPreview(reader.result);
       reader.readAsDataURL(file);
     }
   };
@@ -86,21 +86,18 @@ const Profile = () => {
   const handleSave = async () => {
     try {
       let photoUrl = form.picture;
-
-      // si la foto es un archivo, la subimos
+      // Si la foto es un archivo, la subimos
       if (form.picture instanceof File) {
         photoUrl = await uploadToCloudinary(form.picture);
       }
-
       const res = await api.patch("/users/updateMe", {
         name: { first: form.first, last: form.last },
         email: form.email,
         country: form.country ? form.country.value : null,
         city: form.city,
         phone: form.phone,
-        picture: photoUrl,
+        picture: photoUrl, // <--- guarda la URL en el backend
       });
-
       setUser(res.data.data.user);
       setIsEditing(false);
     } catch (error) {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function UserTableFilters({
   search,
@@ -75,12 +76,15 @@ export function UserTableFilters({
 
       {/* Botón agregar usuario */}
       <div className="w-full md:w-auto flex md:justify-end">
+        <Link to={'/admin/create-user'}>
         <button
           onClick={onAddUser}
           className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold shadow transition"
         >
           + Agregar usuario
         </button>
+        
+        </Link>
       </div>
     </div>
   );

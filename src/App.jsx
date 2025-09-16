@@ -29,6 +29,7 @@ import Profile from "./components/profile/Profile";
 import AdminLayout from "./views/admin/AdminLayout";
 import PostEditor from "./components/postEditor/PostEditor";
 import { UsersTableComponent } from "./components/usersTableComponent/UsersTableComponent";
+import { UserCreateForm } from "./components/userCreateForm/UserCreateForm";
 
 function App() {
   const text = `
@@ -105,6 +106,7 @@ function App() {
                 <Route path="profile" element={<Profile />} />
                 <Route path="blog/create" element={<PostEditor />} />
                 <Route path="manage-users" element={<UsersTableComponent />} />
+                <Route path="create-user" element={<UserCreateForm />} />
               </Route>
 
               <Route path="/register" element={<Register></Register>}></Route>
