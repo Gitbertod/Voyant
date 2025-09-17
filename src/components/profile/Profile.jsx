@@ -106,7 +106,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-lg">
+    <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-5xl">
       <div className="flex justify-center mb-4">
         <Avatar
           img={preview || "/default-avatar-icon.jpg"}

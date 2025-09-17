@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Landing from "./views/landing/Landing";
 import Nosotros from "./views/nosotros/Nosotros";
@@ -32,6 +32,11 @@ import { UsersTableComponent } from "./components/usersTableComponent/UsersTable
 import { UserCreateForm } from "./components/userCreateForm/UserCreateForm";
 
 function App() {
+  const location = useLocation();
+
+  // Si la ruta empieza con /admin, no mostramos navbar ni footer
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   const text = `
   <br>  
   En VOYANT, nos dedicamos a proporcionar soluciones de infraestructura crítica adaptadas a las necesidades únicas de diversos sectores.<br>
@@ -41,81 +46,56 @@ function App() {
   `;
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen">
-        <div className="flex-grow">
-          <AuthProvider>
-            <NavBar></NavBar>
-            <Routes>
-              <Route path="/" element={<Landing />}></Route>
-              <Route path="/nosotros" element={<Nosotros />}></Route>
-              <Route
-                path="/soluciones"
-                element={<SolucionesView childComponent={<BurguerMenu />} />}
-              ></Route>
-              <Route
-                path="/soluciones/distribucion-respaldo-de-energia"
-                element={
-                  <DistribucionRespaldoEnergia></DistribucionRespaldoEnergia>
-                }
-              ></Route>
-              <Route
-                path="/soluciones/climatizacion"
-                element={<Climatizacion />}
-              ></Route>
-              <Route
-                path="/soluciones/seguridad"
-                element={<Seguridad />}
-              ></Route>
-              <Route
-                path="/soluciones/industria4.0"
-                element={<IndustriaFourDotZero />}
-              ></Route>
-              <Route
-                path="/soluciones/gestion-de-la-energia"
-                element={<GestionDeLaEnergia />}
-              ></Route>
-              <Route
-                path="/sectores"
-                element={
-                  <Sectores childComponent={<BurguerMenu />} parrafo={text} />
-                }
-              ></Route>
-              <Route path="/data-centers" element={<DataCenters />}></Route>
-              <Route path="/mineria" element={<Mineria />}></Route>
-              <Route
-                path="/industria-electrica"
-                element={<IndustriaElectrica />}
-              ></Route>
-              <Route path="/industria" element={<Industria />}></Route>
-              <Route path="/voyant365" element={<Voyant365 />}></Route>
-              <Route path="/contacto" element={<Contacto />}></Route>
-              <Route
-                path="/telecomunicaciones"
-                element={<Telecomunicaciones />}
-              ></Route>
-              <Route path="/otros-sectores" element={<OtrosSectores />}></Route>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <AuthProvider>
+          {!isAdminRoute && <NavBar />}
+          <Routes>
+            <Route path="/" element={<Landing />}></Route>
+            <Route path="/nosotros" element={<Nosotros />}></Route>
+            <Route
+              path="/soluciones"
+              element={<SolucionesView childComponent={<BurguerMenu />} />}
+            ></Route>
+            <Route
+              path="/soluciones/distribucion-respaldo-de-energia"
+              element={<DistribucionRespaldoEnergia />}
+            ></Route>
+            <Route path="/soluciones/climatizacion" element={<Climatizacion />} />
+            <Route path="/soluciones/seguridad" element={<Seguridad />} />
+            <Route path="/soluciones/industria4.0" element={<IndustriaFourDotZero />} />
+            <Route path="/soluciones/gestion-de-la-energia" element={<GestionDeLaEnergia />} />
+            <Route
+              path="/sectores"
+              element={<Sectores childComponent={<BurguerMenu />} parrafo={text} />}
+            ></Route>
+            <Route path="/data-centers" element={<DataCenters />}></Route>
+            <Route path="/mineria" element={<Mineria />}></Route>
+            <Route path="/industria-electrica" element={<IndustriaElectrica />}></Route>
+            <Route path="/industria" element={<Industria />}></Route>
+            <Route path="/voyant365" element={<Voyant365 />}></Route>
+            <Route path="/contacto" element={<Contacto />}></Route>
+            <Route path="/telecomunicaciones" element={<Telecomunicaciones />}></Route>
+            <Route path="/otros-sectores" element={<OtrosSectores />}></Route>
 
-              {/* Blog público */}
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/login" element={<Login></Login>}></Route>
+            {/* Blog público */}
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-              {/* Rutas privadas admin */}
-              <Route path="/admin" element={<AdminLayout />}>
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="profile" element={<Profile />} />
-                <Route path="blog/create" element={<PostEditor />} />
-                <Route path="manage-users" element={<UsersTableComponent />} />
-                <Route path="create-user" element={<UserCreateForm />} />
-              </Route>
-
-              <Route path="/register" element={<Register></Register>}></Route>
-            </Routes>
-            <FooterVoyant />
-          </AuthProvider>
-        </div>
+            {/* Rutas privadas admin */}
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="blog/create" element={<PostEditor />} />
+              <Route path="manage-users" element={<UsersTableComponent />} />
+              <Route path="create-user" element={<UserCreateForm />} />
+            </Route>
+          </Routes>
+          {!isAdminRoute && <FooterVoyant />}
+        </AuthProvider>
       </div>
-    </>
+    </div>
   );
 }
 
