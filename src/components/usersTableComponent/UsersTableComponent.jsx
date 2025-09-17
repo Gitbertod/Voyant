@@ -7,6 +7,7 @@ export function UsersTableComponent() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [editingUser, setEditingUser] = useState(null);
 
   useEffect(() => {
     api
@@ -32,9 +33,34 @@ export function UsersTableComponent() {
     );
   }
 
+  const handleEdit = (user) => {
+    setEditingUser(user); // abre el modal con los datos
+  };
+
+  const handleCloseModal = () => {
+    setEditingUser(null); // cierra el modal
+  };
+
+  const handleSaveEdit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await api.patch(`/users/${editingUser._id}`, editingUser);
+
+      // actualiza la lista de usuarios en el estado
+      setUsers((prev) =>
+        prev.map((u) => (u._id === editingUser._id ? res.data.data : u))
+      );
+
+      setEditingUser(null); // cerrar modal
+    } catch (err) {
+      console.error("Error al editar usuario", err);
+    }
+  };
+
   return (
     <>
-    <UserTableFilters></UserTableFilters>
+      <UserTableFilters></UserTableFilters>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -88,8 +114,7 @@ export function UsersTableComponent() {
                 <td className="px-6 py-4 flex gap-2">
                   <button
                     className="px-3 py-1 text-xs rounded bg-blue-500 text-white hover:bg-blue-600"
-                    // onClick={() => handleEdit(user)}
-                    disabled
+                    onClick={() => handleEdit(user)}
                   >
                     Editar
                   </button>
@@ -110,6 +135,86 @@ export function UsersTableComponent() {
           </tbody>
         </table>
       </div>
+      {editingUser && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
+            <h2 className="text-lg font-semibold mb-4">Editar Usuario</h2>
+            <form onSubmit={handleSaveEdit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium">Nombre</label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full border rounded p-2 text-sm"
+                  value={editingUser.name?.first || ""}
+                  onChange={(e) =>
+                    setEditingUser({
+                      ...editingUser,
+                      name: { ...editingUser.name, first: e.target.value },
+                    })
+                  }
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium">Apellido</label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full border rounded p-2 text-sm"
+                  value={editingUser.name?.last || ""}
+                  onChange={(e) =>
+                    setEditingUser({
+                      ...editingUser,
+                      name: { ...editingUser.name, last: e.target.value },
+                    })
+                  }
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium">Email</label>
+                <input
+                  type="email"
+                  className="mt-1 block w-full border rounded p-2 text-sm"
+                  value={editingUser.email || ""}
+                  onChange={(e) =>
+                    setEditingUser({ ...editingUser, email: e.target.value })
+                  }
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium">Rol</label>
+                <select
+                  className="mt-1 block w-full border rounded p-2 text-sm"
+                  value={editingUser.role || ""}
+                  onChange={(e) =>
+                    setEditingUser({ ...editingUser, role: e.target.value })
+                  }
+                >
+                  <option value="user">Usuario</option>
+                  <option value="admin">Administrador</option>
+                </select>
+              </div>
+
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  className="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  onClick={handleCloseModal}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600"
+                >
+                  Guardar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
