@@ -29,7 +29,8 @@ import Profile from "./components/profile/Profile";
 import AdminLayout from "./views/admin/AdminLayout";
 import PostEditor from "./components/postEditor/PostEditor";
 import { UsersTableComponent } from "./components/usersTableComponent/UsersTableComponent";
-import { UserCreateForm } from "./components/userCreateForm/UserCreateForm";
+import { UserForm } from "./components/userForm/UserForm";
+import { UserFormCreateWrapper } from "./components/userForm/UserFormCreateWrapper";
 
 function App() {
   const location = useLocation();
@@ -89,7 +90,8 @@ function App() {
               <Route path="profile" element={<Profile />} />
               <Route path="blog/create" element={<PostEditor />} />
               <Route path="manage-users" element={<UsersTableComponent />} />
-              <Route path="create-user" element={<UserCreateForm />} />
+              <Route path="create-user" element={<UserFormCreateWrapper />} />
+              <Route path="edit-user/:id" element={<UserForm mode="edit"/>} />
             </Route>
           </Routes>
           {!isAdminRoute && <FooterVoyant />}
