@@ -57,9 +57,7 @@ export function SidebarComponent() {
           bordered
           color="light"
           size="xl"
-          imgProps={{
-            className: "object-cover w-full h-full",
-          }}
+          referrerPolicy="no-referrer"
         />
         {userData ? (
           <div className="mt-2 text-center">
