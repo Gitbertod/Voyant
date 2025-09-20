@@ -76,12 +76,12 @@ export function UsersTableComponent() {
                 <td className="px-6 py-4">
                   <span
                     className={`inline-block px-2 py-1 rounded text-xs ${
-                      user.active
+                      user.status
                         ? "bg-green-100 text-green-800"
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {user.active ? "Activo" : "Inactivo"}
+                    {user.status ? "Activo" : "Inactivo"}
                   </span>
                 </td>
                 <td className="px-6 py-4">

@@ -27,6 +27,17 @@ export function UserSecurityInfo({ form, handleChange, mode }) {
               required
             />
           </div>
+          <div>
+            <label className="block text-sm font-semibold">Rol</label>
+            <select>
+              <option onChange={handleChange} value={form.role}>
+                Admin
+              </option>
+              <option onChange={handleChange} value={form.role}>
+                User
+              </option>
+            </select>
+          </div>
         </>
       )}
     </div>
