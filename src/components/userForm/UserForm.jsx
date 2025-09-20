@@ -164,9 +164,7 @@ export function UserForm({
         department: form.department,
         position: form.position,
         role: form.role,
-        picture: photoUrl,
-        password: form.password,
-        passwordConfirm: form.passwordConfirm,
+        picture: photoUrl
       };
 
       if (onSubmit) {
