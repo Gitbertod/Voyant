@@ -131,9 +131,10 @@ export function UserForm({
   const uploadToCloudinary = async (file) => {
     const data = new FormData();
     data.append("file", file);
-    data.append("upload_preset", "voyant_users");
+    data.append("upload_preset", "voyantPreset"); 
+    
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/voyant/image/upload",
+      "https://api.cloudinary.com/v1_1/dvihibg5k/image/upload",
       { method: "POST", body: data }
     );
     const json = await res.json();
@@ -166,6 +167,12 @@ export function UserForm({
         role: form.role,
         picture: photoUrl
       };
+
+// 👉 Solo añadir password si el usuario los llenó
+    if (form.password && form.passwordConfirm) {
+      payload.password = form.password;
+      payload.passwordConfirm = form.passwordConfirm;
+    }
 
       if (onSubmit) {
         await onSubmit(payload);
