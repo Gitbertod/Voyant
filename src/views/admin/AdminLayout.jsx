@@ -6,11 +6,13 @@ const AdminLayout = () => {
   return (
     <div className={styles.dashboard}>
       {/* Sidebar fijo */}
-      <SidebarComponent />
+      <div className={styles.sidebar}>
+        <SidebarComponent />
+      </div>
 
-      {/* Contenido dinámico */}
+      {/* Contenido dinámico con scroll */}
       <div className={styles.container}>
-        <Outlet /> {/* 👈 Aquí se renderizan Dashboard, Profile, etc */}
+        <Outlet /> {/* Aquí se renderizan Dashboard, Profile, etc */}
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(user.email, user.password);
-      navigate("/admin/dashboard");
+      navigate("/admin/manage-users");
     } catch (error) {
       if (error.code === "auth/weak-password") console.log("password débil");
 

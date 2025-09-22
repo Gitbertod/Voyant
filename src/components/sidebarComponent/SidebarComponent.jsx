@@ -46,7 +46,7 @@ export function SidebarComponent() {
   };
 
   return (
-    <Sidebar aria-label="Sidebar with logo branding example">
+    <Sidebar aria-label="Sidebar with logo branding example" className="h-screen">
       {/* <SidebarLogo href="#" img="/logoVoyantColor.svg" imgAlt="Voyant logo" /> */}
 
       {/* Bloque usuario */}
@@ -81,11 +81,11 @@ export function SidebarComponent() {
             Mi perfil
           </SidebarItem>
 
-          <SidebarItem as={Link} to="/admin/dashboard" icon={HiChartPie}>
-            Dashboard Blog
-          </SidebarItem>
           <SidebarItem as={Link} to="/admin/manage-users" icon={HiUsers }>
             Gestionar usuarios
+          </SidebarItem>
+          <SidebarItem as={Link} to="/admin/dashboard" icon={HiChartPie}>
+            Dashboard Blog
           </SidebarItem>
 
           <SidebarItem as={Link} to="/admin/blog/create" icon={HiInbox}>

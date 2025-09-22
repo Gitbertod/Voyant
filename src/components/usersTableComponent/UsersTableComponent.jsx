@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
-import { Avatar } from "flowbite-react";
+import { Avatar, Card, Progress } from "flowbite-react";
 import { UserTableFilters } from "./UserTableFilters";
 import { useNavigate } from "react-router-dom";
+import { HiUsers } from "react-icons/hi2";
+import UsersBy from "../usersBy/UsersBy";
 
 export function UsersTableComponent() {
   const [users, setUsers] = useState([]);
@@ -38,8 +40,25 @@ export function UsersTableComponent() {
     navigate(`/admin/edit-user/${user._id}`);
   };
 
+  // 🔹 Ejemplo de datos: puedes pasarlos por props si quieres hacerlo dinámico
+  const roles = [
+    { name: "Admin", count: 12, color: "blue" },
+    { name: "Editor", count: 8, color: "purple" },
+    { name: "User", count: 29, color: "green" },
+  ];
+
+  const total = roles.reduce((sum, role) => sum + role.count, 0);
+
   return (
     <>
+      {/* Row de Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
+        <UsersBy titulo={"Usuarios por rol"}  />
+        <UsersBy titulo={"Usuarios activos / inactivos"}  />
+        <UsersBy titulo={"Usuarios activos / inactivos"}  />
+        
+      </div>
+
       <UserTableFilters />
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500">
@@ -93,7 +112,7 @@ export function UsersTableComponent() {
                 </td>
                 <td className="px-6 py-4 flex gap-2">
                   <button
-                    className="px-3 py-1 text-xs rounded bg-blue-500 text-white hover:bg-blue-600"
+                    className="px-3 py-1 text-xs rounded bg-blue-800 text-white hover:bg-blue-600"
                     onClick={() => handleEdit(user)}
                   >
                     Editar

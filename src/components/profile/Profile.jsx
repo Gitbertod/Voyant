@@ -13,11 +13,18 @@ const Profile = () => {
     first: user?.name.first || "",
     last: user?.name.last || "",
     email: user?.email || "",
+    birthDate:user?.birthDate || "",
     country: user?.country || "",
     city: user?.city || "",
     phone: user?.phone || "",
     picture: user?.picture || "", // url final de Cloudinary
   });
+
+const formatDate = (dateString) => {
+    if (!dateString) return "";
+    return new Date(dateString).toISOString().split("T")[0];
+  };
+
 
   // Lista de países
   const options = useMemo(() => countryList().getData(), []);
@@ -28,6 +35,8 @@ const Profile = () => {
         first: user?.name?.first || "",
         last: user?.name?.last || "",
         email: user?.email || "",
+        dni: user?.dni || "" ,
+        birthDate:formatDate(user?.birthDate),
         country: user?.country
           ? options.find((opt) => opt.value === user.country)
           : null,
@@ -244,11 +253,11 @@ const Profile = () => {
             </p>
             <p>
               <span className="font-semibold">Fecha de nacimiento:</span>{" "}
-              {user?.phone || "No especificado"}
+              {formatDate(user?.birthDate) || "No especificado"}
             </p>
             <p>
               <span className="font-semibold">DNI:</span>{" "}
-              {user?.phone || "No especificado"}
+              {user?.dni || "No especificado"}
             </p>
             <p>
               <span className="font-semibold">Cargo:</span>{" "}

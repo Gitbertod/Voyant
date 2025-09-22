@@ -1,3 +1,4 @@
+/* AdminLayout.module.css */
 .dashboard {
   display: flex;
   min-height: 100vh;
@@ -5,7 +6,23 @@
   background-color: rgb(242, 242, 242);
 }
 
+/* Sidebar fijo */
+.sidebar {
+  width: 250px; /* ajusta según tu diseño */
+  background-color: #fff;
+  border-right: 1px solid #e5e7eb;
+  position: fixed; /* 🔥 hace que quede fijo */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* Contenido dinámico con scroll */
 .container {
   flex: 1;
+  margin-left: 250px; /* igual al ancho del sidebar */
   padding: 20px;
+  overflow-y: auto; /* 👈 scroll vertical solo en el contenido */
+  height: 100vh; /* asegura que use toda la altura */
 }
