@@ -1,29 +1,31 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
-import { Avatar, Card, Progress } from "flowbite-react";
 import { UserTableFilters } from "./UserTableFilters";
 import { useNavigate } from "react-router-dom";
-import { HiUsers } from "react-icons/hi2";
+import { Avatar } from "flowbite-react";
 import UsersBy from "../usersBy/UsersBy";
 
 export function UsersTableComponent() {
   const [users, setUsers] = useState([]);
+  const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    api
-      .get("/users")
-      .then((res) => setUsers(res.data.data))
-      .catch(() => setError("Error al cargar usuarios"))
+    Promise.all([api.get("/users"), api.get("/stats")])
+      .then(([usersRes, statsRes]) => {
+        setUsers(usersRes.data.data);
+        setStats(statsRes.data.data);
+      })
+      .catch(() => setError("Error al cargar datos"))
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-40">
-        <span className="text-gray-500">Cargando usuarios...</span>
+        <span className="text-gray-500">Cargando...</span>
       </div>
     );
   }
@@ -40,25 +42,17 @@ export function UsersTableComponent() {
     navigate(`/admin/edit-user/${user._id}`);
   };
 
-  // 🔹 Ejemplo de datos: puedes pasarlos por props si quieres hacerlo dinámico
-  const roles = [
-    { name: "Admin", count: 12, color: "blue" },
-    { name: "Editor", count: 8, color: "purple" },
-    { name: "User", count: 29, color: "green" },
-  ];
-
-  const total = roles.reduce((sum, role) => sum + role.count, 0);
-
   return (
     <>
-      {/* Row de Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
-        <UsersBy titulo={"Usuarios por rol"}  />
-        <UsersBy titulo={"Usuarios activos / inactivos"}  />
-        <UsersBy titulo={"Usuarios activos / inactivos"}  />
-        
-      </div>
+      {/* Row de Cards dinámicas */}
+      {stats && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
+          <UsersBy titulo="Usuarios por rol" data={stats.usersByRole} />
+          <UsersBy titulo="Usuarios activos/inactivos" data={stats.usersByStatus} />
+        </div>
+      )}
 
+      {/* Tabla */}
       <UserTableFilters />
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500">

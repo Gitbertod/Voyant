@@ -1,15 +1,9 @@
 import React from "react";
 import { HiUsers } from "react-icons/hi2";
-import { Avatar, Card, Progress } from "flowbite-react";
+import { Card, Progress } from "flowbite-react";
 
-const UsersBy = ({titulo, name}) => {
-  const roles = [
-    { name: "Admin", count: 19, color: "blue" },
-    { name: "Editor", count: 8, color: "purple" },
-    { name: "User", count: 29, color: "green" },
-  ];
-
-  const total = roles.reduce((sum, role) => sum + role.count, 0);
+const UsersBy = ({ titulo, data }) => {
+  const total = Object.values(data).reduce((sum, val) => sum + val, 0);
 
   return (
     <Card className="max-w-sm border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -28,23 +22,22 @@ const UsersBy = ({titulo, name}) => {
       </div>
 
       <div className="space-y-3">
-        {roles.map((role) => {
-          const percent = ((role.count / total) * 100).toFixed(0);
+        {Object.entries(data).map(([key, count], idx) => {
+          const percent = total ? ((count / total) * 100).toFixed(0) : 0;
+          const colors = ["blue", "purple", "green", "red", "yellow"];
+          const color = colors[idx % colors.length];
+
           return (
-            <div key={role.name}>
+            <div key={key}>
               <div className="flex justify-between mb-1">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  {role.name}
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">
+                  {key}
                 </span>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
-                  {role.count} ({percent}%)
+                  {count} ({percent}%)
                 </span>
               </div>
-              <Progress
-                progress={parseInt(percent)}
-                color={role.color}
-                size="sm"
-              />
+              <Progress progress={parseInt(percent)} color={color} size="sm" />
             </div>
           );
         })}
