@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TableComponent } from "../../components/tableComponent/TableComponent";
 import { Card } from "flowbite-react";
 import api from "../../api";
+import LoadingSpinner from "../../components/spinner/LoadingSpinner";
 
 const Dashboard = () => {
   const [stats, setStats] = useState({ users: 0, posts: 0, comments: 0 });
@@ -34,7 +35,7 @@ const Dashboard = () => {
   return (
     <div className="w-full">
       <h3 className="mb-6 text-xl font-semibold">
-        Hola, {user ? `${user?.name.first}` : "cargando..."} 👋
+        Hola, {user ? `${user?.name.first}` : <LoadingSpinner/>} 👋
       </h3>
 
       {/* Row de Cards */}
