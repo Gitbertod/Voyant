@@ -9,6 +9,7 @@ import {
   SidebarItem,
   SidebarItemGroup,
   SidebarItems,
+  Drawer
 } from "flowbite-react";
 import {
   HiArrowSmRight,
