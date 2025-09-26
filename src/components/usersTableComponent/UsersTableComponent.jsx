@@ -48,7 +48,10 @@ export function UsersTableComponent() {
       {stats && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
           <UsersBy titulo="Usuarios por rol" data={stats.usersByRole} />
-          <UsersBy titulo="Usuarios activos/inactivos" data={stats.usersByStatus} />
+          <UsersBy
+            titulo="Usuarios activos/inactivos"
+            data={stats.usersByStatus}
+          />
         </div>
       )}
 
@@ -73,8 +76,8 @@ export function UsersTableComponent() {
                   <Avatar
                     img={user.picture || "/default-avatar-icon.jpg"}
                     rounded
-                    size="md"
                     alt="avatar"
+                    className="w-12 h-12 min-w-[3rem] min-h-[3rem] object-cover"
                   />
                   <div className="p-2">
                     {user.name?.first} {user.name?.last}

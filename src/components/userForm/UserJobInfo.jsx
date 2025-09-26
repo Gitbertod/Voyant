@@ -35,13 +35,13 @@ export function UserJobInfo({ form, handleChange }) {
         </div>
         <div>
           <label className="block text-sm font-semibold">Departamento</label>
-          <input
-            type="text"
-            name="department"
-            value={form.department}
-            onChange={handleChange}
-            className="border rounded-lg px-3 py-2 w-full text-sm"
-          />
+          <select value={form.department} onChange={handleChange} name="department" className="border rounded-lg px-3 py-2 w-full text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none">
+            <option value="">Seleccione departamento</option>
+            <option value="ventas">Ventas</option>
+            <option value="soporte">Soporte</option>
+            <option value="IT">IT</option>
+          </select>
+          
         </div>
         <div>
           <label className="block text-sm font-semibold">Puesto</label>
@@ -55,7 +55,7 @@ export function UserJobInfo({ form, handleChange }) {
         </div>
         <div>
           <label className="block text-sm font-semibold">Rol</label>
-          <select name="role" onChange={handleChange} value={form.role}>
+          <select name="role" onChange={handleChange} value={form.role} className="border rounded-lg px-3 py-2 w-full text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" >
             <option value="admin">Admin</option>
             <option value="user">User</option>
           </select>

@@ -18,6 +18,7 @@ const Profile = () => {
     city: user?.city || "",
     phone: user?.phone || "",
     picture: user?.picture || "", // url final de Cloudinary
+    departament: user?.departament || ""
   });
 
 const formatDate = (dateString) => {
@@ -115,167 +116,161 @@ const formatDate = (dateString) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-5xl">
-      <div className="flex justify-center mb-4">
-        <Avatar
-          img={preview || "/default-avatar-icon.jpg"}
-          rounded
-          bordered
-          color="light"
-          size="xl"
-        />
-        <div>
-          <h2 className="text-2xl font-bold mb-4 text-gray-700 text-start">
-            {form.first} {form.last}
-          </h2>
-          <h3>{form.email}</h3>
-        </div>
-      </div>
+  <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-5xl mx-auto">
+  {/* Header Profile */}
+  <div className="flex flex-col md:flex-row items-center md:items-start gap-6 border-b pb-6 mb-6">
+    {/* Avatar */}
+    <Avatar
+      img={preview || "/default-avatar-icon.jpg"}
+      rounded
+      bordered
+      color="light"
+      size="xl"
+      className="shadow-md"
+    />
 
-      <div className="space-y-4 text-start">
-        {isEditing ? (
-          <>
-            {/* Nombre */}
-            <div>
-              <label className="block text-sm font-semibold">Nombre</label>
-              <input
-                type="text"
-                name="first"
-                value={form.first}
-                onChange={handleChange}
-                className="border rounded w-full px-2 py-1"
-              />
-            </div>
-
-            {/* Apellido */}
-            <div>
-              <label className="block text-sm font-semibold">Apellido</label>
-              <input
-                type="text"
-                name="last"
-                value={form.last}
-                onChange={handleChange}
-                className="border rounded w-full px-2 py-1"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-semibold">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                className="border rounded w-full px-2 py-1"
-              />
-            </div>
-
-            {/* País */}
-            <div>
-              <label className="block text-sm font-semibold">País</label>
-              <Select
-                options={options}
-                value={form.country}
-                onChange={handleCountryChange}
-                placeholder="Selecciona un país"
-              />
-            </div>
-
-            {/* Ciudad */}
-            <div>
-              <label className="block text-sm font-semibold">Ciudad</label>
-              <input
-                type="text"
-                name="city"
-                value={form.city}
-                onChange={handleChange}
-                className="border rounded w-full px-2 py-1"
-              />
-            </div>
-
-            {/* Teléfono */}
-            <div>
-              <label className="block text-sm font-semibold">Teléfono</label>
-              <input
-                type="tel"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                className="border rounded w-full px-2 py-1"
-              />
-            </div>
-
-            {/* Foto */}
-            <div>
-              <label className="block text-sm font-semibold">Foto</label>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handlePhotoChange}
-                className="border rounded w-full px-2 py-1"
-              />
-            </div>
-
-            <button
-              onClick={handleSave}
-              className="bg-yellow-400 text-white px-4 py-2 rounded mt-4 w-full"
-            >
-              Guardar
-            </button>
-            <button
-              onClick={() => setIsEditing(false)}
-              className="bg-gray-400 text-white px-4 py-2 rounded mt-2 w-full"
-            >
-              Cancelar
-            </button>
-          </>
-        ) : (
-          <>
-            <p className="m-4">
-              <span className="font-semibold m-1">Nombre:</span>{" "}
-              {user?.name?.first} {user?.name?.last}
-            </p>
-            <p>
-              <span className="font-semibold">Email:</span> {user?.email}
-            </p>
-            <p>
-              <span className="font-semibold">País:</span>{" "}
-              {user?.country || "No especificado"}
-            </p>
-            <p>
-              <span className="font-semibold">Ciudad:</span>{" "}
-              {user?.city || "No especificada"}
-            </p>
-            <p>
-              <span className="font-semibold">Teléfono:</span>{" "}
-              {user?.phone || "No especificado"}
-            </p>
-            <p>
-              <span className="font-semibold">Fecha de nacimiento:</span>{" "}
-              {formatDate(user?.birthDate) || "No especificado"}
-            </p>
-            <p>
-              <span className="font-semibold">DNI:</span>{" "}
-              {user?.dni || "No especificado"}
-            </p>
-            <p>
-              <span className="font-semibold">Cargo:</span>{" "}
-              {user?.phone || "No especificado"}
-            </p>
-            <p>
-              <span className="font-semibold">Rol:</span> {user?.role}
-            </p>
-            <button
-              onClick={() => setIsEditing(true)}
-              className="bg-yellow-400 text-white px-4 py-2 rounded mt-4 w-full"
-            >
-              Editar
-            </button>
-          </>
-        )}
-      </div>
+    {/* User Info */}
+    <div className="flex-1 text-center md:text-left">
+      <h2 className="text-3xl font-bold text-gray-800">
+        {form.first} {form.last}
+      </h2>
+      <p className="text-gray-500">{form.email}</p>
     </div>
+
+    {/* QR Placeholder */}
+    <div className="w-28 h-28 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-sm text-gray-400">
+      QR Code
+    </div>
+  </div>
+
+  {/* Editable Fields */}
+  <div className="space-y-5">
+    {isEditing ? (
+      <>
+        {/* Nombre */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Nombre</label>
+          <input
+            type="text"
+            name="first"
+            value={form.first}
+            onChange={handleChange}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
+          />
+        </div>
+
+        {/* Apellido */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Apellido</label>
+          <input
+            type="text"
+            name="last"
+            value={form.last}
+            onChange={handleChange}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
+          />
+        </div>
+
+        {/* Email */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
+          />
+        </div>
+
+        {/* País */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">País</label>
+          <Select
+            options={options}
+            value={form.country}
+            onChange={handleCountryChange}
+            placeholder="Selecciona un país"
+            className="w-full"
+          />
+        </div>
+
+        {/* Ciudad */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Ciudad</label>
+          <input
+            type="text"
+            name="city"
+            value={form.city}
+            onChange={handleChange}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
+          />
+        </div>
+
+        {/* Teléfono */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Teléfono</label>
+          <input
+            type="tel"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
+          />
+        </div>
+
+        {/* Foto */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">Foto</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handlePhotoChange}
+            className="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-50 file:text-yellow-700 hover:file:bg-yellow-100"
+          />
+        </div>
+
+        {/* Botones */}
+        <div className="flex gap-4 mt-6">
+          <button
+            onClick={handleSave}
+            className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+          >
+            Guardar
+          </button>
+          <button
+            onClick={() => setIsEditing(false)}
+            className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+          >
+            Cancelar
+          </button>
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <p><span className="font-semibold">Nombre:</span> {user?.name?.first} {user?.name?.last}</p>
+          <p><span className="font-semibold">Email:</span> {user?.email}</p>
+          <p><span className="font-semibold">País:</span> {user?.country || "No especificado"}</p>
+          <p><span className="font-semibold">Ciudad:</span> {user?.city || "No especificada"}</p>
+          <p><span className="font-semibold">Teléfono:</span> {user?.phone || "No especificado"}</p>
+          <p><span className="font-semibold">Fecha de nacimiento:</span> {formatDate(user?.birthDate) || "No especificado"}</p>
+          <p><span className="font-semibold">DNI:</span> {user?.dni || "No especificado"}</p>
+          <p><span className="font-semibold">Cargo:</span> {user?.cargo || "No especificado"}</p>
+          <p><span className="font-semibold">Rol:</span> {user?.role}</p>
+        </div>
+
+        <button
+          onClick={() => setIsEditing(true)}
+          className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg font-semibold mt-6 w-full md:w-auto"
+        >
+          Editar
+        </button>
+      </>
+    )}
+  </div>
+</div>
+
   );
 };
 
