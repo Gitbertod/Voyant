@@ -40,13 +40,18 @@ const Login = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="w-80 bg-white shadow-lg rounded-lg p-6 flex flex-col"
+          className="w-80 bg-gradient-to-b from-blue-950 via-blue-750 to-blue-900 shadow-lg rounded-lg p-6 flex flex-col"
         >
-          <h2 className="text-2xl font-bold text-center mb-4 text-gray-700">
+          <img
+            src="/SomosVoyant.png"
+            alt="somos voyant logo"
+            className="w-32 mx-auto mb-6 object-contain"
+          ></img>
+          <h2 className="text-2xl font-bold text-center mb-4 text-gray-100">
             Login
           </h2>
 
-          <label htmlFor="email" className="mb-1">
+          <label htmlFor="email" className="mb-1 text-gray-100">
             Email
           </label>
           <input
@@ -55,10 +60,10 @@ const Login = () => {
             autoComplete="email"
             placeholder="tucorreo@correo.com"
             onChange={handleChange}
-            className="border p-2 mb-3 w-full rounded"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
           />
 
-          <label htmlFor="password" className="mb-1">
+          <label htmlFor="password" className="mb-1 text-gray-100">
             Password
           </label>
           <input
@@ -67,9 +72,8 @@ const Login = () => {
             placeholder="******"
             id="password"
             onChange={handleChange}
-            className="border p-2 mb-4 w-full rounded"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
           />
-
           {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
 
           <button
