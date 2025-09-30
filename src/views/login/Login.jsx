@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import LoadingSpinner from "../../components/spinner/LoadingSpinner";
 
 const Login = () => {
@@ -11,6 +11,7 @@ const Login = () => {
 
   const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false); // 👈 nuevo estado
 
@@ -22,8 +23,13 @@ const Login = () => {
     e.preventDefault();
     setLoading(true); // 👈 activa el spinner
     try {
-      await login(user.email, user.password);
-      navigate("/admin/manage-users");
+      const result = await login(user.email, user.password);
+      // Redirigir según el rol
+      if (result.role === "admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/user/dashboard");
+      }
     } catch (error) {
       if (error.code === "auth/weak-password") console.log("password débil");
       setError(error.message);

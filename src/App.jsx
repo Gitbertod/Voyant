@@ -31,6 +31,9 @@ import PostEditor from "./components/postEditor/PostEditor";
 import { UsersTableComponent } from "./components/usersTableComponent/UsersTableComponent";
 import { UserFormCreateWrapper } from "./components/userForm/UserFormCreateWrapper";
 import { UserFormEditWrapper } from "./components/userForm/UserFormEditWrapper";
+import ProtectedRoute from "./components/portected-route/ProtectedRoute";
+import UserLayout from "./views/user/UserLayout";
+import UserDashboard from "./views/user/UserDashboard";
 
 function App() {
   const location = useLocation();
@@ -93,6 +96,16 @@ function App() {
               <Route path="create-user" element={<UserFormCreateWrapper />} />
               <Route path="edit-user/:id" element={<UserFormEditWrapper />} />
             </Route>
+
+            <Route path="/user" element={
+              <ProtectedRoute allowedRoles={["user"]}>
+                <UserLayout />
+              </ProtectedRoute>
+            }>
+              <Route path="dashboard" element={<UserDashboard />} />
+              <Route path="profile" element={<Profile />} />
+            </Route>
+
           </Routes>
           {!isAdminRoute && <FooterVoyant />}
         </AuthProvider>

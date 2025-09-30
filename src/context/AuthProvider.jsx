@@ -12,12 +12,28 @@ export function AuthProvider({ children }) {
 
   // ✅ Login con backend
   const login = async (email, password) => {
-    const res = await api.post("/users/login", { email, password });
-    const { token, data } = res.data;
+    try {
+      // Login request
+      const res = await api.post("users/login", { email, password });
+      const { token } = res.data;
 
-    setUser(data.user);
-    localStorage.setItem("token", token);
-    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      // Guardar token
+      localStorage.setItem("token", token);
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+      // Obtener datos del usuario
+      const userRes = await api.get("/users/me");
+      const userData = userRes.data.data;
+
+      setUser(userData);
+
+      // Retornar los datos del usuario incluyendo el rol
+      return userData; // Esto es importante para que Login.jsx tenga acceso al rol
+    } catch (error) {
+      localStorage.removeItem("token");
+      delete api.defaults.headers.common["Authorization"];
+      throw new Error(error.response?.data?.message || "Error al iniciar sesión");
+    }
   };
 
   // ✅ Signup con backend
@@ -52,9 +68,18 @@ export function AuthProvider({ children }) {
         .get("/users/me")
         .then((res) => {
           setUser(res.data.data);
+          // Redirigir según el rol si está en una ruta incorrecta
+          const currentPath = window.location.pathname;
+          const userRole = res.data.data.role;
+
+          if (userRole === "admin" && !currentPath.startsWith("/admin")) {
+            window.location.href = "/admin/dashboard";
+          } else if (userRole === "user" && !currentPath.startsWith("/user")) {
+            window.location.href = "/user/dashboard";
+          }
         })
         .catch(() => {
-          logout(); // Si el token no es válido
+          logout();
         });
     }
     setLoading(false);
