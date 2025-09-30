@@ -38,8 +38,9 @@ import UserDashboard from "./views/user/UserDashboard";
 function App() {
   const location = useLocation();
 
-  // Si la ruta empieza con /admin, no mostramos navbar ni footer
-  const isAdminRoute = location.pathname.startsWith("/admin");
+  // Modificar la condición para incluir rutas de usuario
+  const isAuthenticatedRoute = location.pathname.startsWith("/admin") || 
+                             location.pathname.startsWith("/user");
 
   const text = `
   <br>  
@@ -53,7 +54,8 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow">
         <AuthProvider>
-          {!isAdminRoute && <NavBar />}
+          {/* Cambiar isAdminRoute por isAuthenticatedRoute */}
+          {!isAuthenticatedRoute && <NavBar />}
           <Routes>
             <Route path="/" element={<Landing />}></Route>
             <Route path="/nosotros" element={<Nosotros />}></Route>
@@ -107,7 +109,8 @@ function App() {
             </Route>
 
           </Routes>
-          {!isAdminRoute && <FooterVoyant />}
+          
+          {!isAuthenticatedRoute && <FooterVoyant />}
         </AuthProvider>
       </div>
     </div>
