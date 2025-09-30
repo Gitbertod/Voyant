@@ -97,7 +97,7 @@ function App() {
               <Route path="edit-user/:id" element={<UserFormEditWrapper />} />
             </Route>
 
-            <Route path="/user" element={
+          <Route path="/user" element={
               <ProtectedRoute allowedRoles={["user"]}>
                 <UserLayout />
               </ProtectedRoute>
