@@ -19,10 +19,7 @@
 
 /* Contenido dinámico */
 .container {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  height: 100vh;
+  @apply flex-1 p-4 overflow-auto;
 }
 
 /* Ajuste en desktop (contenido desplazado por sidebar) */
