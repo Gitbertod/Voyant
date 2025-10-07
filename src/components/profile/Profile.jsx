@@ -141,7 +141,9 @@ const Profile = () => {
         {/* QR Placeholder */}
         <div className="w-28 h-28 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-sm text-gray-400">
           <img
-            src={`/api/v1/qr/${user._id}`}
+            src={`${import.meta.env.PROD 
+              ? "https://voyant-backend.onrender.com/api/v1/qr"  // URL de producción
+              : "/api/v1/qr"}/${user._id}`}                      // URL local (usando proxy)
             alt="QR del usuario"
             width="200"
             className="w-full h-full object-contain"
