@@ -5,7 +5,11 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; connect-src 'self' https://voyant-backend.onrender.com https://*.cloudinary.com https://maps.googleapis.com https://maps.gstatic.com; script-src 'self' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://*.googleusercontent.com https://maps.googleapis.com https://maps.gstatic.com https://*.cloudinary.com https://voyant-backend.onrender.com; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://www.google.com/maps https://maps.googleapis.com;"
+          "value": "default-src 'self' https://voyant-backend.onrender.com; connect-src 'self' https://voyant-backend.onrender.com https://*.cloudinary.com https://maps.googleapis.com https://maps.gstatic.com; script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://*.googleusercontent.com https://maps.googleapis.com https://maps.gstatic.com https://*.cloudinary.com https://voyant-backend.onrender.com; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.google.com https://www.google.com/maps https://maps.googleapis.com"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     }
