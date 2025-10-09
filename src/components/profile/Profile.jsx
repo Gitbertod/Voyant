@@ -146,6 +146,7 @@ const Profile = () => {
               : "/api/v1/qr"}/${user._id}`}                      // URL local (usando proxy)
             alt="QR del usuario"
             width="200"
+            crossOrigin="anonymous"
             className="w-full h-full object-contain"
             onError={(e) => {
               e.target.src = "/qr-placeholder.png";
