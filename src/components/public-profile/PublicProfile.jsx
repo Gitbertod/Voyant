@@ -26,10 +26,13 @@ function PublicProfile() {
 
   if (!user) {
     return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-      <p className="text-center mt-10"> Cargando profile...</p>
-    </div>)
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
+          <p className="text-gray-600"> Cargando perfil...</p>
+        </div>
+      </div>
+    );
   }
 
   // if (loading) {
@@ -58,7 +61,9 @@ function PublicProfile() {
       <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl">
         {/* Header con Avatar */}
         <div className="flex flex-col items-center mb-8">
-          <div className="w-32 h-32 relative mb-4"> {/* Contenedor con dimensiones fijas */}
+          <div className="w-32 h-32 relative mb-4">
+            {" "}
+            {/* Contenedor con dimensiones fijas */}
             <Avatar
               img={user.picture || "/default-avatar-icon.jpg"}
               size="xm"
@@ -66,7 +71,7 @@ function PublicProfile() {
               bordered
               className="!w-full !h-full object-cover" // Override Flowbite's default size and maintain aspect ratio
               imgProps={{
-                className: "object-cover w-full h-full rounded-full" // Ensure image covers the area properly
+                className: "object-cover w-full h-full rounded-full", // Ensure image covers the area properly
               }}
             />
           </div>
