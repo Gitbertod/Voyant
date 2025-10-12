@@ -58,13 +58,18 @@ function PublicProfile() {
       <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl">
         {/* Header con Avatar */}
         <div className="flex flex-col items-center mb-8">
-          <Avatar
-            img={user.picture || "/default-avatar-icon.jpg"}
-            size="xl"
-            rounded
-            bordered
-            className="w-32 h-32 mb-4"
-          />
+          <div className="w-32 h-32 relative mb-4"> {/* Contenedor con dimensiones fijas */}
+            <Avatar
+              img={user.picture || "/default-avatar-icon.jpg"}
+              size="xm"
+              rounded
+              bordered
+              className="!w-full !h-full object-cover" // Override Flowbite's default size and maintain aspect ratio
+              imgProps={{
+                className: "object-cover w-full h-full rounded-full" // Ensure image covers the area properly
+              }}
+            />
+          </div>
           <h1 className="text-3xl font-bold text-gray-800">
             {user.name?.first} {user.name?.last}
           </h1>
