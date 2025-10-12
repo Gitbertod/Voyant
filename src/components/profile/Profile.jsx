@@ -79,10 +79,10 @@ const Profile = () => {
   const uploadToCloudinary = async (file) => {
     const data = new FormData();
     data.append("file", file);
-    data.append("upload_preset", "voyantPreset"); // ⚡ cambia por el tuyo
+    data.append("upload_preset", "voyantPreset"); 
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dvihibg5k/image/upload", // ⚡ cambia por tu cloud_name
+      "https://api.cloudinary.com/v1_1/dvihibg5k/image/upload", 
       {
         method: "POST",
         body: data,

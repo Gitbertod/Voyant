@@ -34,6 +34,7 @@ import { UserFormEditWrapper } from "./components/userForm/UserFormEditWrapper";
 import ProtectedRoute from "./components/portected-route/ProtectedRoute";
 import UserLayout from "./views/user/UserLayout";
 import UserDashboard from "./views/user/UserDashboard";
+import PublicProfile from "./components/public-profile/PublicProfile";
 
 function App() {
   const location = useLocation();
@@ -83,6 +84,7 @@ function App() {
             <Route path="/contacto" element={<Contacto />}></Route>
             <Route path="/telecomunicaciones" element={<Telecomunicaciones />}></Route>
             <Route path="/otros-sectores" element={<OtrosSectores />}></Route>
+            <Route path="/profile/:id" element={<PublicProfile/>}></Route>
 
             {/* Blog público */}
             <Route path="/blog/:id" element={<BlogPost />} />
