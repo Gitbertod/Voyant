@@ -24,16 +24,24 @@ function PublicProfile() {
     fetchUser();
   }, [id]);
 
-  if (loading) {
+  if (!user) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando perfil...</p>
-        </div>
-      </div>
-    );
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
+      <p className="text-center mt-10"> Cargando profile...</p>
+    </div>)
   }
+
+  // if (loading) {
+  //   return (
+  //     <div className="flex items-center justify-center min-h-screen">
+  //       <div className="text-center">
+  //         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
+  //         <p className="text-gray-600">Cargando perfil...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   if (error) {
     return (
@@ -60,7 +68,9 @@ function PublicProfile() {
           <h1 className="text-3xl font-bold text-gray-800">
             {user.name?.first} {user.name?.last}
           </h1>
-          <p className="text-gray-600">{user.position || "Colaborador Voyant"}</p>
+          <p className="text-gray-600">
+            {user.position || "Colaborador Voyant"}
+          </p>
         </div>
 
         {/* Información de contacto */}
@@ -75,23 +85,29 @@ function PublicProfile() {
               <p className="text-gray-800">{user.phone || "No especificado"}</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-500">Departamento</h3>
-              <p className="text-gray-800">{user.department || "No especificado"}</p>
+              <h3 className="text-sm font-semibold text-gray-500">
+                Departamento
+              </h3>
+              <p className="text-gray-800">
+                {user.department || "No especificado"}
+              </p>
             </div>
           </div>
-          
+
           <div className="space-y-4">
             <div>
               <h3 className="text-sm font-semibold text-gray-500">Ubicación</h3>
               <p className="text-gray-800">
-                {user.city && user.country 
+                {user.city && user.country
                   ? `${user.city}, ${user.country}`
                   : "No especificada"}
               </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-gray-500">Cargo</h3>
-              <p className="text-gray-800">{user.position || "No especificado"}</p>
+              <p className="text-gray-800">
+                {user.position || "No especificado"}
+              </p>
             </div>
           </div>
         </div>
@@ -99,15 +115,15 @@ function PublicProfile() {
         {/* Sello de verificación */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-center">
           <div className="inline-flex items-center justify-center space-x-2 bg-green-50 px-4 py-2 rounded-full">
-            <svg 
-              className="w-5 h-5 text-green-500" 
-              fill="currentColor" 
+            <svg
+              className="w-5 h-5 text-green-500"
+              fill="currentColor"
               viewBox="0 0 20 20"
             >
-              <path 
-                fillRule="evenodd" 
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" 
-                clipRule="evenodd" 
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
               />
             </svg>
             <span className="text-sm font-medium text-green-600">
