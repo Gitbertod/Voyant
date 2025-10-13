@@ -65,6 +65,7 @@ export function UsersTableComponent() {
               <th className="px-6 py-3">Email</th>
               <th className="px-6 py-3">Rol</th>
               <th className="px-6 py-3">Status</th>
+              <th className="px-6 py-3">Departamento</th>
               <th className="px-6 py-3">Fecha de creación</th>
               <th className="px-6 py-3">Acciones</th>
             </tr>
@@ -99,6 +100,9 @@ export function UsersTableComponent() {
                   >
                     {user.status ? "Activo" : "Inactivo"}
                   </span>
+                </td>
+                <td className="px-6 py-4">
+                  {user.departament}
                 </td>
                 <td className="px-6 py-4">
                   {new Date(user.createdAt).toLocaleDateString("es-PE", {

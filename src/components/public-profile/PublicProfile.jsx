@@ -93,13 +93,14 @@ function PublicProfile() {
             <div>
               <h3 className="text-sm font-semibold text-gray-500">Teléfono</h3>
               <p className="text-gray-800">{user.phone || "No especificado"}</p>
+              {console.log(user)}
             </div>
             <div>
               <h3 className="text-sm font-semibold text-gray-500">
                 Departamento
               </h3>
               <p className="text-gray-800">
-                {user.department || "No especificado"}
+                {user.departament || "No especificado"}
               </p>
             </div>
           </div>
