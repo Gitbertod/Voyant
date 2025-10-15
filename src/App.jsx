@@ -35,6 +35,7 @@ import ProtectedRoute from "./components/portected-route/ProtectedRoute";
 import UserLayout from "./views/user/UserLayout";
 import UserDashboard from "./views/user/UserDashboard";
 import PublicProfile from "./components/public-profile/PublicProfile";
+import ResetPassword from "./components/resetPassword/ResetPassword";
 
 function App() {
   const location = useLocation();
@@ -85,6 +86,7 @@ function App() {
             <Route path="/telecomunicaciones" element={<Telecomunicaciones />}></Route>
             <Route path="/otros-sectores" element={<OtrosSectores />}></Route>
             <Route path="/profile/:id" element={<PublicProfile/>}></Route>
+            <Route path="/users/resetPassword/:token" element={<ResetPassword />} />
 
             {/* Blog público */}
             <Route path="/blog/:id" element={<BlogPost />} />
