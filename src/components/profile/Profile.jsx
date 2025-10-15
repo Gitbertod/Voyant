@@ -127,7 +127,6 @@ const Profile = () => {
           bordered
           color="light"
           size="xl"
-          className="shadow-md"
         />
 
         {/* User Info */}
@@ -239,6 +238,19 @@ const Profile = () => {
                 type="tel"
                 name="phone"
                 value={form.phone}
+                onChange={handleChange}
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Password
+              </label>
+              <input
+                type="password"
+                name="last"
+                value={form.last}
                 onChange={handleChange}
                 className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
               />
