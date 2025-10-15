@@ -91,6 +91,7 @@ const Login = () => {
             onChange={handleChange}
             value={user.email}
             required
+            autoComplete="email"
             className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
           />
 
@@ -106,6 +107,7 @@ const Login = () => {
                 onChange={handleChange}
                 value={user.password}
                 required
+                autoComplete="current-password"
                 className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
               />
             </>
