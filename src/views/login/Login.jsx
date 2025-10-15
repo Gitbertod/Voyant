@@ -24,21 +24,33 @@ const Login = () => {
 
     try {
       if (isForgotPassword) {
-        await api.post("/users/forgotPassword", {
-          email: user.email,
-        });
+        try {
+          await api.post("/users/forgotPassword", {
+            email: user.email,
+          });
 
-        // Replace alert with SweetAlert2
-        await Swal.fire({
-          icon: 'success',
-          title: '¡Enlace enviado!',
-          text: 'Se ha enviado un enlace de recuperación a tu correo',
-          confirmButtonColor: '#EAB308', // yellow-400 in tailwind
-          confirmButtonText: 'Entendido'
-        });
+          await Swal.fire({
+            icon: 'success',
+            title: '¡Enlace enviado!',
+            text: 'Se ha enviado un enlace de recuperación a tu correo',
+            confirmButtonColor: '#EAB308',
+            confirmButtonText: 'Entendido'
+          });
 
-        setIsForgotPassword(false);
-        setUser({ email: "", password: "" });
+          setIsForgotPassword(false);
+          setUser({ email: "", password: "" });
+        } catch (error) {
+          console.error('Error details:', error.response || error);
+          
+          await Swal.fire({
+            icon: 'error',
+            title: 'Error al enviar el correo',
+            text: error.response?.data?.message || 
+                  'Hubo un problema al enviar el correo de recuperación. Por favor, intenta más tarde.',
+            confirmButtonColor: '#EAB308',
+            confirmButtonText: 'Entendido'
+          });
+        }
       } else {
         // Lógica de login normal
         const result = await login(user.email, user.password);
@@ -49,8 +61,9 @@ const Login = () => {
         }
       }
     } catch (error) {
+      console.error('Full error:', error);
       setError(error.response?.data?.message || "Error en la operación");
-      // Add SweetAlert2 for error
+      
       await Swal.fire({
         icon: 'error',
         title: '¡Error!',
