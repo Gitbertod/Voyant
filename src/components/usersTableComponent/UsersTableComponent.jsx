@@ -71,6 +71,7 @@ export function UsersTableComponent() {
               <th className="px-6 py-3">Status</th>
               <th className="px-6 py-3">Departamento</th>
               <th className="px-6 py-3">Fecha de creación</th>
+              <th className="px-6 py-3">Última Conección</th>
               <th className="px-6 py-3">Acciones</th>
             </tr>
           </thead>
@@ -113,6 +114,11 @@ export function UsersTableComponent() {
                     day: "numeric",
                   })}
                 </td>
+                <td>
+                  {user.lastLogin
+                    ? new Date(user.lastLogin).toLocaleString()
+                    : "Nunca ha iniciado sesión"}
+                </td>
                 <td className="px-6 py-4 flex gap-2">
                   <button
                     className="px-3 py-1 text-xs rounded bg-blue-800 text-white hover:bg-blue-600"
@@ -120,7 +126,7 @@ export function UsersTableComponent() {
                   >
                     Editar
                   </button>
-                  <button
+                  {/* <button
                     className={`px-3 py-1 text-xs rounded ${
                       user.active
                         ? "bg-red-500 hover:bg-red-600"
@@ -129,7 +135,7 @@ export function UsersTableComponent() {
                     disabled
                   >
                     {user.active ? "Desactivar" : "Activar"}
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             ))}
