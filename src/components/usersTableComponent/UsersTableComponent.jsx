@@ -116,10 +116,16 @@ export function UsersTableComponent() {
                 </td>
                 <td>
                   {user.lastLogin
-                    ? `${new Date(user.lastLogin).toLocaleString()} (${
-                        user.lastLoginIp || "IP desconocida"
-                      })`
+                    ? new Date(user.lastLogin).toLocaleString()
                     : "Nunca ha iniciado sesión"}
+                  <br />
+                  <small>{user.lastLoginIp}</small>
+                  <br />
+                  <small>
+                    {user.lastLoginLocation
+                      ? `${user.lastLoginLocation.city}, ${user.lastLoginLocation.region}, ${user.lastLoginLocation.country}`
+                      : "Ubicación desconocida"}
+                  </small>
                 </td>
                 <td className="px-6 py-4 flex gap-2">
                   <button
