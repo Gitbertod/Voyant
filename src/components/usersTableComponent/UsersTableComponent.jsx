@@ -71,7 +71,7 @@ export function UsersTableComponent() {
               <th className="px-6 py-3">Status</th>
               <th className="px-6 py-3">Departamento</th>
               <th className="px-6 py-3">Fecha de creación</th>
-              <th className="px-6 py-3">Última Conección</th>
+              <th className="px-6 py-3">Última Conexión</th>
               <th className="px-6 py-3">Acciones</th>
             </tr>
           </thead>
@@ -116,7 +116,9 @@ export function UsersTableComponent() {
                 </td>
                 <td>
                   {user.lastLogin
-                    ? new Date(user.lastLogin).toLocaleString()
+                    ? `${new Date(user.lastLogin).toLocaleString()} (${
+                        user.lastLoginIp || "IP desconocida"
+                      })`
                     : "Nunca ha iniciado sesión"}
                 </td>
                 <td className="px-6 py-4 flex gap-2">
