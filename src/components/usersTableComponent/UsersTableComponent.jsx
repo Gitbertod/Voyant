@@ -52,6 +52,10 @@ export function UsersTableComponent() {
             titulo="Usuarios activos/inactivos"
             data={stats.usersByStatus}
           />
+          <UsersBy
+            titulo="Usuarios por departamento"
+            data={stats.usersByDepartament}
+          />
         </div>
       )}
 
@@ -101,9 +105,7 @@ export function UsersTableComponent() {
                     {user.status ? "Activo" : "Inactivo"}
                   </span>
                 </td>
-                <td className="px-6 py-4">
-                  {user.departament}
-                </td>
+                <td className="px-6 py-4">{user.departament}</td>
                 <td className="px-6 py-4">
                   {new Date(user.createdAt).toLocaleDateString("es-PE", {
                     year: "numeric",

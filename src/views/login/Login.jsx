@@ -55,7 +55,7 @@ const Login = () => {
         // Lógica de login normal
         const result = await login(user.email, user.password);
         if (result.role === "admin") {
-          navigate("/admin/dashboard");
+          navigate("/admin/manage-users");
         } else {
           navigate("/user/dashboard");
         }

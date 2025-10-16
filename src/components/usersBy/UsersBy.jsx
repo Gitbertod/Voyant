@@ -6,7 +6,7 @@ const UsersBy = ({ titulo, data }) => {
   const total = Object.values(data).reduce((sum, val) => sum + val, 0);
 
   return (
-    <Card className="max-w-sm border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300">
+    <Card className=" border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="flex items-center justify-between mb-4">
         <h5 className="text-lg font-semibold text-gray-700 dark:text-gray-300">
           {titulo}

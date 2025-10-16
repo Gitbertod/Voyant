@@ -30,7 +30,7 @@ export function AuthProvider({ children }) {
         // Solo redirigir si estamos en una ruta incorrecta
         const currentPath = window.location.pathname;
         if (userData.role === "admin" && !currentPath.startsWith("/admin")) {
-          navigate("/admin/dashboard");
+          navigate("/admin/manage-users");
         } else if (userData.role === "user" && !currentPath.startsWith("/user")) {
           navigate("/user/dashboard");
         }
