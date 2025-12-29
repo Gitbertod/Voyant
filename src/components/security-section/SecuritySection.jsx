@@ -57,11 +57,11 @@ const SecuritySection = () => {
   return (
     <div className="mt-12 pt-8 border-t">
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-200">
-        <div className="flex items-center justify-between mb-6">
-          <div>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <div className="flex-1">
             <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-blue-800"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -82,7 +82,7 @@ const SecuritySection = () => {
           {!isChangingPassword && (
             <button
               onClick={() => setIsChangingPassword(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+              className="w-full md:w-auto bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
             >
               Cambiar Contraseña
             </button>
