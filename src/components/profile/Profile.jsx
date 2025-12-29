@@ -8,7 +8,13 @@ import countryList from "react-select-country-list";
 const Profile = () => {
   const { user, loading, setUser } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
+  const [isChangingPassword, setIsChangingPassword] = useState(false);
   const [preview, setPreview] = useState(null); // preview de la foto
+  const [passwordForm, setPasswordForm] = useState({
+    passwordCurrent: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
   const [form, setForm] = useState({
     _id: user?._id,
     first: user?.name.first || "",
@@ -59,6 +65,51 @@ const Profile = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  // ✅ Manejo de cambio de contraseña
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswordForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // ✅ Guardar cambio de contraseña
+  const handleSavePassword = async () => {
+    if (
+      !passwordForm.passwordCurrent ||
+      !passwordForm.newPassword ||
+      !passwordForm.confirmPassword
+    ) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
+
+    if (passwordForm.newPassword !== passwordForm.confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
+
+    if (passwordForm.newPassword.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres");
+      return;
+    }
+
+    try {
+      await api.patch("/users/updateMyPassword", {
+        passwordCurrent: passwordForm.passwordCurrent,
+        password: passwordForm.newPassword,
+        passwordConfirm: passwordForm.confirmPassword,
+      });
+      alert("Contraseña actualizada exitosamente");
+      setPasswordForm({
+        passwordCurrent: "",
+        newPassword: "",
+        confirmPassword: "",
+      });
+      setIsChangingPassword(false);
+    } catch (error) {
+      alert(error.response?.data?.message || "Error al cambiar la contraseña");
+    }
+  };
+
   // ✅ Manejo de país
   const handleCountryChange = (value) => {
     setForm((prev) => ({ ...prev, country: value }));
@@ -79,10 +130,10 @@ const Profile = () => {
   const uploadToCloudinary = async (file) => {
     const data = new FormData();
     data.append("file", file);
-    data.append("upload_preset", "voyantPreset"); 
+    data.append("upload_preset", "voyantPreset");
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dvihibg5k/image/upload", 
+      "https://api.cloudinary.com/v1_1/dvihibg5k/image/upload",
       {
         method: "POST",
         body: data,
@@ -140,9 +191,11 @@ const Profile = () => {
         {/* QR Placeholder */}
         <div className="w-28 h-28 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-sm text-gray-400">
           <img
-            src={`${import.meta.env.PROD 
-              ? "https://voyant-backend.onrender.com/api/v1/qr"  // URL de producción
-              : "/api/v1/qr"}/${user._id}`}                      // URL local (usando proxy)
+            src={`${
+              import.meta.env.PROD
+                ? "https://voyant-backend.onrender.com/api/v1/qr" // URL de producción
+                : "/api/v1/qr"
+            }/${user._id}`} // URL local (usando proxy)
             alt="QR del usuario"
             width="200"
             crossOrigin="anonymous"
@@ -243,19 +296,6 @@ const Profile = () => {
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
-                Password
-              </label>
-              <input
-                type="password"
-                name="last"
-                value={form.last}
-                onChange={handleChange}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-yellow-400 focus:ring-0 transition-all duration-300 ease-in-out"
-              />
-            </div>
-
             {/* Foto */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -332,6 +372,118 @@ const Profile = () => {
             </button>
           </>
         )}
+      </div>
+
+      {/* Sección de Cambio de Contraseña */}
+      <div className="mt-12 pt-8 border-t">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-200">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                <svg
+                  className="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
+                Seguridad
+              </h3>
+              <p className="text-gray-600 mt-1">
+                Actualiza tu contraseña para mantener tu cuenta segura
+              </p>
+            </div>
+            {!isChangingPassword && (
+              <button
+                onClick={() => setIsChangingPassword(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+              >
+                Cambiar Contraseña
+              </button>
+            )}
+          </div>
+
+          {isChangingPassword && (
+            <div className="space-y-4 mt-6">
+              {/* Contraseña Actual */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Contraseña Actual
+                </label>
+                <input
+                  type="password"
+                  name="passwordCurrent"
+                  value={passwordForm.passwordCurrent}
+                  onChange={handlePasswordChange}
+                  placeholder="Ingresa tu contraseña actual"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none"
+                />
+              </div>
+
+              {/* Nueva Contraseña */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Nueva Contraseña
+                </label>
+                <input
+                  type="password"
+                  name="newPassword"
+                  value={passwordForm.newPassword}
+                  onChange={handlePasswordChange}
+                  placeholder="Ingresa tu nueva contraseña"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none"
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Mínimo 6 caracteres
+                </p>
+              </div>
+
+              {/* Confirmar Contraseña */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Confirmar Nueva Contraseña
+                </label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={passwordForm.confirmPassword}
+                  onChange={handlePasswordChange}
+                  placeholder="Confirma tu nueva contraseña"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none"
+                />
+              </div>
+
+              {/* Botones de Acción */}
+              <div className="flex gap-3 mt-6 pt-4 border-t border-blue-300">
+                <button
+                  onClick={handleSavePassword}
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+                >
+                  Confirmar Cambio
+                </button>
+                <button
+                  onClick={() => {
+                    setIsChangingPassword(false);
+                    setPasswordForm({
+                      passwordCurrent: "",
+                      newPassword: "",
+                      confirmPassword: "",
+                    });
+                  }}
+                  className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
