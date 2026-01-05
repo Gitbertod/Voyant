@@ -119,7 +119,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-5xl mx-auto">
+    <div className="bg-white shadow-xl rounded-2xl p-5 w-full max-w-5xl mx-auto">
       {/* Header Profile */}
       <ProfileHeader preview={preview} form={form} user={user} />
 

@@ -4,7 +4,6 @@ import { UserPersonalInfo } from "./UserPersonalInfo";
 import { UserContactInfo } from "./UserContactInfo";
 import { UserLocationInfo } from "./UserLocationInfo";
 import { useParams } from "react-router-dom";
-import Select from "react-select";
 import countryList from "react-select-country-list";
 import api from "../../api";
 import { UserJobInfo } from "./UserJobInfo";

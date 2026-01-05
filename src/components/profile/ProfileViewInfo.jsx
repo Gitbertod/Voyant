@@ -61,13 +61,13 @@ const ProfileViewInfo = ({ user, formatDate, onEdit }) => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Información en tarjetas mejoradas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {infoItems.map((item, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 border border-gray-200 hover:border-yellow-300 hover:shadow-md transition-all duration-300"
+            className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-2 border border-gray-200 hover:border-yellow-300 hover:shadow-md transition-all duration-300"
           >
             <div className="flex items-start gap-3">
               {item.icon}
