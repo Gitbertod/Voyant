@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import LoadingSpinner from "../../components/spinner/LoadingSpinner";
 import api from "../../api";
-import Swal from 'sweetalert2'; // Add this import
+import Swal from 'sweetalert2';
 
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
   const [isForgotPassword, setIsForgotPassword] = useState(false); // 👈 nuevo estado
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -113,16 +115,29 @@ const Login = () => {
               <label htmlFor="password" className="mb-1 text-gray-100">
                 Password
               </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="******"
-                onChange={handleChange}
-                value={user.password}
-                required
-                autoComplete="current-password"
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
-              />
+              <div className="relative mb-4">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  placeholder="******"
+                  onChange={handleChange}
+                  value={user.password}
+                  required
+                  autoComplete="current-password"
+                  className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 pr-10 transition-all duration-300 ease-in-out"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-0 bottom-2 text-gray-400 hover:text-yellow-400 transition-colors"
+                >
+                  {showPassword ? (
+                    <MdVisibility size={20} />
+                  ) : (
+                    <MdVisibilityOff size={20} />
+                  )}
+                </button>
+              </div>
             </>
           )}
 

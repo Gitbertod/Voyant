@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import api from "../../api";
 
 const ResetPassword = () => {
@@ -11,6 +12,8 @@ const ResetPassword = () => {
   const [messageType, setMessageType] = useState(""); // "success" o "error"
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
 
   // ✅ Validaciones
   const validateForm = () => {
@@ -85,18 +88,31 @@ const ResetPassword = () => {
         <label htmlFor="password" className="mb-1 text-gray-100">
           Nueva Contraseña
         </label>
-        <input
-          type="password"
-          placeholder="Mínimo 6 caracteres"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            if (errors.password) {
-              setErrors((prev) => ({ ...prev, password: "" }));
-            }
-          }}
-          className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
-        />
+        <div className="relative mb-4">
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Mínimo 6 caracteres"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              if (errors.password) {
+                setErrors((prev) => ({ ...prev, password: "" }));
+              }
+            }}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 pr-10 transition-all duration-300 ease-in-out"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-0 bottom-2 text-gray-400 hover:text-yellow-400 transition-colors"
+          >
+            {showPassword ? (
+              <MdVisibility size={20} />
+            ) : (
+              <MdVisibilityOff size={20} />
+            )}
+          </button>
+        </div>
         {errors.password && (
           <p className="text-red-400 text-xs mb-3">{errors.password}</p>
         )}
@@ -104,18 +120,31 @@ const ResetPassword = () => {
         <label htmlFor="passwordConfirm" className="mb-1 text-gray-100">
           Confirmar Contraseña
         </label>
-        <input
-          type="password"
-          placeholder="Confirma tu nueva contraseña"
-          value={passwordConfirm}
-          onChange={(e) => {
-            setPasswordConfirm(e.target.value);
-            if (errors.passwordConfirm) {
-              setErrors((prev) => ({ ...prev, passwordConfirm: "" }));
-            }
-          }}
-          className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 mb-4 transition-all duration-300 ease-in-out"
-        />
+        <div className="relative mb-4">
+          <input
+            type={showPasswordConfirm ? "text" : "password"}
+            placeholder="Confirma tu nueva contraseña"
+            value={passwordConfirm}
+            onChange={(e) => {
+              setPasswordConfirm(e.target.value);
+              if (errors.passwordConfirm) {
+                setErrors((prev) => ({ ...prev, passwordConfirm: "" }));
+              }
+            }}
+            className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-b-4 focus:border-yellow-400 focus:ring-0 text-white placeholder-gray-400 pr-10 transition-all duration-300 ease-in-out"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPasswordConfirm(!showPasswordConfirm)}
+            className="absolute right-0 bottom-2 text-gray-400 hover:text-yellow-400 transition-colors"
+          >
+            {showPasswordConfirm ? (
+              <MdVisibility size={20} />
+            ) : (
+              <MdVisibilityOff size={20} />
+            )}
+          </button>
+        </div>
         {errors.passwordConfirm && (
           <p className="text-red-400 text-xs mb-3">{errors.passwordConfirm}</p>
         )}
