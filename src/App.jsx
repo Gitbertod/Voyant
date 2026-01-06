@@ -1,5 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Landing from "./views/landing/Landing";
 import Nosotros from "./views/nosotros/Nosotros";
 import SolucionesView from "./views/soluciones/SolucionesView";
@@ -117,6 +119,20 @@ function App() {
           {!isAuthenticatedRoute && <FooterVoyant />}
         </AuthProvider>
       </div>
+      
+      {/* ToastContainer para notificaciones */}
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
