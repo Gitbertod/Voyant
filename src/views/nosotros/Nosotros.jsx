@@ -3,7 +3,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import NavBar from "../../components/navbar/NavBar";
 import SectionComponent from "../../components/section-component/SectionComponent";
-import SectionComponent2 from "../../components/section-component2/SectionComponent2";
 import Shape from "../../components/shape/Shape";
 import styles from "./Nosotros.module.css";
 import Valores from "../../components/valores/Valores";
@@ -37,8 +36,9 @@ const Nosotros = () => {
         }
         childComponent2={<Shape />}
       />
-      <SectionComponent2
+      <SectionComponent
         title="Misión"
+        reverse={true}
         text={
           <>
             Nuestra misión es ayudar a nuestros clientes a alcanzar dos metas

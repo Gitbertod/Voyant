@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import video_bg from "../../../assets/datacenters.mp4";
 import SectionComponent from "../../../components/section-component/SectionComponent";
-import SectionComponent2 from "../../../components/section-component2/SectionComponent2";
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
 import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
@@ -142,7 +141,8 @@ const DataCenters = () => {
         }
         imgSrc="DataCenter.jpg"
       />
-      <SectionComponent2
+      <SectionComponent
+        reverse= {true}
         text={
           <>
             <strong>Sistemas de climatización:</strong> Nuestras soluciones de

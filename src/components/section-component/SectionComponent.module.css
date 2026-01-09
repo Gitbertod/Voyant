@@ -6,8 +6,7 @@
     overflow: hidden;
     background-size: cover;
     justify-content: center;
-    min-height: 700px;  
-    height: auto;
+    height: 100vh;  
     z-index: -1;
 }
 
@@ -22,6 +21,10 @@
     align-items: center;
     width: 80%;
     
+}
+
+.containerInfo .reverse {
+    flex-direction: row-reverse;
 }
 
 .container img{
