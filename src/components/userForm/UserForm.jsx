@@ -32,7 +32,7 @@ export function UserForm({
     departament: "",
     position: "",
     role: "user",
-    status:true,
+    status: true,
     picture: "",
     password: "",
     passwordConfirm: "",
@@ -65,7 +65,7 @@ export function UserForm({
               first: user.name?.first || "",
               last: user.name?.last || "",
             },
-            dni:user.dni || "",
+            dni: user.dni || "",
             email: user.email || "",
             phone: user.phone || "",
             country: user.country || "",
@@ -89,26 +89,25 @@ export function UserForm({
 
   // handleChange (genérico, sirve para inputs simples)
   const handleChange = (e) => {
-  const { name, value } = e.target;
+    const { name, value } = e.target;
 
-  // soporta valores anidados con "name.first"
-  if (name.includes(".")) {
-    const [parent, child] = name.split(".");
-    setForm((prev) => ({
-      ...prev,
-      [parent]: {
-        ...prev[parent],
-        [child]: value,
-      },
-    }));
-  } else {
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
-};
-
+    // soporta valores anidados con "name.first"
+    if (name.includes(".")) {
+      const [parent, child] = name.split(".");
+      setForm((prev) => ({
+        ...prev,
+        [parent]: {
+          ...prev[parent],
+          [child]: value,
+        },
+      }));
+    } else {
+      setForm((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
 
   // Manejo de país
   const handleCountryChange = (option) => {
@@ -133,8 +132,8 @@ export function UserForm({
   const uploadToCloudinary = async (file) => {
     const data = new FormData();
     data.append("file", file);
-    data.append("upload_preset", "voyantPreset"); 
-    
+    data.append("upload_preset", "voyantPreset");
+
     const res = await fetch(
       "https://api.cloudinary.com/v1_1/dvihibg5k/image/upload",
       { method: "POST", body: data }
@@ -158,9 +157,9 @@ export function UserForm({
           first: form.name.first,
           last: form.name.last,
         },
-        dni:form.dni,
+        dni: form.dni,
         email: form.email,
-        status:form.status,
+        status: form.status,
         phone: form.phone,
         country: form.country,
         city: form.city,
@@ -169,14 +168,14 @@ export function UserForm({
         departament: form.department,
         position: form.position,
         role: form.role,
-        picture: photoUrl
+        picture: photoUrl,
       };
 
-// 👉 Solo añadir password si el usuario los llenó
-    if (form.password && form.passwordConfirm) {
-      payload.password = form.password;
-      payload.passwordConfirm = form.passwordConfirm;
-    }
+      // 👉 Solo añadir password si el usuario los llenó
+      if (form.password && form.passwordConfirm) {
+        payload.password = form.password;
+        payload.passwordConfirm = form.passwordConfirm;
+      }
 
       if (onSubmit) {
         await onSubmit(payload);
@@ -207,6 +206,7 @@ export function UserForm({
       <UserAvatarSection
         preview={preview}
         handlePhotoChange={handlePhotoChange}
+        userId={mode === "edit" ? id : null}
       />
 
       {/* Grid de inputs */}
