@@ -24,27 +24,16 @@ function PublicProfile() {
     fetchUser();
   }, [id]);
 
-  if (!user) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-          <p className="text-gray-600"> Cargando perfil...</p>
+          <p className="text-gray-600">Cargando perfil...</p>
         </div>
       </div>
     );
   }
-
-  // if (loading) {
-  //   return (
-  //     <div className="flex items-center justify-center min-h-screen">
-  //       <div className="text-center">
-  //         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-  //         <p className="text-gray-600">Cargando perfil...</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   if (error) {
     return (
@@ -56,35 +45,135 @@ function PublicProfile() {
     );
   }
 
+  if (!user) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando perfil...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Determinar si el usuario está activo
+  const isActive = user.status === true;
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl">
+      <div className={`bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl relative overflow-hidden ${!isActive ? 'border-2 border-red-400' : ''}`}>
+        
+        {/* Banner de estado inactivo */}
+        {!isActive && (
+          <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white py-3 px-6 flex items-center justify-center space-x-3 shadow-lg">
+            <svg 
+              className="w-6 h-6 animate-pulse" 
+              fill="currentColor" 
+              viewBox="0 0 20 20"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+            <span className="font-bold text-lg">USUARIO INACTIVO</span>
+            <svg 
+              className="w-6 h-6 animate-pulse" 
+              fill="currentColor" 
+              viewBox="0 0 20 20"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+          </div>
+        )}
+
         {/* Header con Avatar */}
-        <div className="flex flex-col items-center mb-8">
+        <div className={`flex flex-col items-center mb-8 ${!isActive ? 'mt-12' : ''}`}>
           <div className="w-32 h-32 relative mb-4">
-            {" "}
-            {/* Contenedor con dimensiones fijas */}
+            {/* Overlay de inactivo sobre el avatar */}
+            {!isActive && (
+              <div className="absolute inset-0 bg-gray-900 bg-opacity-60 rounded-full flex items-center justify-center z-10">
+                <svg 
+                  className="w-16 h-16 text-red-500" 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
+                >
+                  <path 
+                    fillRule="evenodd" 
+                    d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" 
+                    clipRule="evenodd" 
+                  />
+                </svg>
+              </div>
+            )}
             <Avatar
               img={user.picture || "/default-avatar-icon.jpg"}
-              size="xm"
+              size="xl"
               rounded
               bordered
-              className="!w-full !h-full object-cover" // Override Flowbite's default size and maintain aspect ratio
+              className={`!w-full !h-full object-cover ${!isActive ? 'grayscale opacity-60' : ''}`}
               imgProps={{
-                className: "object-cover w-full h-full rounded-full", // Ensure image covers the area properly
+                className: "object-cover w-full h-full rounded-full",
               }}
             />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className={`text-3xl font-bold ${isActive ? 'text-gray-800' : 'text-gray-500'}`}>
             {user.name?.first} {user.name?.last}
           </h1>
-          <p className="text-gray-600">
+          <p className={`${isActive ? 'text-gray-600' : 'text-gray-400'}`}>
             {user.position || "Colaborador Voyant"}
           </p>
+
+          {/* Badge de estado */}
+          <div className="mt-3">
+            {isActive ? (
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span className="w-2 h-2 mr-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                Activo
+              </span>
+            ) : (
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                <span className="w-2 h-2 mr-1.5 bg-red-500 rounded-full"></span>
+                Inactivo
+              </span>
+            )}
+          </div>
         </div>
 
+        {/* Alerta de usuario inactivo */}
+        {!isActive && (
+          <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+            <div className="flex items-start">
+              <svg 
+                className="w-5 h-5 text-red-500 mt-0.5 mr-3 flex-shrink-0" 
+                fill="currentColor" 
+                viewBox="0 0 20 20"
+              >
+                <path 
+                  fillRule="evenodd" 
+                  d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" 
+                  clipRule="evenodd" 
+                />
+              </svg>
+              <div>
+                <h3 className="text-sm font-bold text-red-800 mb-1">
+                  Este usuario está inactivo
+                </h3>
+                <p className="text-sm text-red-700">
+                  Este perfil ha sido desactivado y puede que no esté disponible para contacto o colaboración.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Información de contacto */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 ${!isActive ? 'opacity-60' : ''}`}>
           <div className="space-y-4">
             <div>
               <h3 className="text-sm font-semibold text-gray-500">Email</h3>
@@ -93,7 +182,6 @@ function PublicProfile() {
             <div>
               <h3 className="text-sm font-semibold text-gray-500">Teléfono</h3>
               <p className="text-gray-800">{user.phone || "No especificado"}</p>
-              {console.log(user)}
             </div>
             <div>
               <h3 className="text-sm font-semibold text-gray-500">
@@ -125,22 +213,41 @@ function PublicProfile() {
 
         {/* Sello de verificación */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-          <div className="inline-flex items-center justify-center space-x-2 bg-green-50 px-4 py-2 rounded-full">
-            <svg
-              className="w-5 h-5 text-green-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span className="text-sm font-medium text-green-600">
-              Perfil verificado por Voyant
-            </span>
-          </div>
+          {isActive ? (
+            <div className="inline-flex items-center justify-center space-x-2 bg-green-50 px-4 py-2 rounded-full">
+              <svg
+                className="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-sm font-medium text-green-600">
+                Perfil verificado por Voyant
+              </span>
+            </div>
+          ) : (
+            <div className="inline-flex items-center justify-center space-x-2 bg-gray-100 px-4 py-2 rounded-full">
+              <svg
+                className="w-5 h-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-sm font-medium text-gray-500">
+                Perfil verificado por Voyant
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>
