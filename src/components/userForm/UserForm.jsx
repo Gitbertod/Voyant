@@ -191,7 +191,7 @@ export function UserForm({
 
   return (
     <form
-      className="bg-white p-6 rounded-xl shadow-lg max-w-4xl mx-auto h-auto"
+      className="bg-white p-6 rounded-xl shadow-lg max-w-4xl mx-auto"
       onSubmit={handleSubmit}
     >
       <h2 className="text-xl font-bold mb-6 text-gray-800 border-b pb-3">
