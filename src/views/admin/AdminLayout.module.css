@@ -15,12 +15,15 @@
   left: 0;
   bottom: 0;
   z-index: 40;
-  /*overflow-y: auto;*/ /* Solo el sidebar tiene scroll si es necesario */
+  /*overflow-y: auto; /* Solo el sidebar tiene scroll si es necesario */
 }
 
-/* Contenido dinámico - SIN overflow-auto */
+/* Contenido dinámico - Centrado */
 .container {
- 
+  @apply flex-1 p-6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* ❌ REMOVIDO: overflow-auto que causaba el doble scroll */
 }
 
@@ -28,6 +31,7 @@
 @media (min-width: 768px) {
   .container {
     margin-left: 250px;
+    max-width: calc(100vw - 250px); /* Previene desbordamiento */
   }
 }
 

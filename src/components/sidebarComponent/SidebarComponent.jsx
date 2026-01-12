@@ -85,7 +85,7 @@ export function SidebarComponent() {
           <SidebarItem as={Link} to="/admin/manage-users" icon={HiUsers }>
             Gestionar usuarios
           </SidebarItem>
-          <SidebarItem as={Link} to="/admin/dashboard" icon={HiChartPie}>
+          {/* <SidebarItem as={Link} to="/admin/dashboard" icon={HiChartPie}>
             Dashboard Blog
           </SidebarItem>
 
@@ -99,7 +99,7 @@ export function SidebarComponent() {
 
           <SidebarItem href="#" icon={MdConnectWithoutContact}>
             Voyant Conecta
-          </SidebarItem>
+          </SidebarItem> */}
 
           <SidebarItem
             as={Link}
