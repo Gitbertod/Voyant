@@ -199,7 +199,9 @@ export function UserForm({
       </h2>
 
       {error && (
-        <div className="mb-4 text-red-600 text-sm font-medium">{error}</div>
+        <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 text-sm font-medium rounded-lg">
+          {error}
+        </div>
       )}
 
       {/* Avatar */}
@@ -220,7 +222,11 @@ export function UserForm({
       />
       <UserJobInfo form={form} handleChange={handleChange} />
       <UserSecurityInfo form={form} handleChange={handleChange} mode={mode} />
-      <FormActions></FormActions>
+      
+      {/* Botones de acción */}
+      <div className="mt-6 pt-6 border-t border-gray-200">
+        <FormActions loading={loading} mode={mode} />
+      </div>
     </form>
   );
 }
