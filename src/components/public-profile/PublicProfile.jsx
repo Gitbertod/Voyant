@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../api";
-import { Avatar } from "flowbite-react";
 
 function PublicProfile() {
   const { id } = useParams();
@@ -94,7 +93,7 @@ function PublicProfile() {
 
         {/* Header con Avatar */}
         <div className={`flex flex-col items-center mb-8 ${!isActive ? 'mt-12' : ''}`}>
-          <div className="w-32 h-32 relative mb-4">
+          <div className="w-32 h-32 relative mb-4 flex-shrink-0">
             {/* Overlay de inactivo sobre el avatar */}
             {!isActive && (
               <div className="absolute inset-0 bg-gray-900 bg-opacity-60 rounded-full flex items-center justify-center z-10">
@@ -111,15 +110,10 @@ function PublicProfile() {
                 </svg>
               </div>
             )}
-            <Avatar
-              img={user.picture || "/default-avatar-icon.jpg"}
-              size="xl"
-              rounded
-              bordered
-              className={`!w-full !h-full object-cover ${!isActive ? 'grayscale opacity-60' : ''}`}
-              imgProps={{
-                className: "object-cover w-full h-full rounded-full",
-              }}
+            <img
+              src={user.picture || "/default-avatar-icon.jpg"}
+              alt={`${user.name?.first} ${user.name?.last}`}
+              className={`w-32 h-32 rounded-full object-cover border-4 border-gray-200 ${!isActive ? 'grayscale opacity-60' : ''}`}
             />
           </div>
           <h1 className={`text-3xl font-bold ${isActive ? 'text-gray-800' : 'text-gray-500'}`}>
