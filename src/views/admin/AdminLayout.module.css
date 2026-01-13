@@ -3,9 +3,36 @@
   min-height: 100vh;
   font-family: sans-serif;
   background-color: rgb(242, 242, 242);
+  position: relative;
 }
 
-/* Sidebar fijo en desktop */
+/* ========== HEADER MÓVIL ========== */
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menuButton {
+  padding: 0.5rem !important;
+}
+
+.mobileTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ========== SIDEBAR DESKTOP ========== */
 .sidebar {
   width: 250px;
   background-color: #fff;
@@ -15,30 +42,88 @@
   left: 0;
   bottom: 0;
   z-index: 40;
-  /*overflow-y: auto; /* Solo el sidebar tiene scroll si es necesario */
+  /* overflow-y: auto; */
+  display: none; /* Oculto por defecto en móvil */
 }
 
-/* Contenido dinámico - Centrado */
+/* ========== CONTENEDOR PRINCIPAL ========== */
 .container {
-  @apply flex-1 p-6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* ❌ REMOVIDO: overflow-auto que causaba el doble scroll */
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 4rem; /* Espacio para header móvil */
 }
 
-/* Ajuste en desktop (contenido desplazado por sidebar) */
+.content {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+/* ========== DRAWER MÓVIL ========== */
+.drawer {
+  z-index: 50 !important;
+}
+
+/* ========== RESPONSIVE DESKTOP ========== */
 @media (min-width: 768px) {
+  /* Mostrar sidebar en desktop */
+  .sidebar {
+    display: block;
+  }
+
+  /* Ocultar header móvil */
+  .mobileHeader {
+    display: none;
+  }
+
+  /* Ajustar contenedor para sidebar */
   .container {
     margin-left: 250px;
-    max-width: calc(100vw - 250px); /* Previene desbordamiento */
+    padding-top: 0;
+    width: calc(100% - 250px);
+  }
+
+  .content {
+    padding: 2rem;
+    max-width: 1400px;
   }
 }
 
-/* En móvil el contenido ocupa todo el ancho */
-@media (max-width: 767px) {
-  .container {
-    margin-left: 0;
-    padding-top: 4rem; /* Espacio para el botón hamburguesa */
+/* ========== RESPONSIVE TABLET ========== */
+@media (min-width: 640px) and (max-width: 767px) {
+  .content {
+    padding: 1.5rem;
   }
+}
+
+/* ========== RESPONSIVE MÓVIL PEQUEÑO ========== */
+@media (max-width: 480px) {
+  .mobileHeader {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .mobileTitle {
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 0.75rem;
+  }
+
+  .container {
+    padding-top: 3.5rem;
+  }
+}
+
+/* ========== AJUSTES PARA EVITAR SCROLL HORIZONTAL ========== */
+* {
+  box-sizing: border-box;
+}
+
+.dashboard,
+.container,
+.content {
+  overflow-x: hidden;
 }

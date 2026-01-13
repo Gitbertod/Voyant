@@ -1,6 +1,6 @@
 import { SidebarComponent } from "../../components/sidebarComponent/SidebarComponent";
 import { Outlet } from "react-router-dom";
-import { HiMenu } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 import { Button, Drawer } from "flowbite-react";
 import { useState } from "react";
 import styles from "./AdminLayout.module.css";
@@ -8,32 +8,52 @@ import styles from "./AdminLayout.module.css";
 const AdminLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleClose = () => setIsOpen(false);
+
   return (
     <div className={styles.dashboard}>
-      {/* 🔹 Botón hamburguesa visible solo en móviles */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
-        <Button color="gray" onClick={() => setIsOpen(true)}>
-          <HiMenu className="h-6 w-6" />
+      {/* 🔹 Header móvil con botón hamburguesa */}
+      <div className={styles.mobileHeader}>
+        <Button 
+          color="gray" 
+          size="sm"
+          onClick={() => setIsOpen(true)}
+          className={styles.menuButton}
+        >
+          <HiMenu className="h-5 w-5" />
         </Button>
+        <span className={styles.mobileTitle}>Admin Panel</span>
       </div>
 
       {/* 🔹 Sidebar fijo en desktop */}
-      <div className={`${styles.sidebar} hidden md:block`}>
+      <aside className={styles.sidebar}>
         <SidebarComponent />
-      </div>
+      </aside>
 
       {/* 🔹 Drawer en móvil */}
-      <Drawer open={isOpen} onClose={() => setIsOpen(false)} position="left">
-        <Drawer.Header title="Menú" />
+      <Drawer 
+        open={isOpen} 
+        onClose={handleClose} 
+        position="left"
+        className={styles.drawer}
+      >
+        <Drawer.Header 
+          title="Menú" 
+          titleIcon={HiX}
+        />
         <Drawer.Items>
-          <SidebarComponent />
+          <div onClick={handleClose}>
+            <SidebarComponent />
+          </div>
         </Drawer.Items>
       </Drawer>
 
       {/* 🔹 Contenido dinámico */}
-      <div className={styles.container}>
-        <Outlet /> {/* Aquí se renderizan Dashboard, Profile, etc */}
-      </div>
+      <main className={styles.container}>
+        <div className={styles.content}>
+          <Outlet />
+        </div>
+      </main>
     </div>
   );
 };
