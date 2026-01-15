@@ -7,6 +7,7 @@ import CallToAction from "../../../components/call-to-action/CallToAction";
 import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
 import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
 import { FaCheckCircle } from "react-icons/fa";
+import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 
 const DataCenters = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -65,46 +66,45 @@ const DataCenters = () => {
         logosBgSrc="logosVoyant_bg.svg"
         backgroundMobile={"/dataCenters_bg.jpeg"}
       >
-        {" "}
-        {
-          <div className={styles.slidebottom}>
-            <div className={styles.dataInfoContainer}>
-              <MiniDataInfo
-                title={"EFICIENCIA"}
-                text={
-                  <>
-                    <p>Soluciones que optimizan</p>
-                    <p>el uso de energía.</p>
-                  </>
-                }
-                whiteLine={<div className={styles.whiteLine}></div>}
-                icon={<FaCheckCircle className={styles.icon} />}
-              />
-              <MiniDataInfo
-                icon={<FaCheckCircle className={styles.icon} />}
-                title={"ALTA DISPONIBILIDAD"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas para</p>
-                    <p>asegurar la continuidad operativa.</p>
-                  </>
-                }
-                whiteLine={<div className={styles.whiteLine}></div>}
-              />
-              <MiniDataInfo
-                icon={<FaCheckCircle className={styles.icon} />}
-                title={"SERVICIO"}
-                text={
-                  <>
-                    <p>Personal experto disponible 7x24</p>
-                    <p>para mantener funcionando </p>
-                    <p>lo que no se puede detener</p>
-                  </>
-                }
-              />
-            </div>
-          </div>
-        }
+      
+        <BoxDataPercentage>
+
+          <MiniDataInfo
+            title={"EFICIENCIA"}
+            text={
+              <>
+                <p>Soluciones que optimizan</p>
+                <p>el uso de energía.</p>
+              </>
+            }
+            icon={<FaCheckCircle className={styles.icon} />}
+            divider={true}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle className={styles.icon} />}
+            title={"ALTA DISPONIBILIDAD"}
+            text={
+              <>
+                <p>Soluciones diseñadas para</p>
+                <p>asegurar la continuidad operativa.</p>
+              </>
+            }
+            divider={true}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle className={styles.icon} />}
+            title={"SERVICIO"}
+            text={
+              <>
+                <p>Personal experto disponible 7x24</p>
+                <p>para mantener funcionando </p>
+                <p>lo que no se puede detener</p>
+              </>
+            }
+          />
+        </BoxDataPercentage>
+
+
       </CategoryWithBackgroundVideo>
       <SectionComponent
         title="Nuestras soluciones para Datacenter"
@@ -142,7 +142,7 @@ const DataCenters = () => {
         imgSrc="DataCenter.jpg"
       />
       <SectionComponent
-        reverse= {true}
+        reverse={true}
         text={
           <>
             <strong>Sistemas de climatización:</strong> Nuestras soluciones de

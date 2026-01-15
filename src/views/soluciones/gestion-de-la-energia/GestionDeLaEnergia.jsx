@@ -25,26 +25,28 @@ const GestionDeLaEnergia = () => {
         <BoxDataPercentage>
           <MiniDataInfo
             title={"Medición"}
-            text={
-              "Captura continua y confiable de datos energéticos para comprender consumos, comportamientos y puntos críticos de la operación."
+            text={<>Captura continua y confiable <p>de datos energéticos para comprender </p>consumos,  comportamientos y <p>puntos críticos de la operación.</p> </>
             }
-            divider={true}
-            icon={<FaCheckCircle></FaCheckCircle>}
+          divider={true}
+          icon={<FaCheckCircle></FaCheckCircle>}
           />
           <MiniDataInfo
             title={"Análisis"}
-            text={
-              "Análisis avanzado de la información para identificar oportunidades de ahorro, mejorar la eficiencia energética y avanzar en objetivos de sostenibilidad de forma medible."
-            }
+            text={<>
+              <p>Analizamos en tiempo real</p>
+              para identificar oportunidades de ahorro, <p>mejorar la eficiencia energética </p> y avanzar en objetivos de <p>sostenibilidad de forma medible</p>.
+            </>}
+
+
             divider={true}
             icon={<FaCheckCircle></FaCheckCircle>}
           />
           <MiniDataInfo
             title={"Gestión"}
-            text={
-              "Decisiones y acciones basadas en datos que optimizan el uso de la energía sin comprometer la estabilidad, disponibilidad y continuidad de la operación."
-            }
-            
+            text={<>
+              Decisiones y acciones basadas en datos <p>que optimizan el uso de la energía</p>  <p>sin comprometer la estabilidad,</p> disponibilidad y continuidad de la operación.
+            </>}
+
             icon={<FaCheckCircle></FaCheckCircle>}
           />
         </BoxDataPercentage>

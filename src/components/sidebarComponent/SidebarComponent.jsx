@@ -1,8 +1,5 @@
 "use client";
 
-import { MdConnectWithoutContact } from "react-icons/md";
-import { GrTechnology } from "react-icons/gr";
-
 import {
   Avatar,
   Sidebar,
@@ -13,8 +10,6 @@ import {
 } from "flowbite-react";
 import {
   HiArrowSmRight,
-  HiChartPie,
-  HiInbox,
   HiUser,
   HiUsers ,
 } from "react-icons/hi";

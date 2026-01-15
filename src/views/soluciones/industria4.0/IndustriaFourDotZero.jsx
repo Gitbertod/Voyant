@@ -49,8 +49,8 @@ const IndustriaFourDotZero = () => {
             title={"Datos"}
             text={
               <>
-                Dispositivos IoT para recolectar los parámetros clave para la
-                continuidad operativa.
+                <p>Dispositivos IoT para recolectar</p> los parámetros clave para <p>la
+                  continuidad operativa.</p>
               </>
             }
             divider={true}
@@ -60,8 +60,8 @@ const IndustriaFourDotZero = () => {
             title={"Decisiones"}
             text={
               <>
-                Analizamos en tiempo real para identificar riesgos, tendencias y
-                desviaciones antes de que impacten la continuidad operativa.
+                <p>Analizamos en tiempo real <p>para identificar riesgos, tendencias</p> </p>  y
+                desviaciones antes de que  <p>impacten la continuidad operativa.</p> 
               </>
             }
             divider={true}
@@ -71,11 +71,11 @@ const IndustriaFourDotZero = () => {
             title={"Acción"}
             text={
               <>
-                Recomendaciones que permitan actuar a tiempo para asegurar la
+                <p>Recomendaciones que permitan actuar</p> a tiempo para asegurar la
                 continuidad operativa.
               </>
             }
-            divider={true}
+
           />
         </BoxDataPercentage>
       </CategoryWithBackgroundVideo>

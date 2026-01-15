@@ -13,6 +13,7 @@ import { SlEnergy } from "react-icons/sl";
 import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
 import CardBlur from "../../../components/card-blur/CardBlur";
 import Section3 from "../../../components/section3/Section3";
+import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 
 const Mineria = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -62,45 +63,45 @@ const Mineria = () => {
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
       >
-        {
-          <div className={styles.slidebottom}>
-            <div className={styles.dataInfoContainer}>
-              <MiniDataInfo
-                title={"CONFIABILIDAD"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas para</p>
-                    <p>garantizar la continuidad operativa.</p>
-                  </>
-                }
-                whiteLine={<div className={styles.whiteLine}></div>}
-                icon={<FaCheckCircle className={styles.icon} />}
-              />
-              <MiniDataInfo
-                icon={<FaCheckCircle className={styles.icon} />}
-                title={"OPTIMIZACION"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas para minimizar</p>
-                    <p>los costos de operación y mantenimiento.</p>
-                  </>
-                }
-                whiteLine={<div className={styles.whiteLine}></div>}
-              />
-              <MiniDataInfo
-                icon={<FaCheckCircle className={styles.icon} />}
-                title={"ADAPTABILIDAD"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas deacuerdo</p>
-                    <p>a las condiciones específicas </p>
-                    <p>del entorno minero</p>
-                  </>
-                }
-              />
-            </div>
-          </div>
-        }
+
+        <BoxDataPercentage>
+
+          <MiniDataInfo
+            title={"CONFIABILIDAD"}
+            text={
+              <>
+                <p>Soluciones diseñadas para</p>
+                <p>garantizar la continuidad operativa.</p>
+              </>
+            }
+            divider={true}
+            icon={<FaCheckCircle className={styles.icon} />}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle className={styles.icon} />}
+            title={"OPTIMIZACION"}
+            text={
+              <>
+                <p>Soluciones diseñadas para minimizar</p>
+                <p>los costos de operación y mantenimiento.</p>
+              </>
+            }
+            divider={true}
+
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle className={styles.icon} />}
+            title={"ADAPTABILIDAD"}
+            text={
+              <>
+                <p>Soluciones diseñadas deacuerdo</p>
+                <p>a las condiciones específicas </p>
+                <p>del entorno minero</p>
+              </>
+            }
+          />
+        </BoxDataPercentage>
+
       </CategoryWithBackgroundVideo>
       <SectionComponent
         title="Nuestras soluciones"
@@ -131,7 +132,7 @@ const Mineria = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
               <CardBlur
-                icon={<TbBatteryCharging2 className={styles.icon} style={{color: "white"}} />}
+                icon={<TbBatteryCharging2 className={styles.icon} style={{ color: "white" }} />}
                 bold={"Sistemas de respaldo de energía: "}
                 text={
                   <>
@@ -151,7 +152,7 @@ const Mineria = () => {
                 }
               />
               <CardBlur
-                icon={<SlEnergy className={styles.icon} style={{color: "white"}} />}
+                icon={<SlEnergy className={styles.icon} style={{ color: "white" }} />}
                 bold={"Distribución de energía: "}
                 text={
                   <>
@@ -168,7 +169,7 @@ const Mineria = () => {
                 }
               />
               <CardBlur
-                icon={<BsFan className={styles.icon} style={{color: "white"}} />}
+                icon={<BsFan className={styles.icon} style={{ color: "white" }} />}
                 bold={"Sistemas de climatización: "}
                 text={
                   <>
@@ -189,7 +190,7 @@ const Mineria = () => {
                 }
               />
               <CardBlur
-                icon={<GrShieldSecurity className={styles.icon} style={{color: "white"}}/>}
+                icon={<GrShieldSecurity className={styles.icon} style={{ color: "white" }} />}
                 bold={"Soluciones de Seguridad y Control de Acceso: "}
                 text={
                   <>
