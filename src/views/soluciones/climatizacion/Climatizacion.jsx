@@ -31,7 +31,7 @@ const Climatizacion = () => {
       
       <CategoryWithBackgroundVideo
         title="Climatización"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec."
+        text="Controlamos las condiciones de operación en las salas críticas donde la continuidad de operación es indispensable, con soluciones de climatización eficientes y confiables, adaptadas a tu necesidad."
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"

@@ -4,7 +4,10 @@ import video_bg from "../../../assets/industria4.0_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
+import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
+import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
+import { FaCheckCircle } from "react-icons/fa";
+
 const IndustriaFourDotZero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -28,11 +31,54 @@ const IndustriaFourDotZero = () => {
     <>
       <CategoryWithBackgroundVideo
         title="Industria 4.0"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        text={
+          <>
+            <strong>Datos que se transforman en decisiones.</strong> Elevamos tu
+            infraestructura a un nivel inteligente y predictivo, integrando
+            sensores, plataformas y analítica para lograr mayor disponibilidad,
+            control y continuidad operativa.
+          </>
+        }
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
-      />
+      >
+        <BoxDataPercentage>
+          <MiniDataInfo
+            icon={<FaCheckCircle />}
+            title={"Datos"}
+            text={
+              <>
+                Dispositivos IoT para recolectar los parámetros clave para la
+                continuidad operativa.
+              </>
+            }
+            divider={true}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle />}
+            title={"Decisiones"}
+            text={
+              <>
+                Analizamos en tiempo real para identificar riesgos, tendencias y
+                desviaciones antes de que impacten la continuidad operativa.
+              </>
+            }
+            divider={true}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle />}
+            title={"Acción"}
+            text={
+              <>
+                Recomendaciones que permitan actuar a tiempo para asegurar la
+                continuidad operativa.
+              </>
+            }
+            divider={true}
+          />
+        </BoxDataPercentage>
+      </CategoryWithBackgroundVideo>
       <SectionComponent
         title="Industria 4.0"
         buttonText="Contáctanos"
@@ -41,7 +87,9 @@ const IndustriaFourDotZero = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/iot.png"
-        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
+        childComponent={
+          <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+        }
       />
     </>
   );

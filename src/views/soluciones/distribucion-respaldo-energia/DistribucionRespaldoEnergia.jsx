@@ -30,10 +30,9 @@ const DistribucionRespaldoEnergia = () => {
 
   return (
     <>
-       
       <CategoryWithBackgroundVideo
         title="Distribución y respaldo de energía"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut felis quis quam cursus tincidunt nec sed lectus. Pellentesque eu blandit erat. Aenean nisl enim, fermentum id sem ut, sodales luctus eros. Maecenas sed erat ex. Vestibulum facilisis hendrerit arcu, nec varius nunc elementum vitae. Phasellus sollicitudin magna a odio mattis, in facilisis massa vestibulum. Nulla nec justo elementum ipsum porttitor aliquet. In hac habitasse platea dictumst."
+        text="Aseguramos la continuidad y estabilidad de tu energía, integrando distribución eléctrica y respaldo confiable para que tu operación no se detenga ante cortes, variaciones o contingencias."
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
@@ -46,7 +45,9 @@ const DistribucionRespaldoEnergia = () => {
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/distribucion.jpg"
-        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
+        childComponent={
+          <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+        }
       />
     </>
   );

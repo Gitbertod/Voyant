@@ -8,7 +8,9 @@ import SectionComponent from "../../../components/section-component/SectionCompo
 import CallToAction from "../../../components/call-to-action/CallToAction";
 import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
 import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
-
+import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
+import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Seguridad = ({ tituloh1 = "Seguridad" }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -31,42 +33,60 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
 
   return (
     <>
-      <div className="main">
-        <div className={styles.overlay}></div>
-        <div className={styles.imageBg}></div>
-        {!isMobile && (
-          <video
-            src={mineria_bg}
-            autoPlay
-            loop
-            muted
-            className={styles.videoBg}
-          ></video>
-        )}
-      </div>
-      <div className={styles.mainContainer}>
-        <img src="/logosVoyant_bg.svg" className={styles.logosVoyant} />
-        <div className={styles.container}>
-          <h1>{tituloh1}</h1>
-          <div className={styles.yellowLine}></div>
-          <p className={styles.textInfo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum? Deserunt, consequuntur animi?
-          </p>
-          <BoxDataPercentage />
-        </div>
-      </div>
+      <CategoryWithBackgroundVideo
+        title="Seguridad"
+        text="Diseñamos seguridad para entornos donde el control no puede perderse. Integramos tecnología, analítica y soporte experto para prevenir incidentes, asegurar trazabilidad y proteger la continuidad de operaciones críticas."
+        videoSrc={mineria_bg}
+        logoSrc="/logoVoyantColor.svg"
+        logosBgSrc="/logosVoyant_bg.svg"
+      >
+        <BoxDataPercentage>
+          <MiniDataInfo
+            title={"Trazabilidad y control"}
+            text={
+              <>
+                Visibilidad continua de eventos <br></br>y accesos a las áreas
+                protegidas
+              </>
+            }
+            divider={true}
+            icon={<FaCheckCircle className={styles.icon} />}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle className={styles.icon} />}
+            title={"ALTA DISPONIBILIDAD"}
+            text={
+              <>
+                Soluciones diseñadas para<br></br>
+                asegurar la continuidad operativa
+              </>
+            }
+            
+            divider={true}
+          />
+          <MiniDataInfo
+            icon={<FaCheckCircle className={styles.icon} />}
+            title={"SERVICIO"}
+            text={
+              <>
+                Personal experto disponible 7x24 <br></br>
+                para mantener funcionando <br></br>
+                lo que no se puede detener
+              </>
+            }
+            
+          />
+        </BoxDataPercentage>
+      </CategoryWithBackgroundVideo>
+
       <SectionComponent
         title="Seguridad"
         buttonText="Contáctanos"
-        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
-            sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
-            reprehenderit recusandae quidem inventore neque dicta dignissimos?
-            Incidunt, eum? Deserunt, consequuntur animi?"
+        text="En Voyant aseguramos la continuidad de tu operación con soluciones de seguridad integradas que protegen personas, activos y accesos, con monitoreo y soporte experto cuando más lo necesitas."
         imgSrc="/seguridad.png"
-        childComponent={<CallToAction linkTo={"/contacto"} buttonText="Contáctanos"/>}
+        childComponent={
+          <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+        }
       />
     </>
   );
