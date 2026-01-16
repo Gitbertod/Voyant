@@ -1,124 +1,129 @@
-.container{
+/* CONTENEDOR PRINCIPAL */
+.container {
     display: flex;
-    /* background-image: url("./voyant_bg3.jpeg"); */
+    justify-content: center;
     background-color: white;
-    position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
+    position: relative;
     overflow: hidden;
     background-size: cover;
-    justify-content: center;
-    height: 100vh;  
+    min-height: 100vh;
+    padding: 100px 0;
     z-index: -1;
-    padding-top: 100px ;
-    padding-bottom: 100px;
 }
 
-.container h5{
-    font-size: 60px;
+/* TÍTULO */
+.container h5 {
+    font-size: clamp(30px, 5vw, 60px);
     font-weight: 500;
     text-align: left;
     color: #f9b03a;
-}
-.containerInfo{
-    display: flex;
-    align-items: center;
-    width: 80%;
-    
+    margin-bottom: 1.5rem;
 }
 
-.containerInfo .reverse {
+/* CONTENEDOR DE INFORMACIÓN */
+.containerInfo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.containerInfo.reverse {
     flex-direction: row-reverse;
 }
 
-.container img{
-    /* mask-image: linear-gradient(white 50%,transparent); */
-    width: 80%;  
+/* CONTENEDOR DE TEXTO */
+.containerText {
+    flex: 1;
+    min-width: 0; /* Permite que el texto se contraiga correctamente */
 }
-.containerText{
-    width: 50%;
-}
-.parrafo{
-    font-size:large;
+
+.parrafo {
+    font-size: clamp(16px, 1.8vw, 18px);
     text-align: left;
-}
-.imgContainer{
-    width: 70%;
+    line-height: 1.6;
 }
 
-/*RESPONSIVE*/
+/* CONTENEDOR DE IMAGEN */
+.imgContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-@media (max-width:1783px){
-    .container h5{
-        font-size: 60px;
-    }
-    .parrafo{
-        font-size: x-large;
-    }
-    .container img{
-        mask-image: linear-gradient(white 50%,transparent);
-        width: 50%;  
-    }
-    .imgContainer{
-        width: 40%;
-    }
+.container img {
+    width: 100%;
+    max-width: 600px; /* Evita que la imagen sea demasiado grande */
+    height: auto;
+    object-fit: contain;
 }
-@media (max-width:1460px){
-    
-    .parrafo{
-        font-size:large;
-    }
-    .container img{
-       
-        width: 100%;  
-    }
-    .imgContainer{
-        width: 70%;
-    }
-    .containerInfo{
-        display: flex;
-        align-items: center;
-        width: 90%;
-    }
-}
-@media (max-width:1024px){
-    
-    .containerText h5{
-        font-size: 55px;
+
+/* RESPONSIVE */
+
+/* Tablets grandes y laptops pequeñas (1024px - 1460px) */
+@media (max-width: 1460px) {
+    .containerInfo {
+        gap: 30px;
     }
     
-}
-@media (max-width:768px){
-    .containerText h5{
-        font-size: 45px;
+    .container img {
+        max-width: 500px;
     }
-    .containerInfo{
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 80px 0;
+    }
+    
+    .containerInfo {
+        gap: 25px;
+    }
+    
+    .container img {
+        max-width: 450px;
+    }
+}
+
+/* Móviles grandes y tablets pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 0;
+        min-height: auto;
+    }
+    
+    .containerInfo,
+    .containerInfo.reverse {
         flex-direction: column;
-        display: flex;
-        align-items: center;
-        width: 90%;
-        height: 100%;
-    }
-    .containerText{
+        gap: 40px;
         width: 90%;
     }
-    .imgContainer{
-        width: 90%;
-        margin-bottom: 40px;
-    }
-    .container h5{
-        font-size: 35px;
-    }
-
-}
-@media (max-width:375px){
     
-    .containerText{
-        width: 90%;
-    }
-    .imgContainer{
+    .containerText {
         width: 100%;
     }
-    .container h5{
-        font-size: 30px;
+    
+    .imgContainer {
+        width: 100%;
+        order: -1; /* La imagen siempre aparece primero en móvil */
     }
+    
+    .container img {
+        max-width: 100%;
+    }
+}
 
+/* Móviles pequeños (hasta 375px) */
+@media (max-width: 375px) {
+    .container {
+        padding: 40px 0;
+    }
+    
+    .containerInfo {
+        width: 95%;
+        gap: 30px;
+    }
 }
