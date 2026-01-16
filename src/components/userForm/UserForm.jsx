@@ -4,7 +4,6 @@ import { UserPersonalInfo } from "./UserPersonalInfo";
 import { UserContactInfo } from "./UserContactInfo";
 import { UserLocationInfo } from "./UserLocationInfo";
 import { useParams } from "react-router-dom";
-import countryList from "react-select-country-list";
 import api from "../../api";
 import { UserJobInfo } from "./UserJobInfo";
 import { UserSecurityInfo } from "./UserSecurityInfo";
@@ -16,7 +15,7 @@ export function UserForm({
   onSubmit,
   onCancel,
 }) {
-  const { id } = useParams(); // Obtiene el id de la URL
+  const { id } = useParams();
   const [form, setForm] = useState({
     name: {
       first: "",
@@ -26,6 +25,9 @@ export function UserForm({
     email: "",
     phone: "",
     country: "",
+    countryId: null,
+    state: "",
+    stateId: null,
     city: "",
     birthDate: "",
     jobDate: "",
@@ -44,7 +46,10 @@ export function UserForm({
   );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const options = countryList().getData();
+
+  // Estados para los IDs de país, estado y ciudad
+  const [countryId, setCountryId] = useState(null);
+  const [stateId, setStateId] = useState(null);
 
   // Convierte ISO a YYYY-MM-DD
   const formatDate = (dateString) => {
@@ -69,6 +74,9 @@ export function UserForm({
             email: user.email || "",
             phone: user.phone || "",
             country: user.country || "",
+            countryId: user.countryId || null,
+            state: user.state || "",
+            stateId: user.stateId || null,
             city: user.city || "",
             birthDate: formatDate(user.birthDate),
             jobDate: formatDate(user.jobDate),
@@ -81,6 +89,10 @@ export function UserForm({
             passwordConfirm: "",
           });
           setPreview(user.picture || "/default-avatar-icon.jpg");
+          
+          // Establecer los IDs si existen
+          if (user.countryId) setCountryId(user.countryId);
+          if (user.stateId) setStateId(user.stateId);
         })
         .catch(() => setError("No se pudo cargar el usuario"))
         .finally(() => setLoading(false));
@@ -110,11 +122,67 @@ export function UserForm({
   };
 
   // Manejo de país
-  const handleCountryChange = (option) => {
-    setForm((prev) => ({
-      ...prev,
-      country: option ? option.value : "",
-    }));
+  const handleCountryChange = (selectedCountry) => {
+    if (selectedCountry) {
+      setCountryId(selectedCountry.id);
+      setForm((prev) => ({
+        ...prev,
+        country: selectedCountry.name,
+        countryId: selectedCountry.id,
+        state: "", // Resetear estado
+        stateId: null,
+        city: "", // Resetear ciudad
+      }));
+      // Resetear estado y ciudad cuando cambia el país
+      setStateId(null);
+    } else {
+      setCountryId(null);
+      setStateId(null);
+      setForm((prev) => ({
+        ...prev,
+        country: "",
+        countryId: null,
+        state: "",
+        stateId: null,
+        city: "",
+      }));
+    }
+  };
+
+  // Manejo de estado
+  const handleStateChange = (selectedState) => {
+    if (selectedState) {
+      setStateId(selectedState.id);
+      setForm((prev) => ({
+        ...prev,
+        state: selectedState.name,
+        stateId: selectedState.id,
+        city: "", // Resetear ciudad
+      }));
+    } else {
+      setStateId(null);
+      setForm((prev) => ({
+        ...prev,
+        state: "",
+        stateId: null,
+        city: "",
+      }));
+    }
+  };
+
+  // Manejo de ciudad
+  const handleCityChange = (selectedCity) => {
+    if (selectedCity) {
+      setForm((prev) => ({
+        ...prev,
+        city: selectedCity.name,
+      }));
+    } else {
+      setForm((prev) => ({
+        ...prev,
+        city: "",
+      }));
+    }
   };
 
   // Manejo de foto
@@ -162,6 +230,9 @@ export function UserForm({
         status: form.status,
         phone: form.phone,
         country: form.country,
+        countryId: form.countryId,
+        state: form.state,
+        stateId: form.stateId,
         city: form.city,
         birthDate: form.birthDate,
         jobDate: form.jobDate,
@@ -216,9 +287,11 @@ export function UserForm({
       <UserContactInfo form={form} handleChange={handleChange} />
       <UserLocationInfo
         form={form}
-        handleChange={handleChange}
         handleCountryChange={handleCountryChange}
-        options={options}
+        handleStateChange={handleStateChange}
+        handleCityChange={handleCityChange}
+        countryId={countryId}
+        stateId={stateId}
       />
       <UserJobInfo form={form} handleChange={handleChange} />
       <UserSecurityInfo form={form} handleChange={handleChange} mode={mode} />
