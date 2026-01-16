@@ -78,7 +78,7 @@ const DataCenters = () => {
               </>
             }
             icon={<FaCheckCircle className={styles.icon} />}
-            divider={true}
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle className={styles.icon} />}
@@ -89,7 +89,7 @@ const DataCenters = () => {
                 <p>asegurar la continuidad operativa.</p>
               </>
             }
-            divider={true}
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle className={styles.icon} />}

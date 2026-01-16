@@ -49,7 +49,7 @@ const IndustriaFourDotZero = () => {
             title={"Datos"}
             text={
               <>
-                <p>Dispositivos IoT para recolectar</p> los parámetros clave para <p>la
+                <p>Dispositivos IoT para recolectar los parámetros clave para la
                   continuidad operativa.</p>
               </>
             }
@@ -60,7 +60,7 @@ const IndustriaFourDotZero = () => {
             title={"Decisiones"}
             text={
               <>
-                <p>Analizamos en tiempo real <p>para identificar riesgos, tendencias</p> </p>  y
+                <p>Analizamos en tiempo real para identificar riesgos, tendencias</p>   y
                 desviaciones antes de que  <p>impacten la continuidad operativa.</p> 
               </>
             }
