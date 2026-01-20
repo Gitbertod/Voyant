@@ -31,10 +31,12 @@ export function UserForm({
     city: "",
     birthDate: "",
     jobDate: "",
-    departament: "",
-    position: "",
+    department: "", // 👈 CORREGIDO
+    departmentName: "", // 👈 AGREGADO
+    position: "", // 👈 CORREGIDO
+    positionName: "", // 👈 AGREGADO
     role: "user",
-    status: true,
+    status: "active", // 👈 CORREGIDO (string ahora)
     picture: "",
     password: "",
     passwordConfirm: "",
@@ -80,10 +82,12 @@ export function UserForm({
             city: user.city || "",
             birthDate: formatDate(user.birthDate),
             jobDate: formatDate(user.jobDate),
-            departament: user.department || "",
-            position: user.position || "",
+            department: user.department?._id || user.department || "", // 👈 CORREGIDO
+            departmentName: user.departmentName || "", // 👈 AGREGADO
+            position: user.position || "", // 👈 CORREGIDO
+            positionName: user.positionName || "", // 👈 AGREGADO
             role: user.role || "user",
-            status: user.status || true,
+            status: user.status || "active", // 👈 CORREGIDO
             picture: user.picture || "",
             password: "",
             passwordConfirm: "",
@@ -129,11 +133,10 @@ export function UserForm({
         ...prev,
         country: selectedCountry.name,
         countryId: selectedCountry.id,
-        state: "", // Resetear estado
+        state: "",
         stateId: null,
-        city: "", // Resetear ciudad
+        city: "",
       }));
-      // Resetear estado y ciudad cuando cambia el país
       setStateId(null);
     } else {
       setCountryId(null);
@@ -157,7 +160,7 @@ export function UserForm({
         ...prev,
         state: selectedState.name,
         stateId: selectedState.id,
-        city: "", // Resetear ciudad
+        city: "",
       }));
     } else {
       setStateId(null);
@@ -210,16 +213,18 @@ export function UserForm({
     return json.secure_url;
   };
 
-  // Guardar datos
+  // 👇 GUARDAR DATOS (CORREGIDO)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+    
     try {
       let photoUrl = form.picture;
       if (form.picture instanceof File) {
         photoUrl = await uploadToCloudinary(form.picture);
       }
+
       const payload = {
         name: {
           first: form.name.first,
@@ -227,7 +232,7 @@ export function UserForm({
         },
         dni: form.dni,
         email: form.email,
-        status: form.status,
+        status: form.status, // 👈 CORREGIDO (ahora es string)
         phone: form.phone,
         country: form.country,
         countryId: form.countryId,
@@ -236,13 +241,15 @@ export function UserForm({
         city: form.city,
         birthDate: form.birthDate,
         jobDate: form.jobDate,
-        departament: form.department,
-        position: form.position,
+        department: form.department, // 👈 CORREGIDO
+        departmentName: form.departmentName, // 👈 AGREGADO
+        position: form.position, // 👈 CORREGIDO
+        positionName: form.positionName, // 👈 AGREGADO
         role: form.role,
         picture: photoUrl,
       };
 
-      // 👉 Solo añadir password si el usuario los llenó
+      // Solo añadir password si el usuario los llenó
       if (form.password && form.passwordConfirm) {
         payload.password = form.password;
         payload.passwordConfirm = form.passwordConfirm;
@@ -253,7 +260,7 @@ export function UserForm({
       }
     } catch (err) {
       setError(
-        err.response?.data?.message || err.message || "Error al crear usuario"
+        err.response?.data?.message || err.message || "Error al guardar usuario"
       );
     } finally {
       setLoading(false);
