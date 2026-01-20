@@ -4,10 +4,6 @@ import video_bg from "../../../assets/distribucion_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import NavBar from "../../../components/navbar/NavBar";
-import { Link } from "react-router-dom";
-import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
-import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 
 const DistribucionRespaldoEnergia = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -44,7 +40,7 @@ const DistribucionRespaldoEnergia = () => {
             sequi sunt assumenda, illum vero voluptatibus ipsa, natus quaerat
             reprehenderit recusandae quidem inventore neque dicta dignissimos?
             Incidunt, eum? Deserunt, consequuntur animi?"
-        imgSrc="/distribucion.jpg"
+        imgSrc="/distribucion.png"
         childComponent={
           <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
         }
