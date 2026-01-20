@@ -37,21 +37,26 @@ export function UserJobInfo({ form, handleChange }) {
           <label className="block text-sm font-semibold">Departamento</label>
           <select value={form.department} onChange={handleChange} name="department" className="border rounded-lg px-3 py-2 w-full text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none">
             <option value="">Seleccione departamento</option>
-            <option value="ventas">Ventas</option>
-            <option value="soporte">Soporte</option>
-            <option value="IT">IT</option>
+            <option value="gerencia">Gerencia</option>
+            <option value="supervisores">Supervisores</option>
+            <option value="Tecnicos">Tecnicos</option>
+            <option value="ssoma">SSOMA</option>
+            <option value="finanzas">Finanzas</option>
+            <option value="administracion">Administracion</option>
           </select>
           
         </div>
         <div>
-          <label className="block text-sm font-semibold">Puesto</label>
-          <input
-            type="text"
-            name="position"
-            value={form.position}
-            onChange={handleChange}
-            className="border rounded-lg px-3 py-2 w-full text-sm"
-          />
+          <label className="block text-sm font-semibold">Cargo</label>
+          <select value={form.department} onChange={handleChange} name="department" className="border rounded-lg px-3 py-2 w-full text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none">
+            <option value="">Seleccione cargo</option>
+            <option value="ventas">Gerente de cultura y ambiente</option>
+            <option value="soporte">Gerente de control de gestión</option>
+            <option value="soporte">Gerente comercial</option>
+            <option value="soporte">Gerente de operaciones</option>
+            <option value="soporte">Gerente de operaciones</option>
+            <option value="IT">IT</option>
+          </select>|
         </div>
         <div>
           <label className="block text-sm font-semibold">Rol</label>
