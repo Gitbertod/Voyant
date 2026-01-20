@@ -25,7 +25,7 @@ export function UserTableFilters({
   return (
     <div className="mb-5 bg-white p-2 rounded-lg shadow">
       {/* Header */}
-      <div className="flex justify-between items-center mb-3"> 
+      <div className="flex justify-between items-center mb-3">
         {hasFilters && (
           <button
             onClick={handleClearFilters}
@@ -45,7 +45,7 @@ export function UserTableFilters({
             Buscar
           </label>
           <div className="relative">
-            
+
             <input
               type="text"
               value={search}
@@ -87,9 +87,11 @@ export function UserTableFilters({
             onChange={(e) => onStatusChange(e.target.value)}
             className="border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-0 w-full transition appearance-none bg-white"
           >
-            <option value="">Todos</option>
-            <option value="activo">Activo</option>
-            <option value="inactivo">Inactivo</option>
+            <option value="">Todos los status</option>
+            <option value="active">Activo</option>
+            <option value="inactive">Inactivo</option>
+            <option value="suspended">Suspendido</option>
+            <option value="vacation">De vacaciones</option>
           </select>
         </div>
 

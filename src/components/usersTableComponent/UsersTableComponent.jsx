@@ -50,10 +50,9 @@ export function UsersTableComponent() {
       result = result.filter((user) => user.role === role);
     }
 
-    // Filtrar por status
+    // 👇 CORREGIDO: Filtrar por status (ahora es string)
     if (status) {
-      const isActive = status === "activo";
-      result = result.filter((user) => user.status === isActive);
+      result = result.filter((user) => user.status === status);
     }
 
     // Ordenar por fecha de creación
@@ -88,6 +87,28 @@ export function UsersTableComponent() {
 
   const handleAddUser = () => {
     navigate("/admin/create-user");
+  };
+
+  // 👇 NUEVA FUNCIÓN: Para obtener estilos del status
+  const getStatusStyle = (status) => {
+    const styles = {
+      active: "bg-green-100 text-green-800",
+      inactive: "bg-red-100 text-red-800",
+      suspended: "bg-orange-100 text-orange-800",
+      vacation: "bg-blue-100 text-blue-800"
+    };
+    return styles[status] || "bg-gray-100 text-gray-800";
+  };
+
+  // 👇 NUEVA FUNCIÓN: Para traducir status al español
+  const getStatusLabel = (status) => {
+    const labels = {
+      active: "Activo",
+      inactive: "Inactivo",
+      suspended: "Suspendido",
+      vacation: "De vacaciones"
+    };
+    return labels[status] || status;
   };
 
   return (
@@ -168,18 +189,16 @@ export function UsersTableComponent() {
                       {user.role}
                     </span>
                   </td>
+                  {/* 👇 CORREGIDO: Status como string */}
                   <td className="px-6 py-4">
                     <span
-                      className={`inline-block px-2 py-1 rounded text-xs ${
-                        user.status
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
-                      }`}
+                      className={`inline-block px-2 py-1 rounded text-xs ${getStatusStyle(user.status)}`}
                     >
-                      {user.status ? "Activo" : "Inactivo"}
+                      {getStatusLabel(user.status)}
                     </span>
                   </td>
-                  <td className="px-6 py-4">{user.departament}</td>
+                  {/* 👇 CORREGIDO: departament → departmentName */}
+                  <td className="px-6 py-4">{user.departmentName || 'N/A'}</td>
                   <td className="px-6 py-4">
                     {new Date(user.createdAt).toLocaleDateString("es-PE", {
                       year: "numeric",
@@ -187,7 +206,7 @@ export function UsersTableComponent() {
                       day: "numeric",
                     })}
                   </td>
-                  <td>
+                  <td className="px-6 py-4">
                     {user.lastLogin
                       ? new Date(user.lastLogin).toLocaleString()
                       : "Nunca ha iniciado sesión"}
