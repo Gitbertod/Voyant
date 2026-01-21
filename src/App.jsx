@@ -39,6 +39,7 @@ import UserDashboard from "./views/user/UserDashboard";
 import PublicProfile from "./components/public-profile/PublicProfile";
 import ResetPassword from "./components/resetPassword/ResetPassword";
 import CookieBanner from "./components/cookieBanner/CookieBanner";
+import PoliticaPrivacidad from "./views/politica-privacidad/PoliticaPrivacidad";
 
 
 function App() {
@@ -65,6 +66,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />}></Route>
             <Route path="/nosotros" element={<Nosotros />}></Route>
+            <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
+
             <Route
               path="/soluciones"
               element={<SolucionesView childComponent={<BurguerMenu />} />}

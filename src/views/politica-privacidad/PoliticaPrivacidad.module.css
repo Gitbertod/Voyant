@@ -1,0 +1,154 @@
+.container {
+  padding: 40px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.7;
+  color: #1f2933;
+  background-color: #ffffff;
+}
+
+/* Título principal */
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* Fecha de actualización */
+.updated {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Párrafos */
+.text {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: #374151;
+}
+
+/* Subtítulos de secciones */
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: #111827;
+  border-left: 4px solid #f9b03a;
+  padding-left: 12px;
+}
+
+/* Listas */
+.list {
+  margin: 12px 0 20px 20px;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Enlaces */
+.link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #1d4ed8;
+}
+
+/* Separador visual */
+.divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 32px 0;
+}
+
+/* Caja destacada (opcional para avisos legales importantes) */
+.highlightBox {
+  background-color: #fef3c7;
+  border-left: 5px solid #f9b03a;
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 6px;
+  color: #92400e;
+  font-size: 0.95rem;
+}
+
+.section {
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.accordionHeader {
+  width: 100%;
+  background: #f9fafb;
+  border: none;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #111827;
+}
+
+.accordionHeader:hover {
+  background-color: #f3f4f6;
+}
+
+.icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: bold;
+  color: #f9b03a;
+}
+
+.accordionContent {
+  padding: 16px 18px;
+  background-color: #ffffff;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 📱 Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+  }
+
+  .text,
+  .list li {
+    font-size: 0.95rem;
+  }
+}
