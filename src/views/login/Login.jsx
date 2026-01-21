@@ -180,7 +180,7 @@ const Login = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="w-80 bg-gradient-to-b from-blue-950 via-blue-750 to-blue-900 shadow-lg rounded-lg p-6 flex flex-col"
+          className="w-full max-w-sm bg-gradient-to-b from-blue-950 via-blue-750 to-blue-900 shadow-lg rounded-lg p-8 flex flex-col"
         >
           <img
             src="/SomosVoyant.png"
