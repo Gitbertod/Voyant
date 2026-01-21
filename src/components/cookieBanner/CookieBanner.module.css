@@ -14,6 +14,7 @@
   z-index: 9999;
 }
 
+/* Botón */
 .banner button {
   background: #f9b03a;
   color: #111827;
@@ -22,9 +23,43 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  white-space: nowrap;
 }
 
+/* Links */
 .banner a {
   color: #93c5fd;
   text-decoration: underline;
+}
+
+/* 📱 Responsive: mobile */
+@media (max-width: 640px) {
+  .banner {
+    flex-direction: column;      /* 🔥 botón debajo */
+    align-items: center;         /* 🔥 centra todo */
+    text-align: center;          /* 🔥 centra texto */
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .banner button {
+    width: 100%;                 /* 🔥 botón ancho completo */
+    max-width: 240px;            /* opcional: no tan gigante */
+  }
+}
+
+
+.banner {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
