@@ -1,0 +1,30 @@
+.banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  z-index: 9999;
+}
+
+.banner button {
+  background: #f9b03a;
+  color: #111827;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.banner a {
+  color: #93c5fd;
+  text-decoration: underline;
+}

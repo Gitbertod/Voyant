@@ -38,6 +38,8 @@ import UserLayout from "./views/user/UserLayout";
 import UserDashboard from "./views/user/UserDashboard";
 import PublicProfile from "./components/public-profile/PublicProfile";
 import ResetPassword from "./components/resetPassword/ResetPassword";
+import CookieBanner from "./components/cookieBanner/CookieBanner";
+
 
 function App() {
   const location = useLocation();
@@ -117,6 +119,8 @@ function App() {
           </Routes>
           
           {!isAuthenticatedRoute && <FooterVoyant />}
+          {!isAuthenticatedRoute && <CookieBanner />}
+
         </AuthProvider>
       </div>
       
