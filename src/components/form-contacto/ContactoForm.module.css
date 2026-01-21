@@ -10,7 +10,7 @@
     background: #f4f7f8;
     border-radius: 8px;
     min-height: 100%;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
   }
   
   h1 {
@@ -87,4 +87,29 @@
   }
   
 
-  
+  .privacy {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 centra todo */
+  text-align: center;  /* 🔥 centra el texto */
+}
+
+.checkboxLabel {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.legalText {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #666;
+}
+
+.legalText a {
+  color: #2563eb;
+  text-decoration: underline;
+}

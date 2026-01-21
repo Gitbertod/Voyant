@@ -18,6 +18,9 @@ const ContactoForm = () => {
     message: false,
   });
 
+  const [acceptPrivacy, setAcceptPrivacy] = useState(false);
+  const [privacyError, setPrivacyError] = useState(false);
+
   const validate = () => {
     const { user_name, user_email, message } = values;
     const nameValid = /^[a-zA-Z\s]{2,30}$/.test(user_name);
@@ -43,12 +46,19 @@ const ContactoForm = () => {
 
   const handleForm = (event) => {
     event.preventDefault();
-    if (validate()) {
+
+    const formValid = validate();
+
+    if (!acceptPrivacy) {
+      setPrivacyError(true);
+    }
+
+    if (formValid && acceptPrivacy) {
       sendEmail();
     } else {
       Swal.fire({
         title: "Error",
-        text: "Por favor, complete todos los campos correctamente.",
+        text: "Por favor, complete todos los campos correctamente y acepte la Política de Privacidad.",
         icon: "error",
       });
     }
@@ -69,6 +79,8 @@ const ContactoForm = () => {
           });
           setValues({ user_name: "", user_email: "", message: "" });
           setErrors({ user_name: false, user_email: false, message: false });
+          setAcceptPrivacy(false);
+          setPrivacyError(false);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -83,11 +95,11 @@ const ContactoForm = () => {
 
   return (
     <>
-    
       <form ref={form} onSubmit={handleForm} className={styles.form}>
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex">
-        Formulario de contacto
-      </h5>
+        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex">
+          Formulario de contacto
+        </h5>
+
         <div className={styles.field}>
           <label>Nombre</label>
           <input
@@ -103,6 +115,7 @@ const ContactoForm = () => {
             </span>
           )}
         </div>
+
         <div className={styles.field}>
           <label>Email</label>
           <input
@@ -118,6 +131,7 @@ const ContactoForm = () => {
             </span>
           )}
         </div>
+
         <div className={styles.field}>
           <label>Mensaje</label>
           <textarea
@@ -132,8 +146,47 @@ const ContactoForm = () => {
             </span>
           )}
         </div>
+
         <div className={styles.field}>
           <input type="submit" value="Enviar" className={styles.button} />
+        </div>
+
+
+        {/* Texto legal */}
+        <p className={styles.legalText}>
+          Al enviar este formulario, autorizas a VOYANT a tratar tus datos para
+          responder tu solicitud y hacer seguimiento. Puedes ejercer tus
+          derechos escribiendo a{" "}
+          <a href="mailto:ventas@voyant.pe">ventas@voyant.pe</a>. Más información
+          en nuestra{" "}
+          <a href="/politica-de-privacidad" target="_blank" rel="noreferrer">
+            Política de Privacidad
+          </a>.
+        </p>
+        {/* Checkbox de política */}
+        <div className={styles.privacy}>
+          <label className={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={acceptPrivacy}
+              onChange={(e) => {
+                setAcceptPrivacy(e.target.checked);
+                setPrivacyError(false);
+              }}
+            />
+            <span>
+              He leído y acepto la{" "}
+              <a href="/politica-de-privacidad" target="_blank" rel="noreferrer">
+                Política de Privacidad
+              </a>
+            </span>
+          </label>
+
+          {privacyError && (
+            <span className={styles.errorMsg}>
+              Debe aceptar la Política de Privacidad.
+            </span>
+          )}
         </div>
       </form>
     </>
