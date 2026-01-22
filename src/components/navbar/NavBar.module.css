@@ -1,14 +1,43 @@
 .navbar {
   display: flex;
-  overflow: hidden;
+  overflow: visible; /* Cambiado de hidden a visible para permitir que el dropdown se vea */
   background-color: transparent;
-  transition: background-color 300ms;
+  transition: background-color 300ms, transform 400ms ease-in-out, backdrop-filter 300ms;
   justify-content: space-evenly;
   align-items: center;
   height: 65px;
-  z-index: 100;
+  position: fixed; /* Cambiado a fixed para mantenerlo siempre visible */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%; /* Asegurar ancho completo */
+  z-index: 9999; /* Aumentado significativamente para estar sobre otros componentes */
   line-height: 50px;
 }
+
+/* Navbar con scroll (blur y fondo) */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar oculto al hacer scroll hacia abajo */
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Ajustar colores del texto cuando tiene blur */
+.navbar.scrolled a,
+.navbar.scrolled .subnavbtn {
+  color: #032d42;
+}
+
+.navbar.scrolled .logoVoyant {
+  filter: none;
+}
+
 .navbar a {
   float: left;
   font-size: 16px;
@@ -20,7 +49,30 @@
   line-height: 50px;
   padding-left: 10px;
   padding-right: 10px;
+  transition: background-color 300ms, color 300ms;
 }
+
+.subnav {
+  position: relative; /* Importante para el posicionamiento del dropdown */
+}
+
+/* Crear un puente invisible entre el botón y el dropdown */
+.subnav::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 20px; /* Altura del puente para cubrir el gap */
+  background: transparent;
+  z-index: 9997;
+  display: none;
+}
+
+.subnav:hover::after {
+  display: block;
+}
+
 .subnav .subnavbtn {
   display: flex;
   font-size: 16px;
@@ -33,132 +85,184 @@
   margin: 0;
   padding-left: 10px;
   padding-right: 10px;
+  cursor: pointer;
+  transition: background-color 300ms, color 300ms;
+  height: 50px;
+  align-items: center;
 }
+
 .navbar a:hover,
 .subnav:hover .subnavbtn {
   background-color: #eee;
-  transition: background-color 600ms;
+  color: black;
 }
+
+/* Hover cuando el navbar tiene scroll */
+.navbar.scrolled a:hover,
+.navbar.scrolled .subnav:hover .subnavbtn {
+  background-color: rgba(249, 176, 58, 0.1);
+  color: #f9b03a;
+}
+
 .subnavContent {
   display: none;
-  position: absolute;
-  left: 0;
+  position: fixed; /* Cambiado a fixed para posicionar relativo a la ventana */
+  left: 0; /* Desde el borde izquierdo de la pantalla */
+  right: 0; /* Hasta el borde derecho de la pantalla */
+  top: 65px; /* Posicionado justo debajo del navbar */
   background-color: white;
-  width: 100%;
+  width: 100vw; /* Ancho completo de la ventana */
   opacity: 0;
-  height: 35vh;
+  min-height: 35vh;
   color: #f9b03a;
-  transform: translateY(-50%);
-  transition: opacity 600ms, transform 600ms;
+  transform: translateY(-20px);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+  z-index: 9998; /* Justo debajo del navbar pero sobre todo lo demás */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  pointer-events: none; /* Desactivar eventos cuando está oculto */
 }
+
+.subnavContent.showMenu {
+  pointer-events: auto; /* Activar eventos cuando está visible */
+}
+
 .subnavContent a {
   display: flex;
   flex-direction: column;
   color: black;
   text-decoration: none;
-  transition: background-color 600ms;
+  transition: background-color 300ms, transform 200ms;
   align-items: center;
   justify-content: center;
   height: fit-content;
+  padding: 10px;
+  border-radius: 8px;
 }
-a:hover .subnavContent {
-  background-color: #eee;
- color: #f9b03a;
+
+.subnavContent a:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
 }
+
+.subnavContent a:hover .category {
+  color: #f9b03a;
+}
+
 .subnav:hover > .subnavContent,
 .subnavContent:hover {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  transition: opacity 600ms, transform 600ms;
+  gap: 30px; /* Espaciado entre elementos */
+  flex-wrap: wrap;
   opacity: 1;
-  color: #f9b03a;
-  transform: translateY(0%);
+  transform: translateY(0);
+  max-width: 100%; /* Asegurar que no se salga del viewport */
+  overflow-x: hidden; /* Prevenir scroll horizontal */
+  padding: 40px 5%; /* Padding lateral responsivo */
 }
-.divStyle {
-  padding: 0 16px;
+
+.subnavContent > * {
+  flex: 0 0 auto; /* No crecer ni encoger, tamaño automático */
 }
+
 .subnavContent .category {
-  
   height: fit-content;
   justify-content: space-evenly;
+  text-align: center;
 }
+
 .icon {
-  margin: 0px auto;
-  margin-bottom: 15px;
-  width: 100px;
-  height: 100px;
+  margin: 0 auto 15px;
+  width: 80px;
+  height: 80px;
   color: #032d42;
-  z-index: 10;
+  transition: transform 300ms, color 300ms;
 }
-.navbar:hover {
+
+.subnavContent a:hover .icon {
+  transform: scale(1.1);
+  color: #f9b03a;
+}
+
+.navbar:not(.scrolled):hover {
   background-color: white;
+}
+
+.navbar:not(.scrolled):hover a,
+.navbar:not(.scrolled):hover .subnavbtn {
   color: black;
 }
-.navbar:hover a {
-  color: black;
-}
-.showMenu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  opacity: 1;
-  transform: translateY(0%);
-}
+
 .optionsNav {
   display: flex;
+  gap: 5px;
+  align-items: center;
 }
+
 .category {
-  height: 200px;
-  width: 200px;
+  height: auto;
+  min-height: 150px;
+  width: 180px;
   line-height: 25px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .slidebottom {
-	-webkit-animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.logoVoyant{
+.logoVoyant {
   height: 45px;
+  transition: filter 300ms;
 }
 
-/**/
-
- @-webkit-keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
+.link {
+  display: flex;
+  align-items: center;
 }
+
+/* Animations */
 @keyframes slide-bottom {
   0% {
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-            opacity: 0;
+    transform: translateY(-20px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-            opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/*RESPONSIVE*/
-@media (max-width:768px){
-
-  .navbar{
-    height: 80px ;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    height: 80px;
+    position: fixed;
   }
+  
   .subnav {
     display: none;
   }
-  .optionsNav{
+  
+  .optionsNav {
+    display: none;
+  }
+  
+  .subnavContent {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Asegurar que en desktop el drawer no se muestre */
+  .navbar > :last-child {
     display: none;
   }
 }

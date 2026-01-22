@@ -4,6 +4,7 @@ import video_bg from "../../../assets/distribucion_bg.mov";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import CallToAction from "../../../components/call-to-action/CallToAction";
+import { Link } from "react-router-dom";
 
 const DistribucionRespaldoEnergia = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -42,7 +43,8 @@ const DistribucionRespaldoEnergia = () => {
             Incidunt, eum? Deserunt, consequuntur animi?"
         imgSrc="/distribucion.png"
         childComponent={
-          <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+           <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
+          
         }
       />
     </>
