@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Shape.module.css";
 
-const Shape = () => {
+const Shape = ({image}) => {
   return (
     <>
-        <img src="./nosotros.jpg" className={styles.shape}></img>
+        <img src={image} className={styles.shape}></img>
     </>
   );
 };

@@ -34,7 +34,7 @@ const Nosotros = () => {
             avanzar siempre, y construyas un futuro sin límites.
           </>
         }
-        childComponent2={<Shape />}
+        childComponent2={<Shape image="./teamVoyant.jpeg" />}
       />
       <SectionComponent
         title="Misión"

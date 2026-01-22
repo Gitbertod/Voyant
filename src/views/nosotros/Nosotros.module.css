@@ -1,5 +1,4 @@
 .container{
-    
     /* background-image: url("./voyant_bg3.jpeg"); */
     background-color:transparent;
     position: relative; /* Para que los elementos posicionados absolutamente sean relativos a este contenedor */
