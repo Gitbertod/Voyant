@@ -127,16 +127,16 @@ const NavBar = () => {
       icon: SlEnergy,
       title: "Industria Eléctrica"
     },
-    {
-      path: "/industria",
-      icon: FaIndustry,
-      title: "Industria"
-    },
-    {
-      path: "/telecomunicaciones",
-      icon: FaTowerCell,
-      title: "Telecomunicaciones"
-    },
+    // {
+    //   path: "/industria",
+    //   icon: FaIndustry,
+    //   title: "Industria"
+    // },
+    // {
+    //   path: "/telecomunicaciones",
+    //   icon: FaTowerCell,
+    //   title: "Telecomunicaciones"
+    // },
     {
       path: "/otros-sectores",
       icon: LiaIndustrySolid,

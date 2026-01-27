@@ -42,20 +42,16 @@ const Mineria = () => {
           <>
             <strong>
               En VOYANT, sabemos que la industria minera opera en algunos de los
-              entornos más desafiantes del planeta.
+              entornos más desafientes del planeta.
             </strong>
 
             <p>
-              Ya sea en altitudes elevadas o en condiciones de temperatura
-              extremas, nuestras soluciones están diseñadas para operar con la
-              máxima confiabilidad. Entendemos que en la industria minera, la
-              continuidad operativa y la seguridad son aspectos críticos. Por
-              eso, nos enfocamos en desarrollar soluciones que aseguran el
-              funcionamiento ininterrumpido de tus operaciones, incluso en las
-              condiciones más exigentes. Con tecnología avanzada y resiliente en
-              energía, climatización y sistemas de seguridad, garantizamos la
-              continuidad operativa de tus procesos y la seguridad de tus
-              activos más valiosos.
+              Por eso nos enfocamos en suministrar soluciones de energía,
+              climatización y seguridad{" "}
+              <p>
+                diseñadas para operar en condiciones extremas, con
+                confiabilidad, control y soporte especializado 24/7.
+              </p>
             </p>
           </>
         }
@@ -63,15 +59,15 @@ const Mineria = () => {
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="logosVoyant_bg.svg"
       >
-
         <BoxDataPercentage>
-
           <MiniDataInfo
             title={"CONFIABILIDAD"}
             text={
               <>
-                <p>Soluciones diseñadas para</p>
-                <p>garantizar la continuidad operativa.</p>
+                <p>
+                  Diseños robustos para sostener operación continua en
+                  condiciones extremas.
+                </p>
               </>
             }
             divider={true}
@@ -82,26 +78,27 @@ const Mineria = () => {
             title={"OPTIMIZACION"}
             text={
               <>
-                <p>Soluciones diseñadas para minimizar</p>
-                <p>los costos de operación y mantenimiento.</p>
+                <p>
+                  Eficiencia energética y operativa para reducir costos de O&M
+                  sin sacrificar disponibilidad.
+                </p>
               </>
             }
-            divider={true}
-
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle className={styles.icon} />}
             title={"ADAPTABILIDAD"}
             text={
               <>
-                <p>Soluciones diseñadas deacuerdo</p>
-                <p>a las condiciones específicas </p>
-                <p>del entorno minero</p>
+                <p>
+                  Soluciones ajustadas a altura, calor, polvo, vibración y
+                  ambientes corrosivos.
+                </p>
               </>
             }
           />
         </BoxDataPercentage>
-
       </CategoryWithBackgroundVideo>
       <SectionComponent
         title="Nuestras soluciones"
@@ -117,7 +114,10 @@ const Mineria = () => {
         {
           <div>
             <div className="pt-8 pl-8">
-              <strong className="text-2xl mt-5 text-yellow-400" data-aos="fade-left">
+              <strong
+                className="text-2xl mt-5 text-yellow-400"
+                data-aos="fade-left"
+              >
                 Somos tu aliado para resolver cualquier desafío de
                 infraestructura, desde el diseño conceptual hasta la
                 implementación y el mantenimiento de tus sistemas.
@@ -132,7 +132,12 @@ const Mineria = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
               <CardBlur
-                icon={<TbBatteryCharging2 className={styles.icon} style={{ color: "white" }} />}
+                icon={
+                  <TbBatteryCharging2
+                    className={styles.icon}
+                    style={{ color: "white" }}
+                  />
+                }
                 bold={"Sistemas de respaldo de energía: "}
                 text={
                   <>
@@ -152,7 +157,12 @@ const Mineria = () => {
                 }
               />
               <CardBlur
-                icon={<SlEnergy className={styles.icon} style={{ color: "white" }} />}
+                icon={
+                  <SlEnergy
+                    className={styles.icon}
+                    style={{ color: "white" }}
+                  />
+                }
                 bold={"Distribución de energía: "}
                 text={
                   <>
@@ -169,10 +179,14 @@ const Mineria = () => {
                 }
               />
               <CardBlur
-                icon={<BsFan className={styles.icon} style={{ color: "white" }} />}
+                icon={
+                  <BsFan className={styles.icon} style={{ color: "white" }} />
+                }
                 bold={"Sistemas de climatización: "}
                 text={
                   <>
+                    
+                    <p></p>
                     Nuestras soluciones de climatización están diseñadas para
                     maximizar la eficiencia energética en las salas eléctricas y
                     otros entornos críticos, empleando tecnologías avanzadas
@@ -190,7 +204,12 @@ const Mineria = () => {
                 }
               />
               <CardBlur
-                icon={<GrShieldSecurity className={styles.icon} style={{ color: "white" }} />}
+                icon={
+                  <GrShieldSecurity
+                    className={styles.icon}
+                    style={{ color: "white" }}
+                  />
+                }
                 bold={"Soluciones de Seguridad y Control de Acceso: "}
                 text={
                   <>

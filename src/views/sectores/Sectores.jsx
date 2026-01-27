@@ -80,7 +80,7 @@ const Sectores = ({ childComponent, parrafo }) => {
                 icon={<SlEnergy className={styles.icon} />}
                 link="/industria-electrica"
               />
-              <CategoryBox
+              {/* <CategoryBox
                 title="INDUSTRIA"
                 icon={<FaIndustry className={styles.icon} />}
                 link="/industria"
@@ -89,7 +89,7 @@ const Sectores = ({ childComponent, parrafo }) => {
                 title="TELECOMUNICACIONES"
                 icon={<FaTowerCell className={styles.icon} />}
                 link="/telecomunicaciones"
-              />
+              /> */}
               <CategoryBox
                 title="OTROS SECTORES"
                 icon={<LiaIndustrySolid className={styles.icon} />}
