@@ -65,33 +65,25 @@ const DataCenters = () => {
       >
         <BoxDataPercentage>
           <MiniDataInfo
+            icon={<FaCheckCircle />}
             title={"EFICIENCIA"}
-            text={
-              <>
-                <p>Soluciones que optimizan</p>
-                <p>el uso de energía.</p>
-              </>
-            }
-            icon={<FaCheckCircle className={styles.icon} />}
+            text={<>Soluciones que optimizan el uso de energía.</>}
+            divider={true}
           />
           <MiniDataInfo
-            icon={<FaCheckCircle className={styles.icon} />}
+            icon={<FaCheckCircle />}
             title={"ALTA DISPONIBILIDAD"}
             text={
-              <>
-                <p>Soluciones diseñadas para</p>
-                <p>asegurar la continuidad operativa.</p>
-              </>
+              <>Soluciones diseñadas para asegurar la continuidad operativa.</>
             }
           />
           <MiniDataInfo
-            icon={<FaCheckCircle className={styles.icon} />}
+            icon={<FaCheckCircle />}
             title={"SERVICIO"}
             text={
               <>
-                <p>Personal experto disponible 7x24</p>
-                <p>para mantener funcionando </p>
-                <p>lo que no se puede detener</p>
+                Personal experto disponible 7x24 para mantener funcionando lo
+                que no se puede detener
               </>
             }
           />
@@ -167,10 +159,12 @@ const DataCenters = () => {
             <p>
               Integramos seguridad física con CCTV con analítica, radares
               perimetrales, control de acceso con biometría/reconocimiento
-              facial, cerraduras de alta seguridad y <strong>gestión centralizada</strong> de
-              accesos a áreas críticas. Incluimos <strong>autenticación multifactor</strong> ,
-              respaldo ante fallas, <strong>soporte 24/7 </strong>y mantenimiento predictivo,
-              cumpliendo estándares como <strong>ISO 27001 y TIA-942</strong> para datacenters
+              facial, cerraduras de alta seguridad y{" "}
+              <strong>gestión centralizada</strong> de accesos a áreas críticas.
+              Incluimos <strong>autenticación multifactor</strong> , respaldo
+              ante fallas, <strong>soporte 24/7 </strong>y mantenimiento
+              predictivo, cumpliendo estándares como{" "}
+              <strong>ISO 27001 y TIA-942</strong> para datacenters
               <strong>Tier III/IV.</strong>
             </p>
           </>

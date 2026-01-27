@@ -49,29 +49,29 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
       >
         <BoxDataPercentage>
           <MiniDataInfo
+            icon={<FaCheckCircle />}
             title={"Trazabilidad y control"}
             text={
               <>
-                Visibilidad continua de eventos <br></br>y accesos a las áreas
+                Visibilidad continua de eventos y accesos a las áreas
                 protegidas
               </>
             }
             divider={true}
-            icon={<FaCheckCircle className={styles.icon} />}
           />
           <MiniDataInfo
-            icon={<FaCheckCircle className={styles.icon} />}
+            icon={<FaCheckCircle />}
             title={"ALTA DISPONIBILIDAD"}
             text={
               <>
-                Soluciones diseñadas para<br></br>
+                Soluciones diseñadas para
                 asegurar la continuidad operativa
               </>
             }
-            divider={true}
+           
           />
           <MiniDataInfo
-            icon={<FaCheckCircle className={styles.icon} />}
+            icon={<FaCheckCircle />}
             title={"SERVICIO"}
             text={
               <>
@@ -126,9 +126,9 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
                 infraestructura eléctrica.
               </li>
               <li>
-                <strong>• Integración y supervisión</strong> en plataformas de gestión y
-                automatización, habilitando correlación de eventos, operación
-                estandarizada y respuesta más rápida.
+                <strong>• Integración y supervisión</strong> en plataformas de
+                gestión y automatización, habilitando correlación de eventos,
+                operación estandarizada y respuesta más rápida.
               </li>
             </ul>
           </>

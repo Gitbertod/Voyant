@@ -48,7 +48,7 @@ const GestionDeLaEnergia = () => {
                 de <p>sostenibilidad de forma medible</p>.
               </>
             }
-            divider={true}
+            
             icon={<FaCheckCircle></FaCheckCircle>}
           />
           <MiniDataInfo

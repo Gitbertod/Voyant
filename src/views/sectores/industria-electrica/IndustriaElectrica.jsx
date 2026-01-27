@@ -8,6 +8,7 @@ import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
 import styles from "../../../components/mini-datainfo/MiniDataInfo.module.css";
 import { FaCheckCircle } from "react-icons/fa";
+import BoxDataPercentage from "../../../components/iconsdata/BoxDataPercentage";
 
 const IndustriaElectrica = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -67,44 +68,44 @@ const IndustriaElectrica = () => {
         logosBgSrc="logosVoyant_bg.svg"
       >
         {
-          <div className={styles.slidebottom}>
-            <div className={styles.dataInfoContainer}>
-              <MiniDataInfo
-                title={"CONFIABILIDAD"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas para</p>
-                    <p>garantizar la continuidad operativa.</p>
-                  </>
-                }
-                whiteLine={<div className={styles.whiteLine}></div>}
-                icon={<FaCheckCircle className={styles.icon} />}
-              />
-              <MiniDataInfo
-                icon={<FaCheckCircle className={styles.icon} />}
-                title={"SEGURIDAD"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas para garantizar</p>
-                    <p>
-                      la seguridad del personal<p>y los activos.</p>{" "}
-                    </p>
-                  </>
-                }
-                whiteLine={<div className={styles.whiteLine}></div>}
-              />
-              <MiniDataInfo
-                icon={<FaCheckCircle className={styles.icon} />}
-                title={"ADAPTABILIDAD"}
-                text={
-                  <>
-                    <p>Soluciones diseñadas específicamente</p>
-                    <p>para cada fase de la industria eléctrica </p>
-                  </>
-                }
-              />
-            </div>
-          </div>
+          <BoxDataPercentage>
+
+            <MiniDataInfo
+              title={"CONFIABILIDAD"}
+              text={
+                <>
+                  <p>Soluciones diseñadas para</p>
+                  <p>garantizar la continuidad operativa.</p>
+                </>
+              }
+              whiteLine={<div className={styles.whiteLine}></div>}
+              icon={<FaCheckCircle className={styles.icon} />}
+            />
+            <MiniDataInfo
+              icon={<FaCheckCircle className={styles.icon} />}
+              title={"SEGURIDAD"}
+              text={
+                <>
+                  <p>Soluciones diseñadas para garantizar</p>
+                  <p>
+                    la seguridad del personal<p>y los activos.</p>{" "}
+                  </p>
+                </>
+              }
+              whiteLine={<div className={styles.whiteLine}></div>}
+            />
+            <MiniDataInfo
+              icon={<FaCheckCircle className={styles.icon} />}
+              title={"ADAPTABILIDAD"}
+              text={
+                <>
+                  <p>Soluciones diseñadas específicamente</p>
+                  <p>para cada fase de la industria eléctrica </p>
+                </>
+              }
+            />
+          </BoxDataPercentage>
+          
         }
       </CategoryWithBackgroundVideo>
       <SectionComponent

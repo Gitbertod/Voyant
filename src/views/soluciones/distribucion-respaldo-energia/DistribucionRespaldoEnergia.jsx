@@ -59,7 +59,7 @@ const DistribucionRespaldoEnergia = () => {
                 con monitoreo y gestión inteligente de la energía y los activos.
               </>
             }
-            divider={true}
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}
