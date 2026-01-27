@@ -59,7 +59,6 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
                 asegurar la continuidad operativa
               </>
             }
-            
             divider={true}
           />
           <MiniDataInfo
@@ -72,15 +71,25 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
                 lo que no se puede detener
               </>
             }
-            
           />
         </BoxDataPercentage>
       </CategoryWithBackgroundVideo>
 
       <SectionComponent
-        title="Seguridad"
+        title="Seguridad diseñada para sostener la continuidad operativa "
         buttonText="Contáctanos"
-        text="En Voyant aseguramos la continuidad de tu operación con soluciones de seguridad integradas que protegen personas, activos y accesos, con monitoreo y soporte experto cuando más lo necesitas."
+        text={
+          <>
+            <p>
+              En VOYANT entendemos la seguridad como una capa de control
+              operacional: protege personas y activos, pero sobre todo evita que
+              un incidente interrumpa procesos que no pueden detenerse. Por eso
+              diseñamos e integramos soluciones que entregan <strong>visibilidad,
+              trazabilidad y respuesta</strong>, con operación consistente 24/7 en
+              entornos de alta exigencia.
+            </p>
+          </>
+        }
         imgSrc="/seguridad.png"
         childComponent={
           <CallToAction linkTo={"/contacto"} buttonText="Contáctanos" />
