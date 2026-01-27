@@ -34,28 +34,7 @@ const Valores = () => {
                 className={styles.img}
               />
               <p className={styles.parrafo}>
-                <span>Humildad:</span> Creemos en mantener siempre una
-                perspectiva abierta, que nos permite aprender de nuestros
-                clientes, colegas y competidores, para así adaptarnos y servir
-                mejor.
-              </p>
-            </div>
-
-            <div
-              className={styles.card}
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="/empatia.svg"
-                alt="Voyant Symbol"
-                className={styles.img}
-              />
-              <p className={styles.parrafo}>
-                <span>Empatía:</span> Nos ponemos en el lugar de nuestros
-                clientes y compañeros, entendiendo sus desafíos y necesidades
-                para ofrecer soluciones que realmente hagan la diferencia en sus
-                vidas y negocios.
+                <span>Consciencia:</span> Conectar con el propósito, con lo que haces con lo que dices y con el impacto que generas.
               </p>
             </div>
             <div
@@ -69,9 +48,7 @@ const Valores = () => {
                 className={styles.img}
               />
               <p className={styles.parrafo}>
-                <span>Determinacíon:</span> Nuestra pasión nos impulsa a
-                perseguir nuestros objetivos con firmeza y persistencia,
-                superando cualquier obstáculo que se presente en el camino.
+                <span>Determinacíon:</span>Avanzar con coraje,foco y la certeza absoluta que todo es posible si inviertes la energia necesaria .
               </p>
             </div>
             <div
@@ -85,62 +62,10 @@ const Valores = () => {
                 className={styles.img}
               />
               <p className={styles.parrafo}>
-                <span>Responsabilidad:</span> Nos hacemos cargo de nuestros
-                actos y sus impactos, asumiendo nuestra contribución en los
-                resultados.
+                <span>Disciplina:</span> Hacer lo que se debe hacer, no poque sea facil sino porque el objetivo lo requiere..., aun cuando nadie mira.
               </p>
             </div>
-            <div
-              className={styles.card}
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="/coraje.svg"
-                alt="Voyant Symbol"
-                className={styles.img}
-              />
-              <p className={styles.parrafo}>
-                <span>Coraje:</span> Nos atrevemos a tomar decisiones difíciles
-                y a innovar en áreas no exploradas, siempre con el objetivo de
-                cumplir nuestro propósito como empresa y avanzar.
-              </p>
-            </div>
-
-            <div
-              className={styles.card}
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="/creatividad.svg"
-                alt="Voyant Symbol"
-                className={styles.img}
-              />
-              <p className={styles.parrafo}>
-                <span>Creatividad:</span> Fomentamos un ambiente donde las ideas
-                nuevas son bienvenidas y valoradas, permitiéndonos encontrar
-                soluciones únicas y efectivas para los retos más complejos.
-              </p>
-            </div>
-
-            <div
-              className={styles.card}
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="/aprendizaje.svg"
-                alt="Voyant Symbol"
-                className={styles.img}
-              />
-              <p className={styles.parrafo}>
-                <span>Aprendizaje Continuo:</span> Estamos comprometidos con el
-                crecimiento personal y profesional continuo, asegurando que
-                nuestro equipo esté siempre a la vanguardia y pueda responder a
-                los cambios rápidos de un mundo en constante evolución.
-              </p>
-            </div>
+          
             <p className={styles.textAboveCards}>
               Estos valores son la esencia de VOYANT y la base sobre la que
               construimos un futuro mejor para todos nuestros stakeholders. Son
