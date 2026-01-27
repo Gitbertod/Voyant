@@ -32,7 +32,16 @@ const Climatizacion = () => {
     <>
       <CategoryWithBackgroundVideo
         title="Climatización"
-        text="Controlamos las condiciones de operación en las salas críticas donde la continuidad de operación es indispensable, con soluciones de climatización eficientes y confiables, adaptadas a tu necesidad."
+        text={
+          <>
+            <p>
+              Controlamos las condiciones de operación en las salas críticas
+              donde la continuidad de operación es indispensable,<p>con soluciones
+              de climatización eficientes y confiables, adaptadas a tu
+              necesidad.</p> 
+            </p>
+          </>
+        }
         videoSrc={video_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"

@@ -33,7 +33,16 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
     <>
       <CategoryWithBackgroundVideo
         title="Seguridad"
-        text="Diseñamos seguridad para entornos donde el control no puede perderse. Integramos tecnología, analítica y soporte experto para prevenir incidentes, asegurar trazabilidad y proteger la continuidad de operaciones críticas."
+        text={
+          <>
+            <p>
+              Diseñamos seguridad para entornos donde el control no puede
+              perderse. Integramos tecnología, analítica y soporte experto para
+              prevenir incidentes, asegurar trazabilidad y proteger la
+              continuidad de operaciones críticas.
+            </p>
+          </>
+        }
         videoSrc={mineria_bg}
         logoSrc="/logoVoyantColor.svg"
         logosBgSrc="/logosVoyant_bg.svg"
@@ -84,10 +93,44 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
               En VOYANT entendemos la seguridad como una capa de control
               operacional: protege personas y activos, pero sobre todo evita que
               un incidente interrumpa procesos que no pueden detenerse. Por eso
-              diseñamos e integramos soluciones que entregan <strong>visibilidad,
-              trazabilidad y respuesta</strong>, con operación consistente 24/7 en
-              entornos de alta exigencia.
+              diseñamos e integramos soluciones que entregan{" "}
+              <strong>visibilidad, trazabilidad y respuesta</strong>, con
+              operación consistente 24/7 en entornos de alta exigencia.
             </p>
+            <br></br>
+            <p>
+              Combinamos{" "}
+              <strong>
+                detección, control de accesos y gestión unificada de eventos
+              </strong>{" "}
+              para reducir puntos ciegos y acelerar la toma de decisiones.
+              Integramos tecnologías líderes según el caso de uso:
+            </p>
+            <br></br>
+            <ul>
+              <li>
+                <strong>• Video seguridad y analítica</strong> para detección
+                temprana, verificación y trazabilidad (p.ej., analítica avanzada
+                para intrusión, merodeo, objetos, zonas restringidas).
+              </li>
+              <li>
+                <strong>• Control de acceso de alta seguridad</strong> para
+                credenciales, puertas críticas y flujo de personas (incluyendo
+                cerraduras electromecánicas robustas para entornos
+                industriales).
+              </li>
+              <li>
+                <strong>• Detección perimetral inteligente</strong> con
+                tecnologías como radar para grandes extensiones, baja
+                visibilidad y falsas alarmas reducidas, ideal para minería e
+                infraestructura eléctrica.
+              </li>
+              <li>
+                <strong>• Integración y supervisión</strong> en plataformas de gestión y
+                automatización, habilitando correlación de eventos, operación
+                estandarizada y respuesta más rápida.
+              </li>
+            </ul>
           </>
         }
         imgSrc="/seguridad.png"
