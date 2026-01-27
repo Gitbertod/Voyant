@@ -30,9 +30,9 @@ const GestionDeLaEnergia = () => {
             title={"Medición"}
             text={
               <>
-                Captura continua y confiable{" "}
-                <p>de datos energéticos para comprender </p>consumos,
-                comportamientos y <p>puntos críticos de la operación.</p>{" "}
+                Captura continua y confiable de datos energéticos para
+                comprender consumos, comportamientos y puntos críticos de la
+                operación.
               </>
             }
             divider={true}
@@ -42,22 +42,19 @@ const GestionDeLaEnergia = () => {
             title={"Análisis"}
             text={
               <>
-                <p>Analizamos en tiempo real</p>
-                para identificar oportunidades de ahorro,{" "}
-                <p>mejorar la eficiencia energética </p> y avanzar en objetivos
-                de <p>sostenibilidad de forma medible</p>.
+                Analizamos en tiempo real para identificar oportunidades de
+                ahorro, mejorar la eficiencia energética y avanzar en objetivos
+                de sostenibilidad de forma medible.
               </>
             }
-            
             icon={<FaCheckCircle></FaCheckCircle>}
           />
           <MiniDataInfo
             title={"Gestión"}
             text={
               <>
-                Decisiones y acciones basadas en datos{" "}
-                <p>que optimizan el uso de la energía</p>{" "}
-                <p>sin comprometer la estabilidad,</p> disponibilidad y
+                Decisiones y acciones basadas en datos que optimizan el uso de
+                la energía sin comprometer la estabilidad, disponibilidad y
                 continuidad de la operación.
               </>
             }
@@ -93,10 +90,11 @@ const GestionDeLaEnergia = () => {
             </p>
             <br></br>
             <p>
-              Sobre esa base habilitamos <strong>analítica en tiempo real</strong>  y reportes
-              para detectar desviaciones, consumos anómalos, demandas máximas,
-              pérdidas y patrones de uso. Esto permite pasar de “ver kWh” a
-              entender <strong>qué está impulsando el consumo,</strong> dónde están los
+              Sobre esa base habilitamos{" "}
+              <strong>analítica en tiempo real</strong> y reportes para detectar
+              desviaciones, consumos anómalos, demandas máximas, pérdidas y
+              patrones de uso. Esto permite pasar de “ver kWh” a entender{" "}
+              <strong>qué está impulsando el consumo,</strong> dónde están los
               principales focos de mejora y qué acciones tienen mayor impacto:
               optimización de operación, ajustes de control, balanceo de cargas,
               gestión de demanda, eficiencia por proceso y verificación de
@@ -104,13 +102,16 @@ const GestionDeLaEnergia = () => {
             </p>
             <br></br>
             <p>
-              Finalmente, convertimos el análisis en <strong>gestión:</strong> acciones y
-              recomendaciones operativas, mantenimiento basado en condición
-              donde aplica, y un ciclo de mejora continua que sostiene el ahorro
-              en el tiempo. El resultado es una operación más eficiente y
-              sustentable, con métricas claras y una energía gestionada con
-              disciplina:<strong>mejor desempeño energético sin sacrificar estabilidad,
-              disponibilidad ni continuidad.</strong> 
+              Finalmente, convertimos el análisis en <strong>gestión:</strong>{" "}
+              acciones y recomendaciones operativas, mantenimiento basado en
+              condición donde aplica, y un ciclo de mejora continua que sostiene
+              el ahorro en el tiempo. El resultado es una operación más
+              eficiente y sustentable, con métricas claras y una energía
+              gestionada con disciplina:
+              <strong>
+                mejor desempeño energético sin sacrificar estabilidad,
+                disponibilidad ni continuidad.
+              </strong>
             </p>
           </>
         }

@@ -61,24 +61,21 @@ const IndustriaFourDotZero = () => {
             icon={<FaCheckCircle />}
             title={"Decisiones"}
             text={
-              <>
-                <p>
-                  Analizamos en tiempo real para identificar riesgos, tendencias
-                </p>{" "}
-                y desviaciones antes de que{" "}
-                <p>impacten la continuidad operativa.</p>
-              </>
+              <p>
+                Analizamos en tiempo real para identificar riesgos, tendencias y
+                desviaciones antes de que impacten la continuidad operativa.
+              </p>
             }
-            divider={true}
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}
             title={"Acción"}
             text={
-              <>
-                <p>Recomendaciones que permitan actuar</p> a tiempo para
-                asegurar la continuidad operativa.
-              </>
+              <p>
+                Recomendaciones que permitan actuar a tiempo para asegurar la
+                continuidad operativa.
+              </p>
             }
           />
         </BoxDataPercentage>

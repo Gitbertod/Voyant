@@ -75,8 +75,8 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
             title={"SERVICIO"}
             text={
               <>
-                Personal experto disponible 7x24 <br></br>
-                para mantener funcionando <br></br>
+                Personal experto disponible 7x24 
+                para mantener funcionando 
                 lo que no se puede detener
               </>
             }

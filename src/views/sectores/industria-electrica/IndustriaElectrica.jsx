@@ -69,43 +69,37 @@ const IndustriaElectrica = () => {
       >
         {
           <BoxDataPercentage>
-
             <MiniDataInfo
+              icon={<FaCheckCircle />}
               title={"CONFIABILIDAD"}
               text={
                 <>
-                  <p>Soluciones diseñadas para</p>
-                  <p>garantizar la continuidad operativa.</p>
+                  Soluciones diseñadas para garantizar la continuidad operativa.
                 </>
               }
-              whiteLine={<div className={styles.whiteLine}></div>}
-              icon={<FaCheckCircle className={styles.icon} />}
+              divider={true}
             />
             <MiniDataInfo
-              icon={<FaCheckCircle className={styles.icon} />}
+              icon={<FaCheckCircle />}
               title={"SEGURIDAD"}
               text={
                 <>
-                  <p>Soluciones diseñadas para garantizar</p>
-                  <p>
-                    la seguridad del personal<p>y los activos.</p>{" "}
-                  </p>
+                  Soluciones diseñadas para garantizar la seguridad del personal
+                  y los activos.
                 </>
               }
-              whiteLine={<div className={styles.whiteLine}></div>}
             />
             <MiniDataInfo
               icon={<FaCheckCircle className={styles.icon} />}
               title={"ADAPTABILIDAD"}
               text={
                 <>
-                  <p>Soluciones diseñadas específicamente</p>
-                  <p>para cada fase de la industria eléctrica </p>
+                  Soluciones diseñadas específicamente para cada fase de la
+                  industria eléctrica
                 </>
               }
             />
           </BoxDataPercentage>
-          
         }
       </CategoryWithBackgroundVideo>
       <SectionComponent
