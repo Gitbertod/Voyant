@@ -1,20 +1,21 @@
-import React from "react";
 import styles from "./SectoresSoluciones.module.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import CategoryBox from "../category-box/CategoryBox";
-import { TbBatteryCharging2 } from "react-icons/tb";
 
-const SectoresSoluciones = ({ title, text, child1}) => {
+const SectoresSoluciones = ({ title, text, child1, backgroundImage }) => {
+  const containerStyle = backgroundImage ? {
+    backgroundImage: `url("${backgroundImage}")`,
+  } : {};
+
   return (
-    <div className={styles.container} >
+    <div className={styles.container} style={containerStyle}>
       <div className={styles.content} data-aos="fade-right">
-        <h2>{title}</h2>
-        <div className={styles.yellowLine}></div>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.yellowLine} aria-hidden="true"></div>
         <div className={styles.textInfo}>{text}</div>
-        <div className={styles.categoryContainer}>
-          {child1}
-        </div>
+        {child1 && (
+          <div className={styles.categoryContainer}>
+            {child1}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import styles from "./CategoryBox.module.css";
 
 const CategoryBox = ({ title, icon, link }) => {
   
-
   return (
     <Link to={link}>
       <div className={styles.boxCategory}>

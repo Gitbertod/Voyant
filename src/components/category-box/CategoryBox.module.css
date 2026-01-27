@@ -3,8 +3,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 25px;
+    margin: 0;
     color: white;
+    max-width: 200px;
+    width: 100%;
+}
+
+.categoryGrid {
+  display: contents; /* 👈 deja que los hijos vivan directamente en el grid */
 }
 
 /*RESPONSIVE*/
@@ -14,6 +20,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 25px;
+        margin: 0;
+        width: 100%;
     }
 }
