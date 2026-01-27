@@ -6,8 +6,6 @@ import mineria_bg from "../../../assets/seguridad_bg.mp4";
 import styles from "./Seguridad.module.css";
 import SectionComponent from "../../../components/section-component/SectionComponent";
 import CallToAction from "../../../components/call-to-action/CallToAction";
-import { DrawerComponent } from "../../../components/drawer/DrawerComponent";
-import BurguerMenu from "../../../components/burguer-menu/BurguerMenu";
 import CategoryWithBackgroundVideo from "../../../components/category/CategoryWithBackgroundVideo";
 import MiniDataInfo from "../../../components/mini-datainfo/MiniDataInfo";
 import { FaCheckCircle } from "react-icons/fa";
