@@ -83,7 +83,6 @@ const Mineria = () => {
                 </p>
               </>
             }
-            
           />
           <MiniDataInfo
             icon={<FaCheckCircle className={styles.icon} />}
@@ -140,18 +139,23 @@ const Mineria = () => {
                 bold={"Sistemas de respaldo de energía: "}
                 text={
                   <>
-                    Diseñamos soluciones en AC y DC para asegurar la continuidad
-                    de la energía en las aplicaciones críticas de tu operación,
-                    optimizando tanto la eficiencia energética como el uso del
-                    espacio. Con configuraciones redundantes (N+1, N+2),
-                    garantizamos alta disponibilidad, operación continua y
-                    seguridad para el equipo y el personal. Nuestras soluciones
-                    son compatibles con diversas plataformas de monitoreo,
-                    facilitando su integración para un control en tiempo real.
-                    Además, son modulares y escalables, adaptándose al
-                    crecimiento de tus necesidades operativas. Todo esto,
-                    respaldado por nuestro servicio con personal certificado
-                    disponible 24/7.
+                    <p>
+                      Diseñamos soluciones en AC y DC para asegurar la
+                      continuidad de la energía en las aplicaciones críticas de
+                      tu operación, optimizando tanto la eficiencia energética
+                      como el uso del espacio. Con configuraciones redundantes
+                      (N+1, N+2), garantizamos alta disponibilidad, operación
+                      continua y seguridad para el equipo y el personal.
+                      Nuestras soluciones son compatibles con diversas
+                      plataformas de monitoreo, facilitando su integración para
+                      un control en tiempo real.
+                    </p>
+                    <p>
+                      Además, son modulares y escalables, adaptándose al
+                      crecimiento de tus necesidades operativas. Todo esto,
+                      respaldado por nuestro servicio con personal certificado
+                      disponible 24/7.
+                    </p>
                   </>
                 }
               />
@@ -165,15 +169,20 @@ const Mineria = () => {
                 bold={"Distribución de energía: "}
                 text={
                   <>
-                    Diseñamos e implementamos tableros con tecnología de
-                    vanguardia que abarcan desde celdas de media tensión hasta
-                    la distribución de energía en plantas o salas eléctricas,
-                    incluyendo CCM. Nuestras soluciones no solo distribuyen la
-                    energía, sino que también permiten monitorear en tiempo real
-                    el consumo y el estado de las protecciones en todas las
-                    áreas críticas. Esto te proporciona una visibilidad completa
-                    del estado de tu red eléctrica y la capacidad de gestionar
-                    la eficiencia energética de manera proactiva.
+                    <p>
+                      Diseñamos e implementamos tableros con tecnología de
+                      vanguardia que abarcan desde celdas de media tensión hasta
+                      la distribución de energía en plantas o salas eléctricas,
+                      incluyendo CCM. Nuestras soluciones no solo distribuyen la
+                      energía, sino que también permiten monitorear en tiempo
+                      real el consumo y el estado de las protecciones en todas
+                      las áreas críticas.
+                    </p>
+                    <p>
+                      Esto te proporciona una visibilidad completa del estado de
+                      tu red eléctrica y la capacidad de gestionar la eficiencia
+                      energética de manera proactiva.
+                    </p>
                   </>
                 }
               />
@@ -184,21 +193,24 @@ const Mineria = () => {
                 bold={"Sistemas de climatización: "}
                 text={
                   <>
-                    
-                    <p></p>
-                    Nuestras soluciones de climatización están diseñadas para
-                    maximizar la eficiencia energética en las salas eléctricas y
-                    otros entornos críticos, empleando tecnologías avanzadas
-                    como enfriadoras de velocidad variable y sistemas de free
-                    cooling. Estos sistemas están integrados con controles
-                    inteligentes que optimizan el flujo de aire y mantienen
-                    temperaturas estables, incluso en condiciones de alta
-                    demanda. Ofrecemos soporte técnico especializado 24/7 y un
-                    programa de mantenimiento predictivo que asegura un
-                    funcionamiento continuo y sin interrupciones. Todas nuestras
-                    soluciones cumplen con los estándares internacionales más
-                    exigentes, como ASHRAE y NFPA, para garantizar la seguridad
-                    y la confiabilidad de tus instalaciones.
+                    <p>
+                      Nuestras soluciones de climatización están diseñadas para
+                      maximizar la eficiencia energética en las salas eléctricas
+                      y otros entornos críticos, empleando tecnologías avanzadas
+                      como enfriadoras de velocidad variable y sistemas de free
+                      cooling. Estos sistemas están integrados con controles
+                      inteligentes que optimizan el flujo de aire y mantienen
+                      temperaturas estables, incluso en condiciones de alta
+                      demanda.
+                    </p>
+                    <p>
+                      Ofrecemos soporte técnico especializado 24/7 y un programa
+                      de mantenimiento predictivo que asegura un funcionamiento
+                      continuo y sin interrupciones. Todas nuestras soluciones
+                      cumplen con los estándares internacionales más exigentes,
+                      como ASHRAE y NFPA, para garantizar la seguridad y la
+                      confiabilidad de tus instalaciones.
+                    </p>
                   </>
                 }
               />
@@ -212,24 +224,30 @@ const Mineria = () => {
                 bold={"Soluciones de Seguridad y Control de Acceso: "}
                 text={
                   <>
-                    Nuestras soluciones integradas de seguridad y control de
-                    acceso están diseñadas para proteger cada aspecto de tu
-                    operación minera. Implementamos sistemas avanzados de
-                    control de acceso y cerramientos de alta seguridad,
-                    asegurando un ingreso restringido y monitoreado a áreas
-                    críticas, con gestión de permisos en tiempo real que
-                    optimiza la seguridad de tu equipo e instalaciones. Nuestros
-                    sistemas de videovigilancia de alta resolución, combinados
-                    con análisis inteligente, permiten un monitoreo constante y
-                    preciso, ofreciendo una visión detallada de cada zona.
-                    Además, los sistemas de detección perimetral y radares
-                    proporcionan alertas tempranas ante cualquier actividad
-                    inusual en el perímetro, reforzando la seguridad en las
-                    áreas sensibles. Contamos con un equipo técnico
-                    especializado y soporte 24/7, respaldado por fabricantes
-                    líderes, para garantizar una protección completa y continua,
-                    adaptada a los desafíos únicos de la industria minera y
-                    diseñada para maximizar la confiabilidad operativa.
+                    <p>
+                      Nuestras soluciones integradas de seguridad y control de
+                      acceso están diseñadas para proteger cada aspecto de tu
+                      operación minera. Implementamos sistemas avanzados de
+                      control de acceso y cerramientos de alta seguridad,
+                      asegurando un ingreso restringido y monitoreado a áreas
+                      críticas, con gestión de permisos en tiempo real que
+                      optimiza la seguridad de tu equipo e instalaciones.
+                      Nuestros sistemas de videovigilancia de alta resolución,
+                      combinados con análisis inteligente, permiten un monitoreo
+                      constante y preciso, ofreciendo una visión detallada de
+                      cada zona.
+                    </p>
+                    <p>
+                      Además, los sistemas de detección perimetral y radares
+                      proporcionan alertas tempranas ante cualquier actividad
+                      inusual en el perímetro, reforzando la seguridad en las
+                      áreas sensibles. Contamos con un equipo técnico
+                      especializado y soporte 24/7, respaldado por fabricantes
+                      líderes, para garantizar una protección completa y
+                      continua, adaptada a los desafíos únicos de la industria
+                      minera y diseñada para maximizar la confiabilidad
+                      operativa.
+                    </p>
                   </>
                 }
               />
