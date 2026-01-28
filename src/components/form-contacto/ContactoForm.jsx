@@ -181,7 +181,7 @@ const ContactoForm = () => {
 
         {/* Campo: País (NUEVO) */}
         <div className={styles.field}>
-          <label>País</label>
+          <label>País con que desea contactar</label>
           <select
             name="pais"
             value={values.pais}
