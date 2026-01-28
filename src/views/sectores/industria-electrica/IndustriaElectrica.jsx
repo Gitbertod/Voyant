@@ -77,7 +77,7 @@ const IndustriaElectrica = () => {
                   Soluciones diseñadas para garantizar la continuidad operativa.
                 </>
               }
-              divider={true}
+              
             />
             <MiniDataInfo
               icon={<FaCheckCircle />}
@@ -90,7 +90,7 @@ const IndustriaElectrica = () => {
               }
             />
             <MiniDataInfo
-              icon={<FaCheckCircle className={styles.icon} />}
+              icon={<FaCheckCircle />}
               title={"ADAPTABILIDAD"}
               text={
                 <>

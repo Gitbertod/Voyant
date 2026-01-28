@@ -55,7 +55,6 @@ const IndustriaFourDotZero = () => {
                 </p>
               </>
             }
-            divider={true}
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}

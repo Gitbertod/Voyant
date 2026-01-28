@@ -27,6 +27,7 @@ const GestionDeLaEnergia = () => {
       >
         <BoxDataPercentage>
           <MiniDataInfo
+            icon={<FaCheckCircle/>}
             title={"Medición"}
             text={
               <>
@@ -35,8 +36,6 @@ const GestionDeLaEnergia = () => {
                 operación.
               </>
             }
-            divider={true}
-            icon={<FaCheckCircle></FaCheckCircle>}
           />
           <MiniDataInfo
             title={"Análisis"}
@@ -47,7 +46,7 @@ const GestionDeLaEnergia = () => {
                 de sostenibilidad de forma medible.
               </>
             }
-            icon={<FaCheckCircle></FaCheckCircle>}
+            icon={<FaCheckCircle/>}
           />
           <MiniDataInfo
             title={"Gestión"}
@@ -58,7 +57,7 @@ const GestionDeLaEnergia = () => {
                 continuidad de la operación.
               </>
             }
-            icon={<FaCheckCircle></FaCheckCircle>}
+            icon={<FaCheckCircle/>}
           />
         </BoxDataPercentage>
       </CategoryWithBackgroundVideo>

@@ -68,7 +68,7 @@ const DataCenters = () => {
             icon={<FaCheckCircle />}
             title={"EFICIENCIA"}
             text={<>Soluciones que optimizan el uso de energía.</>}
-            divider={true}
+           
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}

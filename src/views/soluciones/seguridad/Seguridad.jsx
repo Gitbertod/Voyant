@@ -57,7 +57,7 @@ const Seguridad = ({ tituloh1 = "Seguridad" }) => {
                 protegidas
               </>
             }
-            divider={true}
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}

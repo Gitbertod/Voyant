@@ -1,63 +1,59 @@
+/* ========================================
+   VARIABLES CSS PARA RESPONSIVIDAD
+   ======================================== */
 .dataInfoContainer {
+    /* Variables por defecto (móviles pequeños) */
+    --gap: 20px;
+    --margin-top: 25px;
+    --padding: 0 15px;
+    --porcentaje-size: 28px;
+    --icon-size: 65px;
+    --icon-margin: 12px;
+    --mini-info-size: 18px;
+
     display: grid;
-    gap: 20px;
-    margin-top: 80px;
+    gap: var(--gap);
+    margin-top: var(--margin-top);
     width: 100%;
-    padding: 0 20px;
+    padding: var(--padding);
     justify-items: center;
 }
 
-/* Layout para 1 elemento: centrado */
+/* ========================================
+   LAYOUTS ADAPTATIVOS POR CANTIDAD
+   ======================================== */
+
+/* 1 elemento: centrado con ancho máximo */
 .dataInfoContainer.count-1 {
     grid-template-columns: 1fr;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 }
 
-/* Layout para 2 elementos: lado a lado */
-.dataInfoContainer.count-2 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Layout para 3 elementos: 2 arriba, 1 abajo centrado ocupando el ancho de los 2 de arriba */
-.dataInfoContainer.count-3 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.dataInfoContainer.count-3 > *:nth-child(3) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    max-width: 100%;
-}
-
-/* Layout para 4 elementos: 2x2 */
+/* 2-4 elementos: grid adaptativo */
+.dataInfoContainer.count-2,
+.dataInfoContainer.count-3,
 .dataInfoContainer.count-4 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 }
 
-/* Layout para 5+ elementos: 3 columnas en pantallas grandes */
+/* 5-6 elementos: grid de 3 columnas en desktop */
 .dataInfoContainer.count-5,
 .dataInfoContainer.count-6 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 }
+
+/* ========================================
+   ELEMENTOS INTERNOS
+   ======================================== */
 
 .dataInfo {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
     width: 100%;
 }
 
@@ -72,22 +68,26 @@
 }
 
 .porcentaje {
-    font-size: 50px;
+    font-size: var(--porcentaje-size);
 }
 
 .icon {
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-right: var(--icon-margin);
     flex-shrink: 0;
 }
 
 .miniInfo {
-    font-size: 20px;
+    font-size: var(--mini-info-size);
     font-family: "Anonymous Pro", monospace;
     font-weight: 400;
     font-style: normal;
 }
+
+/* ========================================
+   ANIMACIÓN
+   ======================================== */
 
 .slidebottom {
     animation: slide-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -99,153 +99,113 @@
         opacity: 0;
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
-/* RESPONSIVE */
+/* ========================================
+   RESPONSIVE - MOBILE FIRST
+   ======================================== */
 
-@media (max-width: 1280px) {
+/* Móviles medianos (480px+) */
+@media (min-width: 480px) {
     .dataInfoContainer {
-        gap: 30px;
-        margin-top: 60px;
-    }
-    
-    /* Ajustar para 3 elementos en pantallas medianas */
-    .dataInfoContainer.count-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .dataInfoContainer.count-3 > *:nth-child(3) {
-        grid-column: auto;
-    }
-    
-    .porcentaje {
-        font-size: 45px;
-    }
-    
-    .icon {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .miniInfo {
-        font-size: 24px;
+        --gap: 20px;
+        --margin-top: 25px;
+        --porcentaje-size: 32px;
+        --icon-size: 75px;
+        --icon-margin: 15px;
+        --mini-info-size: 20px;
     }
 }
 
-@media (max-width: 960px) {
+/* Móviles grandes (640px+) */
+@media (min-width: 640px) {
     .dataInfoContainer {
-        gap: 25px;
-        margin-top: 50px;
+        --gap: 25px;
+        --margin-top: 30px;
+        --padding: 0 15px;
+        --porcentaje-size: 32px;
+        --icon-size: 75px;
+        --icon-margin: 15px;
+        --mini-info-size: 20px;
     }
-    
-    /* Mantener 3 en línea si caben */
+}
+
+/* Tablets pequeñas (790px+) - Cambio a 2 columnas */
+@media (min-width: 790px) {
+    .dataInfoContainer {
+        --gap: 20px;
+        --margin-top: 40px;
+        --porcentaje-size: 35px;
+        --icon-size: 60px;
+        --icon-margin: 12px;
+        --mini-info-size: 20px;
+    }
+
+    /* 2 columnas para 2-6 elementos */
+    .dataInfoContainer.count-2,
     .dataInfoContainer.count-3,
     .dataInfoContainer.count-4,
     .dataInfoContainer.count-5,
     .dataInfoContainer.count-6 {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
+    /* Tercer elemento de 3 ocupa toda la fila */
     .dataInfoContainer.count-3 > *:nth-child(3) {
         grid-column: 1 / -1;
-    }
-    
-    .porcentaje {
-        font-size: 40px;
-    }
-    
-    .icon {
-        width: 70px;
-        height: 70px;
-        margin-right: 15px;
-    }
-    
-    .miniInfo {
-        font-size: 22px;
+        justify-self: center;
     }
 }
 
-@media (max-width: 790px) {
-    .dataInfoContainer,
-    .dataInfoContainer.count-1,
-    .dataInfoContainer.count-2,
-    .dataInfoContainer.count-3,
-    .dataInfoContainer.count-4,
-    .dataInfoContainer.count-5,
-    .dataInfoContainer.count-6 {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 40px;
+/* Tablets medianas (960px+) */
+@media (min-width: 960px) {
+    .dataInfoContainer {
+        --gap: 25px;
+        --margin-top: 50px;
+        --porcentaje-size: 40px;
+        --icon-size: 70px;
+        --icon-margin: 15px;
+        --mini-info-size: 22px;
     }
-    
+
+    /* Resetear el span del tercer elemento */
     .dataInfoContainer.count-3 > *:nth-child(3) {
         grid-column: auto;
     }
-    
-    .dataInfo {
-        justify-content: flex-start;
+}
+
+/* Desktop pequeño (1280px+) - Cambio a 3 columnas para 5-6 elementos */
+@media (min-width: 1280px) {
+    .dataInfoContainer {
+        --gap: 30px;
+        --margin-top: 60px;
+        --porcentaje-size: 45px;
+        --icon-size: 80px;
+        --icon-margin: 20px;
+        --mini-info-size: 24px;
     }
-    
-    .porcentaje {
-        font-size: 35px;
+
+    /* 3 columnas para muchos elementos */
+    .dataInfoContainer.count-3 {
+        grid-template-columns: repeat(3, 1fr);
     }
-    
-    .icon {
-        width: 60px;
-        height: 60px;
-        margin-right: 12px;
-    }
-    
-    .miniInfo {
-        font-size: 20px;
+
+    .dataInfoContainer.count-5,
+    .dataInfoContainer.count-6 {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 640px) {
-    .dataInfoContainer {
-        gap: 25px;
-        margin-top: 30px;
-        padding: 0 15px;
-    }
-    
-    .dataInfo {
-        width: 100%;
-    }
-    
-    .porcentaje {
-        font-size: 32px;
-    }
-    
-    .icon {
-        width: 75px;
-        height: 75px;
-        margin-right: 15px;
-    }
-    
-    .miniInfo {
-        font-size: 20px;
-    }
-}
+/* ========================================
+   MEJORAS DE ACCESIBILIDAD
+   ======================================== */
 
-@media (max-width: 480px) {
-    .dataInfoContainer {
-        gap: 20px;
-        margin-top: 25px;
-    }
-    
-    .porcentaje {
-        font-size: 28px;
-    }
-    
-    .icon {
-        width: 65px;
-        height: 65px;
-    }
-    
-    .miniInfo {
-        font-size: 18px;
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .slidebottom {
+        animation: none;
     }
 }

@@ -47,7 +47,7 @@ const DistribucionRespaldoEnergia = () => {
                 sostenibilidad.
               </>
             }
-            divider={true}
+           
             icon={<FaCheckCircle />}
           />
           <MiniDataInfo
@@ -63,7 +63,7 @@ const DistribucionRespaldoEnergia = () => {
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}
-            title={"Confiabilidad Disponibilidad como resultado:"}
+            title={"Confiabilidad Disponibilidad como resultado"}
             text={
               <>
                 Energía estable y protegida, con monitoreo y <br></br>soporte experto

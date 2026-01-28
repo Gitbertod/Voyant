@@ -1,20 +1,33 @@
+/* ========================================
+   VARIABLES CSS PARA RESPONSIVIDAD
+   ======================================== */
 .dataInfo {
+  /* Variables por defecto (móviles) */
+  --icon-size: 50px;
+  --gap: 20px;
+  --divider-width: 6px;
+  --divider-margin: 24px;
+
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--gap);
   margin: 24px 0;
 }
 
+/* ========================================
+   ELEMENTOS
+   ======================================== */
+
 .icon {
-  width: 50px;
-  height: 50px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* 👇 MUY IMPORTANTE */
+/* Asegurar que los SVG dentro del icono escalen correctamente */
 .icon svg {
   width: 90%;
   height: 90%;
@@ -35,33 +48,28 @@
 }
 
 .divider {
-  width: 6px;
+  width: var(--divider-width);
   height: 100%;
   background-color: white;
-  margin-left: 24px;
+  margin-left: var(--divider-margin);
 }
 
-/* Tablet */
+/* ========================================
+   RESPONSIVE - MOBILE FIRST
+   ======================================== */
+
+/* Tablet (768px+) */
 @media (min-width: 768px) {
-  .icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .divider {
-    width: 8px;
+  .dataInfo {
+    --divider-width: 8px;
   }
 }
 
-/* Desktop */
+/* Desktop (1024px+) */
 @media (min-width: 1024px) {
-  .icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .divider {
-    width: 10px;
-    margin-left: 40px;
+  .dataInfo {
+    --icon-size: 60px;
+    --divider-width: 10px;
+    --divider-margin: 40px;
   }
 }

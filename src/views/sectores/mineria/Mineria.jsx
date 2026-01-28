@@ -70,11 +70,10 @@ const Mineria = () => {
                 </p>
               </>
             }
-            divider={true}
-            icon={<FaCheckCircle className={styles.icon} />}
+            icon={<FaCheckCircle />}
           />
           <MiniDataInfo
-            icon={<FaCheckCircle className={styles.icon} />}
+            icon={<FaCheckCircle />}
             title={"OPTIMIZACION"}
             text={
               <>

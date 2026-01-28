@@ -34,12 +34,9 @@ const Climatizacion = () => {
         title="Climatización"
         text={
           <>
-            <p>
-              Controlamos las condiciones de operación en las salas críticas
-              donde la continuidad de operación es indispensable,<p>con soluciones
-              de climatización eficientes y confiables, adaptadas a tu
-              necesidad.</p> 
-            </p>
+            Controlamos las condiciones de operación en las salas críticas donde
+            la continuidad de operación es indispensable,con soluciones de
+            climatización eficientes y confiables, adaptadas a tu necesidad.
           </>
         }
         videoSrc={video_bg}
@@ -57,7 +54,7 @@ const Climatizacion = () => {
                 críticos.
               </>
             }
-            divider={true}
+            
             icon={<FaCheckCircle />}
           />
           <MiniDataInfo
@@ -70,7 +67,7 @@ const Climatizacion = () => {
                 ambiente (temperatura, humedad, flujo de aire y calidad).
               </>
             }
-            divider={true}
+            
           />
           <MiniDataInfo
             icon={<FaCheckCircle />}
