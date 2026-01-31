@@ -163,6 +163,6 @@ JWT_EXPIRE=[tiempo-expiracion]
 
 ---
 
-**Última actualización**: Enero 2025  
+**Última actualización**: Enero 2026  
 **Desarrollador**: Gilberto  
 **Estado del proyecto**: En desarrollo activo
